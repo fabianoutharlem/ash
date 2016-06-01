@@ -1,0 +1,44 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Merk</th>
+    <th>Model</th>
+    <th>Type</th>
+    <th>Kenteken</th>
+    <th>Prijs (totaal/maand/5050)</th>
+    <th>Bouwjaar</th>
+    <th>Best day deal</th>
+    <th>Acties</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <%= render cars %>
+  </tbody>
+</table>
+
+<% content_for :head do %>
+    <%= stylesheet_link_tag 'admin/forms' %>
+<% end %>
+
+<% content_for :javascript do %>
+
+    <%= javascript_include_tag 'admin/forms' %>
+
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function () {
+        var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+
+        elems.forEach(function (html) {
+          var switchery = new Switchery(html);
+        });
+
+        $('.js-switch').on('change', function () {
+          $(this).parents('form').submit();
+        });
+
+      });
+    </script>
+
+<% end %>

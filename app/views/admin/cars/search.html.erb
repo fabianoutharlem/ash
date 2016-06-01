@@ -1,0 +1,91 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2>Zoekresultaten voor: <%= params[:q] %></h2>
+    <ol class="breadcrumb">
+      <li>
+        <a href="<%= url_for admin_root_path %>">Home</a>
+      </li>
+      <li>
+        <%= link_to 'Autos', admin_cars_path %>
+      </li>
+      <li class="active">
+        <strong>Zoekresultaten</strong>
+      </li>
+    </ol>
+  </div>
+  <div class="col-lg-2">
+
+  </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>Zoekresultaten (<%= @cars.total_count %>)</h5>
+          <div class="ibox-tools">
+            <a class="collapse-link">
+              <i class="fa fa-chevron-up"></i>
+            </a>
+          </div>
+        </div>
+        <div class="ibox-content">
+
+          <%= render partial: 'cars_table', locals: {cars: @cars} %>
+
+          <%= paginate @cars, theme: 'twitter-bootstrap-3', :pagination_class => "pagination-small pagination-centered" %>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<% content_for :javascript do %>
+
+    <script type="text/javascript">
+
+
+      $(function () {
+
+        $('.i-checks').iCheck({
+          checkboxClass: 'icheckbox_square-green',
+          radioClass: 'iradio_square-green',
+        });
+
+        $("span.pie").peity("pie", {
+          fill: ['#1ab394', '#d7d7d7', '#ffffff']
+        })
+
+        $(".line").peity("line", {
+          fill: '#1ab394',
+          stroke: '#169c81',
+        })
+
+        $(".bar").peity("bar", {
+          fill: ["#1ab394", "#d7d7d7"]
+        })
+
+        $(".bar_dashboard").peity("bar", {
+          fill: ["#1ab394", "#d7d7d7"],
+          width: 100
+        })
+
+        var updatingChart = $(".updating-chart").peity("line", {fill: '#1ab394', stroke: '#169c81', width: 64})
+
+        setInterval(function () {
+          var random = Math.round(Math.random() * 10)
+          var values = updatingChart.text().split(",")
+          values.shift()
+          values.push(random)
+
+          updatingChart
+              .text(values.join(","))
+              .change()
+        }, 1000);
+
+      });
+
+    </script>
+
+<% end %>

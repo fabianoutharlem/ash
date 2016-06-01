@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ASH | CMS</title>
+
+  <%= csrf_meta_tag %>
+
+  <%= yield :head %>
+
+  <!-- Main css styles -->
+  <%= stylesheet_link_tag 'admin/application', media: 'all', 'data-turbolinks-track' => true %>
+
+  <!-- Main javascript files -->
+  <%= javascript_include_tag 'admin/application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+
+<!-- Skin configuration box -->
+<!-- <%= render 'admin/layouts/skinconfig' %> -->
+
+<!-- Wrapper-->
+<div id="wrapper" class="<%= params[:controller] %>.<%= params[:action] %>">
+
+  <!-- Navigation -->
+  <%= render 'admin/layouts/navigation' %>
+
+  <!-- Page wraper -->
+  <div id="page-wrapper" class="gray-bg <%= @extra_class %>">
+
+    <!-- Page wrapper -->
+    <%= render 'admin/layouts/topnavbar' %>
+
+    <!-- Main view  -->
+    <%= yield %>
+
+    <!-- Footer -->
+    <%= render 'admin/layouts/footer' %>
+
+  </div>
+  <!-- End page wrapper-->
+
+</div>
+<!-- End wrapper-->
+
+<script type="text/javascript" charset="utf-8">
+  $(function () {
+    toastr.options = {
+      closeButton: true,
+      progressBar: true,
+      showMethod: 'slideDown',
+      timeOut: 4000
+    };
+    <% flash.each do |flash_type, flash_content| %>
+    <% toastr_type = case flash_type
+                       when 'error'
+                         'error'
+                       when 'alert'
+                         'warning'
+                       when 'success'
+                         'success'
+                       else
+                         'info'
+                     end
+    %>
+    <% if flash_content.is_a? Array %>
+    <% flash_content.each do |message| %>
+    toastr.<%= toastr_type %>("<% message %>");
+    <% end %>
+    <% else %>
+    toastr.<%= toastr_type %>("<%= flash_content %>");
+    <% end %>
+    <% end %>
+  });
+
+</script>
+
+<!-- Include javascript per-view -->
+<!-- For demo purpose we include javascript in view but you can easily start SeedProject and organize it with Rails asset pipeline as you want -->
+<%= yield :javascript %>
+
+
+
+
+</body>
+</html>

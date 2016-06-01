@@ -1,0 +1,15 @@
+<tr>
+  <td><%= car.vehicle_number_hexon %></td>
+  <td><%= car.brand.name %></td>
+  <td><%= car.model.name %></td>
+  <td><%= car.car_type %></td>
+  <td><%= car.license_plate %></td>
+  <td><%= "&euro;#{car.price_total} / &euro;#{car.price_month} / &euro;#{car.price_50_50}".html_safe %></td>
+  <td><%= car.manufacture_year %></td>
+  <td>
+    <%= form_for car, url: admin_car_path(car), remote: true do |f| %>
+      <%= f.check_box :best_day_deal, class: 'js-switch' %>
+    <% end %>
+  </td>
+  <td><%= link_to 'Delete', admin_car_path(car), method: :delete, class: 'btn btn-danger' %></td>
+</tr>

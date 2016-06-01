@@ -1,0 +1,21 @@
+<div class="row border-bottom">
+  <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+      <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+      <form role="search" class="navbar-form-custom" method="get" action="<%= search_admin_cars_path %>">
+        <div class="form-group">
+          <input type="text" placeholder="Zoek autos..." class="form-control" name="q" id="top-search"/>
+        </div>
+      </form>
+    </div>
+    <ul class="nav navbar-top-links navbar-right">
+      <li>
+        <span class="m-r-sm text-muted welcome-message" data-i18n="topnav.welcometext">Welkom in het ASH CMS</span>
+      </li>
+
+      <li>
+        <%= link_to '<i class="fa fa-sign-out"></i> Log out'.html_safe, destroy_user_session_path, method: :delete %>
+      </li>
+    </ul>
+  </nav>
+</div>

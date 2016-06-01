@@ -1,0 +1,65 @@
+<div class="form-group">
+
+  <%= f.label :name, 'Naam', class: 'col-sm-2 control-label' %>
+  <div class="col-sm-10">
+    <%= f.text_field :name, class: 'form-control' %>
+    <span class="help-block m-b-none">Het aanpassen van de naam van een merk heeft gevolgen voor de werking van het wheelerdelta script, deze is dan niet meer in staat het juiste merk te vinden en zal een merk aanmaken met de oude naam.</span>
+  </div>
+
+</div>
+
+<style>
+  .note-editor {
+    min-height: 0;
+  }
+</style>
+
+<div class="form-group">
+
+  <%= f.label :description, 'Beschrijving', class: 'col-sm-2 control-label' %>
+  <div class="col-sm-10">
+    <div style="border: 1px solid #e5e6e7;">
+      <%= f.text_area :description, class: 'summernote' %>
+    </div>
+  </div>
+
+</div>
+
+<div class="form-group">
+
+  <div class="col-sm-10 col-sm-push-2">
+    <div class="i-checks">
+      <%= f.label :visible_in_menu, class: 'control-label' do %>
+          <%= f.check_box :visible_in_menu %> <i></i> Zichtbaar in menu
+      <% end %>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="hr-line-dashed"></div>
+
+<div class="form-group">
+  <%= f.label :image, 'Afbeelding', class: 'col-sm-2 control-label' %>
+
+  <div class="col-sm-4">
+    <%= f.file_field :image %>
+    <%= image_tag f.object.image.menu if f.object.image.present? %>
+    <br>
+  </div>
+  <div class="col-sm-6 i-checks">
+    <label>
+      <%= f.check_box :remove_image %>
+      Afbeelding verwijderen
+    </label>
+  </div>
+</div>
+
+<div class="hr-line-dashed"></div>
+<div class="form-group">
+  <div class="col-sm-4 col-sm-offset-2">
+    <%= link_to 'Annuleren', admin_brands_path, class: 'btn btn-white' %>
+    <%= f.submit 'Opslaan', class: 'btn btn-primary' %>
+  </div>
+</div>

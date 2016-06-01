@@ -1,0 +1,46 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+  <div class="sidebar-collapse">
+    <ul class="nav metismenu" id="side-menu">
+      <li class="nav-header">
+        <div class="dropdown profile-element">
+                    <span>
+                        <img alt="image" class="img-circle" src="<%= image_url 'profile_small.jpg' %>"/>
+                    </span>
+          <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="clear">
+                            <span class="block m-t-xs">
+                                <strong class="font-bold"><%= current_user.email %></strong>
+                            </span>
+                        </span>
+          </a>
+        </div>
+        <div class="logo-element">
+          ASH
+        </div>
+      </li>
+      <li class="<%= is_active_controller('admin') %>">
+        <%= link_to admin_root_path do %>
+            <i class="fa fa-tachometer"></i>
+            <span class="nav-label">Dashboard</span>
+        <% end %>
+      </li>
+      <li class="<%= is_active_controller('cars') %>">
+        <a href="<%= admin_cars_path %>"><i class="fa fa-car"></i>
+          <span class="nav-label">Autos</span>
+          <span class="fa arrow"></span>
+        </a>
+        <ul class="nav nav-second-level collapse <%= is_active_controller('cars') %>">
+          <li class="<%= is_active_action('index') %>"><%= link_to "Alle autos", admin_cars_path %></li>
+          <li class="<%= is_active_action('best_day_deals') %>"><%= link_to "Best day deals", best_day_deals_admin_cars_path %></li>
+        </ul>
+      </li>
+      <li class="<%= is_active_controller('brands') %>">
+        <%= link_to admin_brands_path do %>
+            <i class="fa fa-tags"></i>
+            <span class="nav-label">Merken </span>
+        <% end %>
+      </li>
+    </ul>
+
+  </div>
+</nav>

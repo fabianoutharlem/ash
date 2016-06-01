@@ -1,0 +1,15 @@
+<tr class="item" data-item-id="<%= brand.id %>">
+  <td style="vertical-align: middle;"><i class="fa fa-arrows-v" aria-hidden="true"></i></td>
+  <td><%= image_tag brand.image.menu if brand.image.present? %></td>
+  <td><%= brand.name %></td>
+  <td><%= truncate strip_tags(brand.description), length: 80 %></td>
+  <td><%= brand.slug %></td>
+  <td>
+    <%= form_for brand, url: admin_brand_path(brand), method: :put, remote: true do |f| %>
+      <%= f.check_box :visible_in_menu, class: 'js-switch' %>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to 'Aanpassen', edit_admin_brand_path(brand), class: 'btn btn-primary' %>
+  </td>
+</tr>

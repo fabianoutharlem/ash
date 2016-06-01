@@ -22,5 +22,19 @@ module Ash
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.assets.precompile += [ 'admin/appviews.css', 'admin/cssanimations.css', 'admin/dashboards.css', 'admin/forms.css', 'admin/gallery.css', 'admin/graphs.css', 'admin/mailbox.css', 'admin/miscellaneous.css', 'admin/pages.css', 'admin/tables.css', 'admin/uielements.css', 'admin/widgets.css', 'admin/commerce.css' ]
+    config.assets.precompile += [ 'admin/appviews.js', 'admin/cssanimations.js', 'admin/dashboards.js', 'admin/forms.js', 'admin/gallery.js', 'admin/graphs.js', 'admin/mailbox.js', 'admin/miscellaneous.js', 'admin/pages.js', 'admin/tables.js', 'admin/uielements.js', 'admin/widgets.js', 'admin/commerce.js' ]
+
+
+    config.to_prepare do
+      devise_layout = 'admin/layouts/empty'
+      Devise::SessionsController.layout devise_layout
+      Devise::RegistrationsController.layout devise_layout
+      Devise::ConfirmationsController.layout devise_layout
+      Devise::UnlocksController.layout devise_layout
+      Devise::PasswordsController.layout devise_layout
+    end
+
   end
 end
