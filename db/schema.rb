@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160601125609) do
+ActiveRecord::Schema.define(version: 20160614140241) do
 
   create_table "body_types", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -105,6 +105,47 @@ ActiveRecord::Schema.define(version: 20160601125609) do
 
   add_index "models", ["slug"], name: "index_models_on_slug", unique: true, using: :btree
 
+  create_table "newsletter_template_values", force: :cascade do |t|
+    t.string   "option_name",            limit: 255
+    t.string   "option_type",            limit: 255
+    t.integer  "newsletter_template_id", limit: 4
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
+
+  add_index "newsletter_template_values", ["newsletter_template_id"], name: "index_newsletter_template_values_on_newsletter_template_id", using: :btree
+
+  create_table "newsletter_templates", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "template",   limit: 255
+    t.string   "image",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "newsletter_values", force: :cascade do |t|
+    t.integer  "newsletter_id",                limit: 4
+    t.integer  "newsletter_template_value_id", limit: 4
+    t.string   "value",                        limit: 255
+    t.string   "type",                         limit: 255
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+  end
+
+  add_index "newsletter_values", ["newsletter_id"], name: "index_newsletter_values_on_newsletter_id", using: :btree
+  add_index "newsletter_values", ["newsletter_template_value_id"], name: "index_newsletter_values_on_newsletter_template_value_id", using: :btree
+
+  create_table "newsletters", force: :cascade do |t|
+    t.string   "campaign_id",            limit: 255
+    t.string   "title",                  limit: 255
+    t.string   "subject",                limit: 255
+    t.integer  "newsletter_template_id", limit: 4
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
+
+  add_index "newsletters", ["newsletter_template_id"], name: "index_newsletters_on_newsletter_template_id", using: :btree
+
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id",        limit: 4
     t.integer  "taggable_id",   limit: 4
@@ -149,4 +190,8 @@ ActiveRecord::Schema.define(version: 20160601125609) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "newsletter_template_values", "newsletter_templates"
+  add_foreign_key "newsletter_values", "newsletter_template_values"
+  add_foreign_key "newsletter_values", "newsletters"
+  add_foreign_key "newsletters", "newsletter_templates"
 end

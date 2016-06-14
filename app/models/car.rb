@@ -65,6 +65,10 @@ class Car < ActiveRecord::Base
     end
   end
 
+  def main_image
+    car_medias.first if car_medias.any?
+  end
+
   def display_name
     fields = [brand.name, model.name]
     fields << car_type unless car_type.blank?

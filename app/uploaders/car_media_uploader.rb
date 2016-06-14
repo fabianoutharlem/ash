@@ -25,6 +25,14 @@ class CarMediaUploader < CarrierWave::Uploader::Base
     process resize_to_fill: [400, 300]
   end
 
+  version :small, if: :image? do
+    process resize_to_fill: [150, 150]
+  end
+
+  version :mini, if: :image? do
+    process resize_to_fill: [70, 70]
+  end
+
   process :set_content_type
 
   protected

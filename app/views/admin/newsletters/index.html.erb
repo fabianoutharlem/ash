@@ -1,0 +1,63 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2>Nieuwsbrieven</h2>
+    <ol class="breadcrumb">
+      <li>
+        <a href="<%= url_for admin_root_path %>">Home</a>
+      </li>
+      <li>
+        <a>Autos</a>
+      </li>
+      <li class="active">
+        <strong>Nieuwsbrieven</strong>
+      </li>
+    </ol>
+  </div>
+  <div class="col-lg-2">
+
+  </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>Nieuwsbrieven (<%= @newsletters.total_count %>)</h5>
+          <div class="ibox-tools">
+            <a class="dropdown-toggle btn btn-default" data-toggle="dropdown" href="#">
+              <i class="fa fa-plus"></i><span> Nieuwe nieuwsbrief</span>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+              <% NewsletterTemplate.all.each do |template| %>
+                  <li>
+                    <%= link_to template.name, new_newsletter_with_template_admin_newsletters_path(template) %>
+                  </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <div class="ibox-content">
+
+          <table class="table">
+            <thead>
+            <tr>
+              <th>Titel</th>
+              <th>Onderwerp</th>
+              <th>Aanmaak datum</th>
+              <th>Acties</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <%= render @newsletters %>
+            </tbody>
+          </table>
+
+          <%= paginate @newsletters, theme: 'twitter-bootstrap-3', :pagination_class => "pagination-small pagination-centered" %>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

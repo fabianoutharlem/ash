@@ -12,6 +12,22 @@ class Admin::CarsController < Admin::AdminBaseController
     query = params[:q]
     query = "%#{query}%"
     @cars = Car.joins(:brand, :model).where('vehicle_number_hexon LIKE :q OR car_type LIKE :q OR brands.name LIKE :q OR models.name LIKE :q OR replace(license_plate, \'-\', \'\') LIKE replace(:q, \'-\', \'\')', q: query).page(params[:page])
+    respond_to do |format|
+      format.js {
+        render json: {
+            cars: @cars.map {|car|
+              {
+                  id: car.id,
+                  display_name: car.display_name,
+                  main_image_url: car.main_image.try(:small).try(:url) || 'http://lorempixel.com/150/150'
+              }
+            },
+            total_count: @cars.total_count,
+            page: @cars.current_page
+        }, status: 200
+      }
+      format.html
+    end
   end
 
   def update

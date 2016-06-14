@@ -35,7 +35,7 @@ class Admin::BrandsController < Admin::AdminBaseController
   private
 
   def brand_params
-    params.require(:brand).permit(:brand_id, :name, :description, :row_order_position, :visible_in_menu, :image)
+    params.require(:brand).permit(:brand_id, :name, :description, :row_order_position, :visible_in_menu, :image, :remove_image)
   end
 
 end

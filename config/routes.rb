@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/rails_admin', as: 'rails_admin'
   post '/import', to: 'import#handle'
 
   root to: "home#index"
@@ -21,6 +22,15 @@ Rails.application.routes.draw do
 
     resources :brands do
       post :update_row_order, on: :collection
+    end
+
+    resources :newsletters do
+      get :prepare_for_send
+      post :send_newsletter
+      get :preview
+      collection do
+        get '/new/:template_id', to: 'newsletters#new', as: :new_newsletter_with_template
+      end
     end
 
     resources :admin do

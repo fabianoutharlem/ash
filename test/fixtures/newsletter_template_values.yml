@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  option_name: MyString
+  option_type: MyString
+  newsletter_template_id: 
+
+two:
+  option_name: MyString
+  option_type: MyString
+  newsletter_template_id: 

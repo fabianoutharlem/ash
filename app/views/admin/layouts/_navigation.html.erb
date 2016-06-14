@@ -40,6 +40,12 @@
             <span class="nav-label">Merken </span>
         <% end %>
       </li>
+      <li class="<%= is_active_controller('newsletters') %>">
+        <%= link_to admin_newsletters_path do %>
+            <i class="fa fa-newspaper-o"></i>
+            <span class="nav-label">Nieuwsbrieven </span>
+        <% end %>
+      </li>
     </ul>
 
   </div>

@@ -46,6 +46,8 @@ group :development do
   # gem 'spring'
 end
 
+gem 'rails_admin'
+
 gem 'devise'
 
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -66,3 +68,6 @@ gem 'rmagick'
 
 gem 'ranked-model'
 
+gem 'select2-rails', github: 'argerim/select2-rails'
+
+gem 'gibbon'

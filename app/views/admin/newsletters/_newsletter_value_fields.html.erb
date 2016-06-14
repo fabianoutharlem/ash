@@ -1,0 +1,4 @@
+<%= f.hidden_field :newsletter_template_value_id %>
+<%= f.hidden_field :type %>
+
+<%= render 'admin/newsletters/newsletter_values/'+f.object.partial_name, {f: f} %>
