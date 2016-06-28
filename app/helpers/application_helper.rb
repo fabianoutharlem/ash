@@ -6,4 +6,12 @@ module ApplicationHelper
   def is_active_action(action_name)
     params[:action] == action_name ? "active" : nil
   end
+
+  def format_money(amount)
+    if amount.nil?
+      amount = 0.0
+    end
+    string = number_to_currency(amount, unit: '€ ', delimiter: '.', separator: ',')
+    string.gsub(',00', ',-')
+  end
 end

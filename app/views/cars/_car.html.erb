@@ -1,0 +1,87 @@
+<div class="item">
+  <article class="article_car hart <%= 'best_day_deal' if car.best_day_deal? %>">
+
+    <div class="hover_element">
+      <div class="content_box">
+        <h4><%= car.brand.name %></h4>
+        <h5><%= car.model.name %> <%= car.car_type %></h5>
+
+        <table>
+          <tr>
+            <td>Van</td>
+            <td>Voor</td>
+          </tr>
+          <tr>
+            <td class="first"><%= format_money car.price_total %></td>
+            <td class="second"><%= format_money car.price_discount %></td>
+          </tr>
+        </table>
+
+        <a href="../detail_pagina/detail_pagina.php" class="orange_btn">Bekijk deze auto</a>
+        <p class="click_hier">Deze auto financieren? Klik hieronder!</p>
+      </div>
+      <div class="finance_mogelijkheden">
+        <a href="#" class="zakelijk finance_opties">
+          <p class="finance">Zakelijk v.a. <%= format_money car.price_month %> p/m</p>
+          <div class="orange_arrow"><%= image_tag 'arrow_right.png' %></div>
+        </a>
+        <a href="#" class="particulier finance_opties">
+          <p class="finance">Particulier v.a. <%= format_money car.price_month %> p/m</p>
+          <div class="orange_arrow"><%= image_tag 'arrow_right.png' %></div>
+        </a>
+        <a href="#" class="fifty_fifty finance_opties">
+          <p class="finance">50/50 Deal <%= format_money car.price_50_50 %></p>
+          <div class="orange_arrow"><%= image_tag 'arrow_right.png' %></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="car_slider">
+      <ul>
+        <% car.car_images.first(3).each do |car_image| %>
+            <li><%= image_tag car_image.file.thumb %></li>
+        <% end %>
+      </ul>
+
+      <div class="best_deal">
+        <p>BEST DAY DEAL</p>
+        <span class="day_deal_star"></span>
+        <span class="day_deal_star"></span>
+        <span class="day_deal_star"></span>
+      </div>
+    </div>
+
+    <div class="container-fluid car_container">
+      <%= link_to car_like_path(car.id), remote: true do %>
+          <div class="hart"></div>
+      <% end %>
+
+      <div class="car_info">
+        <h5><%= car.brand.name %></h5>
+        <p><%= car.model.name %> <%= car.car_type %></p>
+      </div>
+
+      <div class="aanbieding">
+        <table>
+          <tr>
+            <td>Van</td>
+            <td>Voor</td>
+          </tr>
+          <tr>
+            <td><%= format_money car.price_total %></td>
+            <td><%= format_money car.price_discount %></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="p_m">
+        <table>
+          <tr>
+            <td class="rij_deze">Rij deze auto p.m. vanaf</td>
+            <td class="orange"><%= format_money car.price_month %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </article>
+</div>

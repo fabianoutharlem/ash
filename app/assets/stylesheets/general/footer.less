@@ -1,0 +1,558 @@
+section.footer {
+  margin-top: 30px;
+
+  section.footer_contact {
+    height: 60px;
+    background-color: #595959;
+
+    @media @880 {
+      display: none;
+    }
+
+    div.container-fluid {
+      padding: 0 80px;
+
+      @media @1440 {
+        padding: 0 0 0 28px
+      }
+
+      @media @1280 {
+        padding: 0;
+        text-align: center;
+      }
+
+      ul {
+
+        @media @1440 {
+          width: 1440px;
+        }
+
+        a {
+          margin-right: 14px;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+
+        li {
+          display: inline-block;
+          font-size: 16px;
+          line-height: 1.5;
+          color: white;
+          height: 60px;
+
+          @media @1040 {
+            font-size: 12px;
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          span {
+            color: white;
+            font-size: 16px;
+            line-height: 1.5;
+
+            &.large {
+              display: inline-block;
+            }
+
+            &.small {
+              display: none;
+              color: #595959;
+            }
+          }
+
+          i {
+            margin-right: 10px;
+            vertical-align: middle;
+          }
+
+          &.text {
+            height: 43px;
+            vertical-align: middle;
+            margin-right: 23px;
+
+            @media @1280 {
+              width: 18%;
+              text-align: left;
+            }
+
+            &:last-child {
+              margin-right: 0;
+            }
+
+            p {
+              display: inline-block;
+              vertical-align: middle;
+            }
+
+            i {
+              display: none;
+              vertical-align: middle;
+              width: 50px;
+
+              &.phone {
+                background: image-url('iphone_orange.png') no-repeat center;
+                background-size: 19px 33px;
+                height: 33.4px;
+              }
+
+              &.whatsapp {
+                background: image-url('whatsapp_orange.png') no-repeat center;
+                background-size: 35px 35px;
+                height: 35.5px;
+              }
+
+              &.mail {
+                background: image-url('mail_orange.png') no-repeat center;
+                background-size: 29px 23px;
+                height: 23px;
+              }
+
+              &.chat {
+                background: image-url('chat_orange.png') no-repeat center;
+                background-size: 24px 21px;
+                height: 21.4px;
+              }
+            }
+          }
+
+          &.vraag {
+
+            @media @1280 {
+              display: none;
+            }
+          }
+
+          &.icon {
+          }
+
+          &.phone {
+
+            i {
+              display: inline-block;
+              background: image-url('footer_iphone.png') no-repeat center;
+              background-size: contain;
+              width: 16.9px;
+              height: 29.5px;
+            }
+          }
+
+          &.whatsapp {
+
+            i {
+              display: inline-block;
+              background: image-url('footer_whatsapp.png') no-repeat center;
+              background-size: contain;
+              width: 33.5px;
+              height: 33.3px;
+            }
+          }
+
+          &.mail {
+
+            i {
+              display: inline-block;
+              background: image-url('footer_mail.png') no-repeat center;
+              background-size: contain;
+              width: 27.3px;
+              height: 21.8px;
+              margin-bottom: 2px;
+            }
+          }
+
+          &.chat {
+
+            i {
+              display: inline-block;
+              background: image-url('footer_chat.png') no-repeat center;
+              background-size: contain;
+              width: 20.7px;
+              height: 18.8px;
+              margin-bottom: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  section.footer_smart {
+    position: relative;
+    background-color: #efefef;
+    padding: 30px 0 20px 0;
+
+    @media @-880 {
+      display: none;
+    }
+
+    h4 {
+      text-align: center;
+      width: 100%;
+      font-size: 16px;
+      color: #595959;
+      margin: 0 0 15px 0;
+
+      span {
+        font-weight: @lato-bold;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      color: #595959;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+
+    ul.berijkbaar_menu {
+      width: 280px;
+      margin: 0 auto;
+
+      li {
+        width: 280px;
+        height: 60px;
+        border: solid 1px #dedede;
+        padding: 0 0 0 15px;
+        margin-bottom: 15px;
+        
+        &:hover {
+          cursor: pointer;
+        }
+
+        p {
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        a {
+          width: 100%;
+          height: 100%;
+        }
+
+        i {
+          display: inline-block;
+          width: 36px;
+          height: 60px;
+          background-size: contain;
+          margin: 0 15px 0 0;
+          vertical-align: middle;
+
+          &.phone {
+            background: image-url('iphone_orange.png') no-repeat center;
+          }
+
+          &.whatsapp {
+            background: image-url('whatsapp_orange.png') no-repeat center;
+          }
+
+          &.mail {
+            background: image-url('mail_orange.png') no-repeat center;
+          }
+
+          &.chat {
+            background: image-url('chat_orange.png') no-repeat center;
+          }
+        }
+      }
+    }
+
+    ul.menu {
+      width: 280px;
+      margin: 25px auto 0 auto;
+
+      p {
+        display: inline-block;
+        font-weight: @lato-bold;
+        vertical-align: middle;
+      }
+
+      img.arrow {
+        display: inline-block;
+        width: 10px;
+        height: 7.1px;
+        margin-left: 3px;
+        vertical-align: middle;
+      }
+
+      li {
+        min-height: 50px;
+        border-bottom: solid 1px #dedede;
+        line-height: 50px;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &.expand_menu {
+
+          &.active {
+
+            img.arrow {
+              transform: rotate(-90deg);
+            }
+          }
+
+          img.arrow {
+            transition: @trans;
+          }
+
+          ul {
+            min-width: 280px;
+            list-style-type: none;
+            margin: 20px auto 0 auto;
+
+             li {
+               border-bottom: none;
+               padding: 0 0 0 20px;
+               font-size: 13px;
+               line-height: 2;
+               color: #595959;
+               min-height: 25px;
+
+               &:first-child {
+                 border-left: 1px solid #f35026;
+               }
+
+               &:last-child {
+                 border-bottom: solid 1px #dedede;
+               }
+
+               a {
+                 font-size: 13px;
+                 line-height: 2;
+                 color: #595959;
+               }
+             }
+          }
+
+          div.expand {
+            display: none;
+
+            &.active {
+              display: block;
+            }
+          }
+        }
+
+        &.voorraad {
+
+          ul {
+            margin: 0 0 20px 0;
+
+            li {
+              margin: 0 auto 2px auto;
+              width: 280px;
+              height: 40px;
+              background-color: #ffffff;
+              border: solid 1px #e9e9e9;
+              text-align: center;
+
+              &:first-child {
+                border: solid 1px #e9e9e9;
+              }
+
+              figure {
+                display: inline-block;
+                margin: 0 20px 0 0;
+                vertical-align: middle;
+
+                img {
+                  display: inline-block;
+                  width: auto;
+                  height: auto;
+                }
+              }
+
+              p {
+                display: inline-block;
+                font-size: 14px;
+                line-height: 40px;
+                color: #595959;
+              }
+
+              &.search {
+                padding: 0;
+                margin-bottom: 10px;
+
+                form {
+                  margin-left: -1px;
+                  margin-top: 0;
+
+                  input {
+                    width: 280px;
+                    height: 40px;
+                    background-color: #ffffff;
+                    border: solid 1px #e9e9e9;
+                    font-size: 14px;
+                    color: #595959;
+                    margin: 0 auto;
+                  }
+                }
+              }
+
+              &.img {
+                height: 90px;
+                text-align: left;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+section.contact {  //footer_main
+  background-color: #efefef;
+
+  @media @880 {
+    display: none;
+  }
+
+  div.container-fluid {
+    padding: 50px 142px 70px 142px;
+
+    @media @1280 {
+      padding: 50px 0 70px 0;
+    }
+
+    h4 {
+      font-size: 16px;
+      color: #595959;
+      font-weight: @lato-bold;
+      margin: 0 0 33px 0;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0 0 24px 0;
+      padding: 0;
+
+      li {
+        padding: 0 0 0 20px;
+        vertical-align: top;
+        font-size: 13px;
+        line-height: 2;
+        color: #595959;
+
+        &:first-child {
+          border-left: 1px solid #fc8161;
+        }
+
+        &:nth-child(2) {
+          border-left: 1px solid #fc8161;
+        }
+
+        &.bold {
+          font-weight: @lato-bold;
+        }
+
+        a {
+          font-size: 13px;
+          line-height: 2;
+          color: #595959;
+
+          &:hover {
+            text-decoration: none;
+            color: @orange;
+          }
+
+          &.bold {
+            font-weight: @lato-bold;
+          }
+
+          &.orange {
+            color: @orange;
+          }
+        }
+      }
+    }
+
+    div.first_col {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    div.second_col {
+      clear: left;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    div.Adres {
+      float: left;
+      display: inline-block;
+      width: 319px;
+
+      @media @1280 {
+        margin-left: 6%;
+        width: 28%;
+      }
+
+      @media @1279 {
+        margin-left: 4%;
+      }
+
+      @media @1200 {
+        width: 25%;
+      }
+    }
+
+    div.Klantenservice {
+      display: inline-block;
+      width: 489px;
+
+      @media @1280 {
+        width: 400px;
+      }
+
+      @media @1100 {
+        width: 32%;
+      }
+
+      @media @905 {
+        width: 26%;
+      }
+
+      @media @1040 {
+
+      }
+
+      div.first_col {
+        width: 230px;
+
+        @media @1280 {
+          width: 206px;
+        }
+      }
+    }
+
+    div.tot_voorraad {
+      float: right;
+      display: inline-block;
+
+      @media @1280 {
+        margin-right: 6%;
+      }
+
+      @media @1279 {
+        margin-right: 4%;
+      }
+
+      div.first_col {
+        width: 195px;
+
+        @media @1280 {
+          width: 174px;
+        }
+      }
+    }
+  }
+}

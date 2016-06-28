@@ -1,0 +1,13 @@
+<li class="main_slides _slide2"
+    style="background: url(<%= image_path('bg_slide2.jpg') %>) no-repeat center; background-size: cover;">
+
+  <h1><%= slide_values[:heading].value %></h1>
+
+  <ul>
+    <% slide_values[:autos].cars.each do |car| %>
+        <li><%= render 'cars/car', car: car %></li>
+    <% end rescue '' %>
+  </ul>
+
+  <a href="<%= slide_values[:button_link].value %>" class="orange_btn"><%= slide_values[:button_tekst].value %></a>
+</li>

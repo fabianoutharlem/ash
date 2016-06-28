@@ -1,0 +1,724 @@
+section.auto_uitgelicht {
+
+  @media @1280 {
+    margin-top: -10px;
+  }
+
+  div.content_container {
+    position: relative;
+    padding: 30px 30px 30px 70px;
+    background-color: #f4f4f4;
+    overflow: hidden;
+
+    @media @1280 {
+      padding: 3%;
+    }
+
+    @media @960 {
+      padding-right: 5%;
+    }
+
+    @media @880 {
+      padding-right: 2%;
+      padding-left: 0;
+    }
+
+    @media @800 {
+      padding-right: 4%;
+      padding-left: 2%;
+    }
+
+    @media @750 {
+      text-align: center;
+      //padding: 20px 40px;
+    }
+
+    img.cross {
+      margin-top: 60px;
+
+      @media @880 {
+        margin-top: 30px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    div.overlay_afspraak {
+      background-color: rgba(0, 0, 0, 0.9);
+      text-align: center;
+      width: 100%;
+      padding: 70px 0 90px 0;
+      z-index: 20;
+      position: absolute;
+      top: -100%;
+      right: 0;
+      transition: @trans;
+
+      @media @1279 {
+        padding: 30px 0 40px 0;
+      }
+
+      &.active {
+        top: 0;
+      }
+
+      h2 {
+        font-size: 34px;
+        color: #f8f8f8;
+        margin-bottom: 40px;
+
+        @media @1279 {
+          margin-bottom: 30px;
+        }
+
+        @media @880 {
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+
+        @media @360 {
+          margin-left: 50px;
+          margin-right: 50px;
+          margin-bottom: 20px;
+          font-size: 2em;
+        }
+      }
+
+      .unslider {
+        vertical-align: top;
+        float: none;
+        display: inline-block;
+      }
+
+      .car_slider_afspraak {
+        width: 546px;
+        display: inline-block;
+        margin-right: 20px;
+
+        @media @880 {
+          margin-right: 0;
+        }
+
+        @media @360 {
+          width: 273px;
+        }
+
+        div.background {
+          width: 100%;
+          height: 410px;
+
+          @media @360 {
+            height: 205px;
+          }
+        }
+      }
+
+      form {
+        margin-top: 0;
+        vertical-align: top;
+        display: inline-block;
+        width: 280px;
+
+        @media @880 {
+          width: 600px;
+          margin: 30px auto 0 auto;
+        }
+
+        @media @360 {
+          display: block;
+          width: 273px;
+          margin-top: 20px;
+        }
+
+        input {
+          margin-bottom: 22px;
+
+          @media @880 {
+            display: inline-block;
+            margin: 0 5px 10px 5px;
+          }
+
+          @media @360 {
+            width: 273px;
+            margin: 0 0 10px 0;
+          }
+        }
+
+        .orange_btn {
+
+          @media @880 {
+            display: inline-block;
+            margin: 0 5px 10px 5px;
+            font-size: 16px;
+            line-height: 47px;
+          }
+
+          @media @360 {
+            width: 273px;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    div.overlay_financier {
+      display: none;
+      z-index: 20;
+      position: absolute;
+      top: 0;
+      right: -100%;
+      transition: @trans;
+      padding-left: 70px;
+
+      &.active {
+        right: 0;
+      }
+
+      section.article_financieren {
+        margin: 0 35px 0 35px;
+      }
+
+      img.cross {
+        display: block;
+        margin: 50px auto 0 auto;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    div.model {
+      display: inline-block;
+
+      @media @1200 {
+        margin-left: 2%;
+      }
+
+      @media @1070 {
+        width: 280px;
+      }
+
+      @media @880 {
+        margin-left: 0;
+      }
+
+      @media @750 {
+        text-align: left;
+        margin-top: 20px;
+        width: 380px;
+      }
+
+      @media @360 {
+        width: 280px;
+        margin-top: 0;
+      }
+
+      h2 {
+        font-size: 34px;
+        color: #595959;
+        margin-bottom: 10px;
+
+        @media @360 {
+          margin-top: 15px;
+          font-size: 1.8em;
+        }
+      }
+
+      h3 {
+        font-size: 18px;
+        color: #595959;
+        margin-bottom: 10px;
+        font-weight: @lato-light;
+        line-height: 1.6;
+        width: 370px;
+
+        @media @360 {
+          width: auto;
+          font-size: 1.1em;
+        }
+      }
+
+      p {
+        font-size: 24px;
+        color: #595959;
+
+        &.binnen_24 {
+          margin: 6px 0 53px 0;
+          font-size: 14px;
+          line-height: 1.1;
+          color: #595959;
+          width: 380px;
+          text-align: center;
+
+          @media @1070 {
+            width: auto;
+          }
+
+          @media @360 {
+            width: auto;
+            margin-bottom: 40px;
+          }
+        }
+      }
+
+      .orange_btn {
+        width: 380px;
+        height: 50px;
+
+        @media @1070 {
+          font-size: 1.2em;
+          line-height: 47px;
+          width: 280px;
+        }
+
+        @media @750 {
+          font-size: 1.2em;
+          line-height: 47px;
+          width: 380px;
+        }
+
+        @media @360 {
+          font-size: 1.2em;
+          line-height: 47px;
+          width: 280px;
+        }
+      }
+
+      table {
+
+        tr {
+          height: 50px;
+          border-bottom: solid 1px #dddddd;
+
+          td {
+            font-size: 24px;
+            line-height: 2.1;
+            height: 50px;
+
+            @media @360 {
+              font-size: 1.2em;
+            }
+
+            &.first {
+              color: #595959;
+              width: 215px;
+            }
+
+            &.second {
+              color: @orange;
+              text-align: right;
+              width: 165px;
+              padding-right: 20px;
+            }
+          }
+        }
+      }
+
+      div.per_maand {
+        width: 380px;
+        height: 60px;
+        border: solid 1px #dddddd;
+        padding: 0 20px 0 10px;
+        margin: 50px 0 0 0;
+        background-color: white;
+
+        @media @1070 {
+          width: 280px;
+          position: relative;
+        }
+
+        @media @750 {
+          width: 380px;
+          position: relative;
+        }
+
+        @media @360 {
+          width: 280px;
+          position: relative;
+        }
+
+        img {
+
+          @media @1070 {
+            width: 38px;
+            height: 38px;
+          }
+
+          @media @750 {
+            width: auto;
+            height: auto;
+          }
+
+          @media @1070 {
+            width: 38px;
+            height: 38px;
+          }
+        }
+
+        p {
+          margin-left: 10px;
+          display: inline-block;
+          vertical-align: middle;
+
+          @media @1070 {
+            font-size: 1.2em;
+          }
+
+          &.maand_prijs {
+            font-size: 32px;
+            line-height: 1.8;
+            color: #f35026;
+            float: right;
+
+            @media @1070 {
+              font-size: 1.4em;
+              position: absolute;
+              right: 10px;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+          }
+        }
+      }
+
+      div.akp_button {
+        margin-top: 10px;
+
+        .green_btn {
+          background-color: #00b04a;
+          margin: 0;
+
+          &:after {
+            background-color: #00b04a;
+            border-left: 1px solid #23c467;
+          }
+        }
+      }
+
+      button.orange_btn {
+        margin-bottom: 20px;
+      }
+
+      div.icons {
+        width: 380px;
+
+        @media @1070 {
+          width: 280px;
+        }
+
+        @media @750 {
+          width: 380px;
+        }
+
+        @media @360 {
+          width: 280px;
+        }
+
+        a {
+
+          i {
+            display: inline-block;
+            margin: 0 6px 0 0;
+            width: 42px;
+            height: 42px;
+
+            &:hover {
+              opacity: 0.8;
+            }
+
+            &.align_right {
+              float: right;
+
+              @media @1070 {
+                float: none;
+              }
+            }
+
+            &.like {
+              background: image-url('model_like.png') no-repeat center;
+            }
+
+            &.vergelijk {
+              background: image-url('model_vergelijk.png') no-repeat center;
+              width: 121px;
+            }
+
+            &.mail {
+              background: image-url('model_mail.png') no-repeat center;
+            }
+
+            &.print {
+              background: image-url('model_printen.png') no-repeat center;
+            }
+
+            &.fb {
+              background: image-url('model_fb.png') no-repeat center;
+            }
+
+            &.twitter {
+              background: image-url('model_twitter.png') no-repeat center;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .unslider {
+      float: right;
+      position: relative;
+
+      @media @750 {
+        float: none;
+      }
+    }
+
+    div.car_slider {
+      display: inline-block;
+      float: right;
+      width: 780px;
+      height: 585px;
+      border: solid 1px #dedede;
+
+      @media @1280 {
+        width: calc(780px * 0.92);
+        height: calc(585px * 0.92);
+      }
+
+      @media @1200 {
+        width: calc(780px * 0.75);
+        height: calc(585px * 0.75);
+      }
+
+      @media @960 {
+        width: calc(780px * 0.6);
+        height: calc(585px * 0.6);
+      }
+
+      @media @800 {
+        width: calc(780px * 0.5);
+        height: calc(585px * 0.5);
+      }
+
+      @media @750 {
+        width: calc(780px * 0.7);
+        height: calc(585px * 0.7);
+        margin: 0 auto;
+        float: none;
+      }
+      
+      @media @360 {
+        width: 280px;
+        height: 210px;
+      }
+
+      .unslider-arrow {
+        display: none;
+      }
+
+      ul {
+        height: 100%;
+
+        li {
+          height: 100%;
+
+          div.background {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+      &.carslider_responsive {
+        display: none;
+
+        @media @750 {
+          display: block;
+        }
+      }
+
+      &.carslider_fullwidth {
+
+        @media @750 {
+          display: none;
+        }
+      }
+    }
+
+    div.vragen {
+
+      @media @1280 {
+        float: right;
+        width: 100%;
+        text-align: center;
+      }
+
+      @media @1200 {
+        max-width: 583px;
+        margin-top: -130px;
+      }
+
+      @media @1070 {
+        max-width: 583px;
+        margin-top: -180px;
+      }
+
+      @media @960 {
+        max-width: 468px;
+        margin-top: -280px;
+      }
+
+      @media @880 {
+        width: 380px;
+        margin: 0 auto;
+        float: none;
+      }
+
+      @media @320 {
+        width: 100%;
+      }
+
+      a {
+        width: 100%;
+        height: 100%;
+      }
+
+      p {
+        display: inline-block;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #595959;
+        vertical-align: middle;
+
+        @media @1240 {
+          font-size: 15px;
+        }
+      }
+
+      i {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 13px 0 0;
+        width: 35px;
+
+        &.phone {
+          background: image-url('model_phone2.png') no-repeat center;
+          height: 33px;
+          background-size: contain;
+        }
+
+        &.whatsapp {
+          background: image-url('model_whatsapp2.png') no-repeat center;
+          height: 35px;
+          background-size: contain;
+        }
+
+        &.mail {
+          background: image-url('model_mail2.png') no-repeat center;
+          height: 22px;
+          background-size: contain;
+        }
+
+        &.chat {
+          background: image-url('model_chat2.png') no-repeat center;
+          height: 21px;
+          background-size: contain;
+        }
+      }
+
+      div.berijkbaar {
+        width: 160px;
+        background: 0;
+        position: absolute;
+        padding: 42px 0 0 0;
+
+        @media @1280 {
+          width: 100%;
+          position: relative;
+        }
+
+        p {
+          display: block;
+
+          @media @1280 {
+            display: inline-block;
+          }
+        }
+      }
+
+      ul {
+        display: inline-block;
+        margin: 35px 0 0 185px;
+
+        @media @1280 {
+          margin-left: 0;
+          margin-top: 20px;
+        }
+
+        li {
+          display: inline-block;
+          width: 280px;
+          height: 60px;
+          background-color: white;
+          margin: 0 8px 0 0;
+          padding: 0 0 0 17px;
+
+          @media @1280 {
+            margin: 0 10px 10px 0;
+            text-align: left;
+          }
+
+          @media @1240 {
+            width: 270px;
+          }
+
+          @media @960 {
+            width: 100%;
+            text-align: center;
+          }
+
+          @media @880 {
+            width: 380px;
+            text-align: center;
+            margin: 10px 0;
+          }
+
+          @media @360 {
+            width: 280px;
+            text-align: left;
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          &:last-child {
+            margin: 0;
+
+            @media @360 {
+              margin: 0 10px 10px 0;
+            }
+          }
+
+          &.second_col {
+
+            @media @1200 {
+              margin: 0;
+            }
+
+            @media @960 {
+              margin: 0 10px 10px 0;
+            }
+
+            @media @880 {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

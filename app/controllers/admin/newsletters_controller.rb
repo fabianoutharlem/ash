@@ -47,7 +47,7 @@ class Admin::NewslettersController < Admin::AdminBaseController
     rescue Exception => e
       flash[:error] = 'Er ging iets fout, check je invoer en probeer het nogmaals'
       logger.debug e.message
-      redirect_to new_admin_newsletter_path
+      redirect_to :back
     end
   end
 

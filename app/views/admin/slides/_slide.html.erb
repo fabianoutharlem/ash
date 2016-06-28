@@ -1,0 +1,8 @@
+<tr class="item" data-item-id="<%= slide.id %>">
+  <td><%= slide.name %></td>
+  <td><%= slide.created_at.strftime('%Y-%m-%d - %H:%M') %></td>
+  <td>
+    <%= link_to 'Aanpassen', edit_admin_slide_path(slide), class: 'btn btn-primary' %>
+    <%= link_to 'Delete', admin_slide_path(slide), class: 'btn btn-danger', method: :delete %>
+  </td>
+</tr>

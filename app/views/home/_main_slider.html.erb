@@ -1,0 +1,23 @@
+<section class="main_slider">
+  <div class="wrapper">
+    <div class="container-fluid">
+      <div class="my-slider">
+        <ul>
+          <% @slider.slides.each do |slide| %>
+              <%= render ('admin/slides/templates/' + slide.slide_template.template), slide_values: slide.template_variables %>
+          <% end %>
+        </ul>
+      </div>
+
+      <div class='marquee'>
+        <ul>
+          <% MarqueeItem.all.each do |item| %>
+              <li>
+                <a href="<%= item.link %>"><%= image_tag 'ticker_vink.png' %><%= item.title %></a>
+              </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

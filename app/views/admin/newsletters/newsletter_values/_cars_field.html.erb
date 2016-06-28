@@ -2,7 +2,7 @@
 
   <%= f.label f.object.newsletter_template_value.option_name.to_sym, class: 'col-sm-2 control-label' %>
   <div class="col-sm-10">
-    <%= f.select :value, (f.object.cars.present? ? options_from_collection_for_select(f.object.cars, :id, :display_name, f.object.value) : {}), {}, class: "form-control #{f.object.newsletter_template_value.option_name}", multiple: true %>
+    <%= f.select :value, (f.object.try(:cars).present? ? options_from_collection_for_select(f.object.cars, :id, :display_name, f.object.value) : {}), {}, class: "form-control #{f.object.newsletter_template_value.option_name}", multiple: true %>
   </div>
 
 </div>

@@ -37,15 +37,28 @@
       <li class="<%= is_active_controller('brands') %>">
         <%= link_to admin_brands_path do %>
             <i class="fa fa-tags"></i>
-            <span class="nav-label">Merken </span>
+            <span class="nav-label">Merken</span>
         <% end %>
       </li>
       <li class="<%= is_active_controller('newsletters') %>">
         <%= link_to admin_newsletters_path do %>
             <i class="fa fa-newspaper-o"></i>
-            <span class="nav-label">Nieuwsbrieven </span>
+            <span class="nav-label">Nieuwsbrieven</span>
         <% end %>
       </li>
+      <li class="<%= is_active_controller('sliders') || is_active_controller('slides') %>">
+        <%= link_to admin_sliders_path do %>
+            <i class="fa fa-picture-o" aria-hidden="true"></i>
+            <span class="nav-label">Sliders</span>
+        <% end %>
+      </li>
+      <li class="<%= is_active_controller('marquee_items') %>">
+        <%= link_to admin_marquee_items_path do %>
+            <i class="fa fa-bullhorn" aria-hidden="true"></i>
+            <span class="nav-label">Marquee items</span>
+        <% end %>
+      </li>
+
     </ul>
 
   </div>

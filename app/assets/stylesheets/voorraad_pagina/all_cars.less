@@ -1,0 +1,693 @@
+section.all_cars {
+
+  .content_container {
+    padding: 5px 110px 10px 110px;
+
+    @media @1280 {
+      padding: 20px;
+    }
+
+    @media @700 {
+      padding: 10px;
+    }
+
+    @media @680 {
+      text-align: center;
+    }
+
+    @media @320 {
+      padding: 10px 0;
+    }
+
+    div.left_container {
+      display: inline-block;
+
+      @media @1280 {
+        display: block;
+      }
+
+      @media @680 {
+        width: 100%;
+        padding: 20px 0;
+        background-color: #ea785b;
+      }
+    }
+
+    div.left {
+      display: inline-block;
+
+      @media @1280 {
+        z-index: 10;
+        position: absolute;
+      }
+
+      @media @680 {
+        position: relative;
+      }
+
+      @media @320 {
+        display: block;
+      }
+
+      div.select_menu {
+        font-size: 0;
+
+        div.tab {
+          display: inline-block;
+          width: 160px;
+          height: 50px;
+          border-top-left-radius: 12px;
+          border-top-right-radius: 12px;
+          background-color: #d3d3d3;
+          font-size: 16px;
+          line-height: 0.9;
+          text-align: center;
+          color: #404040;
+          vertical-align: middle;
+
+          @media @320 {
+            width: 50%;
+          }
+
+          &:hover {
+            background-color: #ffffff;
+            color: #f35026;
+            border: solid 2px #d6d6d6;
+            border-bottom: 0;
+            cursor: pointer;
+          }
+
+          &.active {
+            background-color: #ffffff;
+            color: #f35026;
+            border: solid 2px #d6d6d6;
+            border-bottom: 0;
+          }
+        }
+
+        div.search_fields {
+          width: 320px;
+          padding: 20px 20px 40px 20px;
+          border: solid 2px #d6d6d6;
+          border-top: 0;
+
+          @media @680 {
+            background-color: white;
+          }
+
+          @media @320 {
+            width: 100%;
+            padding: 20px 0;
+          }
+
+          div.row {
+            width: 280px;
+          }
+
+          p {
+            margin: 0 0 1.5px 0;
+            font-size: 14px;
+            color: #000000;
+          }
+
+          div.select {
+            display: inline-block;
+            margin: 0 0 16px 0;
+          }
+
+          div.col {
+            display: inline-block;
+
+            @media @320 {
+              width: 130px;
+            }
+
+            &.left {
+
+              @media @680 {
+                float: left;
+              }
+            }
+
+            &.right {
+              float: right;
+              width: 130px;
+              margin: 0;
+
+              @media @680 {
+                padding: 0;
+              }
+            }
+
+            .select2-container--default {
+              width: 130px !important;
+            }
+
+            .select2-selection--single {
+              height: 40px;
+              width: 130px;
+              font-size: 14px;
+              color: #555555;
+              padding: 5px 0 0 10px;
+              text-align: left;
+              border-radius: 0;
+              border: 0;
+              background-color: #e6e6e6;
+            }
+          }
+
+          div.slider {
+            margin: 0 0 50px 0;
+
+            @media @320 {
+              margin: 0 auto 50px auto;
+            }
+
+            p {
+              margin: 0 0 15px 0;
+            }
+
+            div.slider_col {
+              width: 280px;
+
+              .ui-state-default {
+                width: 40px;
+                height: 40px;
+              }
+
+              div#tooltip {
+                font-size: 12px;
+                color: #000000;
+              }
+            }
+          }
+        }
+
+        div.orange_btn {
+          font-size: 18px;
+        }
+      }
+
+      div.lease_budget {
+        margin: 20px 0;
+        width: 320px;
+        padding: 20px 0 10px 20px;
+        border: solid 2px #d6d6d6;
+
+        @media @960 {
+          background-color: white;
+        }
+
+        @media @320 {
+          width: 100%;
+          padding: 20px 0;
+        }
+
+        h5 {
+          width: 275px;
+          font-size: 21px;
+          line-height: 1.5;
+          color: #000000;
+          margin: 0 0 15px 0;
+        }
+
+        div.tot {
+          display: inline-block;
+          width: 130px;
+          height: 40px;
+          background-color: #595959;
+          font-size: 16px;
+          text-align: center;
+          vertical-align: middle;
+          color: #f8f8f8;
+          margin: 0 15px 10px 0;
+
+          @media @320 {
+            margin: 0 5px 10px 5px;
+          }
+
+          &:hover {
+            background-color: #f35026;
+            cursor: pointer;
+          }
+
+          &.active {
+            background-color: #f35026;
+          }
+        }
+      }
+    }
+
+    div.right {
+      display: inline-block;
+      float: right;
+      margin-right: -13px;
+      width: 902px;
+
+      @media @1280 {
+        margin-left: 340px;
+        width: 73%;
+        text-align: center;
+        float: none;
+        margin-right: 0;
+      }
+
+      @media @1140 {
+        width: 67%;
+      }
+
+      @media @880 {
+        margin-left: 310px;
+      }
+
+      @media @680 {
+        margin: 0;
+        width: 100%;
+        padding: 20px 0;
+      }
+
+      li {
+        display: inline-block;
+
+        @media @1279 {
+          width: 45%;
+        }
+
+        @media @800 {
+          width: 70%;
+        }
+
+        @media @680 {
+          width: 40%;
+        }
+
+        @media @500 {
+          width: 70%;
+        }
+
+        @media @400 {
+          width: 80%;
+        }
+
+        div.item {
+          display: inline-block;
+          margin: 0 13px 0 0;
+
+          @media @500 {
+            margin-right: -30px;
+          }
+
+          div.container-fluid {
+            //border: solid 2px #e5e5e5;
+          }
+        }
+
+        article.banner_ford {
+          margin: 0 0 25px 0;
+        }
+
+        &.banner {
+
+          @media @1280 {
+            margin-left: -13px;
+          }
+
+          @media @1279 {
+            display: block;
+            width: 80%;
+            height: 280px;
+            margin: 0 auto 25px auto;
+            padding-right: 12px;
+          }
+
+          @media @1140 {
+            width: 85%;
+          }
+
+          @media @880 {
+            display: none;
+          }
+        }
+      }
+    }
+
+    //article car resposnive
+
+    article.article_car {
+
+      @media @1279 {
+        width: 90%;
+      }
+
+      h5 {
+
+        @media @1040 {
+          font-size: 1em;
+        }
+
+        @media @800 {
+          font-size: 1.5em;
+        }
+      }
+
+      p {
+
+        @media @1040 {
+          font-size: 0.8em;
+        }
+
+        @media @800 {
+          font-size: 1em;
+        }
+
+        @media @680 {
+          margin-bottom: 0;
+        }
+      }
+
+      div.container-fluid {
+
+        @media @1279 {
+          text-align: center;
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        @media @680 {
+          padding-top: 2px;
+        }
+      }
+
+      div.content_box {
+
+        @media @1279 {
+          height: 50%;
+        }
+      }
+
+      div.finance_mogelijkheden {
+
+        @media @1279 {
+          height: 50%;
+        }
+      }
+
+      table {
+
+        @media @1279 {
+          margin: 0 auto;
+        }
+      }
+
+      div.aanbieding {
+
+        tr {
+
+          &:nth-child(2) {
+
+            td {
+
+              @media @1040 {
+                font-size: 1em;
+              }
+
+              @media @880 {
+                width: 114px;
+              }
+
+              &:nth-child(2) {
+
+                @media @1040 {
+                  font-size: 1.5em;
+                }
+
+                @media @880 {
+                  font-size: 1.2em;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      div.p_m {
+
+        @media @1279 {
+          margin: 10px auto 0 auto;
+        }
+
+        @media @1040 {
+          width: 200px;
+        }
+
+        @media @880 {
+          width: 170px;
+        }
+
+        @media @800 {
+          width: 85%;
+        }
+
+        td.rij_deze {
+
+          @media @1040 {
+            width: 114px;
+            font-size: 0.9em;
+          }
+
+          @media @880 {
+            width: 103px;
+          }
+
+          @media @800 {
+            width: 50%;
+            padding-left: 10px;
+          }
+
+          @media @680 {
+            font-size: 0.7em;
+            padding-top: 8px;
+          }
+        }
+
+        td.orange {
+
+          @media @1040 {
+            font-size: 1.8em;
+          }
+
+          @media @880 {
+            font-size: 1.4em;
+          }
+
+          @media @680 {
+            padding-top: 6px;
+          }
+        }
+      }
+    }
+
+    //overlay responsive styling
+
+    p.finance {
+
+      @media @1000 {
+        font-size: 1em;
+      }
+
+      @media @680 {
+        font-size: 0.8em;
+      }
+    }
+
+    article.article_car {
+
+      div.hover_element {
+
+        p.finance {
+
+          @media @1040 {
+            font-size: 1em;
+          }
+
+          @media @680 {
+            font-size: 0.8em;
+          }
+
+          @media @500 {
+            font-size: 1em;
+          }
+        }
+
+        a.finance_opties {
+
+          @media @360 {
+            padding-left: 10px;
+          }
+
+          @media @500 {
+            padding-left: 20px;
+          }
+        }
+
+        div.content_box {
+
+          @media @1279 {
+            margin: 0 auto;
+          }
+
+          @media @1100 {
+            width: 200px;
+            padding: 9px 0 0 0;
+          }
+
+          @media @880 {
+            width: 150px;
+          }
+
+          @media @800 {
+            width: 240px;
+            padding: 13px 20px 8px 20px;
+          }
+
+          @media @750 {
+            padding: 6px 0 0 0;
+            width: 200px;
+          }
+
+          @media @630 {
+            width: 150px;
+          }
+
+          @media @550 {
+            padding-top: 2px;
+          }
+
+          @media @500 {
+            width: 220px;
+            padding-top: 10px;
+          }
+
+          @media @440 {
+            width: 180px;
+          }
+
+          h4 {
+
+            @media @1100 {
+              font-size: 1.3em;
+            }
+          }
+
+          h5 {
+
+            @media @1100 {
+              font-size: 1em;
+            }
+
+            @media @880 {
+              font-size: 0.8em;
+            }
+
+            @media @800 {
+              font-size: 1em;
+            }
+          }
+
+          table {
+
+            @media @800 {
+              margin-top: 10px;
+            }
+
+            @media @680 {
+              margin-top: 0;
+            }
+
+            @media @500 {
+              margin-top: 10px;
+            }
+
+            @media @440 {
+              margin-top: 0;
+            }
+
+            td.first {
+
+              @media @880 {
+                width: 75px;
+              }
+            }
+
+            td.second {
+
+              @media @1100 {
+                font-size: 1.2em;
+              }
+
+              @media @880 {
+                font-size: 1em;
+                width: 70px;
+              }
+            }
+          }
+
+          a.orange_btn {
+
+            @media @1200 {
+              width: 200px;
+            }
+
+            @media @1000 {
+              margin-top: 3px;
+            }
+
+            @media @880 {
+              width: 200px;
+              font-size: 13px;
+              margin: 0 auto;
+            }
+
+            @media @800 {
+              margin-top: 10px;
+              width: 200px;
+              font-size: 14px;
+            }
+
+            @media @680 {
+              margin-top: 3px;
+            }
+
+            @media @630 {
+              width: 150px;
+              height: 30px;
+              font-size: 11px;
+              line-height: 30px;
+            }
+
+            @media @500 {
+              width: 220px;
+              height: 40px;
+              line-height: 40px;
+              font-size: 16px;
+              margin-top: 10px;
+            }
+
+            @media @440 {
+              margin-top: 3px;
+              width: 180px;
+              font-size: 14px;
+            }
+          }
+
+          p.click_hier {
+
+            @media @1200 {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -11,4 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
+//= require jquery.marquee.min.js
+//= require owl.carousel.min.js
+//= require top_car_carousel.js
+//= require ui_mobile.js
+//= require unslider.js
+//= require select2.min.js
+//= require main.js

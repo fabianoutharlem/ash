@@ -1,0 +1,171 @@
+section.vergelijk_car {
+
+  @media @1280 {
+    margin-top: -10px;
+  }
+
+  div.content_container {
+
+    h4 {
+      font-size: 34px;
+      line-height: 0.9;
+      color: #595959;
+    }
+
+    section.cars_vergelijken {
+      margin-bottom: 50px;
+
+      @media @1040 {
+        display: none;
+      }
+
+      div.table_section {
+        width: 100%;
+        padding: 40px 30px;
+        background-color: #f4f4f4;
+
+        &.first_table_section {
+          margin-bottom: 10px;
+        }
+
+        &.second_table_section {
+
+          h4 {
+            position: absolute;
+          }
+        }
+      }
+
+      table {
+        //display: inline-block;
+        width: 100%;
+
+        tr {
+
+          &.header {
+            //padding-bottom: 25px;
+          }
+
+          th {
+            font-size: 14px;
+            line-height: 1.9;
+            color: #595959;
+            width: 300px;
+            position: relative;
+            //border-right: 20px solid white;
+
+            @media @1200 {
+              width: 280px;
+            }
+
+            h4 {
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+
+            div.voertuigen_vergelijken {
+              position: absolute;
+              bottom: 0;
+
+              p {
+                font-size: 14px;
+                line-height: 2.3;
+                color: #595959;
+              }
+
+              .orange_btn {
+                width: 220px;
+                font-size: 16px;
+                margin: 0;
+              }
+            }
+          }
+
+          .first_margin {
+            padding-top: 25px;
+          }
+
+          td {
+            font-size: 14px;
+            line-height: 1.9;
+            color: #595959;
+            padding-right: 20px;
+            position: relative;
+
+            &.emty_space {
+              width: 300px;
+
+              @media @1200 {
+                width: 280px;
+              }
+            }
+
+            &.car3 {
+              //display: none;
+            }
+
+            div.car_img {
+              width: 280px;
+              height: 210px;
+
+              @media @1300 {
+                width: 200px;
+                height: 149.8px;
+              }
+            }
+
+            .cross {
+              position: absolute;
+              background: image-url('cross.png') no-repeat center;
+              background-size: 20px 20px;
+              width: 20px;
+              height: 20px;
+              right: 25px;
+              top: 0;
+
+              @media @1370 {
+                right: 10px;
+              }
+
+              &:hover {
+                cursor: pointer;
+                opacity: 0.8;
+              }
+            }
+          }
+        }
+        
+        &.acessiores_table {}
+      }
+    }
+
+    div.error {
+      display: none;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 40px;
+
+      @media @1040 {
+        display: block;
+      }
+
+      @media @360 {
+        width: 300px;
+        margin: 0 auto 40px auto;
+      }
+
+      h4 {
+        font-size: 2em;
+
+        @media @750 {
+          font-size: 1.5em;
+        }
+
+        @media @360 {
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+}

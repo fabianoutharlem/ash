@@ -1,0 +1,208 @@
+section.actie {
+  text-align: center;
+  margin-bottom: -30px;
+
+  div.container-fluid {
+    padding: 110px 140px 90px 140px;
+
+    @media @1280 {
+      padding: 90px 10% 70px 10%;
+    }
+
+    @media @1240 {
+      padding: 90px 7% 70px 7%;
+    }
+
+    @media @1140 {
+      padding: 90px 4% 70px 4%;
+    }
+
+    @media @905 {
+      padding: 90px 0 70px 0;
+    }
+
+    @media @360 {
+      padding: 60px 0 30px 0;
+    }
+
+    div._actie {
+      display: inline-block;
+      width: 560px;
+      height: 420px;
+
+      @media @1280 {
+        width: 480px;
+        height: 360px;
+      }
+
+      @media @1100 {
+        display: block;
+        margin: 0 auto;
+      }
+
+      @media @360 {
+        display: block;
+        width: 280px;
+        margin: 0 auto;
+        height: auto;
+      }
+
+      &.wat_verwachten {
+        background-image: linear-gradient(146deg, #f97844, #f35026);
+        text-align: left;
+        float: left;
+        //margin: 0 20px 0 0;
+        padding: 26px 35px 38px 40px;
+
+        @media @1100 {
+          float: none;
+          margin: 0 auto 20px auto;
+        }
+
+        @media @360 {
+          padding: 55px 20px 20px 20px;
+          float: none;
+        }
+
+        img {
+          display: inline-block;
+          margin: -152px 30px 0 -7px;
+
+          @media @1280 {
+            margin: -115px 30px 0 -7px;
+            width: 140.5px;
+            height: 123.8px;
+          }
+
+          @media @360 {
+            margin: -115px 0 0 0;
+            width: 80px;
+            height: 70px;
+          }
+        }
+
+        h5 {
+          display: inline-block;
+          font-weight: @lato-bold;
+          font-size: 28px;
+          line-height: 1.4;
+          color: #ffffff;
+          width: 224px;
+
+          @media @1280 {
+            font-size: 22px;
+            line-height: 1.6;
+          }
+
+          @media @360 {
+            font-size: 22px;
+            line-height: 1.3;
+            margin-top: -20px;
+          }
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 1.9;
+          color: #ffffff;
+          margin: 17px 0 0 0;
+
+          @media @1280 {
+            font-size: 13px;
+            line-height: 2.4;
+          }
+
+          @media @360 {
+            font-size: 13px;
+            line-height: 1.7;
+            margin-top: 5px;
+          }
+        }
+      }
+
+      &.volkswagen_weken {
+        position: relative;
+        float: right;
+        //margin: 0 0 0 20px;
+        border: solid 8px #f35026;
+        background: url("../../../../../assets/images/2011-vw-golf-r.png") no-repeat center;
+        background-size: 495px 308px;
+        padding: 33px 0;
+
+        @media @1280 {
+          background-size: 425px 264px;
+        }
+
+        @media @1100 {
+          float: none;
+          margin: 0 auto;
+          background-size: 80%;
+        }
+
+        @media @360 {
+          float: none;
+          height: 210px;
+          border: solid 5px #f35026;
+          padding: 15px 0 20px 0;
+          background-size: 247.5px 154px;
+          margin-top: 20px;
+        }
+
+        h5 {
+          font-size: 36px;
+          color: @orange;
+          font-weight: @late-semibold;
+
+          @media @1280 {
+            font-size: 31px;
+          }
+
+          @media @360 {
+            font-size: 18px;
+          }
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 2.2;
+          color: @dark_gray;
+          margin: 0;
+
+          @media @1280 {
+            font-size: 14px;
+            line-height: 2.4;
+          }
+
+          @media @360 {
+            font-size: 8px;
+            color: #4a4a4a;
+          }
+        }
+
+        .orange_btn {
+          display: inline-block;
+          position: absolute;
+          bottom: 33px;
+          left: 50%;
+          transform: translateX(-50%);
+
+          @media @360 {
+            width: 200.5px;
+            height: 33.4px;
+            font-size: 13.4px;
+            bottom: 20px;
+            line-height: 33px;
+          }
+
+          &:after {
+
+            @media @360 {
+              width: 33.4px;
+              background-size: 6.1px 9.4px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

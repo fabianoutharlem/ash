@@ -1,0 +1,205 @@
+section.u_bepaald {
+
+  @media @770 {
+    margin-top: 85px;
+  }
+
+  @media @360 {
+    margin-bottom: 130px;
+  }
+
+  div.content_container {
+    background: image-url('bg_u_bepaald.png') no-repeat center;
+    background-size: cover;
+    height: 780px;
+    position: relative;
+
+    @media @1040 {
+      height: 540px;
+    }
+
+    @media @360 {
+      height: 455px;
+    }
+
+    div.banner {
+      position: absolute;
+      text-align: center;
+
+      &.banner1 {
+        top: -150px;
+        left: 150px;
+
+        @media @1280 {
+          top: -100px;
+          left: 10%
+        }
+
+        @media @1100 {
+          left: 5%;
+        }
+
+        @media @360 {
+          left: 50%;
+          transform: translateX(-50%);
+          top: -130px;
+        }
+
+      }
+
+      &.banner2{
+        bottom: -150px;
+        right: 100px;
+        z-index: 5;
+
+        @media @1280 {
+          right: 6%;
+        }
+
+        @media @1279 {
+          bottom: -100px;
+          right: 10%;
+        }
+
+        @media @1100 {
+          right: 5%;
+        }
+
+        @media @360 {
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: -360px;
+          width: 260px;
+        }
+
+      }
+    }
+
+    div.content {
+      height: 100%;
+
+      @media @360 {
+        width: 310px;
+        margin: 10px auto;
+      }
+
+      h3 {
+        vertical-align: middle;
+        display: inline-block;
+        font-size: 52px;
+        line-height: 1.2;
+        color: #ffffff;
+        font-weight: @lato-light;
+        width: 452px;
+        margin-left: 750px;
+        margin-top: -50px;
+
+        @media @1279 {
+          margin-left: 610px;
+        }
+
+        @media @1100 {
+          margin-left: 44%;
+          font-size: 3em;
+        }
+
+        @media @880 {
+          margin-left: 36%;
+          font-size: 2.5em;
+        }
+
+        @media @800 {
+          margin-left: 29%;
+          margin-top: -10px;
+        }
+
+        @media @650 {
+          margin-left: 17%;
+        }
+
+        @media @360 {
+          width: 250px;
+          font-size: 30px;
+          margin-left: 12%;
+        }
+
+        span {
+          font-weight: @lato-regular;
+        }
+      }
+    }
+
+    div.img_car {
+      background: image-url('img_car.png') no-repeat center;
+      background-size: contain;
+      width: 841px;
+      height: 445px;
+      position: absolute;
+      left: 10px;
+      bottom: -160px;
+
+      @media @1279 {
+        width: 701px;
+        height: 425px;
+      }
+
+      @media @1100 {
+        left: -2%;
+        width: 601px;
+        height: 395px;
+      }
+
+      @media @1040 {
+        width: 60%;
+        height: 50%;
+        bottom: -23%;
+      }
+
+      @media @650 {
+        left: -4%;
+      }
+
+      @media @360 {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      @media @500 {
+        width: 75%;
+        height: 55%;
+      }
+    }
+  }
+
+  &.u_bepaald_hoeveel {
+    margin-bottom: 140px;
+
+    div.let_op {
+      background: image-url('geld_lenen_kost_geld.png') no-repeat center;
+      background-size: cover;
+      position: absolute;
+      width: 480px;
+      height: 78px;
+      right: 5%;
+      bottom: -100px;
+      border: solid 1px #e1e1e1;
+      z-index: 10;
+
+
+      @media @1280 {
+        width: 321px;
+        height: 60px;
+        right: 3%;
+        border: 0;
+        background-size: contain;
+      }
+
+      @media @800 {
+        bottom: -140px;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

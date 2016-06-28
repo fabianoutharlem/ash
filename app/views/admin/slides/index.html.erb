@@ -1,0 +1,59 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2>Slides</h2>
+    <ol class="breadcrumb">
+      <li>
+        <a href="<%= url_for admin_root_path %>">Home</a>
+      </li>
+      <li class="active">
+        <%= link_to 'Sliders', admin_sliders_path %>
+      </li>
+      <li class="active">
+        <strong>slides</strong>
+      </li>
+    </ol>
+  </div>
+  <div class="col-lg-2">
+
+  </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>Slides (<%= @slides.count %>)</h5>
+          <div class="ibox-tools">
+            <a class="dropdown-toggle btn btn-default" data-toggle="dropdown" href="#">
+              <i class="fa fa-plus"></i><span> Nieuwe slide</span>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+              <% SlideTemplate.all.each do |template| %>
+                  <li>
+                    <%= link_to template.name, new_slide_with_template_admin_slides_path(template, @slider) %>
+                  </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <div class="ibox-content">
+
+          <table class="table table-striped" id="sortable_slides">
+            <thead>
+            <tr>
+              <th>Naam</th>
+              <th>Aanmaak datum</th>
+              <th>Acties</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <%= render @slides %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,85 @@
+article._financieringsbanner {
+  cursor: pointer;
+  text-align: left;
+  display: inline-block;
+  margin-left: 30px;
+
+  @media @1280 {
+    margin: 0 1.5%;
+  }
+
+  @media @940 {
+    margin-bottom: 2.5%;
+  }
+
+  @media @360 {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 280px;
+  }
+
+  div.info {
+    background-color: @orange;
+    width: 336px;
+    height: 130px;
+    padding: 27px 17px 0 30px;
+
+    @media @1280 {
+      width: 279.1px;
+      height: 107.9px;
+    }
+
+    h4 {
+      height: 29px;
+      font-size: 24px;
+      color: #ffffff;
+      margin: 0 0 10px 0;
+
+      @media @1280 {
+        font-size: 19.9px;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.4;
+      color: #ffffff;
+
+      @media @1280 {
+        font-size: 11.6px;
+      }
+    }
+  }
+
+  div.financiering_btn {
+    height: 80px;
+    width: 336px;
+    padding: 20px 0 0 35px;
+    background-color: white;
+
+    @media @1280 {
+      padding: 21px 0 0 20px;
+      width: 279.1px;
+    }
+
+    img {
+      display: inline-block;
+
+      @media @1280 {
+        width: 210px;
+        height: 34px;
+      }
+    }
+
+    div.button_arrow {
+      background: image-url('financiering_arrow.png') no-repeat center;
+      background-size: 6px 10px;
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      background-color: #f35026;
+      float: right;
+      margin-top: 2px;
+    }
+  }
+}

@@ -1,0 +1,166 @@
+section.main_slider, section.exclusief_slider, section.budget_slider {
+
+  div.container-fluid {
+
+    .my-slider {
+      position: relative;
+    }
+
+    .unslider {
+      height: 760px;
+      position: relative;
+      overflow: hidden;
+
+      @media @1040 {
+        height: 530px;
+      }
+
+      @media @360 {
+        height: 240px;
+      }
+    }
+
+    .unslider-arrow {
+      width: 50px;
+      height: 50px;
+      right: 0;
+
+      @media @1040 {
+        display: none;
+      }
+
+      @media @880 {
+        width: 40px;
+        height: 40px;
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      @media @360 {
+        display: none;
+      }
+
+      &.prev {
+       //left: 1631px;
+        right: 0;
+        top: 50%;
+        transform: translateY(50%);
+      }
+
+      &.next {
+        //left: 1631px;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    .unslider-nav ol li {
+
+      @media @360 {
+        width: 8px;
+        height: 8px;
+      }
+    }
+
+    .unslider-nav ol {
+
+      @media @1040 {
+        display: none;
+      }
+
+      @media @360 {
+        bottom: 10px;
+      }
+    }
+
+    .marquee {
+      width: 1440px;
+      height: 60px;
+      background-color: #595959;
+      overflow: hidden;
+
+      @media @1280 {
+        width: 100%;
+      }
+
+      @media @360 {
+        height: 40px;
+      }
+
+      li {
+        display: inline-block;
+        line-height: 60px;
+        margin: 0 40px 0 0;
+
+        @media @360 {
+          line-height: 40px;
+        }
+
+        a {
+          color: white;
+          font-size: 19px;
+          letter-spacing: 1.5px;
+
+          @media @360 {
+            font-size: 15px;
+            line-height: 2;
+          }
+
+          &:hover {
+            text-decoration: none;
+          }
+
+          img {
+            margin-right: 10px;
+
+            @media @360 {
+              width: 22px;
+              height: 18.9px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+section.exclusief_slider, section.budget_slider {
+  margin-bottom: 30px;
+}
+
+section.budget_slider {
+
+  .unslider-arrow {
+    display: none;
+  }
+
+  .unslider-nav {
+    display: none;
+  }
+}
+
+section.main_slider {
+
+  @media @1280 {
+    margin-top: -10px;
+  }
+
+  @media @880 {
+    margin-top: 0;
+  }
+}
+
+section.exclusief_slider {
+
+  .unslider-arrow {
+    display: none;
+  }
+
+  .unslider-nav {
+    display: none;
+  }
+}

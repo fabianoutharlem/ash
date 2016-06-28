@@ -1,0 +1,402 @@
+html {
+
+  body {
+    //-webkit-font-smoothing: antialiased;
+    font-family: 'Lato', sans-serif;
+
+    div.wrapper {
+      width: 1440px;   //1680
+      margin: 0 auto;
+      padding: 0;
+
+      @media @1280 {
+        width: 100%;
+      }
+    }
+
+    div.container-fluid {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    div.container-fluid {
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    h3 {
+      margin: 0;
+    }
+
+    h4 {
+      margin: 0;
+    }
+
+    h5 {
+      margin: 0;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    input {
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .row {
+      padding: 0;
+      margin: 0;
+    }
+
+    .helper {
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+
+    //orange-btn styling
+    .orange_btn {
+      position: relative;
+      background-color: @orange;
+      width: 280px;
+      height: 50px;
+      padding-right: 50px;
+      line-height: 47px;
+      text-align: center;
+      color: white;
+      font-size: 20px;
+      margin: 0 auto;
+      border: 0;
+
+      //@media @360 {
+        //width: 201.8px;
+        //height: 36px;
+        //font-size: 14.3px;
+        //line-height: 36px;
+      //}
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      &:after {
+        background: image-url('btn_arrow.png') no-repeat center;
+        display: block;
+        position: absolute;
+        width: 50px;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        content: ' ';
+        background-color: @orange;
+        border-left: 1px solid #ff7c59;
+        margin: 5px 0;
+
+        //@media @360 {
+          //background-size: 6.6px 10px;
+          //width: 36px;
+        //}
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      p {
+        height: 24px;
+        width: 100%;
+        margin: auto 0;
+      }
+    }
+
+    //select2
+
+                //white arrow
+    div.select {
+      position: relative;
+
+      span.arrow {
+        background: image-url('shape4.png') no-repeat center;
+        background-size: cover;
+        width: 12px;
+        height: 8px;
+        position: absolute;
+        right: 14px;
+        z-index: 10;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+      }
+    }
+
+    .select2-container {
+
+      &:after {
+        width: 40px;
+        height: 40px;
+        background-color: @orange;
+      }
+    }
+
+    .select2-container--default {
+      width: 280px !important;
+
+      .select2-selection--single {
+        height: 40px;
+        width: 280px;
+        font-size: 14px;
+        color: #555555;
+        padding: 5px 0 0 10px;
+        text-align: left;
+        border-radius: 0;
+        border: 0;
+        background-color: #e6e6e6;
+
+        &:focus {
+          outline: none;
+        }
+
+        .select2-selection__arrow {
+          height: 100%;
+          width: 40px;
+          top: 0;
+          right: 0;
+          background-color: @orange;
+
+          b {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .select2-results__options {
+      max-height: 270px;
+    }
+
+    //slider
+    .slider_col {
+
+      p {
+        margin: 0 0 17px 0;
+        font-size: 14px;
+        color: #000000;
+      }
+
+      .ui-widget-content {
+        height: 10.1px;
+        background: #e6e6e6;
+        border: 0;
+      }
+
+      .ui-slider-range {
+        background: @orange;
+      }
+
+      .ui-slider-horizontal {
+
+        .ui-state-default {
+          background: image-url('slider_handle.png') no-repeat scroll 50% 50%;
+          width: 45px;
+          height: 46px;
+          border: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          margin-left: -25px;
+
+          &:focus {
+            outline: none;
+          }
+
+          div#tooltip {
+            position: absolute;
+            left: 48%;
+            transform: translateX(-50%);
+            bottom: -20px;
+            font-size: 14px;
+            color: #000000;
+            width: 95px;
+          }
+        }
+      }
+    }
+
+    //form styling
+    form {
+      margin-top: 30px;
+
+      input {
+        display: inline-block;
+        width: 280px;
+        height: 50px;
+        background-color: #d8d8d8;
+        border: 0;
+        color: #55555;
+        padding: 0 0 0 20px;
+        margin: 0 20px 0 0;
+      }
+
+      ::-webkit-input-placeholder {
+        color: #555555;
+      }
+
+      :-moz-placeholder { /* Firefox 18- */
+        color: #555555;
+      }
+
+      ::-moz-placeholder {  /* Firefox 19+ */
+        color: #555555;
+      }
+
+      :-ms-input-placeholder {
+        color: #555555;
+      }
+      button.orange_btn {
+        display: inline-block;
+        height: 50px;
+        line-height: 0;
+      }
+    }
+
+    //styling adres_contact komt voor op meerdere pages
+    div.adres_contact {
+      width: 100%;
+      text-align: center;
+      background-color: #f4f4f4;
+      padding: 30px 0;
+      margin-bottom: 40px;
+
+      p {
+        font-size: 16px;
+        color: #595959;
+
+        &.bold {
+          font-weight: @lato-bold;
+          margin-top: 7px;
+        }
+      }
+
+      div.adres_container {
+
+        @media @1200 {
+          width: 600px;
+          margin: 0 auto;
+        }
+
+        @media @640 {
+          width: 300px;
+        }
+      }
+
+      div.berijkbaar {
+        display: inline-block;
+        height: 60px;
+        vertical-align: top;
+        margin-right: 25px;
+        text-align: left;
+
+        @media @1280 {
+          display: none;
+        }
+
+        @media @360 {
+          display: block;
+          width: 280px;
+          text-align: center;
+          height: auto;
+          margin-bottom: 10px;
+        }
+
+        p {
+
+          @media @360 {
+            display: inline-block;
+          }
+        }
+      }
+
+      div.contact_venster {
+        width: 280px;
+        height: 60px;
+        border: solid 1px #dedede;
+        display: inline-block;
+        margin-right: 10px;
+        text-align: left;
+        background-color: white;
+
+        @media @360 {
+          margin: 0;
+        }
+
+        &:hover {
+          border: solid 1px @orange;
+          cursor: pointer;
+        }
+
+        p {
+          display: inline-block;
+          line-height: 60px;
+          height: 60px;
+          vertical-align: top;
+        }
+
+        figure {
+          width: 60px;
+          height: 100%;
+          display: inline-block;
+
+          &.phone {
+            background: image-url('iphone_orange.png') no-repeat center;
+            background-size: 19px 33px;
+          }
+
+          &.whatsapp {
+            background: image-url('whatsapp_orange.png') no-repeat center;
+            background-size: 35px 35px;
+          }
+
+          &.mail {
+            background: image-url('mail_orange.png') no-repeat center;
+            background-size: 29px 23px;
+          }
+
+          &.chat {
+            background: image-url('chat_orange.png') no-repeat center;
+            background-size: 24px 21px;
+          }
+        }
+      }
+    }
+  }
+}

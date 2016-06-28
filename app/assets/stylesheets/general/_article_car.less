@@ -1,0 +1,312 @@
+article.article_car {
+  position: relative;
+  background-color: #ffffff;
+  width: 285px;
+  text-align: left;
+  margin-bottom: 25px;
+  overflow: hidden;
+
+  &:hover {
+
+    div.hover_element {
+      bottom: 0;
+    }
+  }
+
+  &.hart {
+
+    div.hart {
+      display: block;
+    }
+  }
+
+  &.best_day_deal {
+
+    div.best_deal {
+      display: block;
+    }
+
+    .container-fluid {
+      padding: 12px 0 16px 16px;
+      border: solid 4px #f35026;
+      border-top: 0;
+    }
+  }
+
+  h4, h5 {
+    font-size: 16.3px;
+    line-height: 1.5;
+    color: #414141;
+    margin: 0;
+    padding: 0;
+  }
+
+  p {
+    color: #757575;
+    margin: 0 0 9px 0;
+    font-size: 14px;
+    font-weight: @lato-light;
+  }
+
+  table {
+
+    tr {
+
+      &:first-child {
+        font-size: 13px;
+        color: #757575;
+      }
+
+      &:nth-child(2) {
+        height: 20px;
+
+        td:first-child {
+          font-size: 16px;
+          color: #757575;
+          text-decoration: line-through;
+
+          @media @960 {
+            font-size: 11px;
+          }
+        }
+
+        td:nth-child(2) {
+          font-size: 24px;
+          color: @orange;
+          line-height: 0;
+          font-weight: @lato-light;
+        }
+      }
+
+      td:first-child {
+        width: 115px;
+      }
+    }
+  }
+
+  div.car_slider {
+    height: 100%;
+    width: 100%;
+
+    img {
+      width: 100%;
+      //height: 214px;
+    }
+  }
+
+  .unslider-nav {
+    display: none;
+  }
+
+  div.hart {
+    display: none;
+    background: image-url('hart_like.png') no-repeat center;
+    background-size: contain;
+    width: 41.4px;
+    height: 41.2px;
+    position: absolute;
+    top: -20px;
+    right: 20px;
+
+    @media @880 {
+      right: 10px;
+    }
+
+    @media @680 {
+      width: 31.4px;
+      height: 31.2px;
+    }
+
+    @media @500 {
+      width: 41.4px;
+      height: 41.2px;
+    }
+  }
+
+  div.best_deal {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    height: 24px;
+    padding: 3px 0 0 15px;
+    background-color: #f35026;
+
+    p {
+      display: inline-block;
+      font-size: 13px;
+      color: #ffffff;
+      font-weight: 500;
+      height: 24px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+
+    span.day_deal_star {
+      display: inline-block;
+      background: image-url('rank_star.png') no-repeat center;
+      background-size: cover;
+      width: 14px;
+      height: 14px;
+      margin-bottom: 4px;
+    }
+  }
+
+  div.container-fluid {
+    padding: 12px 4px 20px 20px;
+    width: 100%;
+    height: 175px;
+    position: relative;
+    border: solid 2px #e5e5e5;
+
+    div.car_info {
+    }
+
+    div.aanbieding {
+    }
+
+    div.p_m {
+      text-align: center;
+      width: 245px;
+      height: 45px;
+      border: solid 2px @orange;
+      margin: 10px 0 0 0;
+      font-size: 13px;
+
+      table {
+
+        tr {
+
+          td {
+            font-size: 13px;
+            color: #595959;
+            padding: 2px 0 0 0;
+
+            &.rij_deze {
+              width: 154px;
+            }
+
+            &.orange {
+              font-size: 24px;
+              line-height: 1.5;
+              color: @orange;
+              font-weight: @lato-light;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  div.hover_element {
+    position: absolute;
+    z-index: 25;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    bottom: -100%;
+    transition: @trans;
+
+    div.content_box {
+      position: relative;
+      width: 280px;
+      height: 214px;
+      padding: 13px 20px 8px 20px;
+
+      h5 {
+        font-weight: @lato-light;
+      }
+
+      a.orange_btn {
+        display: inline-block;
+        width: 238.3px;
+        height: 40px;
+        margin-top: 14px;
+        margin-bottom: 0;
+        line-height: 40px;
+        font-size: 15.9px;
+
+        &:after {
+          width: 40px;
+        }
+      }
+
+      p.click_hier {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        width: 230px;
+      }
+    }
+
+    div.finance_mogelijkheden {
+      background-color: #22c064;
+      width: 100%;
+      height: 175px;
+
+      a.finance_opties {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: percentage(1/3);
+        background-color: green;
+        padding-left: 20px;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        p {
+          height: 62px;
+          line-height: 62px;
+          color: white;
+          font-size: 17px;
+        }
+
+        &.zakelijk {
+          background-color: #22c064;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+
+        &.particulier {
+          background-color: #00B04A;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+
+        &.fifty_fifty {
+          background-color: #22c064;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+
+        div.orange_arrow {
+          background-color: @orange;
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+
+          img {
+            width: 10px;
+            height: 16px;
+            margin-top: 11px;
+            margin-left: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+

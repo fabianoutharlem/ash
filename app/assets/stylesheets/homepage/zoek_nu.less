@@ -1,0 +1,303 @@
+section.zoek_nu {
+
+  div.container-fluid {
+    background: image-url('bg_zoeknu.png') no-repeat center;
+
+    @media @1280 {
+      background: 0;
+    }
+
+    div.title {
+      background-color: white;
+      text-align: center;
+      padding: 63px 0 38px 0;
+
+      @media @360 {
+        padding: 20px 0 10px 0;
+      }
+
+      @media @880 {
+        padding: 63px 10px 30px 10px;
+      }
+
+      @media @714 {
+        padding-top: 30px;
+      }
+
+      h2 {
+        font-size: 64px;
+        color: #4a4a4a;
+
+        @media @360 {
+          display: none;
+        }
+      }
+
+      h2.small_device {
+        display: none;
+        font-size: 24px;
+        color: #4a4a4a;
+        font-weight: @lato-bold;
+
+        @media @360 {
+          display: block;
+        }
+      }
+    }
+
+    div.search {
+      height: 590px;
+      width: 1440px;
+      padding: 140px 50px 0 50px;
+      font-size: 0;
+
+      @media @1280 {
+        width: 100%;
+        background: image-url('bg_zoeknu_small.jpg') no-repeat center;
+        background-size: cover;
+        text-align: center;
+        padding: 73px 0 0 0;
+      }
+
+      @media @650 {
+        width: 100%;
+        height: auto;
+        background-size: cover;
+        padding: 30px 0 20px 0;
+      }
+
+      div.altabs {
+        display: block;
+
+        div.tab {
+          display: none;
+          width: 310px;
+          height: 55px;
+          border-top-left-radius: 12px;
+          border-top-right-radius: 12px;
+          background-color: #d3d3d3;
+          font-size: 17px;
+          color: #595959;
+          line-height: 55px;
+          margin-bottom: -1px;
+
+          @media @1280 {
+            display: inline-block;
+          }
+
+          @media @650 {
+            width: 160px;
+            height: 50px;
+            font-size: 16px;
+            line-height: 50px;
+
+            p {
+              display: none;
+            }
+          }
+
+          &:hover {
+            cursor: pointer;
+            background-color: #ffffff;
+          }
+
+          &.active {
+            background-color: #ffffff;
+            color: #f35026;
+          }
+
+          span {
+            display: none;
+
+            @media @650 {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    section.car_search {
+      position: relative;
+      display: inline-block;
+
+      @media @1280 {
+        display: none;
+      }
+
+      &.active {
+
+        @media @1280 {
+          display: inline-block;
+        }
+      }
+
+      h3 {
+        position: absolute;
+        top: -81px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 32px;
+        font-weight: 600;
+        //margin: 0 70px;
+        height: 78px;
+        width: 465px;
+        text-align: center;
+
+        @media @1280 {
+          display: none;
+        }
+      }
+
+      div.searchbox {
+        text-align: left;
+        padding: 20px 0 20px 20px;
+        background-color: white;
+        width: 620px;
+        height: 401px;
+        margin: 0 auto;
+        border-radius: 18px;
+
+        @media @1280 {
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+        }
+
+        @media @650 {
+          width: 320px;
+          height: auto;
+        }
+
+        div.select_col {
+          display: inline-block;
+          margin: 0 18px 10px 0;
+
+          @media @650 {
+            display: block;
+          }
+
+          &.col_small {
+
+            @media @650 {
+              display: inline-block;
+            }
+          }
+
+          p {
+            font-size: 14px;
+            color: #000000;
+            margin-bottom: 1px;
+          }
+        }
+      }
+
+      div.col {
+        display: inline-block;
+        width: 280px;
+        margin: 6px 18px 0 0;
+
+        @media @650 {
+          display: block;
+        }
+
+        &.zoeken_col {
+          margin: 46px 18px 0 0;
+
+          @media @650 {
+            margin: 0 18px 0 0;
+          }
+
+          img {
+            margin-top: 5px;
+
+            @media @650 {
+              position: absolute;
+              bottom: 30px;
+            }
+          }
+        }
+
+        &.col_small {
+          width: 130px;
+
+          .select {
+            width: 130px;
+          }
+
+          .select2-selection--single {
+            width: 130px;
+          }
+
+          .select2-selection {
+            width: 130px;
+          }
+
+          .select2-container {
+            width: 130px !important;
+          }
+        }
+
+        &.slider_col {
+
+          @media @650 {
+            margin: 0;
+          }
+        }
+
+        div.orange_btn {
+          font-size: 18px;
+
+          @media @650 {
+            width: 279.4px;
+            height: 50px;
+            font-size: 18px;
+            line-height: 50px;
+            margin-bottom: 63px;
+            font-size: 16px;
+          }
+
+          &:after {
+
+            @media @650 {
+              width: 50px;
+              background-size: 8.8px 14px;
+            }
+          }
+        }
+
+        .ui-widget-content {
+
+          @media @650 {
+            margin-bottom: 60px;
+          }
+        }
+      }
+    }
+
+    section.financieren {
+
+      h3 {
+        color: #ffffff;
+      }
+
+      div.searchbox {
+
+        select {
+          display: inline-block;
+        }
+      }
+    }
+
+    section.kopen {
+      float: right;
+
+      @media @1280 {
+        float: none;
+      }
+
+      h3 {
+        color: #595959;
+      }
+    }
+  }
+}

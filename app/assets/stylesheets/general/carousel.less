@@ -1,0 +1,197 @@
+section.carousel {
+  *,
+  *:after,
+  *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  @media @1280 {
+    //display: none;
+  }
+
+  &.homepage_carousel {
+
+    h3 {
+      font-weight: @lato-bold;
+      font-size: 64px;
+      color: #4a4a4a;
+      margin-bottom: 10px;
+
+      @media @1280 {
+        font-size: 48px;
+      }
+    }
+
+    #demos {
+      background: image-url('bg_homepage_carousel.jpg') no-repeat center;
+      background-size: cover;
+      text-align: center;
+      padding: 154px 0 0 0;
+
+      @media @1280 {
+        padding-top: 124px;
+      }
+    }
+  }
+
+  &.vergelijkbare_carousel {
+
+    #demos {
+      background: image-url('bg_carousel_detail.png') no-repeat center;
+      background-size: cover;
+      text-align: center;
+      padding: 125px 0 0 0;
+
+      @media @1280 {
+        padding-top: 85px;
+      }
+    }
+  }
+
+  .owl-carousel {
+    width: 1200px;
+    margin: 0 auto;
+
+    @media @1279 {
+      width: 900px;
+    }
+
+    @media @1040 {
+      width: 800px;
+    }
+
+    @media @880 {
+      width: 600px;
+    }
+
+    @media @700 {
+      width: 300px;
+    }
+  }
+
+  .row {
+    width: 100%;
+    max-width: 1440px;
+    min-width: 320px;
+    margin: 0 auto;
+    padding: 6px 48px 0 48px;
+    position: relative;
+
+    @media @360 {
+      padding: 0;
+    }
+  }
+
+  .nav_container {
+    position: absolute;
+    transform: translateY(-50%);
+    right: 0;
+    top: 47%;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @media @700 {
+      display: none;
+    }
+  }
+
+  .owl-prev {
+    background: image-url('nav_prev_carousel.png') no-repeat center;
+    background-size: cover;
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translateY(100%);
+    margin-top: -1px;
+
+    @media @360 {
+      width: 30px;
+      height: 30px;
+    }
+
+    @media @320 {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .owl-next {
+    background: image-url('main_slider_next.png') no-repeat center;
+    background-size: cover;
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translateY(-100%);
+
+    @media @360 {
+      width: 35px;
+      height: 35px;
+    }
+
+    @media @320 {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .owl-item {
+    width: 285px;
+
+    .article_car {
+
+      @media @1279 {
+        margin: 0 auto 20px auto;
+      }
+    }
+  }
+
+
+  .owl-dots {
+    position: absolute;
+    //top: 902px;
+    bottom: -90px;
+
+    left: 0;
+    right: 0;
+
+    @media @1280 {
+      transform: translateX(-50%);
+      left: 50%;
+    }
+
+    .owl-dot {
+      display: inline-block;
+
+      span {
+        background: image-url('carousel_dot.png') no-repeat center;
+        background-size: cover;
+        display: block;
+        width: 10px;
+        height: 10px;
+        margin: 0 10px 0 0;
+      }
+
+      &.active {
+
+        span {
+          background: image-url('carousel_dot_active.png') no-repeat center;
+          background-size: cover;
+          display: block;
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
+  }
+  
+  .orange_btn {
+    display: inline-block;
+    width: 300px;
+    margin: -4px auto 59px auto;
+  }
+}
+

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  option_name: MyString
+  option_type: MyString
+  slide_template_id: 1
+
+two:
+  option_name: MyString
+  option_type: MyString
+  slide_template_id: 1

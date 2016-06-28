@@ -1,0 +1,134 @@
+section.bekijk_voorraad, section.nieuw_binnen {
+
+  div.content_container {
+    padding: 230px 0 65px 0;
+
+    @media @1000 {
+      padding-top: 300px;
+    }
+
+    h3 {
+      font-size: 64px;
+      color: #4a4a4a;
+      font-weight: @lato-bold;
+      width: 90%;
+      margin: -100px auto 20px auto;
+      text-align: center;
+
+      @media @1279 {
+        margin-top: 0;
+      }
+
+      @media @1000 {
+        margin-bottom: 50px;
+        font-size: 52px;
+      }
+
+      @media @360 {
+        font-size: 36px;
+        margin-bottom: 30px;
+      }
+    }
+
+    ul.autos {
+      width: 1240px;
+      margin: 0 auto 30px auto;
+
+      @media @1279 {
+        width: 923px;
+      }
+
+      @media @1000 {
+        width: 85%;
+      }
+
+      @media @750 {
+        width: 100%;
+      }
+
+      @media @360 {
+        margin: 0;
+      }
+
+      li.auto {
+        display: inline-block;
+        margin-right: 20px;
+
+        @media @1000 {
+          width: 49%;
+          margin-right: 0;
+        }
+
+        @media @360 {
+          width: 100%;
+        }
+
+        article.article_car {
+
+          @media @1000 {
+            margin: 0 auto 25px auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+section.bekijk_voorraad {
+
+  div.content_container {
+    background: image-url('bg_bekijk_voorraad.png') no-repeat center;
+    background-size: cover;
+
+    @media @360 {
+      background: #f1f1f1;
+      padding: 25px 0;
+    }
+  }
+}
+
+section.nieuw_binnen {
+  margin-bottom: 30px;
+  margin-top: 30px;
+
+  @media @360 {
+    margin-top: 0;
+  }
+
+  div.content_container {
+    background: image-url('bg_bekijk_voorraad.png') no-repeat center;
+    background-size: cover;
+
+    @media @360 {
+      background: image-url('bg_carousel_detail.png') no-repeat center;
+      padding-top: 0px;
+      padding-bottom: 30px;
+    }
+  }
+
+  div.large_screen {
+
+    @media @360 {
+      display: none;
+    }
+  }
+
+  div.small_screen_carousel {
+    display: none;
+
+    @media @360 {
+      display: block;
+    }
+
+    .article_car {
+
+      @media @360 {
+        margin: 0 auto 40px auto;
+      }
+    }
+  }
+
+  .orange_btn {
+    margin-bottom: 75px;
+  }
+}

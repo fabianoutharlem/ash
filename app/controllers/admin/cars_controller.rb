@@ -19,7 +19,7 @@ class Admin::CarsController < Admin::AdminBaseController
               {
                   id: car.id,
                   display_name: car.display_name,
-                  main_image_url: car.main_image.try(:small).try(:url) || 'http://lorempixel.com/150/150'
+                  main_image_url: car.main_image.try(:file).try(:small).try(:url)
               }
             },
             total_count: @cars.total_count,

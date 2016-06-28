@@ -1,0 +1,193 @@
+section.auto_uitgelicht, section.adres {
+
+  div.vragen {
+
+    @media @1280 {
+      float: right;
+      width: 100%;
+      text-align: center;
+    }
+
+    @media @1200 {
+      max-width: 583px;
+      margin-top: -130px;
+    }
+
+    @media @1070 {
+      max-width: 583px;
+      margin-top: -180px;
+    }
+
+    @media @960 {
+      max-width: 468px;
+      margin-top: -280px;
+    }
+
+    @media @880 {
+      width: 380px;
+      margin: 0 auto;
+      float: none;
+    }
+
+    @media @320 {
+      width: 100%;
+    }
+
+    a {
+      width: 100%;
+      height: 100%;
+    }
+
+    p {
+      display: inline-block;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #595959;
+      vertical-align: middle;
+
+      @media @1240 {
+        font-size: 15px;
+      }
+    }
+
+    i {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 13px 0 0;
+      width: 35px;
+
+      &.phone {
+        background: image-url('model_phone2.png') no-repeat center;
+        height: 33px;
+        background-size: contain;
+      }
+
+      &.whatsapp {
+        background: image-url('model_whatsapp2.png') no-repeat center;
+        height: 35px;
+        background-size: contain;
+      }
+
+      &.mail {
+        background: image-url('model_mail2.png') no-repeat center;
+        height: 22px;
+        background-size: contain;
+      }
+
+      &.chat {
+        background: image-url('model_chat2.png') no-repeat center;
+        height: 21px;
+        background-size: contain;
+      }
+    }
+
+    div.berijkbaar {
+      width: 160px;
+      background: 0;
+      position: absolute;
+
+      @media @1280 {
+        width: 100%;
+        position: relative;
+      }
+
+      p {
+        display: block;
+
+        @media @1280 {
+          display: inline-block;
+        }
+      }
+    }
+
+    ul {
+      display: inline-block;
+
+      @media @1280 {
+        margin-left: 0;
+        margin-top: 20px;
+      }
+
+      li {
+        display: inline-block;
+        width: 280px;
+        height: 60px;
+        background-color: white;
+        margin: 0 8px 0 0;
+        padding: 0 0 0 17px;
+
+        @media @1280 {
+          margin: 0 10px 10px 0;
+          text-align: left;
+        }
+
+        @media @1240 {
+          width: 270px;
+        }
+
+        @media @960 {
+          width: 100%;
+          text-align: center;
+        }
+
+        @media @880 {
+          width: 380px;
+          text-align: center;
+          margin: 10px 0;
+        }
+
+        @media @360 {
+          width: 280px;
+          text-align: left;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &:last-child {
+          margin: 0;
+
+          @media @360 {
+            margin: 0 10px 10px 0;
+          }
+        }
+
+        &.second_col {
+
+          @media @1200 {
+            margin: 0;
+          }
+
+          @media @960 {
+            margin: 0 10px 10px 0;
+          }
+
+          @media @880 {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+section.auto_uitgelicht {
+  margin: 35px 0 0 185px;
+
+  div.berijkbaar {
+    padding: 42px 0 0 0;
+  }
+}
+
+section.adres {
+
+  ul {
+    margin: 20px 50px 0 185px;
+  }
+
+  div.berijkbaar {
+    padding: 0 0 3px 0;
+  }
+}
+

@@ -1,0 +1,234 @@
+section.adres {
+
+  @media @1280 {
+    margin-top: -10px;
+  }
+
+  div.content_container {
+    padding: 10px 0 50px 0;
+    //text-align: center;
+
+    @media @1280 {
+      padding-top: 0;
+    }
+
+    div.row {
+      text-align: center;
+
+      @media @1280 {
+        padding: 0 10px;
+      }
+
+      div.col {
+        display: inline-block;
+        width: calc(99% / 3);
+
+        @media @750 {
+          width: 70%;
+          margin: 0 auto 20px auto;
+        }
+
+        @media @360 {
+          width: 320px;
+        }
+
+        div.contact_content {
+          background-color: #f4f4f4;
+          width: 95%;
+          margin: 0 auto;
+          padding-bottom: 30px;
+
+          h5 {
+            font-size: 24px;
+            color: #595959;
+            margin-bottom: 20px;
+
+            @media @1280 {
+              clear: both;
+            }
+          }
+
+          div.maps {
+            text-decoration: none;
+            overflow: hidden;
+            height: 290px;
+            width: 100%;
+
+            @media @1040 {
+              height: 200px;
+            }
+
+            @media @750 {
+              height: 290px;
+            }
+
+            @media @360 {
+              height: 198px;
+            }
+          }
+
+          form {
+            margin-bottom: 30px;
+            width: 100%;
+
+            input {
+              width: 240px;
+              height: 50px;
+              background-color: #ffffff;
+              border: solid 1px #dedede;
+              display: inline-block;
+              margin: 0 0 0 10px;
+
+              @media @1280 {
+                display: block;
+                margin-left: 30px;
+                margin-bottom: 10px;
+              }
+
+              @media @1040 {
+                margin-left: 10px;
+              }
+
+              @media @880 {
+                width: 180px;
+              }
+
+              @media @750 {
+                width: 240px;
+                margin: 0 0 10px 12%;
+              }
+
+              @media @360 {
+                margin-left: 30px;
+              }
+            }
+
+            .orange_btn {
+              width: 180px;
+              height: 50px;
+              font-size: 18px;
+              display: inline-block;
+              line-height: 48px;
+              float: right;
+              margin-right: 10px;
+
+              @media @1280 {
+                display: block;
+                float: left;
+                margin-left: 30px;
+              }
+
+              @media @1040 {
+                margin-left: 10px;
+              }
+
+              @media @750 {
+                margin-left: 12%;
+              }
+
+              @media @360 {
+                margin-left: 30px;
+              }
+            }
+          }
+
+          div.contact_gegevens {
+            padding-left: 30px;
+            position: relative;
+            text-align: left;
+
+            @media @1280 {
+              text-align: left;
+              margin-top: 170px;
+            }
+
+            @media @940 {
+              padding-left: 10px;
+            }
+
+            @media @770 {
+              padding-right: 10px;
+            }
+
+            @media @750 {
+              padding-left: 12%;
+            }
+
+            @media @360 {
+              padding-left: 30px;
+            }
+
+            ul {
+              list-style-type: none;
+              margin-bottom: 30px;
+
+              li {
+                font-size: 13px;
+                line-height: 2;
+                color: #595959;
+                max-width: 230px;
+                padding-left: 20px;
+
+                &:first-child {
+                  border-left: 1px solid #fc8161;
+                }
+
+                &.bold {
+                  font-weight: @lato-bold;
+                }
+              }
+            }
+
+            div.logo {
+              position: absolute;
+              top: 0;
+
+              &.logo_ash {
+                background: image-url('logo_ash.png') no-repeat center;
+                background-size: contain;
+                width: 109.9px;
+                height: 97.2px;
+                right: 15%;
+
+                @media @1280 {
+                  width: 89.8px;
+                  height: 79.3px;
+                  right: auto;
+                  top: -90px;
+                }
+              }
+
+              &.logo_akp {
+                background: image-url('akp_logo.png') no-repeat center;
+                background-size: contain;
+                width: 213px;
+                height: 50px;
+                right: 3%;
+
+                @media @1280 {
+                  right: auto;
+                  top: -80px;
+                }
+              }
+
+              &.logo_ath {
+                background: image-url('logo_ath.png') no-repeat center;
+                background-size: contain;
+                width: 130px;
+                height: 101px;
+                right: 15%;
+
+                @media @1280 {
+                  width: 103px;
+                  height: 80px;
+                  right: auto;
+                  top: -90px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

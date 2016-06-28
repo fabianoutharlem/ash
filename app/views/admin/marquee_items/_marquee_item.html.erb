@@ -1,0 +1,8 @@
+<tr class="item" data-item-id="<%= marquee_item.id %>">
+  <td><%= marquee_item.title %></td>
+  <td><%= marquee_item.link %></td>
+  <td>
+    <%= link_to 'Aanpassen', edit_admin_marquee_item_path(marquee_item), class: 'btn btn-primary' %>
+    <%= link_to 'Delete', admin_marquee_item_path(marquee_item), method: :delete, class: 'btn btn-danger' %>
+  </td>
+</tr>

@@ -1,0 +1,888 @@
+<section class="header">
+  <div class="wrapper">
+    <div class="container-fluid header_content_container">
+      <a class="logo" href="../homepage/homepage.php">
+        <%= image_tag 'logo_ash.png' %>
+      </a>
+
+      <div class="smartphone_menu">
+        <span class="helper"></span>
+        <p>Menu</p>
+        <%= image_tag 'arrow_down_orange.png' %>
+      </div>
+
+      <ul class="menu">
+        <li class="active">
+          <a href="../homepage/homepage.php"><span class="helper"></span>
+            Home
+            <div class="border-bottom"></div>
+            <div class="left_border"></div>
+          </a>
+        </li>
+        <li class="voorraad" data-submenu="voorraad_menu">
+          <a href="../voorraad_pagina/voorraad_pagina.php">
+            <span class="helper"></span>
+            Voorraad
+            <%= image_tag 'header_arrow.png', class: 'header_arrow.png' %>
+            <div class="border-bottom"></div>
+            <div class="left_border"></div>
+          </a>
+        </li>
+        <li class="Financieringen" data-submenu="financieringen_menu">
+          <a href="../financierings_pagina/financierings_pagina.php">
+            <span class="helper"></span>
+            Financieringen
+            <%= image_tag 'header_arrow.png', class: 'header_arrow.png' %>
+            <div class="border-bottom"></div>
+            <div class="left_border"></div>
+          </a>
+        </li>
+        <li class="Exclusive">
+          <a href="../exclusief/exclusief.php">
+            <span class="helper"></span>
+            ASH Exclusief
+            <div class="border-bottom"></div>
+            <div class="left_border"></div>
+          </a>
+        </li>
+        <li class="budget">
+          <a href="../budget_cars/budget_cars.php">
+            <span class="helper"></span>
+            Budget Cars
+            <div class="border-bottom"></div>
+            <div class="left_border"></div>
+          </a>
+        </li>
+        <li class="Contact" data-submenu="contact_menu">
+          <a href="../contact_pagina/contact_pagina.php">
+            <span class="helper"></span>
+            Contact
+            <%= image_tag 'header_arrow.png', class: 'header_arrow.png' %>
+            <div class="border-bottom"></div>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="search">
+        <li class="hart">
+          <figure>
+            <a href="#">
+              <%= image_tag 'header_hart.png' %>
+            </a>
+          </figure>
+          <span class="helper"></span>
+        </li>
+        <li class="zoeken" data-submenu="zoeken_menu" data-smartmenus="zoeken">
+          <span class="helper"></span>
+          <%= image_tag 'Search.png' %>
+          <div class="border-bottom"></div>
+          <div class="left_border"></div>
+        </li>
+        <li class="taal" data-submenu="taal_menu" data-smartmenus="talen">
+          <span class="helper"></span>
+          <%= image_tag 'nl_vlag.svg', class: 'nl_vlag.svg' %>
+          <p>NL</p>
+          <%= image_tag 'header_arrow.png', class: 'header_arrow.png' %>
+          <div class="border-bottom"></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- sub menu -->
+  <div data-menu="voorraad_menu" class="voorraad_menu sub_menu">
+    <div class="wrapper">
+      <div class="container-fluid content-container">
+        <ul>
+          <li class="img">
+            <a href="../voorraad_pagina/voorraad_pagina.php">
+              <span class="helper"></span>
+              <figure>
+                <span class="helper"></span>
+                <%= image_tag 'sub_car1.png' %>
+              </figure>
+              <p>Audi (201)</p>
+            </a>
+          </li>
+          <li class="img">
+            <a href="../voorraad_pagina/voorraad_pagina.php">
+              <span class="helper"></span>
+              <figure>
+                <span class="helper"></span>
+                <%= image_tag 'sub_car2.png' %>
+              </figure>
+              <p>BMW (111)</p>
+            </a>
+          </li>
+          <li class="img">
+            <a href="../voorraad_pagina/voorraad_pagina.php">
+              <span class="helper"></span>
+              <figure>
+                <span class="helper"></span>
+                <%= image_tag 'sub_car3.png' %>
+              </figure>
+              <p>Mercedes (16)</p>
+            </a>
+          </li>
+          <li class="img">
+            <a href="../voorraad_pagina/voorraad_pagina.php">
+              <span class="helper"></span>
+              <figure>
+                <span class="helper"></span>
+                <%= image_tag 'sub_car4.png' %>
+              </figure>
+              <p>Volkswagen (197)</p>
+            </a>
+          </li>
+          <li class="img">
+            <a href="../voorraad_pagina/voorraad_pagina.php">
+              <span class="helper"></span>
+              <figure>
+                <span class="helper"></span>
+                <%= image_tag 'car_bentley.jpg' %>
+              </figure>
+              <p>Bentley (1)</p>
+            </a>
+          </li>
+          <li class="img">
+            <a href="../voorraad_pagina/voorraad_pagina.php">
+              <span class="helper"></span>
+              <figure>
+                <span class="helper"></span>
+                <%= image_tag 'car_kia.jpg' %>
+              </figure>
+              <p>Kia (3)</p>
+            </a>
+          </li>
+          <li class="img">
+            <a href="../voorraad_pagina/voorraad_pagina.php">
+              <span class="helper"></span>
+              <figure>
+                <span class="helper"></span>
+                <%= image_tag 'car_peugeot.jpg' %>
+              </figure>
+              <p>Peugot (3)</p>
+            </a>
+          </li>
+          <li class="img">
+            <a href="../voorraad_pagina/voorraad_pagina.php">
+              <span class="helper"></span>
+              <figure>
+                <span class="helper"></span>
+                <%= image_tag 'car_toyota.jpg' %>
+              </figure>
+              <p>Toyota (34)</p>
+            </a>
+          </li>
+          <li class="img">
+            <a href="../voorraad_pagina/voorraad_pagina.php">
+              <span class="helper"></span>
+              <figure>
+                <span class="helper"></span>
+                <%= image_tag 'car_hyundai.jpg' %>
+              </figure>
+              <p>Hyundai (7)</p>
+            </a>
+          </li>
+          <li class="img">
+            <a href="../voorraad_pagina/voorraad_pagina.php">
+              <span class="helper"></span>
+              <figure>
+                <span class="helper"></span>
+                <%= image_tag 'car_landrover.jpg' %>
+              </figure>
+              <p>Landrover (2)</p>
+            </a>
+          </li>
+          <li class="img">
+            <a href="../voorraad_pagina/voorraad_pagina.php">
+              <span class="helper"></span>
+              <figure>
+                <span class="helper"></span>
+                <%= image_tag 'car_porsche.jpg' %>
+              </figure>
+              <p>Porsche (2)</p>
+            </a>
+          </li>
+          <li class="img">
+            <a href="../voorraad_pagina/voorraad_pagina.php">
+              <span class="helper"></span>
+              <figure>
+                <span class="helper"></span>
+                <%= image_tag 'car_opel.jpg' %>
+              </figure>
+              <p>Opel (7)</p>
+            </a>
+          </li>
+          <li class="img">
+            <a href="../voorraad_pagina/voorraad_pagina.php">
+              <span class="helper"></span>
+              <figure>
+                <span class="helper"></span>
+                <%= image_tag 'car_citroen.jpg' %>
+              </figure>
+              <p>Citroën (21)</p>
+            </a>
+          </li>
+          <li class="img">
+            <a href="../voorraad_pagina/voorraad_pagina.php">
+              <span class="helper"></span>
+              <figure>
+                <span class="helper"></span>
+                <%= image_tag 'car_lexus.jpg' %>
+              </figure>
+              <p>Lexus (16)</p>
+            </a>
+          </li>
+          <li class="img">
+            <a href="../voorraad_pagina/voorraad_pagina.php">
+              <span class="helper"></span>
+              <figure>
+                <span class="helper"></span>
+                <%= image_tag 'car_renauld.jpg' %>
+              </figure>
+              <p>Renauld (16)</p>
+            </a>
+          </li>
+          <li class="img">
+            <a href="../voorraad_pagina/voorraad_pagina.php">
+              <span class="helper"></span>
+              <figure>
+                <span class="helper"></span>
+                <%= image_tag 'car_honda.jpg' %>
+              </figure>
+              <p>Honda (2)</p>
+            </a>
+          </li>
+          <li class="img">
+            <a href="../voorraad_pagina/voorraad_pagina.php">
+              <span class="helper"></span>
+              <figure>
+                <span class="helper"></span>
+                <%= image_tag 'car_fiat.jpg' %>
+              </figure>
+              <p>Fiat (12)</p>
+            </a>
+          </li>
+          <li class="img">
+            <a href="../voorraad_pagina/voorraad_pagina.php">
+              <span class="helper"></span>
+              <figure>
+                <span class="helper"></span>
+                <%= image_tag 'car_alfa.jpg' %>
+              </figure>
+              <p>Alfa Romeo (2)</p>
+            </a>
+          </li>
+          <li class="img">
+            <a href="../voorraad_pagina/voorraad_pagina.php">
+              <span class="helper"></span>
+              <figure>
+                <span class="helper"></span>
+                <%= image_tag 'car_seat.jpg' %>
+              </figure>
+              <p>Seat (16)</p>
+            </a>
+          </li>
+          <li class="img">
+            <a href="../voorraad_pagina/voorraad_pagina.php">
+              <span class="helper"></span>
+              <figure>
+                <span class="helper"></span>
+                <%= image_tag 'car_volvo.jpg' %>
+              </figure>
+              <p>Volvo (7)</p>
+            </a>
+          </li>
+          <li class="img">
+            <a href="../voorraad_pagina/voorraad_pagina.php">
+              <span class="helper"></span>
+              <figure>
+                <span class="helper"></span>
+                <%= image_tag 'car_ford.jpg' %>
+              </figure>
+              <p>Ford (12)</p>
+            </a>
+          </li>
+          <li class="img">
+            <a href="../voorraad_pagina/voorraad_pagina.php">
+              <span class="helper"></span>
+              <figure>
+                <span class="helper"></span>
+                <%= image_tag 'car_mitsubisi.jpg' %>
+              </figure>
+              <p>Mitsubisi (10)</p>
+            </a>
+          </li>
+          <li class="img">
+            <a href="../voorraad_pagina/voorraad_pagina.php">
+              <span class="helper"></span>
+              <figure>
+                <span class="helper"></span>
+                <%= image_tag 'car_nissan.jpg' %>
+              </figure>
+              <p>Nissan (2)</p>
+            </a>
+          </li>
+          <li class="img">
+            <a href="../voorraad_pagina/voorraad_pagina.php">
+              <span class="helper"></span>
+              <figure>
+                <span class="helper"></span>
+                <%= image_tag 'car_skoda.jpg' %>
+              </figure>
+              <p>Skoda (3)</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div data-menu="financieringen_menu" class="financieringen_menu sub_menu">
+    <div class="wrapper">
+      <div class="container-fluid content-container">
+        <h2><span
+        class="large">Kies de financiering die het beste bij jou past met Auto KredietPlan!</span><span
+        class="small">Wilt uw een auto financieren?</span></h2>
+        <p class="small">Bekijk hier de mogelijkheden!</p>
+
+        <%= render 'layouts/article_finance' %>
+        <%= render 'layouts/article_finance' %>
+        <%= render 'layouts/article_finance' %>
+      </div>
+    </div>
+  </div>
+
+  <div data-menu="contact_menu" class="contact_menu sub_menu">
+    <section class="contact">
+      <div class="wrapper">
+        <div class="container-fluid content-container">
+          <div class="Klantenservice">
+            <h4>Klantenservice & Financieringen</h4>
+            <div class="first_col">
+              <ul>
+                <li><a href="#" class="orange">Home</a></li>
+                <li><a href="#">Totale voorraad</a></li>
+                <li><a href="#">Wie zijn wij?</a></li>
+                <li><a href="#">Onze zekerheden</a></li>
+              </ul>
+              <ul>
+                <li><a href="#">Financiering</a></li>
+                <li><a href="#">50/50 deals</a></li>
+                <li><a href="#">Auto lease - de mogelijkheden</a></li>
+                <li><a href="#">Auto op afbetaling</a></li>
+                <li><a href="#">Full Operationeel Lease</a></li>
+                <li><a href="#">Leasen gebruikte autos</a></li>
+                <li><a href="#">Voordelen van Financial Lease</a></li>
+              </ul>
+            </div>
+            <div class="second_col">
+              <ul>
+                <li><a href="#">Veel gestelde vragen</a></li>
+                <li><a href="#">Algemene voorwaarden</a></li>
+                <li><a href="#">Disclaimer</a></li>
+                <li><a href="#">Sitemap</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="Adres">
+            <h4>Adres & openingstijden</h4>
+            <ul class="first_col">
+              <li class="bold"><a href="#">Auto Service Haarlem</a></li>
+              <li><a href="#">Munterslaan 2</a></li>
+              <li><a href="#">2014 KW Haarlem</a></li>
+            </ul>
+            <ul>
+              <li class="bold"><a href="#">Maandag t/m vrijdag</a></li>
+              <li><a href="#">Van 9.00 tot 18.00 uur</a></li>
+              <li class="bold"><a href="#">Donderdag avond koopavond tot</a></li>
+              <li><a href="#">20.00 uur.</a></li>
+              <li class="bold"><a href="#">Zaterdag</a></li>
+              <li><a href="#">Van 9.00 tot 17.00 uur</a></li>
+              <li class="bold"><a href="#">Zondag</a></li>
+              <li><a href="#">Open van 12-16.00 uur !</a></li>
+            </ul>
+          </div>
+
+          <div class="vragen">
+            <h4>Vragen?<span> Wij zijn bereikbaar via:</span></h4>
+
+            <ul>
+              <li>
+                <span class="helper"></span>
+                <figure><i class="phone"></i></figure>
+                <p>+31 (0) 23 792 00 03</p>
+              </li>
+              <li>
+                <span class="helper"></span>
+                <figure><i class="whatsapp"></i></figure>
+                <p>WhatsApp 06 55 23 29 11</p>
+              </li>
+              <li>
+                <span class="helper"></span>
+                <figure><i class="mail"></i></figure>
+                <p>info@autoservicehaarlem.nl</p>
+              </li>
+              <li>
+                <span class="helper"></span>
+                <figure><i class="chat"></i></figure>
+                <p>Chat met een medewerker</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div data-menu="taal_menu" class="taal_menu sub_menu">
+    <div class="wrapper">
+      <div class="container-fluid content-container">
+        <ul>
+          <li>
+            <span class="helper"></span>
+            <i class="nl"></i>
+            <p>Nederlands</p>
+          </li>
+          <li>
+            <span class="helper"></span>
+            <i class="gb"></i>
+            <p>English</p>
+          </li>
+          <li>
+            <span class="helper"></span>
+            <i class="de"></i>
+            <p>Geman</p>
+          </li>
+          <li>
+            <span class="helper"></span>
+            <i class="fr"></i>
+            <p>French</p>
+          </li>
+          <li>
+            <span class="helper"></span>
+            <i class="es"></i>
+            <p>Spanish</p>
+          </li>
+          <li>
+            <span class="helper"></span>
+            <i class="tr"></i>
+            <p>Turkish</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div data-menu="zoeken_menu" class="zoeken_menu sub_menu">
+    <div class="wrapper">
+      <div class="container-fluid content-container">
+        <div class="zoeken">
+          <p>Zoek op merk, type, model etc.. ( Bijv: audi, A3, cabrio of vw golf 1.2 tsi )</p>
+          <p class="uitgebreid">Uitgebreid zoeken ></p>
+
+          <form>
+            <div class="search_field">
+              <i class="amp"></i>
+              <i class="cross"></i>
+              <input type="text" placeholder="Type hier je je zoekterm...">
+            </div>
+            <button class="orange_btn">Zoeken</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- smartphone menu -->
+  <div class="smartphone">
+    <ul>
+      <li class="talen smartmenu active">
+        <span class="helper"></span>
+        <a href="#"><i class="nl active active_border">
+          <div class="border_bottom"></div>
+        </i></a>
+        <a href="#"><i class="gb active">
+          <div class="border_bottom"></div>
+        </i></a>
+        <a href="#"><i class="de active">
+          <div class="border_bottom"></div>
+        </i></a>
+        <a href="#"><i class="fr active">
+          <div class="border_bottom"></div>
+        </i></a>
+        <a href="#"><i class="es active">
+          <div class="border_bottom"></div>
+        </i></a>
+        <a href="#"><i class="tr active">
+          <div class="border_bottom"></div>
+        </i></a>
+      </li>
+      <li class="zoeken active">
+        <form>
+          <input type="text" placeholder="Zoeken...">
+        </form>
+      </li>
+      <li class="home smartmenu">
+        <a href="#">Home</a>
+      </li>
+      <li class="voorraad smartmenu">
+        <a href="#">
+          Voorraad
+          <%= image_tag 'arrow_down_orange.png', class: 'arrow_down_orange.png' %>
+        </a>
+
+        <div class="expand">
+          <ul>
+            <li class="search">
+              <form>
+                <input type="text" placeholder="Type hier je merk..">
+              </form>
+            </li>
+            <li class="img">
+              <a href="../voorraad_pagina/voorraad_pagina.php">
+                <span class="helper"></span>
+                <figure>
+                  <span class="helper"></span>
+                  <img src="../../assets/images/sub_car1.png">
+                </figure>
+                <p>Audi (201)</p>
+              </a>
+            </li>
+            <li class="img">
+              <a href="../voorraad_pagina/voorraad_pagina.php">
+                <span class="helper"></span>
+                <figure>
+                  <span class="helper"></span>
+                  <img src="../../assets/images/sub_car2.png">
+                </figure>
+                <p>BMW (111)</p>
+              </a>
+            </li>
+            <li class="img">
+              <a href="../voorraad_pagina/voorraad_pagina.php">
+                <span class="helper"></span>
+                <figure>
+                  <span class="helper"></span>
+                  <img src="../../assets/images/sub_car3.png">
+                </figure>
+                <p>Mercedes (16)</p>
+              </a>
+            </li>
+            <li class="img">
+              <a href="../voorraad_pagina/voorraad_pagina.php">
+                <span class="helper"></span>
+                <figure>
+                  <span class="helper"></span>
+                  <img src="../../assets/images/sub_car4.png">
+                </figure>
+                <p>Volkswagen (197)</p>
+              </a>
+            </li>
+            <li class="img">
+              <a href="../voorraad_pagina/voorraad_pagina.php">
+                <span class="helper"></span>
+                <figure>
+                  <span class="helper"></span>
+                  <img src="../../assets/images/sub_car1.png">
+                </figure>
+                <p>Audi (201)</p>
+              </a>
+            </li>
+            <li class="img">
+              <a href="../voorraad_pagina/voorraad_pagina.php">
+                <span class="helper"></span>
+                <figure>
+                  <span class="helper"></span>
+                  <img src="../../assets/images/sub_car2.png">
+                </figure>
+                <p>BMW (111)</p>
+              </a>
+            </li>
+            <li class="img">
+              <a href="../voorraad_pagina/voorraad_pagina.php">
+                <span class="helper"></span>
+                <figure>
+                  <span class="helper"></span>
+                  <img src="../../assets/images/sub_car3.png">
+                </figure>
+                <p>Mercedes (16)</p>
+              </a>
+            </li>
+            <li class="img">
+              <a href="../voorraad_pagina/voorraad_pagina.php">
+                <span class="helper"></span>
+                <figure>
+                  <span class="helper"></span>
+                  <img src="../../assets/images/sub_car4.png">
+                </figure>
+                <p>Volkswagen (197)</p>
+              </a>
+            </li>
+            <li class="img">
+              <a href="../voorraad_pagina/voorraad_pagina.php">
+                <span class="helper"></span>
+                <figure>
+                  <span class="helper"></span>
+                  <img src="../../assets/images/sub_car1.png">
+                </figure>
+                <p>Audi (201)</p>
+              </a>
+            </li>
+            <li class="img">
+              <a href="../voorraad_pagina/voorraad_pagina.php">
+                <span class="helper"></span>
+                <figure>
+                  <span class="helper"></span>
+                  <img src="../../assets/images/sub_car2.png">
+                </figure>
+                <p>BMW (111)</p>
+              </a>
+            </li>
+            <li class="img">
+              <a href="../voorraad_pagina/voorraad_pagina.php">
+                <span class="helper"></span>
+                <figure>
+                  <span class="helper"></span>
+                  <img src="../../assets/images/sub_car3.png">
+                </figure>
+                <p>Mercedes (16)</p>
+              </a>
+            </li>
+            <li class="img">
+              <a href="../voorraad_pagina/voorraad_pagina.php">
+                <span class="helper"></span>
+                <figure>
+                  <span class="helper"></span>
+                  <img src="../../assets/images/sub_car4.png">
+                </figure>
+                <p>Volkswagen (197)</p>
+              </a>
+            </li>
+            <li class="img">
+              <a href="../voorraad_pagina/voorraad_pagina.php">
+                <span class="helper"></span>
+                <figure>
+                  <span class="helper"></span>
+                  <img src="../../assets/images/sub_car1.png">
+                </figure>
+                <p>Audi (201)</p>
+              </a>
+            </li>
+            <li class="img">
+              <a href="../voorraad_pagina/voorraad_pagina.php">
+                <span class="helper"></span>
+                <figure>
+                  <span class="helper"></span>
+                  <img src="../../assets/images/sub_car2.png">
+                </figure>
+                <p>BMW (111)</p>
+              </a>
+            </li>
+            <li class="img">
+              <a href="../voorraad_pagina/voorraad_pagina.php">
+                <span class="helper"></span>
+                <figure>
+                  <span class="helper"></span>
+                  <img src="../../assets/images/sub_car3.png">
+                </figure>
+                <p>Mercedes (16)</p>
+              </a>
+            </li>
+            <li class="img">
+              <a href="../voorraad_pagina/voorraad_pagina.php">
+                <span class="helper"></span>
+                <figure>
+                  <span class="helper"></span>
+                  <img src="../../assets/images/sub_car4.png">
+                </figure>
+                <p>Volkswagen (197)</p>
+              </a>
+            </li>
+            <li class="img">
+              <a href="../voorraad_pagina/voorraad_pagina.php">
+                <span class="helper"></span>
+                <figure>
+                  <span class="helper"></span>
+                  <img src="../../assets/images/sub_car1.png">
+                </figure>
+                <p>Audi (201)</p>
+              </a>
+            </li>
+            <li class="img">
+              <a href="../voorraad_pagina/voorraad_pagina.php">
+                <span class="helper"></span>
+                <figure>
+                  <span class="helper"></span>
+                  <img src="../../assets/images/sub_car2.png">
+                </figure>
+                <p>BMW (111)</p>
+              </a>
+            </li>
+            <li class="img">
+              <a href="../voorraad_pagina/voorraad_pagina.php">
+                <span class="helper"></span>
+                <figure>
+                  <span class="helper"></span>
+                  <img src="../../assets/images/sub_car3.png">
+                </figure>
+                <p>Mercedes (16)</p>
+              </a>
+            </li>
+            <li class="img">
+              <a href="../voorraad_pagina/voorraad_pagina.php">
+                <span class="helper"></span>
+                <figure>
+                  <span class="helper"></span>
+                  <img src="../../assets/images/sub_car4.png">
+                </figure>
+                <p>Volkswagen (197)</p>
+              </a>
+            </li>
+            <li class="img">
+              <a href="../voorraad_pagina/voorraad_pagina.php">
+                <span class="helper"></span>
+                <figure>
+                  <span class="helper"></span>
+                  <img src="../../assets/images/sub_car1.png">
+                </figure>
+                <p>Audi (201)</p>
+              </a>
+            </li>
+            <li class="img">
+              <a href="../voorraad_pagina/voorraad_pagina.php">
+                <span class="helper"></span>
+                <figure>
+                  <span class="helper"></span>
+                  <img src="../../assets/images/sub_car2.png">
+                </figure>
+                <p>BMW (111)</p>
+              </a>
+            </li>
+            <li class="img">
+              <a href="../voorraad_pagina/voorraad_pagina.php">
+                <span class="helper"></span>
+                <figure>
+                  <span class="helper"></span>
+                  <img src="../../assets/images/sub_car3.png">
+                </figure>
+                <p>Mercedes (16)</p>
+              </a>
+            </li>
+            <li class="img">
+              <a href="../voorraad_pagina/voorraad_pagina.php">
+                <span class="helper"></span>
+                <figure>
+                  <span class="helper"></span>
+                  <img src="../../assets/images/sub_car4.png">
+                </figure>
+                <p>Volkswagen (197)</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="Financieringen smartmenu">
+        <a href="#">
+          Financieringen
+          <%= image_tag 'arrow_down_orange.png', class: 'arrow_down_orange.png' %>
+        </a>
+
+        <div class="expand">
+          <?php include('../general/article_financieren.php'); ?>
+          <?php include('../general/article_financieren.php'); ?>
+          <?php include('../general/article_financieren.php'); ?>
+        </div>
+      </li>
+      <li class="Contact smartmenu">
+        <a href="#">
+          Contact
+          <%= image_tag 'arrow_down_orange.png', class: 'arrow_down_orange.png' %>
+        </a>
+
+        <div class="expand">
+          <ul>
+            <li class="bold"><a href="#">Auto Service Haarlem</a></li>
+            <li><a href="#">Munterslaan 2</a></li>
+            <li><a href="#">2014 KW Haarlem</a></li>
+          </ul>
+
+          <ul>
+            <li class="bold"><a href="#">Maandag t/m vrijdag</a></li>
+            <li><a href="#">Van 9.00 tot 18.00 uur</a></li>
+            <li class="bold"><a href="#">Donderdag avond koopavond tot</a></li>
+            <li><a href="#">20.00 uur.</a></li>
+            <li class="bold"><a href="#">Zaterdag</a></li>
+            <li><a href="#">Van 9.00 tot 17.00 uur</a></li>
+            <li class="bold"><a href="#">Zondag</a></li>
+            <li><a href="#">Open van 12-16.00 uur !</a></li>
+          </ul>
+
+          <ul>
+            <li><a href="../financierings_pagina/financierings_pagina.php">Financiering</a></li>
+            <li><a href="../50_50_deals/50_50_deals.php">50/50 deals</a></li>
+            <li><a href="#">Auto lease - de mogelijkheden</a></li>
+            <li><a href="#">Auto op afbetaling</a></li>
+            <li><a href="#">Full Operationeel Lease</a></li>
+            <li><a href="#">Leasen gebruikte autos</a></li>
+            <li><a href="#">Voordelen van Financial Lease</a></li>
+          </ul>
+
+          <ul>
+            <li><a href="#">Audi Actie Weken</a></li>
+            <li><a href="../link_pagina/link_pagina.php">Linkpartners</a></li>
+            <li><a href="#">Over ons</a></li>
+            <li><a href="../referentie_pagina/referentie_pagina.php">Referenties</a></li>
+            <li><a href="#">Wie zijn wij?</a></li>
+            <li><a href="#">Onze zekerheden</a></li>
+          </ul>
+
+          <ul>
+            <li><a href="#">Veel gestelde vragen</a></li>
+            <li><a href="#">Algemene voorwaarden</a></li>
+            <li><a href="#">Disclaimer</a></li>
+            <li><a href="#">Sitemap</a></li>
+            <li><a href="../contact_pagina/contact_pagina.php">Contact</a></li>
+            <li><a href="../particuliere_financieringen/particuliere_financierigen.php">Particuliere
+              financieringen</a></li>
+            <li><a href="../zakelijke_financiering/zakelijke_financiering.php">Zakelijke Financieringen</a>
+            </li>
+            <li><a href="../merken_pagina/merken_pagina.php">Merken Pagina</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="vragen">
+        <div class="vragen">
+          <h4>Vragen?<span> Wij zijn bereikbaar via:</span></h4>
+
+          <ul>
+            <li>
+              <span class="helper"></span>
+              <figure><i class="phone"></i></figure>
+              <p>+31 (0) 23 792 00 03</p>
+            </li>
+            <li>
+              <span class="helper"></span>
+              <figure><i class="whatsapp"></i></figure>
+              <p>WhatsApp 06 55 23 29 11</p>
+            </li>
+            <li>
+              <span class="helper"></span>
+              <figure><i class="mail"></i></figure>
+              <p>info@autoservicehaarlem.nl</p>
+            </li>
+            <li>
+              <span class="helper"></span>
+              <figure><i class="chat"></i></figure>
+              <p>Chat met een medewerker</p>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>

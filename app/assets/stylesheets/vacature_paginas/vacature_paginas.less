@@ -1,0 +1,228 @@
+section.vacatures {
+  margin-top: -10px;
+
+  div.content_container {
+
+    div.vacature_container {
+      padding: 50px 25px 100px 25px;
+
+      @media @1280 {
+        padding: 20px 0 50px 0;
+      }
+
+      @media @360 {
+        padding: 0 0 30px 0;
+      }
+
+      div.content {
+        margin-left: 25px;
+
+        @media @1280 {
+          text-align: center;
+          margin: 0;
+        }
+
+        h2 {
+          font-size: 26px;
+          color: #f35026;
+          font-weight: @lato-bold;
+        }
+
+        small {
+          font-size: 14px;
+          color: #595959;
+        }
+      }
+
+      ul.vacature {
+        list-style-type: none;
+
+        li {
+          position: relative;
+          width: 1000px;
+          height: 82px;
+          border: solid 1px #e3e3e3;
+          margin-top: 20px;
+          padding: 20px;
+
+          @media @1280 {
+            margin: 20px auto 0 auto;
+          }
+
+          @media @1040 {
+            width: 60%;
+            padding-bottom: 85px;
+            height: auto;
+            text-align: center;
+          }
+
+          @media @750 {
+            width: 80%;
+          }
+
+          @media @360 {
+            width: 300px;
+          }
+
+          h3 {
+            font-size: 20px;
+            color: #6C6C6C;
+            font-weight: @lato-bold;
+
+            @media @360 {
+              font-size: 20px;
+              margin-bottom: 10px;
+            }
+          }
+
+          small {
+            font-size: 14px;
+            color: #6C6C6C;
+          }
+
+          .lees_button {
+            display: inline-block;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            @media @1040 {
+              right: auto;
+              top: auto;
+              bottom: 20px;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+
+            @media @360 {
+              width: 220px;
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+section.vacature_voorbeeld_pagina {
+
+  @media @1280 {
+    margin-top: -10px;
+  }
+
+  @media @880 {
+    margin-top: 0;
+  }
+
+  div.vacature_voorbeeld_pagina_container {
+    padding: 0 25px 70px 25px;
+
+    @media @1280 {
+      padding: 0 50px 50px 50px;
+    }
+
+    @media @360 {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    @media @320 {
+      padding-right: 5px;
+      padding-left: 5px;
+    }
+
+    .terug_btn, .volgende_btn {
+      display: inline-block;
+
+      @media @700 {
+        width: 150px;
+        font-size: 18px;
+      }
+
+      span.large {
+        display: block;
+
+        @media @700 {
+          display: none;
+        }
+      }
+
+      span.small {
+        display: none;
+
+        @media @700 {
+          display: block;
+        }
+      }
+    }
+
+    .volgende_btn {
+
+      @media @640 {
+        float: right;
+      }
+    }
+
+    .terug_btn {
+      margin-right: 20px;
+      padding: 0 0 0 50px;
+
+      @media @700 {
+        margin-right: 5px;
+      }
+
+      &:after {
+        display: none;
+      }
+
+      &:before {
+        background: image-url('arrow_left.png') no-repeat center;
+        background-size: 11px 17px;
+        display: block;
+        position: absolute;
+        width: 50px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        content: ' ';
+        background-color: @orange;
+        border-right: 1px solid #ff7c59;
+        margin: 5px 0;
+      }
+    }
+
+    div.vacature_content {
+      padding-top: 50px;
+      color: #595959;
+      max-width: 1000px;
+
+      @media @320 {
+        padding: 30px 5px 0 5px;
+      }
+
+      h3 {
+        font-size: 20px;
+        font-weight: @lato-bold;
+      }
+
+      h4 {
+        font-weight: @lato-bold;
+        margin-top: 25px;
+      }
+
+      small, li, p, h4 {
+        font-size: 14px;
+      }
+
+      p a {
+        color: @orange;
+      }
+
+      li {
+        margin-left: 20px;
+      }
+    }
+  }
+}

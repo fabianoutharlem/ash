@@ -17,5 +17,6 @@
 //= require switchery/switchery
 //= require ./inspinia.js
 //= require ./brands/update_brands_row_order
+//= require ./slides/update_slides_row_order
 //= require toastr/toastr.min.js
 

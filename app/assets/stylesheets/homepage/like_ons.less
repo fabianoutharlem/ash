@@ -1,0 +1,157 @@
+section.like_ons {
+
+  div.container-fluid {
+    padding: 58px 130px 62px 130px;
+
+    @media @1280 {
+      padding: 45px 0 36px 0;
+      text-align: center;
+    }
+
+    @media @880 {
+      padding: 45px 10px 36px 10px;
+    }
+
+    @media @650 {
+      padding: 25px 10px 25px 10px;
+    }
+
+    @media @360 {
+      padding: 40px 0 40px 0;
+    }
+    
+    div.left {
+      position: relative;
+      display: inline-block;
+      margin-top: 35px;
+
+      @media @650 {
+        display: none;
+      }
+
+      h3 {
+        height: 39px;
+        font-size: 32px;
+        color: @dark_gray;
+        margin: 0 0 7px 0;
+
+        @media @1280 {
+          font-size: 32px;
+        }
+      }
+
+      p {
+        display: inline-block;
+        height: 27px;
+        font-size: 22px;
+        color: @dark_gray;
+        font-weight: @lato-light;
+
+        span {
+          font-weight: @lato-regular;
+        }
+
+        @media @1280 {
+          font-size: 22px;
+        }
+      }
+
+      form.sell_car {
+        margin: 23px 0 0 0;
+
+        input {
+          margin: 0 10px 0 0;
+
+          @media @880 {
+            display: block;
+            margin: 0 auto 10px auto;
+          }
+        }
+      }
+    }
+    
+    div.right {
+      position: relative;
+      display: inline-block;
+      float: right;
+      
+      @media @1280 {
+        float: none;
+      }
+
+      @media @650 {
+        margin-left: -13px;
+      }
+
+      a.social_media {
+        display: block;
+        padding: 20px 26px 0 18px;
+        width: 280px;
+        height: 80px;
+
+        @media @1280 {
+          display: inline-block;
+          margin-top: 25px;
+        }
+
+        @media @360 {
+          display: block;
+          margin: 0;
+        }
+
+        &:hover {
+          cursor: pointer;
+          opacity: 0.8;
+        }
+
+        i {
+          display: inline-block;
+          width: 40px;
+          height: 40px;
+          margin: 0 26px 0 0;
+        }
+
+        p {
+          display: inline-block;
+          font-size: 18px;
+          color: #ffffff;
+          height: 48px;
+          vertical-align: middle;
+        }
+
+        img {
+          float: right;
+          display: inline-block;
+          margin: 8px 0 0 0;
+        }
+
+        &.facebook {
+          background-color: #3765a3;
+          margin: 0 0 20px 0;
+
+          @media @1280 {
+            margin-right: 10px;
+          }
+
+          @media @360 {
+            margin: 0 auto 10px auto;
+          }
+
+          i {
+            background: image-url('fb_icon.png') no-repeat center;
+            background-size: cover;
+          }
+        }
+
+        &.instagram {
+          background-color: #517fa4;
+
+          i {
+            background: image-url('instagram_icon.png') no-repeat center;
+            background-size: cover;
+          }
+        }
+      }
+    }
+  }
+}

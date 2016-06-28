@@ -1,0 +1,170 @@
+section.merk_uitgelicht {
+
+  @media @1280 {
+    margin-top: -10px;
+  }
+
+  div.content_container {
+    background-color: #f1f1f1;
+    padding: 30px 0;
+    //height: 340px;
+
+    h2 {
+      font-size: 24px;
+      color: #595959;
+      margin-bottom: 25px;
+    }
+
+    div.row {
+      width: 100%;
+
+      @media @750 {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 285px;
+        margin: 0 auto;
+      }
+
+      div.col {
+        display: inline-block;
+
+        @media @750 {
+          display: block;
+          width: 100%;
+        }
+
+        div.select_col {
+          width: 279px;
+          margin: 20px auto;
+
+          .select2-selection {
+            background-color: white;
+          }
+        }
+
+        ul {
+          list-style-type: none;
+          display: inline-block;
+
+          li.type {
+            display: inline-block;
+            width: 280px;
+            height: 40px;
+            background-color: #ffffff;
+            border: solid 1px #e9e9e9;
+            margin: 10px 10px 10px 0;
+            text-align: center;
+
+            &:hover {
+              border: solid 1px #f35026;
+            }
+
+            a {
+              display: inline-block;
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+
+        p {
+          display: inline-block;
+          vertical-align: middle;
+          font-size: 14px;
+          color: #595959;
+          text-align: center;
+        }
+
+        div.specific_car {
+          width: 280px;
+          height: 90px;
+          background-color: #ffffff;
+          border: solid 1px #f35026;
+          display: inline-block;
+
+          div.car_images {
+            display: inline-block;
+            vertical-align: middle;
+            width: 125px;
+            height: 100%;
+          }
+        }
+
+        &.right_modellen {
+          //padding: 0 70px;
+          text-align: center;
+
+          @media @1000 {
+            padding: 0 30px;
+          }
+
+          @media @750 {
+            padding: 0;
+          }
+        }
+
+        &.left_content {
+          padding: 0 70px 0 30px;
+          text-align: left;
+
+          @media @1000 {
+            padding-right: 30px;
+          }
+
+          @media @905 {
+            padding-left: 50px;
+          }
+
+          @media @880 {
+            padding-left: 80px;
+          }
+
+          @media @750 {
+            padding: 0;
+          }
+
+          p {
+            line-height: 1.7;
+            text-align: left;
+
+            &.first_alinea {
+              margin-bottom: 25px;
+            }
+
+            &.second_alinea {
+
+              @media @880 {
+                display: none;
+
+                &.active {
+                  display: block;
+                }
+              }
+
+              @media @750 {
+                margin-bottom: 25px;
+              }
+
+              @media @360 {
+                margin-bottom: 25px;
+              }
+            }
+
+            span.lees_meer {
+              display: none;
+              color: @orange;
+
+              @media @880 {
+                display: inline-block;
+              }
+
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

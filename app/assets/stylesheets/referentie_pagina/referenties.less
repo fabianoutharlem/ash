@@ -1,0 +1,339 @@
+section.referenties {
+
+  div.content_container {
+    padding: 85px 0 0 0;
+    margin-bottom: 40px;
+
+    @media @1279 {
+      padding-top: 85px;
+    }
+
+    @media @1040 {
+      padding-top: 45px;
+    }
+
+    @media @650 {
+      padding-top: 35px;
+    }
+
+    h2 {
+      font-size: 36px;
+      text-align: center;
+      color: #595959;
+      margin-bottom: 20px;
+
+      @media @650 {
+        font-size: 24px;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    p.header {
+      font-size: 20px;
+      line-height: 1.8;
+      color: #595959;
+      font-weight: @lato-light;
+      width: 795px;
+      margin: 0 auto 85px auto;
+      text-align: center;
+
+      @media @1279 {
+        margin-bottom: 20px;
+      }
+
+      @media @880 {
+        width: 580px;
+      }
+
+      @media @650 {
+        font-size: 14px;
+      }
+
+      @media @360 {
+        width: 300px;
+      }
+    }
+
+    section.beoordelingen {
+      padding: 100px 0 50px 0;
+      background-color: #f7f7f7;
+      margin-bottom: 10px;
+
+      @media @1280 {
+        padding: 90px 0 40px 0;
+      }
+
+      @media @1040 {
+        padding-top: 50px;
+      }
+
+      div.row {
+        width: 100%;
+        padding: 0 110px;
+
+        @media @1280 {
+          padding: 0 5%;
+        }
+
+        @media @1370 {
+          padding: 0 30px;
+        }
+
+        @media @1279 {
+          padding: 0 7%;
+        }
+
+        @media @1100 {
+          padding: 0 30px;
+        }
+
+        @media @1040 {
+          text-align: center;
+          padding: 0;
+        }
+
+        &.first {
+          margin-bottom: 35px;
+        }
+
+        &.second {
+
+          div.col {
+
+            @media @1279 {
+              width: auto;
+            }
+
+            @media @1040 {
+              width: 100%;
+            }
+
+            &.left {
+
+              @media @1040 {
+                width: 100%;
+              }
+            }
+
+            &.right {
+
+              @media @1040 {
+                display: none;
+              }
+            }
+          }
+        }
+
+        div.col {
+          width: 604px;
+          display: inline-block;
+
+          @media @360 {
+            width: 100%;
+          }
+
+          &.referentie_achterlaten {
+
+            @media @1280 {
+              width: auto;
+            }
+
+            @media @1040 {
+              display: block;
+              width: 100%;
+            }
+
+            @media @360 {
+              width: 100%;
+            }
+          }
+        }
+
+        div.left {
+
+          h3 {
+            font-size: 32px;
+            color: #38393b;
+          }
+
+          p {
+
+            &.beoordelings_cijfer {
+              font-size: 32px;
+              color: #38393b;
+              display: inline-block;
+              margin-right: 10px;
+            }
+
+            &.uitstekend {
+              font-size: 18px;
+              color: #38393b;
+            }
+          }
+        }
+
+        div.stars {
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+
+          &.star {
+            background: image-url('green_star.png') no-repeat center;
+            background-size: 30px 30px;
+            padding-right: 3px;
+          }
+
+          &.half_star {
+            background: image-url('green_half_star.png') no-repeat center;
+            background-size: 30px 30px;
+          }
+        }
+
+        div.right {
+          float: right;
+
+          @media @1040 {
+            float: none;
+          }
+
+          form {
+            margin: 0;
+            padding: 10px;
+            background-color: white;
+
+            @media @1040 {
+              margin-top: 20px;
+            }
+
+            @media @650 {
+              width: 320px;
+              margin: 30px auto 0 auto;
+            }
+
+            input {
+              margin: 0;
+              background-color: white;
+              border: solid 1px #e1e1e1;
+              font-size: 16px;
+              color: #9b9b9b;
+
+              @media @650 {
+                margin: 0 auto 20px auto;
+              }
+
+              &.first_col {
+                display: inline-block;
+                margin-right: 20px;
+
+                @media @650 {
+                  display: block;
+                  margin: 0 auto 20px auto;
+                }
+              }
+
+              &.nth_col {
+                margin-bottom: 20px;
+
+                @media @650 {
+                  margin: 0 auto 20px auto;
+                }
+              }
+
+              &.referentie {
+                height: 120px;
+              }
+            }
+
+            .orange_btn {
+              display: inline-block;
+              line-height: 36px;
+              vertical-align: bottom;
+
+              @media @650 {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    article.user_recentie {
+      position: relative;
+      width: 600px;
+      height: 120px;
+      padding: 20px 0 20px 30px;
+      background-color: white;
+      margin-bottom: 20px;
+
+      @media @1279 {
+        width: 460px;
+      }
+
+      @media @1040 {
+        text-align: left;
+        width: 600px;
+        margin: 0 auto 20px auto;
+      }
+
+      @media @650 {
+        width: 320px;
+        height: 100px;
+      }
+
+      h4 {
+        font-size: 24px;
+        line-height: 1.4;
+
+        @media @650 {
+          font-size: 21px;
+          line-height: 1.6;
+        }
+      }
+
+      p {
+        font-size: 20px;
+        line-height: 1.6;
+        font-weight: @lato-light;
+
+        @media @650 {
+          font-size: 16px;
+          line-height: 2.1;
+        }
+      }
+
+      div.beoordelings_stars {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+
+        div.stars {
+          display: inline-block;
+
+          @media @650 {
+            width: 16.2px;
+            height: 15.5px;
+          }
+
+          &.star {
+
+            @media @650 {
+              background-size: 16.2px 15.5px;
+              padding-right: 1.5px;
+            }
+          }
+
+          &.half_star {
+
+            @media @650 {
+              background-size: 16.2px 15.5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

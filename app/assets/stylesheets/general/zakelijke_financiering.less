@@ -1,0 +1,369 @@
+section.zakelijke_financiering {
+
+  @media @1280 {
+    margin-top: -10px;
+  }
+
+  div.content_container {
+
+    img.small_device {
+      width: 280px;
+      height: 180.5px;
+      display: none;
+      margin: 0 auto 45px auto;
+
+      @media @360 {
+        display: block;
+      }
+    }
+
+    div.row {
+      width: 100%;
+
+      div.col {
+        width: 49%;
+        display: inline-block;
+        vertical-align: top;
+
+        @media @360 {
+          display: block;
+          width: 280px;
+          margin: 0 auto;
+        }
+
+        div.content {
+          width: 600px;
+          margin: 0 auto;
+
+          @media @1280 {
+            width: 80%;
+          }
+
+          @media @800 {
+            width: 85%;
+          }
+
+          @media @360 {
+            width: 280px;
+          }
+
+          p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #595959;
+            font-weight: @lato-light;
+
+            @media @1279 {
+              font-size: 1em;
+            }
+
+            &.first_alinea {
+              font-weight: @lato-regular;
+              margin-bottom: 25px;
+            }
+
+            span {
+              font-weight: @lato-regular;
+            }
+          }
+        }
+
+        &.zakelijk {
+          margin-bottom: 200px;
+
+          @media @1279 {
+            padding-left: 30px;
+          }
+
+          @media @770 {
+            margin-bottom: 45px;
+          }
+
+          @media @360 {
+            padding-left: 0;
+          }
+        }
+
+        h3 {
+          font-size: 36px;
+          line-height: 1.3;
+          color: #f35026;
+          font-weight: @lato-bold;
+
+          @media @1140 {
+            font-size: 2.1em;
+          }
+
+          @media @360 {
+            font-size: 24px;
+          }
+        }
+
+        h4 {
+          font-size: 36px;
+          line-height: 1.3;
+          color: #f35026;
+          margin-bottom: 35px;
+
+          @media @1140 {
+            font-size: 2.1em;
+          }
+
+          @media @880 {
+            font-size: 1.3em;
+          }
+
+          @media @360 {
+            font-size: 13px;
+          }
+        }
+
+        &.voordelen {
+          display: inline-block;
+          text-align: center;
+
+          @media @360 {
+            display: block;
+            text-align: left;
+          }
+
+          div.content {
+
+            @media @1280 {
+              width: 80%;
+            }
+
+            @media @800 {
+              width: 85%;
+            }
+
+            @media @360 {
+              width: 280px;
+            }
+          }
+
+          p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #595959;
+            font-weight: @lato-light;
+
+            @media @1279 {
+              font-size: 1em;
+            }
+
+            &.first_alinea {
+              font-weight: @lato-regular;
+            }
+
+            span {
+              font-weight: @lato-regular;
+            }
+          }
+
+          img {
+            width: 476px;
+            height: 307px;
+
+            @media @1200 {
+              width: 380px;
+              height: 245px;
+            }
+
+            @media @880 {
+              width: calc(380px * 0.8);
+              height: calc(245px * 0.8);
+            }
+
+            @media @700 {
+              margin-bottom: 100px;
+              width: calc(380px * 0.7);
+              height: calc(245px * 0.7);
+            }
+
+            @media @360 {
+              display: none;
+            }
+          }
+
+          h4 {
+            text-align: left;
+            font-size: 24px;
+            line-height: 1.5;
+            color: #595959;
+            margin-bottom: 15px;
+
+            @media @1280 {
+              font-size: 1.5em;
+            }
+
+            @media @360 {
+              font-size: 18px;
+            }
+          }
+
+          ul {
+            text-align: left;
+            list-style-type: none;
+
+            li {
+              font-size: 18px;
+              line-height: 1.8;
+              color: #595959;
+              font-weight: @lato-light;
+              position: relative;
+
+              @media @1280 {
+                font-size: 1.1em;
+              }
+
+              @media @360 {
+                font-size: 13px;
+              }
+
+              img {
+                position: absolute;
+                left: -40px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 22px;
+                height: 18.9px;
+
+                @media @880 {
+                  width: 15px;
+                  height: 14px;
+                  left: -20px;
+                }
+
+                @media @360 {
+                  display: block;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.zakelijke_financiering_page {
+
+    div.content_container {
+      padding: 150px 0 25px 0;
+
+      @media @880 {
+        padding-top: 10%;
+      }
+
+      @media @360 {
+        padding: 47px 0 120px 0;
+      }
+
+      img {
+        margin-bottom: 200px;
+
+        @media @880 {
+          margin-bottom: 130px;
+        }
+      }
+
+      li {
+        margin-left: 40px;
+
+        @media @1280 {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+
+  &.zakelijke_financiering_50_50, &.zakelijke_financiering_particulier {
+
+    div.content_container {
+      margin-top: 0 0 25px 0;
+
+      @media @360 {
+        padding-bottom: 80px;
+      }
+
+      div.banner_50_50 {
+        width: 100%;
+        height: 600px;
+        background-size: cover;
+        margin-bottom: 75px;
+        text-align: center;
+        padding-top: 240px;
+
+        @media @1040 {
+          height: 500px;
+          padding-top: 10px;
+        }
+
+        @media @360 {
+          height: 240px;
+          font-size: 24px;
+        }
+
+        h1 {
+          font-size: 50px;
+          line-height: 0.9;
+          color: #f8f8f8;
+
+          @media @1040 {
+            margin-top: 205px;
+            font-size: 3.5em;
+          }
+
+          @media @360 {
+            font-size: 24px;
+            margin-top: 95px;
+          }
+        }
+      }
+
+      div.voordelen {
+
+        p {
+          text-align: left;
+          margin-top: 50px;
+          margin-right: 60px;
+
+          @media @1040 {
+            margin-right: 0;
+          }
+        }
+      }
+
+      img {
+        margin-bottom: 75px;
+      }
+    }
+  }
+
+  &.zakelijke_financiering_50_50 {
+
+    li {
+      margin-left: 0;
+    }
+  }
+
+  &.zakelijke_financiering_particulier, &.zakelijk, &.particulier {
+
+    div.voordelen {
+
+      p {
+        text-align: left;
+        margin-top: 50px;
+        margin-right: 60px;
+      }
+
+      li {
+        margin-left: 40px;
+
+        @media @880 {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}

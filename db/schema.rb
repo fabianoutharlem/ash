@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160614140241) do
+ActiveRecord::Schema.define(version: 20160628183325) do
 
   create_table "body_types", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20160614140241) do
     t.boolean  "nap"
     t.boolean  "rdw"
     t.integer  "price_total",          limit: 4
+    t.decimal  "price_discount",                   precision: 10
     t.integer  "price_month",          limit: 4
     t.integer  "price_50_50",          limit: 4
     t.integer  "manufacture_year",     limit: 4
@@ -77,7 +78,7 @@ ActiveRecord::Schema.define(version: 20160614140241) do
     t.string   "license_plate",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "best_day_deal",                    default: false
+    t.boolean  "best_day_deal",                                   default: false
   end
 
   add_index "cars", ["brand_id"], name: "index_cars_on_brand_id", using: :btree
@@ -93,6 +94,13 @@ ActiveRecord::Schema.define(version: 20160614140241) do
     t.string   "name",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "marquee_items", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.string   "link",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "models", force: :cascade do |t|
@@ -146,6 +154,48 @@ ActiveRecord::Schema.define(version: 20160614140241) do
 
   add_index "newsletters", ["newsletter_template_id"], name: "index_newsletters_on_newsletter_template_id", using: :btree
 
+  create_table "slide_template_values", force: :cascade do |t|
+    t.string   "option_name",       limit: 255
+    t.string   "option_type",       limit: 255
+    t.integer  "slide_template_id", limit: 4
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  create_table "slide_templates", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "template",   limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "slide_values", force: :cascade do |t|
+    t.integer  "slide_id",                limit: 4
+    t.integer  "slide_template_value_id", limit: 4
+    t.string   "value",                   limit: 255
+    t.string   "type",                    limit: 255
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  create_table "sliders", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "location",   limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "slides", force: :cascade do |t|
+    t.string   "name",              limit: 255
+    t.integer  "row_order",         limit: 4
+    t.integer  "slider_id",         limit: 4
+    t.integer  "slide_template_id", limit: 4
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "slides", ["slider_id"], name: "index_slides_on_slider_id", using: :btree
+
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id",        limit: 4
     t.integer  "taggable_id",   limit: 4
@@ -194,4 +244,5 @@ ActiveRecord::Schema.define(version: 20160614140241) do
   add_foreign_key "newsletter_values", "newsletter_template_values"
   add_foreign_key "newsletter_values", "newsletters"
   add_foreign_key "newsletters", "newsletter_templates"
+  add_foreign_key "slides", "sliders"
 end

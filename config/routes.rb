@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     devise_for :users
   end
 
+  resources :cars do
+    get :like
+  end
+
   namespace :admin do
 
     root 'admin#home'
@@ -32,6 +36,19 @@ Rails.application.routes.draw do
         get '/new/:template_id', to: 'newsletters#new', as: :new_newsletter_with_template
       end
     end
+
+    resources :sliders do
+      resources :slides, only: [:index]
+    end
+
+    resources :slides, except: [:index] do
+      collection do
+        get '/new/:template_id/:slider_id', to: 'slides#new', as: :new_slide_with_template
+        post :update_row_order
+      end
+    end
+
+    resources :marquee_items
 
     resources :admin do
       collection do

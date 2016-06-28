@@ -1,0 +1,4 @@
+<%= f.hidden_field :slide_template_value_id %>
+<%= f.hidden_field :type %>
+
+<%= render 'admin/slides/slide_values/'+f.object.partial_name, {f: f} %>

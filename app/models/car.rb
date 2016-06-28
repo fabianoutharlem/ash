@@ -8,7 +8,7 @@ class Car < ActiveRecord::Base
 
   paginates_per 24
 
-  index_name "akp_cars_#{Rails.env}"
+  index_name "ash_cars_#{Rails.env}"
 
   acts_as_taggable_on :options
 
@@ -17,9 +17,10 @@ class Car < ActiveRecord::Base
   before_destroy :invalidate_cache
   before_update :invalidate_cache
 
+  # TODO: Cache car fragments
   def invalidate_cache
-    ActionController::Base.new.expire_fragment("car_images_#{self.id}")
-    ActionController::Base.new.expire_fragment("admin_car_#{self.id}")
+    # ActionController::Base.new.expire_fragment("car_images_#{self.id}")
+    # ActionController::Base.new.expire_fragment("admin_car_#{self.id}")
   end
 
   default_scope { includes(:car_images) }
@@ -45,8 +46,6 @@ class Car < ActiveRecord::Base
   enum reserved: {'Gereserveerd' => 'j', 'Niet Gereserveerd' => 'n'}
   enum new: {'Nieuw' => 'j', 'Occasion' => 'n'}
   enum btw_marge: {'BTW' => 'B', 'Marge' => 'M'}
-
-  accepts_nested_attributes_for :options
 
   scope :car_includes, -> { joins(:brand, :model, :body_type, :fuel_type, :transmission_type, :car_medias, :options) }
 
@@ -125,8 +124,7 @@ class Car < ActiveRecord::Base
             end
 
 
-    # media << Car.download_video(params[:videos]['video'].last['url']) unless params[:videos].blank? || params[:videos]['video'].blank?
-    {
+    return {
         vehicle_number: params[:voertuignr],
         vehicle_number_hexon: params[:voertuignr_hexon],
         brand_id: brand.id,
