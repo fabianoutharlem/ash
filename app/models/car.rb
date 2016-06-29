@@ -6,7 +6,7 @@ class Car < ActiveRecord::Base
 
   extend FriendlyId
 
-  paginates_per 24
+  paginates_per 12
 
   index_name "ash_cars_#{Rails.env}"
 

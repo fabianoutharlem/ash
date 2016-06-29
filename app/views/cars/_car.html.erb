@@ -52,10 +52,9 @@
     </div>
 
     <div class="container-fluid car_container">
-      <%= link_to car_like_path(car.id), remote: true do %>
+      <% if @car_likes.include? car.id %>
           <div class="hart"></div>
       <% end %>
-
       <div class="car_info">
         <h5><%= car.brand.name %></h5>
         <p><%= car.model.name %> <%= car.car_type %></p>
