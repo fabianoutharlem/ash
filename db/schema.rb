@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160628183325) do
+ActiveRecord::Schema.define(version: 20160629141055) do
 
   create_table "body_types", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -153,6 +153,23 @@ ActiveRecord::Schema.define(version: 20160628183325) do
   end
 
   add_index "newsletters", ["newsletter_template_id"], name: "index_newsletters_on_newsletter_template_id", using: :btree
+
+  create_table "phrasing_phrase_versions", force: :cascade do |t|
+    t.integer  "phrasing_phrase_id", limit: 4
+    t.text     "value",              limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "phrasing_phrase_versions", ["phrasing_phrase_id"], name: "index_phrasing_phrase_versions_on_phrasing_phrase_id", using: :btree
+
+  create_table "phrasing_phrases", force: :cascade do |t|
+    t.string   "locale",     limit: 255
+    t.string   "key",        limit: 255
+    t.text     "value",      limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "slide_template_values", force: :cascade do |t|
     t.string   "option_name",       limit: 255

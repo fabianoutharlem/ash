@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     get :like
   end
 
+  resources :brands do
+    get :cars
+  end
+
   namespace :admin do
 
     root 'admin#home'

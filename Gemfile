@@ -71,3 +71,5 @@ gem 'ranked-model'
 gem 'select2-rails', github: 'argerim/select2-rails'
 
 gem 'gibbon'
+
+gem 'phrasing'

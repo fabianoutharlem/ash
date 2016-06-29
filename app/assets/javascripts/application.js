@@ -19,4 +19,5 @@
 //= require ui_mobile.js
 //= require unslider.js
 //= require select2.min.js
+//= require phrasing
 //= require main.js
