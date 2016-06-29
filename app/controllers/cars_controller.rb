@@ -1,7 +1,11 @@
 class CarsController < ApplicationController
 
   def index
-    @cars = Car.all.page(params[:page]).per(params[:per])
+    @cars = Car.all.includes(:brand, :model).page(params[:page]).per(params[:per_page])
+  end
+
+  def search
+
   end
 
   def like

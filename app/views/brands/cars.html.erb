@@ -1,0 +1,71 @@
+<section class="merk_uitgelicht">
+  <div class="wrapper">
+    <div class="container-fluid content_container">
+      <div class="row">
+        <div class="col col-xs-4 right_modellen">
+          <div class="specific_car">
+            <span class="helper"></span>
+            <div class="car_images"
+                 style="background: url(../../assets/images/mercdes.jpg) no-repeat center; background-size: 99px 45px;"></div>
+            <p>Mercedes-Benz (15)</p>
+          </div>
+
+          <div class="select_col">
+            <div class="select">
+              <span class="arrow"></span>
+              <select name="merk" class="merk_dropdown">
+                <option>Selecteer model</option>
+                <option>A1 (14)</option>
+                <option>A1 (14)</option>
+                <option>A1 (14)</option>
+                <option>A1 (14)</option>
+                <option>A1 (14)</option>
+                <option>A1 (14)</option>
+                <option>A1 (14)</option>
+                <option>A1 (14)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col col-xs-8 left_content">
+          <h2><%= @brand.name %></h2>
+          <%= @brand.description.html_safe %>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= render 'cars/pagination', cars: @cars %>
+
+<section class="bekijk_voorraad">
+  <div class="wrapper">
+    <div class="container-fluid content_container">
+
+      <ul class="autos">
+        <% @cars.each do |car| %>
+            <li>
+              <%= render car %>
+            </li>
+        <% end %>
+      </ul>
+
+    </div>
+  </div>
+</section>
+
+<%= render 'cars/pagination', cars: @cars %>
+
+<section class="mogelijkheden">
+  <div class="wrapper">
+    <div class="container-fluid content_container" style="background: url('<%= image_url 'bg_mogelijkheden.jpg' %>') no-repeat center; background-size: cover">
+
+      <h2>Wilt uw deze auto financieren?</h2>
+      <h3>Bekijk hier de mogelijkheden!</h3>
+
+      <%= render 'shared/finance_circles' %>
+    </div>
+  </div>
+</section>
+

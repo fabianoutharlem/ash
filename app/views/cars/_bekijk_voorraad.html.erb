@@ -1,0 +1,16 @@
+<section class="bekijk_voorraad">
+  <div class="wrapper">
+    <div class="container-fluid content_container">
+
+      <ul class="autos">
+        <% cars.each do |car| %>
+          <li>
+            <%= render car %>
+          </li>
+        <% end %>
+      </ul>
+
+      <div class="orange_btn">Bekijk de voorraad</div>
+    </div>
+  </div>
+</section>

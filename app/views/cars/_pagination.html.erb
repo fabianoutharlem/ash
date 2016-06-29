@@ -1,0 +1,51 @@
+<section class="aantal_paginas">
+  <div class="wrapper">
+    <div class="container-fluid content_container">
+
+      <div class="aantal_pages">
+        <p class="nav-text">Aantal pagina’s:</p>
+        <p class="nav-text_small">Volgende:</p>
+
+        <%= paginate @cars %>
+
+      </div>
+
+      <div class="row page_search">
+        <div class="select_col col">
+          <p class="nav-text">Sorteer op:</p>
+          <div class="select">
+            <span class="arrow"></span>
+            <select name="merk" class="merk_dropdown">
+              <option>Merk Model Prijs</option>
+              <option>opel</option>
+              <option>fiat</option>
+              <option>fiat</option>
+              <option>fiat</option>
+              <option>fiat</option>
+              <option>fiat</option>
+              <option>fiat</option>
+              <option>fiat</option>
+              <option>fiat</option>
+              <option>fiat</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="select_col col small_not_visible">
+          <p class="nav-text">Resultaten per pagina:</p>
+          <div class="select">
+            <span class="arrow"></span>
+            <select name="merk" class="merk_dropdown">
+              <option>Getoonde voertuigen: 20 stuks</option>
+              <option>opel</option>
+              <option>fiat</option>
+              <option>fiat</option>
+              <option>fiat</option>
+              <option>fiat</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
