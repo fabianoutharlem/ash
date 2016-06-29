@@ -138,7 +138,7 @@ section.aantal_paginas {
           }
         }
 
-        .next, .last {
+        .next, .prev {
           vertical-align: top;
           display: inline-block;
           width: 40px;
@@ -148,13 +148,17 @@ section.aantal_paginas {
           line-height: 40px;
           background-size: cover;
         }
-        
+
         .next {
+          background: image-url('search_arrow_right.png') no-repeat center;
+        }
+
+        .prev {
           background: image-url('search_arrow_left.png') no-repeat center;
         }
 
-        .last {
-          background: image-url('search_arrow_right.png') no-repeat center;
+        .first, .last {
+          display: none;
         }
       }
     }
