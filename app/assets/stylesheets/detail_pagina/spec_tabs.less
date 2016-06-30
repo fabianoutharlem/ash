@@ -225,25 +225,26 @@ section.spec_tabs {
                 max-width: 220px;
               }
 
-              &.more {
-                display: none;
-                color: @orange;
-
-                &:hover {
-                  cursor: pointer;
-                }
-
-                &.active {
-                  display: block;
-                }
-              }
-
-              &.large {
+              &:nth-child(n+21) {
 
                 @media @1240 {
                   display: none;
                 }
               }
+            }
+          }
+
+          div.more {
+            display: none;
+            color: @orange;
+            font-size: 12px;
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            &.active {
+              display: block;
             }
           }
         }

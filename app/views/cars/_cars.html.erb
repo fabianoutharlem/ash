@@ -5,11 +5,13 @@
       <div class="left_container">
         <div class="left">
           <div class="select_menu">
-            <div class="tab auto_financieren"><span class="helper"></span>Auto financieren</div>
-            <div class="tab active auto_kopen"><span class="helper"></span>Auto kopen</div>
-            <div class="search_fields">
+            <div class="tab auto_financieren" data-searchfield="finance_field"><span class="helper"></span>Auto financieren</div>
+            <div class="tab active auto_kopen" data-searchfield="buy_field"><span class="helper"></span>Auto kopen</div>
+            <div class="search_fields finance_field">
+
               <div class="select_row">
                 <p>Merk:</p>
+
                 <div class="select">
                   <span class="arrow"></span>
                   <select name="merk" class="merk_dropdown">
@@ -29,6 +31,7 @@
               </div>
               <div class="select_row">
                 <p>Model:</p>
+
                 <div class="select">
                   <span class="arrow"></span>
                   <select name="merk" class="merk_dropdown">
@@ -48,6 +51,7 @@
               </div>
               <div class="select_row">
                 <p>Brandstof:</p>
+
                 <div class="select">
                   <span class="arrow"></span>
                   <select name="merk" class="merk_dropdown">
@@ -67,6 +71,7 @@
               </div>
               <div class="select_row">
                 <p>Carrosserie:</p>
+
                 <div class="select">
                   <span class="arrow"></span>
                   <select name="merk" class="merk_dropdown">
@@ -86,6 +91,7 @@
               </div>
               <div class="select_row">
                 <p>Transmissie:</p>
+
                 <div class="select">
                   <span class="arrow"></span>
                   <select name="merk" class="merk_dropdown">
@@ -106,6 +112,7 @@
               <div class="row select">
                 <div class="select_col col left">
                   <p>Bouwjaar van:</p>
+
                   <div class="select">
                     <span class="arrow"></span>
                     <select name="merk" class="merk_dropdown">
@@ -126,6 +133,7 @@
 
                 <div class="select_col col right">
                   <p>Bouwjaar tot:</p>
+
                   <div class="select">
                     <span class="arrow"></span>
                     <select name="merk" class="merk_dropdown">
@@ -143,12 +151,172 @@
               <div class="row slider">
                 <div class="slider_col col">
                   <p>Prijs tot:</p>
+
                   <div id="slider_prijs_tot"></div>
                 </div>
               </div>
               <div class="row slider">
                 <div class="slider_col col">
                   <p>Prijs per maand tot:</p>
+
+                  <div id="slider_prijs_maand_tot"></div>
+                </div>
+              </div>
+
+              <div class="orange_btn">Zoeken (882)</div>
+            </div>
+            <div class="search_fields buy_field active">
+
+              <div class="select_row">
+                <p>Merk:</p>
+
+                <div class="select">
+                  <span class="arrow"></span>
+                  <select name="merk" class="merk_dropdown">
+                    <option>Selecteer merk</option>
+                    <option>opel</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                  </select>
+                </div>
+              </div>
+              <div class="select_row">
+                <p>Model:</p>
+
+                <div class="select">
+                  <span class="arrow"></span>
+                  <select name="merk" class="merk_dropdown">
+                    <option>Kies eerst een merk</option>
+                    <option>opel</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                  </select>
+                </div>
+              </div>
+              <div class="select_row">
+                <p>Brandstof:</p>
+
+                <div class="select">
+                  <span class="arrow"></span>
+                  <select name="merk" class="merk_dropdown">
+                    <option>Selecteer voorkeur</option>
+                    <option>opel</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                  </select>
+                </div>
+              </div>
+              <div class="select_row">
+                <p>Carrosserie:</p>
+
+                <div class="select">
+                  <span class="arrow"></span>
+                  <select name="merk" class="merk_dropdown">
+                    <option>Selecteer voorkeur</option>
+                    <option>opel</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                  </select>
+                </div>
+              </div>
+              <div class="select_row">
+                <p>Transmissie:</p>
+
+                <div class="select">
+                  <span class="arrow"></span>
+                  <select name="merk" class="merk_dropdown">
+                    <option>Selecteer voorkeur</option>
+                    <option>opel</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                    <option>fiat</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row select">
+                <div class="select_col col left">
+                  <p>Bouwjaar van:</p>
+
+                  <div class="select">
+                    <span class="arrow"></span>
+                    <select name="merk" class="merk_dropdown">
+                      <option>Selecteer</option>
+                      <option>opel</option>
+                      <option>fiat</option>
+                      <option>fiat</option>
+                      <option>fiat</option>
+                      <option>fiat</option>
+                      <option>fiat</option>
+                      <option>fiat</option>
+                      <option>fiat</option>
+                      <option>fiat</option>
+                      <option>fiat</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="select_col col right">
+                  <p>Bouwjaar tot:</p>
+
+                  <div class="select">
+                    <span class="arrow"></span>
+                    <select name="merk" class="merk_dropdown">
+                      <option>Selecteer</option>
+                      <option>opel</option>
+                      <option>fiat</option>
+                      <option>fiat</option>
+                      <option>fiat</option>
+                      <option>fiat</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row slider">
+                <div class="slider_col col">
+                  <p>Prijs tot:</p>
+
+                  <div id="slider_prijs_tot"></div>
+                </div>
+              </div>
+              <div class="row slider">
+                <div class="slider_col col">
+                  <p>Prijs per maand tot:</p>
+
                   <div id="slider_prijs_maand_tot"></div>
                 </div>
               </div>
@@ -159,12 +327,13 @@
 
           <div class="lease_budget">
             <h5>Wat is uw Lease buget per maand?</h5>
-            <div class="tot"><span class="helper"></span>TOT €200,-</div>
-            <div class="tot"><span class="helper"></span>€200,- & €300,-</div>
-            <div class="tot active"><span class="helper"></span>€300,- & €400,-</div>
-            <div class="tot"><span class="helper"></span>€400,- & €500,-</div>
-            <div class="tot"><span class="helper"></span>€500,- & €600,-</div>
-            <div class="tot"><span class="helper"></span>BOVEN €600,-</div>
+
+            <div class="tot"><a href="#"><span class="helper"></span>TOT €200,-</a></div>
+            <div class="tot"><a href="#"><span class="helper"></span>€200,- & €300,-</a></div>
+            <div class="tot active"><a href="#"><span class="helper"></span>€300,- & €400,-</a></div>
+            <div class="tot"><a href="#"><span class="helper"></span>€400,- & €500,-</a></div>
+            <div class="tot"><a href="#"><span class="helper"></span>€500,- & €600,-</a></div>
+            <div class="tot"><a href="#"><span class="helper"></span>BOVEN €600,-</a></div>
           </div>
         </div>
       </div>
@@ -179,7 +348,9 @@
 
           <li class="banner">
             <article class="car_subsection_banner">
-              <h3>Auto Service Haarlem Ford weken!</h3>
+              <a href="#">
+                <h3>Auto Service Haarlem Ford weken!</h3>
+              </a>
             </article>
           </li>
 
