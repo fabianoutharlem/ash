@@ -238,6 +238,17 @@ section.spec_tabs {
             display: none;
             color: @orange;
             font-size: 12px;
+            position: absolute;
+            right: 190px;
+            bottom: 3px;
+
+            @media @1240 {
+              bottom: -15px;
+            }
+
+            @media @880 {
+              right: 140px;
+            }
 
             &:hover {
               cursor: pointer;
