@@ -9,11 +9,11 @@ section.merk_uitgelicht {
     padding: 30px 0;
     //height: 340px;
 
-    h2 {
-      font-size: 24px;
-      color: #595959;
-      margin-bottom: 25px;
-    }
+    //h2 {
+    //  font-size: 24px;
+    //  color: #595959;
+    //  margin-bottom: 25px;
+    //}
 
     div.row {
       width: 100%;
@@ -106,6 +106,7 @@ section.merk_uitgelicht {
         &.left_content {
           padding: 0 70px 0 30px;
           text-align: left;
+          color: #595959;
 
           @media @1000 {
             padding-right: 30px;
@@ -123,46 +124,91 @@ section.merk_uitgelicht {
             padding: 0;
           }
 
-          p {
-            line-height: 1.7;
-            text-align: left;
+          //wyziwyg styling
+          h1 {
+            font-size: 26px;
 
-            &.first_alinea {
-              margin-bottom: 25px;
-            }
-
-            &.second_alinea {
-
-              @media @880 {
-                display: none;
-
-                &.active {
-                  display: block;
-                }
-              }
-
-              @media @750 {
-                margin-bottom: 25px;
-              }
-
-              @media @360 {
-                margin-bottom: 25px;
-              }
-            }
-
-            span.lees_meer {
-              display: none;
-              color: @orange;
-
-              @media @880 {
-                display: inline-block;
-              }
-
-              &:hover {
-                cursor: pointer;
-              }
+            .brand_name {
+              font-weight: @late-semibold;
             }
           }
+
+          h2 {
+            font-size: 24px;
+          }
+
+          h3 {
+            font-size: 22px;
+          }
+
+          h4 {
+            font-size: 20px;
+          }
+
+          h5 {
+            font-size: 18px;
+          }
+
+          h6 {
+            font-size: 16px;
+          }
+
+          p {
+            font-size: 14px;
+            text-align: left;
+            //margin-bottom: 20px;
+            display: block;
+          }
+
+          ul {
+            list-style-type: disc;
+            margin-left: 20px;
+          }
+
+          ol {
+            padding-left: 15px;
+          }
+
+          //p {
+          //  line-height: 1.7;
+          //  text-align: left;
+          //
+          //  &.first_alinea {
+          //    margin-bottom: 25px;
+          //  }
+          //
+          //  &.second_alinea {
+          //
+          //    @media @880 {
+          //      display: none;
+          //
+          //      &.active {
+          //        display: block;
+          //      }
+          //    }
+          //
+          //    @media @750 {
+          //      margin-bottom: 25px;
+          //    }
+          //
+          //    @media @360 {
+          //      margin-bottom: 25px;
+          //    }
+          //  }
+          //
+          //  span.lees_meer {
+          //    display: none;
+          //    color: @orange;
+          //
+          //    @media @880 {
+          //      display: inline-block;
+          //    }
+          //
+          //    &:hover {
+          //      cursor: pointer;
+          //    }
+          //  }
+          //}
         }
       }
     }
