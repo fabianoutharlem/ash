@@ -22,15 +22,30 @@
       </div>
       <div class="finance_mogelijkheden">
         <a href="#" class="zakelijk finance_opties">
-          <p class="finance">Zakelijk v.a. <%= format_money car.price_month %> p/m</p>
+          <table>
+            <tr class="options">
+              <td class="first finance">Zakelijk v.a.</td>
+              <td class="finance"><%= format_money car.price_month %> p/m</td>
+            </tr>
+          </table>
           <div class="orange_arrow"><%= image_tag 'arrow_right.png' %></div>
         </a>
         <a href="#" class="particulier finance_opties">
-          <p class="finance">Particulier v.a. <%= format_money car.price_month %> p/m</p>
+          <table>
+            <tr>
+              <td class="first finance">Particulier v.a.</td>
+              <td class="finance"><%= format_money car.price_month %> p/m</td>
+            </tr>
+          </table>
           <div class="orange_arrow"><%= image_tag 'arrow_right.png' %></div>
         </a>
         <a href="#" class="fifty_fifty finance_opties">
-          <p class="finance">50/50 Deal <%= format_money car.price_50_50 %></p>
+          <table>
+            <tr>
+              <td class="first finance">50/50 Deal</td>
+              <td class="finance"><%= format_money car.price_50_50 %></td>
+            </tr>
+          </table>
           <div class="orange_arrow"><%= image_tag 'arrow_right.png' %></div>
         </a>
       </div>
