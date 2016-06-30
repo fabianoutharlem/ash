@@ -3,26 +3,16 @@
     <div class="container-fluid content_container">
 
       <div class="overlay_afspraak animated">
-        <h2>Afspraak maken voor de Mercedes-Benz C-Klasse</h2>
+        <h2>Afspraak maken voor de <%= [@car.brand.name, @car.model.name].join(' ') %></h2>
         <div class="afspraak_container">
           <div class="car_slider_afspraak carslider_responsive">
             <ul>
-              <li>
-                <div class="background"
-                     style="background: url(../../assets/images/car_slider1.png) no-repeat center; background-size: cover;"></div>
-              </li>
-              <li>
-                <div class="background"
-                     style="background: url(../../assets/images/car_slider1.png) no-repeat center; background-size: cover;"></div>
-              </li>
-              <li>
-                <div class="background"
-                     style="background: url(../../assets/images/car_slider1.png) no-repeat center; background-size: cover;"></div>
-              </li>
-              <li>
-                <div class="background"
-                     style="background: url(../../assets/images/car_slider1.png) no-repeat center; background-size: cover;"></div>
-              </li>
+              <% @car.car_images.each do |car_media| %>
+                  <li>
+                    <div class="background"
+                         style="background: url('<%= image_path car_media.file.large %>') no-repeat center; background-size: cover;"></div>
+                  </li>
+              <% end %>
             </ul>
           </div>
           <form action="">
@@ -31,22 +21,22 @@
             <input type="text" class="telefoon" placeholder="Je telefoon nummer">
             <input type="text" class="email" placeholder="Je email adres">
             <input type="text" class="vragen" placeholder="Eventuele vragen of opmerkingen">
-            <div class="orange_btn">Verstuur aanvraag</div>
+            <div class="orange_btn"><%= phrase 'verstuur_aanvraag' %></div>
           </form>
         </div>
-        <img class="cross" src="../../assets/images/cross_afspraak.png" alt="">
+        <%= image_tag 'cross_afspraak.png', class: 'cross' %>
       </div>
       <div class="overlay_financier">
         <section class="mogelijkheden">
           <div class="wrapper">
             <div class="container-fluid content_container">
 
-              <h2>Wilt uw deze auto financieren?</h2>
-              <h3>Bekijk hier de mogelijkheden!</h3>
+              <h2><%= phrase 'car_detail_finance_1' %></h2>
+              <h3><%= phrase 'car_detail_finance_2' %></h3>
 
               <%= render 'shared/finance_circles' %>
 
-              <img class="cross" src="../../assets/images/cross_afspraak.png" alt="">
+              <%= image_tag 'cross_afspraak.png', class: 'cross' %>
             </div>
           </div>
         </section>
@@ -54,37 +44,27 @@
 
       <div class="car_slider carslider_responsive">
         <ul>
-          <li>
-            <div class="background"
-                 style="background: url(../../assets/images/car_slider1.png) no-repeat center; background-size: cover;"></div>
-          </li>
-          <li>
-            <div class="background"
-                 style="background: url(../../assets/images/car_slider1.png) no-repeat center; background-size: cover;"></div>
-          </li>
-          <li>
-            <div class="background"
-                 style="background: url(../../assets/images/car_slider1.png) no-repeat center; background-size: cover;"></div>
-          </li>
-          <li>
-            <div class="background"
-                 style="background: url(../../assets/images/car_slider1.png) no-repeat center; background-size: cover;"></div>
-          </li>
+          <% @car.car_images.each do |car_media| %>
+              <li>
+                <div class="background"
+                     style="background: url('<%= image_path car_media.file.large %>') no-repeat center; background-size: cover;"></div>
+              </li>
+          <% end %>
         </ul>
       </div>
 
       <div class="model">
-        <h2>Mercedes-Benz</h2>
-        <h3>C-Klasse 180 CGI 156PK Automaat BlueEFFICIENCY Avantgarde</h3>
+        <h2><%= @car.brand.name %></h2>
+        <h3><%= [@car.model.name, @car.car_type].join(' ') %></h3>
 
         <table>
           <tr>
             <td class="first">Prijs</td>
-            <td class="second">€ 17.900,-</td>
+            <td class="second"><%= format_money @car.price_total %></td>
           </tr>
           <tr>
             <td class="first">50/50 Deal</td>
-            <td class="second">€ 9.500,-</td>
+            <td class="second"><%= format_money @car.price_50_50 %></td>
           </tr>
         </table>
 
@@ -92,7 +72,7 @@
           <span class="helper"></span>
           <img src="../../assets/images/logo_akp_single.png" alt="">
           <p>Per maand v.a.</p>
-          <p class="maand_prijs">€ 238,-</p>
+          <p class="maand_prijs"><%= format_money @car.price_month %></p>
         </div>
 
         <div class="akp_button">
@@ -115,57 +95,47 @@
 
       <div class="car_slider carslider_fullwidth">
         <ul>
-          <li>
-            <div class="background"
-                 style="background: url(../../assets/images/car_slider1.png) no-repeat center; background-size: cover;"></div>
-          </li>
-          <li>
-            <div class="background"
-                 style="background: url(../../assets/images/car_slider1.png) no-repeat center; background-size: cover;"></div>
-          </li>
-          <li>
-            <div class="background"
-                 style="background: url(../../assets/images/car_slider1.png) no-repeat center; background-size: cover;"></div>
-          </li>
-          <li>
-            <div class="background"
-                 style="background: url(../../assets/images/car_slider1.png) no-repeat center; background-size: cover;"></div>
-          </li>
+          <% @car.car_images.each do |car_media| %>
+              <li>
+                <div class="background"
+                     style="background: url('<%= image_path car_media.file.large %>') no-repeat center; background-size: cover;"></div>
+              </li>
+          <% end %>
         </ul>
       </div>
 
       <div class="vragen">
         <div class="berijkbaar">
-          <p>Vragen?</p>
-          <p>Wij zijn bereikbaar via:</p>
+          <p><%= phrase 'car_detail_reachable_1' %></p>
+          <p><%= phrase 'car_detail_reachable_2' %></p>
         </div>
         <ul>
           <li>
             <a href="#">
               <span class="helper"></span>
               <i class="phone"></i>
-              <p>+31 (0) 23 792 00 03</p>
+              <p><%= phrase 'phone' %></p>
             </a>
           </li>
           <li class="second_col">
             <a href="#">
               <span class="helper"></span>
               <i class="whatsapp"></i>
-              <p>WhatsApp 06 55 23 29 11</p>
+              <p><%= phrase 'whatsapp' %></p>
             </a>
           </li>
           <li>
             <a href="#">
               <span class="helper"></span>
               <i class="mail"></i>
-              <p>info@autoservicehaarlem.nl</p>
+              <p><%= phrase 'email' %></p>
             </a>
           </li>
           <li class="second_col">
             <a href="#">
               <span class="helper"></span>
               <i class="chat"></i>
-              <p>Chat met een medewerker</p>
+              <p><%= phrase 'chat_with_employee' %></p>
             </a>
           </li>
         </ul>
@@ -181,18 +151,18 @@
       <div class="tabs_container">
         <div class="_specificaties tab active" data-submenu="specs">
           <span class="helper"></span>
-          <p>Specificaties</p>
-          <img src="../../assets/images/arrow_down_orange.png" alt="">
+          <p><%= phrase 'specifications' %></p>
+          <%= image_tag 'arrow_down_orange.png' %>
         </div>
         <div class="_Accesoires tab" data-submenu="accesoires">
           <span class="helper"></span>
-          <p>Accesoires</p>
-          <img src="../../assets/images/arrow_down_orange.png" alt="">
+          <p><%= phrase 'accessoiries' %></p>
+          <%= image_tag 'arrow_down_orange.png' %>
         </div>
         <div class="_Financiering tab" data-submenu="financiering">
           <span class="helper"></span>
-          <p>Financierings<span> informatie</span></p>
-          <img src="../../assets/images/arrow_down_orange.png" alt="">
+          <p><%= phrase 'finance_information' %></p>
+          <%= image_tag 'arrow_down_orange.png' %>
         </div>
 
         <div class="specs tabs active">
@@ -203,7 +173,7 @@
           </div>
 
           <div class="left">
-            <h4>Specificaties</h4>
+            <h4><%= phrase 'specifications' %></h4>
             <ul>
               <li><span>Merk</span>Mercedes-Benz</li>
               <li><span>Model</span>C-Klasse</li>
@@ -225,7 +195,7 @@
           </div>
 
           <div class="right">
-            <h4>Acessoires</h4>
+            <h4><%= phrase 'accessoiries' %></h4>
             <ul>
               <li>• 7 persoons</li>
               <li>• Achterstoelen uitneembaar</li>
@@ -281,7 +251,7 @@
             <I class="nap"></I>
           </div>
 
-          <h4>Acessoires</h4>
+          <h4><%= phrase 'accessoiries' %></h4>
 
           <ul>
             <li class="first_list">• 7 persoons</li>
@@ -377,7 +347,7 @@
 
         <div class="financiering tabs">
 
-          <h4>Financierings informatie</h4>
+          <h4><%= phrase 'finance_information' %></h4>
 
           <div class="cols">
             <div class="prijzen">

@@ -12,6 +12,8 @@ class CarsController < ApplicationController
 
   def show
     @car = Car.includes(:brand, :model, :car_images, :options).find(params[:id])
+    @view = ab_test('car_show', ['show', 'show_b'])
+    # render @view
   end
 
   def like
