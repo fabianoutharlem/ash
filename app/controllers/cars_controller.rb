@@ -10,6 +10,10 @@ class CarsController < ApplicationController
 
   end
 
+  def show
+    @car = Car.includes(:brand, :model, :car_images, :options).find(params[:id])
+  end
+
   def like
     if cookies[:liked_cars].present?
       likes = JSON.parse cookies[:liked_cars]
