@@ -92,10 +92,14 @@ $(document).ready(function () {
         minimumResultsForSearch: Infinity
     });
 
+    //filter
+    $('.cars_filter_select').select2({
+        minimumResultsForSearch: Infinity
+    });
+
     //homepage price slider
     var showLabel = function (event, ui) {
         var curValue = ui.value || $(this).slider("option", "value");
-        ;
         var target = ui.handle || $('.ui-slider-handle');
         var tooltip = '<div id="tooltip">€' + curValue + ',- p.m.</div>';
         $(target).html(tooltip);

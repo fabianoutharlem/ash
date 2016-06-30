@@ -15,6 +15,9 @@ Rails.application.routes.draw do
 
   resources :brands do
     get :cars
+    resources :models, only: [] do
+      get :cars
+    end
   end
 
   namespace :admin do

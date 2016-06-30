@@ -6,23 +6,18 @@
           <div class="specific_car">
             <span class="helper"></span>
             <div class="car_images"
-                 style="background: url(../../assets/images/mercdes.jpg) no-repeat center; background-size: 99px 45px;"></div>
-            <p>Mercedes-Benz (15)</p>
+                 style="background: url('<%= image_url @brand.image.menu %>') no-repeat center; background-size: 99px 45px;"></div>
+            <p><%= @brand.name %> (<%= @brand.cars.count %>)</p>
           </div>
 
           <div class="select_col">
             <div class="select">
               <span class="arrow"></span>
-              <select name="merk" class="merk_dropdown">
+              <select name="merk" class="merk_dropdown" onchange="if (this.value) window.location.href=this.value">
                 <option>Selecteer model</option>
-                <option>A1 (14)</option>
-                <option>A1 (14)</option>
-                <option>A1 (14)</option>
-                <option>A1 (14)</option>
-                <option>A1 (14)</option>
-                <option>A1 (14)</option>
-                <option>A1 (14)</option>
-                <option>A1 (14)</option>
+                <% @brand.models.order(:name).each do |model| %>
+                    <option value="<%= url_for action: :cars, controller: :models, brand_id: @brand.slug, model_id: model.slug || model.id %>" <%= @model == model ? 'selected' : '' %>><%= model.name %></option>
+                <% end %>
               </select>
             </div>
           </div>
@@ -45,7 +40,7 @@
 
       <ul class="autos">
         <% @cars.each do |car| %>
-            <li>
+            <li class="auto">
               <%= render car %>
             </li>
         <% end %>
@@ -61,8 +56,8 @@
   <div class="wrapper">
     <div class="container-fluid content_container" style="background: url('<%= image_url 'bg_mogelijkheden.jpg' %>') no-repeat center; background-size: cover">
 
-      <h2>Wilt uw deze auto financieren?</h2>
-      <h3>Bekijk hier de mogelijkheden!</h3>
+      <h2><%= phrase 'finance_header_brand_page' %></h2>
+      <h3><%= phrase 'finance_sub_header_brand_page' %></h3>
 
       <%= render 'shared/finance_circles' %>
     </div>

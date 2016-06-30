@@ -3,10 +3,10 @@
     <div class="container-fluid content_container">
 
       <div class="aantal_pages">
-        <p class="nav-text">Aantal pagina’s:</p>
+        <% if @cars.total_pages > 1 %><p class="nav-text">Aantal pagina’s:</p><% end %>
         <p class="nav-text_small">Volgende:</p>
 
-        <%= paginate @cars %>
+        <%= paginate @cars, views_prefix: 'shared' %>
 
       </div>
 
@@ -15,18 +15,14 @@
           <p class="nav-text">Sorteer op:</p>
           <div class="select">
             <span class="arrow"></span>
-            <select name="merk" class="merk_dropdown">
+            <select name="merk" class="cars_filter_select" onchange="if (this.value) window.location.href=this.value">
               <option>Merk Model Prijs</option>
-              <option>opel</option>
-              <option>fiat</option>
-              <option>fiat</option>
-              <option>fiat</option>
-              <option>fiat</option>
-              <option>fiat</option>
-              <option>fiat</option>
-              <option>fiat</option>
-              <option>fiat</option>
-              <option>fiat</option>
+              <option value="<%= url_for params.merge({order: {type: "brand", direction: "asc"}}) %>" <%= params[:order].try(:symbolize_keys) == {type: "brand", direction: "asc"} ? 'selected' : '' %>>Merk A-Z</option>
+              <option value="<%= url_for params.merge({order: {type: "brand", direction: "desc"}}) %>" <%= params[:order].try(:symbolize_keys) == {type: "brand", direction: "desc"} ? 'selected' : '' %>>Merk Z-A</option>
+              <option value="<%= url_for params.merge({order: {type: "model", direction: "asc"}}) %>" <%= params[:order].try(:symbolize_keys) == {type: "model", direction: "asc"} ? 'selected' : '' %>>Model A-Z</option>
+              <option value="<%= url_for params.merge({order: {type: "model", direction: "desc"}}) %>" <%= params[:order].try(:symbolize_keys) == {type: "model", direction: "desc"} ? 'selected' : '' %>>Model Z-A</option>
+              <option value="<%= url_for params.merge({order: {type: "price", direction: "asc"}}) %>" <%= params[:order].try(:symbolize_keys) == {type: "price", direction: "asc"} ? 'selected' : '' %>>Prijs Oplopend</option>
+              <option value="<%= url_for params.merge({order: {type: "price", direction: "desc"}}) %>" <%= params[:order].try(:symbolize_keys) == {type: "price", direction: "desc"} ? 'selected' : '' %>>Prijs Aflopend</option>
             </select>
           </div>
         </div>
@@ -35,13 +31,13 @@
           <p class="nav-text">Resultaten per pagina:</p>
           <div class="select">
             <span class="arrow"></span>
-            <select name="merk" class="merk_dropdown">
-              <option>Getoonde voertuigen: 20 stuks</option>
-              <option>opel</option>
-              <option>fiat</option>
-              <option>fiat</option>
-              <option>fiat</option>
-              <option>fiat</option>
+            <select name="merk" class="merk_dropdown" onchange="if (this.value) window.location.href=this.value">
+              <option>Getoonde voertuigen: <%= params[:per_page] || Car.default_per_page %> stuks</option>
+              <option value="<%= url_for params.merge(per_page: 12) %>">12</option>
+              <option value="<%= url_for params.merge(per_page: 24) %>">24</option>
+              <option value="<%= url_for params.merge(per_page: 36) %>">36</option>
+              <option value="<%= url_for params.merge(per_page: 48) %>">48</option>
+              <option value="<%= url_for params.merge(per_page: 96) %>">96</option>
             </select>
           </div>
         </div>

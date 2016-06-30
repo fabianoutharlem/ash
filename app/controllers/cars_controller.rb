@@ -1,7 +1,9 @@
 class CarsController < ApplicationController
+  include CarManipulations
 
   def index
-    @cars = Car.all.includes(:brand, :model).page(params[:page]).per(params[:per_page])
+    @cars = Car.all.includes(:brand, :model)
+    @cars = order_by_params(@cars, params).page(params[:page]).per(params[:per_page])
   end
 
   def search

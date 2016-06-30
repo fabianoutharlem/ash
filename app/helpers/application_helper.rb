@@ -14,4 +14,5 @@ module ApplicationHelper
     string = number_to_currency(amount, unit: '€ ', delimiter: '.', separator: ',')
     string.gsub(',00', ',-')
   end
+
 end

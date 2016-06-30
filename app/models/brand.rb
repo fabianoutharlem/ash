@@ -11,6 +11,8 @@ class Brand < ActiveRecord::Base
 
   mount_uploader :image, BrandImageUploader
 
+  scope :menu_items, -> { where(visible_in_menu: true) }
+
   validates_presence_of :name
   validates_uniqueness_of :name
 
