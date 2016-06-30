@@ -279,7 +279,7 @@ $(document).ready(function () {
     });
 
     //meer opties (orange) button 360 formaat tab acessoires
-    var more_btn = $('section.spec_tabs div.accesoires li.more');
+    var more_btn = $('section.spec_tabs div.accesoires div.more');
     more_btn.click(function () {
         $('section.spec_tabs div.accesoires li').addClass('active');
         more_btn.hide();

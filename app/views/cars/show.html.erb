@@ -4,6 +4,7 @@
 
       <div class="overlay_afspraak animated">
         <h2>Afspraak maken voor de <%= [@car.brand.name, @car.model.name].join(' ') %></h2>
+
         <div class="afspraak_container">
           <div class="car_slider_afspraak carslider_responsive">
             <ul>
@@ -21,6 +22,7 @@
             <input type="text" class="telefoon" placeholder="Je telefoon nummer">
             <input type="text" class="email" placeholder="Je email adres">
             <input type="text" class="vragen" placeholder="Eventuele vragen of opmerkingen">
+
             <div class="orange_btn"><%= phrase 'verstuur_aanvraag' %></div>
           </form>
         </div>
@@ -32,6 +34,7 @@
             <div class="container-fluid content_container">
 
               <h2><%= phrase 'car_detail_finance_1' %></h2>
+
               <h3><%= phrase 'car_detail_finance_2' %></h3>
 
               <%= render 'shared/finance_circles' %>
@@ -55,6 +58,7 @@
 
       <div class="model">
         <h2><%= @car.brand.name %></h2>
+
         <h3><%= [@car.model.name, @car.car_type].join(' ') %></h3>
 
         <table>
@@ -71,7 +75,9 @@
         <div class="per_maand">
           <span class="helper"></span>
           <img src="../../assets/images/logo_akp_single.png" alt="">
+
           <p>Per maand v.a.</p>
+
           <p class="maand_prijs"><%= format_money @car.price_month %></p>
         </div>
 
@@ -107,6 +113,7 @@
       <div class="vragen">
         <div class="berijkbaar">
           <p><%= phrase 'car_detail_reachable_1' %></p>
+
           <p><%= phrase 'car_detail_reachable_2' %></p>
         </div>
         <ul>
@@ -114,6 +121,7 @@
             <a href="#">
               <span class="helper"></span>
               <i class="phone"></i>
+
               <p><%= phrase 'phone' %></p>
             </a>
           </li>
@@ -121,6 +129,7 @@
             <a href="#">
               <span class="helper"></span>
               <i class="whatsapp"></i>
+
               <p><%= phrase 'whatsapp' %></p>
             </a>
           </li>
@@ -128,6 +137,7 @@
             <a href="#">
               <span class="helper"></span>
               <i class="mail"></i>
+
               <p><%= phrase 'email' %></p>
             </a>
           </li>
@@ -135,6 +145,7 @@
             <a href="#">
               <span class="helper"></span>
               <i class="chat"></i>
+
               <p><%= phrase 'chat_with_employee' %></p>
             </a>
           </li>
@@ -151,16 +162,19 @@
       <div class="tabs_container">
         <div class="_specificaties tab active" data-submenu="specs">
           <span class="helper"></span>
+
           <p><%= phrase 'specifications' %></p>
           <%= image_tag 'arrow_down_orange.png' %>
         </div>
         <div class="_Accesoires tab" data-submenu="accesoires">
           <span class="helper"></span>
+
           <p><%= phrase 'accessoiries' %></p>
           <%= image_tag 'arrow_down_orange.png' %>
         </div>
         <div class="_Financiering tab" data-submenu="financiering">
           <span class="helper"></span>
+
           <p><%= phrase 'finance_information' %></p>
           <%= image_tag 'arrow_down_orange.png' %>
         </div>
@@ -214,12 +228,14 @@
 
           <h4><%= phrase 'accessoiries' %></h4>
 
-          <ul>
-            <% @car.option_list.each do |option| %>
-                <li><%= option %></li>
-            <% end %>
-          </ul>
-          <div class="more active">Meer opties +</div>
+          <div class="list">
+            <ul>
+              <% @car.option_list.each do |option| %>
+                  <li><%= option %></li>
+              <% end %>
+            </ul>
+            <div class="more active">Meer opties +</div>
+          </div>
         </div>
 
         <div class="financiering tabs">
@@ -229,57 +245,75 @@
           <div class="cols">
             <div class="prijzen">
               <span class="helper"></span>
+
               <p>Contante
                 prijs</p>
+
               <p class="bottom">€ 10.931,00</p>
             </div>
             <div class="prijzen">
               <span class="helper"></span>
+
               <p>Aanbetaling</p>
+
               <p class="bottom">€ 2.597,75</p>
             </div>
             <div class="prijzen">
               <span class="helper"></span>
+
               <p>Totaal
                 kredietbedrag</p>
+
               <p class="bottom">€ 2.597,75</p>
             </div>
             <div class="prijzen">
               <span class="helper"></span>
+
               <p>Slottermijn</p>
+
               <p class="bottom">€ 5.195,50</p>
             </div>
             <div class="prijzen">
               <span class="helper"></span>
+
               <p>Termijn
                 bedrag</p>
+
               <p class="bottom">€ 117,02</p>
             </div>
             <div class="prijzen">
               <span class="helper"></span>
+
               <p>Totale door
                 de consument
                 te betalen
                 bedrag</p>
+
               <p class="bottom">€ 9.408,22</p>
             </div>
             <div class="prijzen">
               <span class="helper"></span>
+
               <p>Jaarlijks
                 kosten
                 percentage</p>
+
               <p class="bottom">€ 9.408,22</p>
             </div>
             <div class="prijzen">
               <span class="helper"></span>
+
               <p>Debet
                 rentevoet</p>
+
               <p class="bottom">€ 8,49</p>
             </div>
             <div class="prijzen">
               <span class="helper"></span>
+
               <p>Looptijd
                 in maanden</p>
+
               <p class="bottom">36</p>
             </div>
           </div>
@@ -309,6 +343,7 @@
 
       <div class="vergelijkbare_title">
         <span class="helper"></span>
+
         <h2><%= phrase 'vergelijkbare_autos' %> <span><%= phrase 'speciaal_voor_u_geselecteerd' %></span></h2>
       </div>
 
@@ -349,6 +384,7 @@
     <div class="container-fluid content_container" style="background: url('<%= image_url 'bg_mogelijkheden.jpg' %>') no-repeat center; background-size: cover">
 
       <h2><%= phrase 'finance_header_car_detail_page' %></h2>
+
       <h3><%= phrase 'finance_sub_header_car_detail_page' %></h3>
 
       <%= render 'shared/finance_circles' %>
