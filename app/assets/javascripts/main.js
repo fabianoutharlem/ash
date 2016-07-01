@@ -285,6 +285,13 @@ $(document).ready(function () {
         more_btn.hide();
     });
 
+    //alle fotos (tab photos)
+    var more_btn = $('section.spec_tabs div.photos div.more');
+    more_btn.click( function() {
+        $('section.spec_tabs div.photos li').toggleClass('show_all');
+        $('section.spec_tabs div.photos div.more span.plus, section.spec_tabs div.photos div.more span.min').toggleClass('active');
+    });
+
     //detail page carousel  //exclusief smartphone carousel
     var owl = $('#owl2row-plugin1');
     owl.owlCarousel({
