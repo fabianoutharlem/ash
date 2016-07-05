@@ -292,6 +292,25 @@ $(document).ready(function () {
         $('section.spec_tabs div.photos div.more span.plus, section.spec_tabs div.photos div.more span.min').toggleClass('active');
     });
 
+      //overlay_photo_selection slider
+    $('.photo_selection_slider').unslider({
+        arrows: {
+            //  Unslider default behaviour
+            prev: '<a class="unslider-arrow prev"><img src="assets/nav_prev_carousel.png" alt=""></a>',
+            next: '<a class="unslider-arrow next"><img src="assets/main_slider_next.png" alt=""></a>',
+        },
+
+        autoplay: false,
+        delay: 5000,
+        nav: true,
+        infinite: true
+    });
+
+      //overlay_photo_selection vissible
+    //$('section.auto_uitgelicht')
+
+
+
     //detail page carousel  //exclusief smartphone carousel
     var owl = $('#owl2row-plugin1');
     owl.owlCarousel({
