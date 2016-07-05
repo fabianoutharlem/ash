@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   resources :cars do
     get :like
+    get 'compare/:car_1_id/:car_2_id', to: 'cars#compare', as: :compare_2
+    get 'compare/:car_1_id/:car_2_id/:car_3_id', to: 'cars#compare', as: :compare_3
   end
 
   resources :brands do
