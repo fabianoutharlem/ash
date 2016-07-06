@@ -162,20 +162,16 @@
 
     <h3>Model naam</h3>
 
-    <div class="unslider_wrapper">
-      <div class="photo_selection_slider">
-        <ul>
-          <li>
-            <%= image_tag 'car1.jpg' %>
-          </li>
-          <li>
-            <%= image_tag 'car1.jpg' %>
-          </li>
-          <li>
-            <%= image_tag 'car1.jpg' %>
-          </li>
-        </ul>
-      </div>
+    <div class="slider_container">
+      <ul id="lightSlider">
+        <% @car.car_images.each do |car_image| %>
+            <li data-thumb="<%= car_image.file.thumb.url %>" data-src="<%= car_image.file.large.url %>">
+              <div class="image_container">
+                <%= image_tag car_image.file.thumb %>
+              </div>
+            </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 

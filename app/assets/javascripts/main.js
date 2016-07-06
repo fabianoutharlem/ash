@@ -293,21 +293,44 @@ $(document).ready(function () {
     });
 
       //overlay_photo_selection slider
-    $('.photo_selection_slider').unslider({
-        arrows: {
-            //  Unslider default behaviour
-            prev: '<a class="unslider-arrow prev"><img src="assets/nav_prev_carousel.png" alt=""></a>',
-            next: '<a class="unslider-arrow next"><img src="assets/main_slider_next.png" alt=""></a>',
-        },
+    $('#lightSlider').lightSlider({
+        item: 1,
+        gallery: true,
+        enableTouch:true,
+        enableDrag:true,
+        adaptiveHeight: true,
+        galleryMargin: 20,
+        pager: true,
+        responsive: [
+            {
+                breakpoint: 880,
+                settings: {
+                    thumbItem: 7
+                }
+            },
 
-        autoplay: false,
-        delay: 5000,
-        nav: true,
-        infinite: true
+            {
+                breakpoint: 600,
+                settings: {
+                    thumbItem: 5
+                }
+            },
+        ],
+        onSliderLoad: function(el) {
+            el.lightGallery({
+                selector: '#lightSlider'
+            });
+        }
     });
 
       //overlay_photo_selection vissible
-    //$('section.auto_uitgelicht')
+    $('section.spec_tabs div.photos figure').click( function() {
+        $('section.spec_tabs div.overlay_photo_selection').addClass('active bounceInUp');
+    });
+      //overlay_photo_selection hide
+    $('section.spec_tabs div.overlay_photo_selection div.cross').click( function() {
+        $('section.spec_tabs div.overlay_photo_selection').removeClass('active bounceInUp');
+    });
 
 
 
