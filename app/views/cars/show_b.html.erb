@@ -1,0 +1,555 @@
+<section class="detail_pagina_b">
+  <section class="auto_uitgelicht">
+    <div class="wrapper">
+      <div class="container-fluid content_container">
+
+        <div class="overlay_afspraak animated">
+          <h2>Afspraak maken voor de <%= [@car.brand.name, @car.model.name].join(' ') %></h2>
+
+          <div class="afspraak_container">
+            <div class="car_slider_afspraak carslider_responsive">
+              <ul>
+                <% @car.car_images.each do |car_media| %>
+                    <li>
+                      <div class="background"
+                           style="background: url('<%= image_path car_media.file.large %>') no-repeat center; background-size: cover;"></div>
+                    </li>
+                <% end %>
+              </ul>
+            </div>
+            <form action="">
+              <input type="text" class="naam" placeholder="Je naam">
+              <input type="text" class="achternaam" placeholder="Je achternaam">
+              <input type="text" class="telefoon" placeholder="Je telefoon nummer">
+              <input type="text" class="email" placeholder="Je email adres">
+              <input type="text" class="vragen" placeholder="Eventuele vragen of opmerkingen">
+
+              <div class="orange_btn"><%= phrase 'verstuur_aanvraag' %></div>
+            </form>
+          </div>
+          <%= image_tag 'cross_afspraak.png', class: 'cross' %>
+        </div>
+        <div class="overlay_financier">
+          <section class="mogelijkheden">
+            <div class="wrapper">
+              <div class="container-fluid content_container">
+
+                <h2><%= phrase 'car_detail_finance_1' %></h2>
+
+                <h3><%= phrase 'car_detail_finance_2' %></h3>
+
+                <%= render 'shared/finance_circles' %>
+
+                <%= image_tag 'cross_afspraak.png', class: 'cross' %>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="upper_container">
+          <div class="car_slider carslider_responsive">
+            <ul>
+              <% @car.car_images.each do |car_media| %>
+                  <li>
+                    <div class="background"
+                         style="background: url('<%= image_path car_media.file.large %>') no-repeat center; background-size: cover;"></div>
+                  </li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="car_slider carslider_fullwidth">
+            <ul>
+              <% @car.car_images.each do |car_media| %>
+                  <li>
+                    <div class="background"
+                         style="background: url('<%= image_path car_media.file.large %>') no-repeat center; background-size: cover;"></div>
+                  </li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="model">
+            <div class="car_content">
+              <h2><%= @car.brand.name %></h2>
+
+              <h3><%= [@car.model.name, @car.car_type].join(' ') %></h3>
+
+              <table>
+                <tr>
+                  <td class="first">Prijs</td>
+                  <td class="second"><%= format_money @car.price_total %></td>
+                </tr>
+                <tr>
+                  <td class="first">50/50 Deal</td>
+                  <td class="second"><%= format_money @car.price_50_50 %></td>
+                </tr>
+                <tr>
+                  <td class="first">Per maand v.a.</td>
+                  <td class="second">maand prijs (fab)</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="finance">
+              <h4>Financier deze auto hier!</h4>
+              <small>Binnen 24 uur rijden! Bepaal jou prijs!</small>
+
+              <div class="banners">
+                <div class="finace_circle circle_1">
+                  <h5>ZAKELIJKE FINANCIERINGEN</h5>
+
+                  <div class="button"><a href="#" class="orange_btn">Klik hier</a></div>
+                  <div class="white_circle"></div>
+                </div>
+                <div class="finace_circle circle_2">
+                  <h5>Particuliere FINANCIERINGEN</h5>
+
+                  <div class="button"><a href="#" class="orange_btn">Klik hier</a></div>
+                  <div class="white_circle"></div>
+                </div>
+                <div class="finace_circle circle_3">
+                  <h5>50/50 deals Particulier</h5>
+
+                  <div class="button"><a href="#" class="orange_btn">Klik hier</a></div>
+                  <div class="white_circle"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="appointment">
+              <p class="views">234 bezoekers bekeken deze auto.</p>
+              <a href="#" class="orange_btn appointment_btn">Afspraak maken</a>
+
+              <div class="icons">
+                <a href="#"><i class="like"></i></a>
+                <a href="../vergelijk_pagina/vergelijk_pagina.php"><i class="vergelijk"></i></a>
+                <a href="#"><i class="mail"></i></a>
+                <a href="#"><i class="print"></i></a>
+                <a href="#"><i class="twitter "></i></a>
+                <a href="#"><i class="fb "></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="vragen">
+          <div class="berijkbaar">
+            <p><%= phrase 'car_detail_reachable_1' %></p>
+
+            <p><%= phrase 'car_detail_reachable_2' %></p>
+          </div>
+          <ul>
+            <li>
+              <a href="#">
+                <span class="helper"></span>
+                <i class="phone"></i>
+
+                <p><%= phrase 'phone' %></p>
+              </a>
+            </li>
+            <li class="second_col">
+              <a href="#">
+                <span class="helper"></span>
+                <i class="whatsapp"></i>
+
+                <p><%= phrase 'whatsapp' %></p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="helper"></span>
+                <i class="mail"></i>
+
+                <p><%= phrase 'email' %></p>
+              </a>
+            </li>
+            <li class="second_col">
+              <a href="#">
+                <span class="helper"></span>
+                <i class="chat"></i>
+
+                <p><%= phrase 'chat_with_employee' %></p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="spec_tabs">
+
+    <div class="overlay_photo_selection animated">
+      <div class="cross"><%= image_tag 'cross.png' %></div>
+
+      <h3>Model naam</h3>
+
+      <div class="unslider_wrapper">
+        <div class="photo_selection_slider">
+          <ul>
+            <li>
+              <%= image_tag 'car1.jpg' %>
+            </li>
+            <li>
+              <%= image_tag 'car1.jpg' %>
+            </li>
+            <li>
+              <%= image_tag 'car1.jpg' %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="container-fluid content_container">
+
+        <div class="tabs_container">
+          <div class="_specificaties tab active" data-submenu="specs">
+            <span class="helper"></span>
+
+            <p><%= phrase 'specifications' %></p>
+            <%= image_tag 'arrow_down_orange.png' %>
+          </div>
+          <div class="_Accesoires tab" data-submenu="accesoires">
+            <span class="helper"></span>
+
+            <p><%= phrase 'accessoiries' %></p>
+            <%= image_tag 'arrow_down_orange.png' %>
+          </div>
+          <div class="_Financiering tab" data-submenu="financiering">
+            <span class="helper"></span>
+
+            <p><%= phrase 'finance_information' %></p>
+            <%= image_tag 'arrow_down_orange.png' %>
+          </div>
+
+          <div class="_photos tab" data-submenu="photos">
+            <span class="helper"></span>
+
+            <p>Fotos</p>
+            <%= image_tag 'arrow_down_orange.png' %>
+          </div>
+
+          <div class="specs tabs active">
+
+            <div class="rdw_nap">
+              <I class="rdw"></I>
+              <I class="nap"></I>
+            </div>
+
+            <div class="left">
+              <h4><%= phrase 'specifications' %></h4>
+              <ul>
+                <li><span>Merk</span>Mercedes-Benz</li>
+                <li><span>Model</span>C-Klasse</li>
+                <li><span>Type</span>180 CGI 156PK Automaat BlueEFFICIENCY Avantgarde</li>
+                <li><span>Carrosserie</span>Sedan (4 deurs)</li>
+                <li><span>Transmissie</span>Automaat</li>
+                <li><span>Kleur</span>Zwart metallic</li>
+                <li><span>KM stand</span>127.171 km</li>
+                <li><span>Brandstof</span>Benzine</li>
+                <li><span>Bouwjaar</span>2010</li>
+                <li><span>Cil. inhoud</span>1796 cc</li>
+                <li><span>Aantal cil.</span>4</li>
+                <li><span>Vermogen</span>156 pk</li>
+                <li><span>Topsnelheid</span>220 km/u</li>
+                <li><span>Interieur</span>Half leder / stof (Zwart)</li>
+                <li><span>Energielabel</span>C</li>
+                <li><span>Wegenbelasting</span>€180 - €205 p/kw</li>
+              </ul>
+            </div>
+
+            <div class="right">
+              <h4><%= phrase 'accessoiries' %></h4>
+              <ul>
+                <% @car.option_list.each do |option| %>
+                    <li><%= option %></li>
+                <% end %>
+              </ul>
+              <div class="more active" onclick="$('._Accesoires').click()">Meer opties +</div>
+            </div>
+          </div>
+
+          <div class="accesoires tabs">
+
+            <div class="rdw_nap">
+              <I class="rdw"></I>
+              <I class="nap"></I>
+            </div>
+
+            <h4><%= phrase 'accessoiries' %></h4>
+
+            <div class="list">
+              <ul>
+                <% @car.option_list.each do |option| %>
+                    <li><%= option %></li>
+                <% end %>
+              </ul>
+              <div class="more active">Meer opties +</div>
+            </div>
+          </div>
+
+          <div class="financiering tabs">
+
+            <h4><%= phrase 'finance_information' %></h4>
+
+            <div class="cols">
+              <div class="prijzen">
+                <span class="helper"></span>
+
+                <p>Contante
+                  prijs</p>
+
+                <p class="bottom">€ 10.931,00</p>
+              </div>
+              <div class="prijzen">
+                <span class="helper"></span>
+
+                <p>Aanbetaling</p>
+
+                <p class="bottom">€ 2.597,75</p>
+              </div>
+              <div class="prijzen">
+                <span class="helper"></span>
+
+                <p>Totaal
+                  kredietbedrag</p>
+
+                <p class="bottom">€ 2.597,75</p>
+              </div>
+              <div class="prijzen">
+                <span class="helper"></span>
+
+                <p>Slottermijn</p>
+
+                <p class="bottom">€ 5.195,50</p>
+              </div>
+              <div class="prijzen">
+                <span class="helper"></span>
+
+                <p>Termijn
+                  bedrag</p>
+
+                <p class="bottom">€ 117,02</p>
+              </div>
+              <div class="prijzen">
+                <span class="helper"></span>
+
+                <p>Totale door
+                  de consument
+                  te betalen
+                  bedrag</p>
+
+                <p class="bottom">€ 9.408,22</p>
+              </div>
+              <div class="prijzen">
+                <span class="helper"></span>
+
+                <p>Jaarlijks
+                  kosten
+                  percentage</p>
+
+                <p class="bottom">€ 9.408,22</p>
+              </div>
+              <div class="prijzen">
+                <span class="helper"></span>
+
+                <p>Debet
+                  rentevoet</p>
+
+                <p class="bottom">€ 8,49</p>
+              </div>
+              <div class="prijzen">
+                <span class="helper"></span>
+
+                <p>Looptijd
+                  in maanden</p>
+
+                <p class="bottom">36</p>
+              </div>
+            </div>
+
+            <p class="financierings_voorwaarden">Financiering wordt verstrekt door Volkswagen Bank te
+              Amersfoort. Volkswagen Bank is ingeschreven in het Handelsregister met de statutaire naam
+              Volkswagen Bank GmbH Zweigniederlassung Niederlande onder nummer 32099980 en is gevestigd te
+              Amersfoort. Volkswagen Bank biedt financieringen en Financial lease aan en bemiddelt in
+              verzekeringen voor zowel de particuliere als de zakelijke rijder, AFM vergunning nummer
+              12000996. Financieringsaanbieding 5,99% op basis van een niet-doorlopend krediet i.c.m. een
+              verzekering. Debetrentevoet (vaste rente gedurende de looptijd) zonder deze verzekering 6,99%.
+              Toetsing en registratie bij BKR te Tiel. Dienstenwijzer op aanvraag verkrijgbaar of te
+              downloaden via www.volkswagenbank.nl. Rentewijzigingen en drukfouten voorbehouden. Actieaanbod
+              geldig t/m 30 december 2015.</p>
+
+            <div class="logo logo_letop"></div>
+            <div class="let_op logo_letop"></div>
+          </div>
+
+          <div class="photos tabs">
+            <ul>
+              <li class="active">
+                <figure>
+                  <img src="<%= image_url 'car1.jpg' %>" alt="">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="<%= image_url 'car1.jpg' %>" alt="">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="<%= image_url 'car1.jpg' %>" alt="">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="<%= image_url 'car1.jpg' %>" alt="">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="<%= image_url 'car1.jpg' %>" alt="">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="<%= image_url 'car1.jpg' %>" alt="">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="<%= image_url 'car1.jpg' %>" alt="">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="<%= image_url 'car1.jpg' %>" alt="">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="<%= image_url 'car1.jpg' %>" alt="">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="<%= image_url 'car1.jpg' %>" alt="">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="<%= image_url 'car1.jpg' %>" alt="">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="<%= image_url 'car1.jpg' %>" alt="">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="<%= image_url 'car1.jpg' %>" alt="">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="<%= image_url 'car1.jpg' %>" alt="">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="<%= image_url 'car1.jpg' %>" alt="">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="<%= image_url 'car1.jpg' %>" alt="">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="<%= image_url 'car1.jpg' %>" alt="">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="<%= image_url 'car1.jpg' %>" alt="">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="<%= image_url 'car1.jpg' %>" alt="">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="<%= image_url 'car1.jpg' %>" alt="">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="<%= image_url 'car1.jpg' %>" alt="">
+                </figure>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vergelijkbare_autos">
+    <div class="wrapper">
+      <div class="container-fluid content_container">
+
+        <div class="vergelijkbare_title">
+          <span class="helper"></span>
+
+          <h2><%= phrase 'vergelijkbare_autos' %> <span><%= phrase 'speciaal_voor_u_geselecteerd' %></span></h2>
+        </div>
+
+        <section class="carousel vergelijkbare_carousel">
+          <section id="demos">
+            <div class="row">
+
+              <div class="nav_container"></div>
+              <div id="owl2row-plugin1" class="owl-carousel_top40">
+                <?php include('../general/_article_car.php'); ?>
+                <?php include('../general/_article_car.php'); ?>
+                <?php include('../general/_article_car.php'); ?>
+                <?php include('../general/_article_car.php'); ?>
+                <?php include('../general/_article_car.php'); ?>
+                <?php include('../general/_article_car.php'); ?>
+                <?php include('../general/_article_car.php'); ?>
+                <?php include('../general/_article_car.php'); ?>
+
+                <?php include('../general/_article_car.php'); ?>
+                <?php include('../general/_article_car.php'); ?>
+                <?php include('../general/_article_car.php'); ?>
+                <?php include('../general/_article_car.php'); ?>
+                <?php include('../general/_article_car.php'); ?>
+                <?php include('../general/_article_car.php'); ?>
+                <?php include('../general/_article_car.php'); ?>
+                <?php include('../general/_article_car.php'); ?>
+              </div>
+              <a href="../voorraad_pagina/voorraad_pagina.php" class="orange_btn">Bekijk de voorraad</a>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="mogelijkheden">
+    <div class="wrapper">
+      <div class="container-fluid content_container" style="background: url('<%= image_url 'bg_mogelijkheden.jpg' %>') no-repeat center; background-size: cover">
+
+        <h2><%= phrase 'finance_header_car_detail_page' %></h2>
+
+        <h3><%= phrase 'finance_sub_header_car_detail_page' %></h3>
+
+        <%= render 'shared/finance_circles' %>
+      </div>
+    </div>
+  </section>
+</section>

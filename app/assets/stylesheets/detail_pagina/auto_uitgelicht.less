@@ -52,7 +52,7 @@ section.auto_uitgelicht {
       padding: 70px 0 90px 0;
       z-index: 20;
       position: absolute;
-      top: -100%;
+      top: -120%;
       right: 0;
       transition: @trans;
 
@@ -264,7 +264,7 @@ section.auto_uitgelicht {
         }
       }
 
-      .orange_btn {
+      .afspraak_btn {
         width: 380px;
         height: 50px;
 
@@ -401,67 +401,67 @@ section.auto_uitgelicht {
       button.orange_btn {
         margin-bottom: 20px;
       }
+    }
 
-      div.icons {
+    div.icons {
+      width: 380px;
+
+      @media @1070 {
+        width: 280px;
+      }
+
+      @media @750 {
         width: 380px;
+      }
 
-        @media @1070 {
-          width: 280px;
-        }
+      @media @360 {
+        width: 280px;
+      }
 
-        @media @750 {
-          width: 380px;
-        }
+      a {
 
-        @media @360 {
-          width: 280px;
-        }
+        i {
+          display: inline-block;
+          margin: 0 6px 0 0;
+          width: 42px;
+          height: 42px;
 
-        a {
+          &:hover {
+            opacity: 0.8;
+          }
 
-          i {
-            display: inline-block;
-            margin: 0 6px 0 0;
-            width: 42px;
-            height: 42px;
+          &.align_right {
+            float: right;
 
-            &:hover {
-              opacity: 0.8;
+            @media @1070 {
+              float: none;
             }
+          }
 
-            &.align_right {
-              float: right;
+          &.like {
+            background: image-url('model_like.png') no-repeat center;
+          }
 
-              @media @1070 {
-                float: none;
-              }
-            }
+          &.vergelijk {
+            background: image-url('model_vergelijk.png') no-repeat center;
+            width: 121px;
+          }
 
-            &.like {
-              background: image-url('model_like.png') no-repeat center;
-            }
+          &.mail {
+            background: image-url('model_mail.png') no-repeat center;
+          }
 
-            &.vergelijk {
-              background: image-url('model_vergelijk.png') no-repeat center;
-              width: 121px;
-            }
+          &.print {
+            background: image-url('model_printen.png') no-repeat center;
+          }
 
-            &.mail {
-              background: image-url('model_mail.png') no-repeat center;
-            }
+          &.fb {
+            background: image-url('model_fb.png') no-repeat center;
+          }
 
-            &.print {
-              background: image-url('model_printen.png') no-repeat center;
-            }
-
-            &.fb {
-              background: image-url('model_fb.png') no-repeat center;
-            }
-
-            &.twitter {
-              background: image-url('model_twitter.png') no-repeat center;
-              margin: 0;
-            }
+          &.twitter {
+            background: image-url('model_twitter.png') no-repeat center;
+            margin: 0;
           }
         }
       }
@@ -509,7 +509,7 @@ section.auto_uitgelicht {
         margin: 0 auto;
         float: none;
       }
-      
+
       @media @360 {
         width: 280px;
         height: 210px;
@@ -722,3 +722,294 @@ section.auto_uitgelicht {
     }
   }
 }
+
+// + b
+
+section.detail_pagina_b { //only b
+
+  section.auto_uitgelicht {
+
+    div.upper_container {
+      //display: flex;
+
+      @media @880 {
+        display: block;
+      }
+
+      div.unslider {
+        float: left;
+
+        @media @880 {
+          float: none;
+          text-align: center;
+        }
+
+        div.car_slider {
+          float: none;
+        }
+      }
+
+      @media @1200 {
+        //min-width: 580px;
+      }
+
+      div.model {
+        //flex-grow: 1;
+        margin-left: 50px;
+
+        @media @1370 {
+          width: 400px;
+          float: right;
+          margin: 0;
+        }
+
+        @media @1240 {
+          margin-right: -15px;
+        }
+
+        @media @1200 {
+          margin: 0;
+        }
+
+        @media @1070 {
+          width: 330px;
+        }
+
+        @media @1000 {
+          width: 300px;
+        }
+
+        @media @880 {
+          float: none;
+          width: 530px;
+          margin-top: 20px;
+        }
+
+        @media @360 {
+          width: 280px;
+          margin-top: 0;
+        }
+
+        h2, h3 {
+          width: 100%;
+        }
+
+        h2 {
+
+          @media @360 {
+            font-size: 24px;
+          }
+        }
+
+        h3 {
+
+          @media @360 {
+            font-size: 13px;
+          }
+        }
+
+        div.car_content {
+
+          table {
+            width: 100%;
+
+            tr {
+              border: 0;
+
+              td {
+
+                @media @1070 {
+                  font-size: 18px;
+                }
+
+                @media @360 {
+                  font-size: 21px;
+                }
+
+                &.first {
+
+                  @media @1280 {
+                    width: 100px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        div.finance {
+          width: 100%;
+          background-color: white;
+          text-align: center;
+          padding: 10px;
+          margin: 30px 0 0 0;
+
+          @media @360 {
+            margin-top: 10px;
+          }
+
+          h4 {
+            font-size: 28px;
+            color: #f35026;
+            font-family: bebas;
+          }
+
+          small {
+            font-size: 14px;
+            line-height: 1.1;
+            color: #414141;
+            margin-bottom: 15px;
+          }
+
+          div.banners {
+            margin-top: 15px;
+
+            div.finace_circle {
+              display: inline-block;
+              position: relative;
+              width: 136.7px;
+              height: 137px;
+              background-image: linear-gradient(137deg, #f97844, #f76838 35%, #f76838 39%, #f35026);
+              box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+              border: solid 0 #ffffff;
+              border-radius: 50%;
+              overflow: hidden;
+              padding: 15px 5px;
+              margin: 0 7px;
+
+              @media @1370 {
+                width: 106.7px;
+                height: 107px;
+              }
+
+              h5 {
+                font-size: 14px;
+                line-height: 1.5;
+                letter-spacing: 1px;
+                color: #ffffff;
+                font-family: bebas;
+
+                @media @1370 {
+                  font-size: 12px;
+                }
+              }
+
+              div.button {
+                z-index: 20;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 30px;
+
+                @media @1370 {
+                  bottom: 19px;
+                }
+
+                a.orange_btn {
+                  //z-index: 20;
+                  display: inline-block;
+                  font-size: 14px;
+                  width: 100px;
+                  height: 30px;
+                  background-color: #00b04a;
+                  padding-right: 30px;
+                  line-height: 30px;
+
+                  @media @1370 {
+                    width: 75px;
+                    height: 25px;
+                    font-size: 11px;
+                    line-height: 25px;
+                  }
+
+                  &:after {
+                    width: 30px;
+                    background-color: #00b04a;
+                    border-left: 1px solid white;
+
+                    @media @1370 {
+                      width: 25px;
+                    }
+                  }
+                }
+              }
+
+              div.white_circle {
+                width: 119px;
+                height: 67.7px;
+                background-color: #ffffff;
+                border-radius: 50%;
+                position: absolute;
+                bottom: -1px;
+                left: 50%;
+                transform: translateX(-50%);
+
+                @media @1370 {
+                  bottom: -35px;
+                }
+              }
+            }
+          }
+        }
+
+        div.appointment {
+
+          @media @880 {
+            text-align: center;
+          }
+
+          p.views {
+            font-size: 10px;
+            line-height: 1.6;
+            color: #414141;
+            margin: 10px 0;
+          }
+
+          div.icons {
+            display: block;
+            margin: 0 0 15px 0;
+
+            @media @880 {
+              margin: 0 auto;
+            }
+          }
+
+          .appointment_btn {
+            display: inline-block;
+            background-color: #888888;
+            margin-bottom: 10px;
+
+            &:after {
+              border-left: 1px solid white;
+              background-color: #888888;
+            }
+          }
+        }
+      }
+    }
+
+    div.vragen {
+      clear: both;
+
+      @media @1200 {
+        position: absolute;
+        top: 450px;
+        margin: 0;
+      }
+
+      @media @880 {
+        position: relative;
+        top: auto;
+        margin: 0 auto;
+      }
+
+      div.berijkbaar {
+
+        @media @360 {
+          padding-top: 30px;
+        }
+      }
+    }
+  }
+}
+
