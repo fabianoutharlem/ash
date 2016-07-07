@@ -7,14 +7,9 @@
 
         <div class="afspraak_container">
           <div class="car_slider_afspraak carslider_responsive">
-            <ul>
-              <% @car.car_images.each do |car_media| %>
-                  <li>
-                    <div class="background"
-                         style="background: url('<%= image_path car_media.file.large %>') no-repeat center; background-size: cover;"></div>
-                  </li>
-              <% end %>
-            </ul>
+            <figure>
+              <%= image_tag 'car1.jpg' %>
+            </figure>
           </div>
           <form action="">
             <input type="text" class="naam" placeholder="Je naam">
