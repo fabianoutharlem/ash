@@ -216,7 +216,11 @@ $(document).ready(function () {
     $('.auto_uitgelicht .car_slider').unslider({
         autoplay: false,
         delay: 5000,
-        arrows: false,
+        arrows: {
+            prev: '<a class="unslider-arrow prev"><img src="../assets/nav_prev_carousel.png" alt=""></a>',
+            next: '<a class="unslider-arrow next"><img src="../assets/main_slider_next.png" alt=""></a>',
+        },
+        nav: false,
         infinite: true
     });
 
@@ -293,12 +297,13 @@ $(document).ready(function () {
     });
 
       //overlay_photo_selection slider
-    $('#lightSlider').lightSlider({
+    var car_thumb_slider = $('#lightSlider').lightSlider({
         item: 1,
         gallery: true,
         enableTouch:true,
         enableDrag:true,
         adaptiveHeight: true,
+        speed: 250,
         galleryMargin: 20,
         pager: true,
         responsive: [
@@ -314,7 +319,7 @@ $(document).ready(function () {
                 settings: {
                     thumbItem: 5
                 }
-            },
+            }
         ],
         onSliderLoad: function(el) {
             el.lightGallery({
@@ -324,8 +329,12 @@ $(document).ready(function () {
     });
 
       //overlay_photo_selection vissible
-    $('section.spec_tabs div.photos figure').click( function() {
-        $('section.spec_tabs div.overlay_photo_selection').addClass('active bounceInUp');
+    $('section.spec_tabs div.photos li').click( function() {
+        car_thumb_slider.goToSlide($(this).index());
+
+        var timer = setTimeout(function() {
+            $('section.spec_tabs div.overlay_photo_selection').addClass('active bounceInUp');
+        }, 250);
     });
       //overlay_photo_selection hide
     $('section.spec_tabs div.overlay_photo_selection div.cross').click( function() {

@@ -476,6 +476,27 @@ section.auto_uitgelicht {
       }
     }
 
+    .unslider-arrow {
+      display: inline-block;
+      font-size: 0;
+      width: 50px;
+      height: 50px;
+      right: 1px;
+      top: 50%;
+
+      @media @750 {
+        display: none;
+      }
+
+      &.next {
+        transform: translateY(-100%);
+      }
+
+      &.prev {
+        transform: rotate(180deg);
+      }
+    }
+
     div.car_slider {
       display: inline-block;
       float: right;
@@ -515,10 +536,6 @@ section.auto_uitgelicht {
         height: 210px;
       }
 
-      .unslider-arrow {
-        display: none;
-      }
-
       ul {
         height: 100%;
 
@@ -536,6 +553,7 @@ section.auto_uitgelicht {
         display: none;
 
         @media @750 {
+          position: relative;
           display: block;
         }
       }
@@ -721,6 +739,7 @@ section.auto_uitgelicht {
       }
     }
   }
+
 }
 
 // + b

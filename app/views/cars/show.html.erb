@@ -361,111 +361,13 @@
 
         <div class="photos tabs">
           <ul>
-            <li class="active">
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
+            <% @car.car_images.each do |car_image| %>
+                <li>
+                  <figure>
+                    <%= image_tag car_image.file.thumb %>
+                  </figure>
+                </li>
+            <% end %>
           </ul>
         </div>
       </div>
