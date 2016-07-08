@@ -51,12 +51,8 @@
       </div>
     </div>
 
-    <div class="car_slider">
-      <ul>
-        <% car.car_images.first(3).each do |car_image| %>
-            <li><%= image_tag car_image.file.thumb %></li>
-        <% end %>
-      </ul>
+    <figure class="main_image">
+      <%= image_tag car.main_image.file.thumb %>
 
       <div class="best_deal">
         <p>BEST DAY DEAL</p>
@@ -64,7 +60,7 @@
         <span class="day_deal_star"></span>
         <span class="day_deal_star"></span>
       </div>
-    </div>
+    </figure>
 
     <div class="container-fluid car_container">
       <% if @car_likes.include? car.id %>

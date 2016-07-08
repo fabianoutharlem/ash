@@ -252,7 +252,7 @@ $(document).ready(function () {
     //afspraak_maken button click overlay visible
     var afspraak_overlay = $('section.auto_uitgelicht .overlay_afspraak');
 
-    $('section.auto_uitgelicht div.model .afspraak_btn').click(function () {
+    $('section.auto_uitgelicht div.model .afspraak_btn, section.auto_uitgelicht a.appointment_btn').click(function () {
         afspraak_overlay.addClass('bounceInUp active');
     });
 
