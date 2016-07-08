@@ -1,0 +1,8 @@
+<tr class="item" data-item-id="<%= vacancy.id %>">
+  <td><%= vacancy.title %></td>
+  <td><%= vacancy.sub_title %></td>
+  <td>
+    <%= link_to 'Aanpassen', edit_admin_vacancy_path(vacancy), class: 'btn btn-primary' %>
+    <%= link_to 'Delete', admin_vacancy_path(vacancy), method: :delete, class: 'btn btn-danger' %>
+  </td>
+</tr>

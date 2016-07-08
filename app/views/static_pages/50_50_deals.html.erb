@@ -1,0 +1,102 @@
+<section class="zakelijke_financiering zakelijke_financiering_50_50">
+  <div class="wrapper">
+    <div class="container-fluid content_container">
+
+      <div class="banner_50_50" style="background: url('<%= image_path('bg_50_50.png') %>'); background-size: cover;">
+        <h1>50/50 Deals (Particulier)</h1>
+      </div>
+
+      <%= image_tag 'img_zakelijk.png', class: 'small_device' %>
+
+      <div class="row">
+        <div class="col zakelijk">
+          <div class="content">
+            <h3>50/50 Deal:</h3>
+            <h4>betaal de helft van uw auto in termijnen zonder rente!</h4>
+
+            <p class="first_alinea">
+              De meest complete én voordelige deal sluit u nu bij Auto Krediet Plan! Profiteer van de uiterst aantrekkelijke 50/50 Deal op alle jong gebruikte personenauto’s uit ons assortiment.
+            </p>
+            <p class="second_alinea">
+            </p>
+          </div>
+        </div>
+        <div class="col voordelen">
+          <div class="content">
+            <%= image_tag 'img_zakelijk.png' %>
+            <h4>Hoe werkt de 50/50 Deal? Heel simpel! </h4>
+            <ul>
+              <li class="hoe_werkt">
+                1. De helft van de aanschafprijs betaalt u vooraf. Dit kan ook via de eventuele
+                inruil van uw huidige auto. De andere helft wordt gefinancierd.
+              </li>
+              <li class="hoe_werkt">
+                2. U heeft de keuze uit een looptijd van 12, 24, 36 of 48 maanden.
+
+              </li>
+              <li class="hoe_werkt">
+                3. De aanvraag voor uw financiering wordt direct in behandeling genomen en
+                doorgaans heeft u binnen enkele minuten al duidelijkheid. Kies nu uw jonge
+                Top-Occasion, maak kennis met de meest complete deals en deel de prijs
+                door twee!
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="u_bepaald u_bepaald_hoeveel">
+  <div class="wrapper">
+    <div class="container-fluid content_container">
+
+      <div class="banner1 banner">
+        <section class="article_financieren">
+
+          <div class="circle_container">
+            <div class="orange_circle">
+              <h4><%= phrase('50_50-finance-circle-1-title') %></h4>
+
+              <p><%= phrase('50_50-finance-circle-1-text') %></p>
+
+              <a href="../financierings_pagina/financierings_pagina.php" class="orange_btn"><%= phrase('50_50-finance-circle-1-button') %></a>
+              <div class="white_circle"></div>
+            </div>
+
+            <div class="mini_logo"></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="content">
+        <span class="helper"></span>
+        <h3><span>U bepaald
+                    hoeveel u betaald!</span>
+          Meer dan 8000
+          klanten gingen u voor.</h3>
+      </div>
+
+      <div class="let_op"></div>
+
+      <div class="img_car"></div>
+
+    </div>
+  </div>
+</section>
+
+<%= render partial: 'zekerheden' %>
+
+<section class="mogelijkheden">
+  <div class="wrapper">
+    <div class="container-fluid content_container" style="background: url('<%= image_url 'bg_mogelijkheden.jpg' %>') no-repeat center; background-size: cover">
+
+      <h2><%= phrase 'finance_header_car_detail_page' %></h2>
+
+      <h3><%= phrase 'finance_sub_header_car_detail_page' %></h3>
+
+      <%= render 'shared/finance_circles' %>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,123 @@
+<section class="zakelijke_financiering zakelijke_financiering_particulier">
+  <div class="wrapper">
+    <div class="container-fluid content_container">
+
+      <div class="banner_50_50" style="background: url('<%= image_path 'bg_zakelijk.png' %>'); background-size: cover;">
+        <h1>Zakelijke financieringen</h1>
+      </div>
+
+      <%= image_tag 'img_zakelijk.png', class: 'small_device' %>
+
+      <div class="row">
+        <div class="col zakelijk">
+          <div class="content">
+            <h3>Zakelijke financiering:</h3>
+            <h4>De voordelen van Auto KredietPlan!</h4>
+
+            <p class="first_alinea">
+              Financial Lease is een zeer flexibele vorm van het leasen van een bedrijfsauto en is speciaal bedoeld voor ZZP' ers, zelfstandig ondernemers en MKB-bedrijven. Bij deze vorm van leasing neemt u zelf de verzekering en onderhoud van de auto voor uw rekening. Dit is anders dan bij operationele lease wat in essentie een zakelijke vorm van auto huren inhoud.
+            </p>
+            <p class="second_alinea">
+              Omdat Financial Lease flexibel is zorgt het ervoor dat u als zelfstandige gemakkelijk kunt beschikken over een (bedrijfs)auto welke nodig is voor doeltreffende en soepele manier van het runnen van uw onderneming.
+              Met een voordelige Financial Lease constructie kost het u relatief weinig liquiditeit en profiteert u van veel fiscale voordelen. Wij van Auto Krediet Plan maken zakelijk rijden graag zo gemakkelijk mogelijk en zetten graag
+              een aantal voordelen voor u als ondernemer op een rij.
+            </p>
+          </div>
+        </div>
+        <div class="col voordelen">
+          <div class="content">
+            <%= image_tag 'img_zakelijk.png' %>
+            <h4>Hoe werkt de 50/50 Deal? Heel simpel! </h4>
+            <ul>
+              <li class="hoe_werkt">
+                <%= image_tag 'vink.png' %>
+                Slotbetaling altijd mogelijk voor lagere maandkosten
+              </li>
+              <li class="hoe_werkt">
+                <%= image_tag 'vink.png' %>
+                Vaste maandkosten zijn altijd overzichtelijk voor u
+              </li>
+              <li class="hoe_werkt">
+                <%= image_tag 'vink.png' %>
+                U bepaalt wat u betaald!
+              </li>
+              <li class="hoe_werkt">
+                <%= image_tag 'vink.png' %>
+                Uw wordt economisch eigenaar van de auto.
+              </li>
+              <li class="hoe_werkt">
+                <%= image_tag 'vink.png' %>
+                Na afloop leaseperiode is de auto uw eigendom
+              </li>
+              <li class="hoe_werkt">
+                <%= image_tag 'vink.png' %>
+                Stukken goedkoper dan het leasen van een nieuwe auto.
+              </li>
+              <li class="hoe_werkt">
+                <%= image_tag 'vink.png' %>
+                U kunt uw oude auto bij ons inruilen
+              </li>
+              <li class="hoe_werkt">
+                <%= image_tag 'vink.png' %>
+                Aanbetalen mag, maar is niet noodzakelijk
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="u_bepaald u_bepaald_hoeveel">
+  <div class="wrapper">
+    <div class="container-fluid content_container">
+
+      <div class="banner1 banner">
+        <section class="article_financieren">
+
+          <div class="circle_container">
+            <div class="orange_circle">
+              <h4><%= phrase('zakelijk-finance-circle-1-title') %></h4>
+
+              <p><%= phrase('zakelijk-finance-circle-1-text') %></p>
+
+              <a href="../financierings_pagina/financierings_pagina.php" class="orange_btn"><%= phrase('zakelijk-finance-circle-1-button') %></a>
+              <div class="white_circle"></div>
+            </div>
+
+            <div class="mini_logo"></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="content">
+        <span class="helper"></span>
+        <h3><span>U bepaald
+                    hoeveel u betaald!</span>
+          Meer dan 8000
+          klanten gingen u voor.</h3>
+      </div>
+
+      <div class="let_op"></div>
+
+      <div class="img_car"></div>
+
+    </div>
+  </div>
+</section>
+
+<%= render 'zekerheden' %>
+
+<section class="mogelijkheden">
+  <div class="wrapper">
+    <div class="container-fluid content_container" style="background: url('<%= image_url 'bg_mogelijkheden.jpg' %>') no-repeat center; background-size: cover">
+
+      <h2><%= phrase 'finance_header_zakelijk' %></h2>
+
+      <h3><%= phrase 'finance_sub_header_zakelijk' %></h3>
+
+      <%= render 'shared/finance_circles' %>
+    </div>
+  </div>
+</section>

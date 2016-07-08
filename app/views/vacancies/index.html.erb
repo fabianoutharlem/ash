@@ -1,0 +1,18 @@
+<section class="vacatures">
+  <div class="wrapper">
+    <div class="container-fluid content_container">
+      <%= render 'shared/adress' %>
+
+      <div class="container-fluid vacature_container">
+        <div class="content">
+          <h2><%= phrase 'Vacatures' %></h2>
+          <small><%= phrase 'Momenteel hebben wij de volgende vacatures' %></small>
+        </div>
+
+        <ul class="vacature">
+          <%= render @vacancies %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

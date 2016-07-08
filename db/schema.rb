@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160630170700) do
+ActiveRecord::Schema.define(version: 20160707135536) do
 
   create_table "alternatives", force: :cascade do |t|
     t.string   "which",        limit: 255
@@ -107,6 +107,12 @@ ActiveRecord::Schema.define(version: 20160630170700) do
     t.datetime "updated_at"
   end
 
+  create_table "link_partners", force: :cascade do |t|
+    t.text     "link",       limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "marquee_items", force: :cascade do |t|
     t.string   "title",      limit: 255
     t.string   "link",       limit: 255
@@ -164,6 +170,36 @@ ActiveRecord::Schema.define(version: 20160630170700) do
   end
 
   add_index "newsletters", ["newsletter_template_id"], name: "index_newsletters_on_newsletter_template_id", using: :btree
+
+  create_table "page_template_values", force: :cascade do |t|
+    t.string  "option_name",      limit: 255
+    t.string  "option_type",      limit: 255
+    t.string  "context",          limit: 255
+    t.integer "page_template_id", limit: 4
+  end
+
+  add_index "page_template_values", ["page_template_id"], name: "index_page_template_values_on_page_template_id", using: :btree
+
+  create_table "page_templates", force: :cascade do |t|
+    t.string "name",     limit: 255
+    t.string "template", limit: 255
+  end
+
+  create_table "page_values", force: :cascade do |t|
+    t.integer "page_id",                limit: 4
+    t.integer "page_template_value_id", limit: 4
+    t.string  "value",                  limit: 255
+    t.string  "type",                   limit: 255
+  end
+
+  add_index "page_values", ["page_id"], name: "index_page_values_on_page_id", using: :btree
+  add_index "page_values", ["page_template_value_id"], name: "index_page_values_on_page_template_value_id", using: :btree
+
+  create_table "pages", force: :cascade do |t|
+    t.string  "title",            limit: 255
+    t.string  "slug",             limit: 255
+    t.integer "page_template_id", limit: 4
+  end
 
   create_table "phrasing_phrase_versions", force: :cascade do |t|
     t.integer  "phrasing_phrase_id", limit: 4
@@ -268,9 +304,21 @@ ActiveRecord::Schema.define(version: 20160630170700) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "vacancies", force: :cascade do |t|
+    t.string   "title",       limit: 255
+    t.string   "slug",        limit: 255
+    t.string   "sub_title",   limit: 255
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
   add_foreign_key "newsletter_template_values", "newsletter_templates"
   add_foreign_key "newsletter_values", "newsletter_template_values"
   add_foreign_key "newsletter_values", "newsletters"
   add_foreign_key "newsletters", "newsletter_templates"
+  add_foreign_key "page_template_values", "page_templates"
+  add_foreign_key "page_values", "page_template_values"
+  add_foreign_key "page_values", "pages"
   add_foreign_key "slides", "sliders"
 end

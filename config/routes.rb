@@ -9,10 +9,12 @@ Rails.application.routes.draw do
     devise_for :users
   end
 
-  resources :cars do
+  resources :cars, only: [:index, :show], path: 'autos' do
     get :like
-    get 'compare/:car_1_id/:car_2_id', to: 'cars#compare', as: :compare_2
-    get 'compare/:car_1_id/:car_2_id/:car_3_id', to: 'cars#compare', as: :compare_3
+    collection do
+      get 'compare/:car_1_id/:car_2_id', to: 'cars#compare', as: :compare_2
+      get 'compare/:car_1_id/:car_2_id/:car_3_id', to: 'cars#compare', as: :compare_3
+    end
   end
 
   resources :brands do
@@ -21,6 +23,18 @@ Rails.application.routes.draw do
       get :cars
     end
   end
+
+  resources :vacancies, only: [:index, :show], path: 'vacatures'
+
+  resources :link_partners, only: [:index]
+
+  ## route static links after normal resources to prevent conflicts
+  get 'contact', to: 'static_pages#contact'
+  get 'financieringen', to: 'static_pages#financieringen'
+  get 'particuliere_financieringen', to: 'static_pages#particuliere_financieringen'
+  get 'zakelijke_financieringen', to: 'static_pages#zakelijke_financieringen'
+  get '50_50_deals', to: 'static_pages#deals_50_50', as: :deal_50_50
+  get 'disclaimer', to: 'static_pages#disclaimer'
 
   namespace :admin do
 
@@ -59,9 +73,19 @@ Rails.application.routes.draw do
 
     resources :marquee_items
 
+    resources :link_partners
+
     resources :admin do
       collection do
         get :home
+      end
+    end
+
+    resources :vacancies
+
+    resources :pages do
+      collection do
+        get '/new/:template_id', to: 'pages#new', as: :new_page_with_template
       end
     end
   end

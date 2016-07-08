@@ -11,14 +11,14 @@
 
       <ul class="menu">
         <li class="active">
-          <a href="../homepage/homepage.php"><span class="helper"></span>
+          <a href="<%= root_path %>"><span class="helper"></span>
             Home
             <div class="border-bottom"></div>
             <div class="left_border"></div>
           </a>
         </li>
         <li class="voorraad" data-submenu="voorraad_menu">
-          <a href="../voorraad_pagina/voorraad_pagina.php">
+          <a href="<%= cars_path %>">
             <span class="helper"></span>
             Voorraad
             <%= image_tag 'header_arrow.png', class: 'header_arrow.png' %>
@@ -52,7 +52,7 @@
           </a>
         </li>
         <li class="Contact" data-submenu="contact_menu">
-          <a href="../contact_pagina/contact_pagina.php">
+          <a href="<%= contact_path %>">
             <span class="helper"></span>
             Contact
             <%= image_tag 'header_arrow.png', class: 'header_arrow.png' %>
@@ -94,7 +94,7 @@
         <ul>
           <% Brand.menu_items.order(:row_order).each do |brand| %>
               <li class="img">
-                <%= link_to brand_path(brand) do %>
+                <%= link_to brand_cars_path(brand) do %>
                     <span class="helper"></span>
                     <figure>
                       <span class="helper"></span>
@@ -136,9 +136,9 @@
                 <li><a href="#">Onze zekerheden</a></li>
               </ul>
               <ul>
-                <li><a href="#">Financiering</a></li>
-                <li><a href="#">50/50 deals</a></li>
-                <li><a href="#">Auto lease - de mogelijkheden</a></li>
+                <li><a href="<%= financieringen_path %>">Financiering</a></li>
+                <li><a href="<%= deal_50_50_path %>">50/50 deals</a></li>
+                <li><a href="<%= '' %>">Auto lease - de mogelijkheden</a></li>
                 <li><a href="#">Auto op afbetaling</a></li>
                 <li><a href="#">Full Operationeel Lease</a></li>
                 <li><a href="#">Leasen gebruikte autos</a></li>
@@ -149,9 +149,10 @@
               <ul>
                 <li><a href="#">Veel gestelde vragen</a></li>
                 <li><a href="#">Algemene voorwaarden</a></li>
-                <li><a href="#">Disclaimer</a></li>
+                <li><a href="<%= disclaimer_path %>">Disclaimer</a></li>
                 <li><a href="#">Sitemap</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="<%= contact_path %>">Contact</a></li>
+                <li><a href="<%= vacancies_path %>">Vacatures</a></li>
               </ul>
             </div>
           </div>
@@ -614,7 +615,7 @@
             <li><a href="#">Algemene voorwaarden</a></li>
             <li><a href="#">Disclaimer</a></li>
             <li><a href="#">Sitemap</a></li>
-            <li><a href="../contact_pagina/contact_pagina.php">Contact</a></li>
+            <li><a href="<%= contact_path %>">Contact</a></li>
             <li><a href="../particuliere_financieringen/particuliere_financierigen.php">Particuliere
               financieringen</a></li>
             <li><a href="../zakelijke_financiering/zakelijke_financiering.php">Zakelijke Financieringen</a>

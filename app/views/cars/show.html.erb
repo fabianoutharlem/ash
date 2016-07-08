@@ -74,7 +74,7 @@
 
         <div class="per_maand">
           <span class="helper"></span>
-          <img src="../../assets/images/logo_akp_single.png" alt="">
+          <%= image_tag 'logo_akp_single.png' %>
 
           <p>Per maand v.a.</p>
 
@@ -365,111 +365,13 @@
 
         <div class="photos tabs">
           <ul>
-            <li class="active">
-                <figure>
-                  <img src="<%= image_url 'car1.jpg' %>" alt="">
-                </figure>
-            </li>
-            <li>
-                <figure>
-                  <img src="<%= image_url 'car1.jpg' %>" alt="">
-                </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="<%= image_url 'car1.jpg' %>" alt="">
-              </figure>
-            </li>
+            <% @car.car_images.each do |image| %>
+                <li>
+                  <figure>
+                    <%= image_tag image.file.thumb %>
+                  </figure>
+                </li>
+            <% end %>
           </ul>
           <div class="more active">Alle fotos <span class="plus active">+</span><span class="min">-</span></div>
         </div>
@@ -512,7 +414,7 @@
               <?php include('../general/_article_car.php'); ?>
               <?php include('../general/_article_car.php'); ?>
             </div>
-            <a href="../voorraad_pagina/voorraad_pagina.php" class="orange_btn">Bekijk de voorraad</a>
+            <a href="<%= cars_path %>" class="orange_btn">Bekijk de voorraad</a>
           </div>
         </section>
       </section>

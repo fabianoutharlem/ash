@@ -1,0 +1,7 @@
+<tr class="item" data-item-id="<%= link_partner.id %>">
+  <td><%= link_partner.link.html_safe %></td>
+  <td>
+    <%= link_to 'Aanpassen', edit_admin_link_partner_path(link_partner), class: 'btn btn-primary' %>
+    <%= link_to 'Delete', admin_link_partner_path(link_partner), method: :delete, class: 'btn btn-danger' %>
+  </td>
+</tr>

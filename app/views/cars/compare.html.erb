@@ -2,330 +2,221 @@
   <div class="wrapper">
     <div class="container-fluid content_container">
 
-      <?php include('../general/adres_contact.php'); ?>sect
+      <%= render 'shared/adress' %>
 
       <section class="cars_vergelijken">
         <div class="first_table_section table_section">
+          <% col_width = @car_3.present? ? '25%' : '33%' %>
           <table class="specificaties_table">
             <tr class="header">
-              <th>
-                <h4>Specificaties</h4>
+              <th width="<%= col_width %>">
+                <h4><%= phrase 'compare_specifications' %></h4>
 
                 <div class="voertuigen_vergelijken">
-                  <p>3 voertuigen vergelijken</p>
-                  <div class="orange_btn">Verschillen tonen</div>
+                  <p><%= @car_3.present? ? 3 : 2 %> <%= phrase 'voertuigen_vergelijken' %></p>
+                  <div class="orange_btn"><%= phrase 'verschillen_tonen' %></div>
                 </div>
               </th>
-              <td class="car car1">
+              <td class="car car1" width="<%= col_width %>">
                 <div class="car_img"
-                     style="background: url(../../assets/images/car_1.png) no-repeat center; background-size: cover;"></div>
-                <div class="cross"></div>
+                     style="background: url('<%= @car_1.main_image.file.thumb.url %>') no-repeat center; background-size: cover;"></div>
+                <% if @car_3.present? %>
+                    <%= link_to '', compare_2_cars_path(@car_2, @car_3), class: 'cross' %>
+                <% end %>
               </td>
-              <td class="car car2">
+              <td class="car car2" width="<%= col_width %>">
                 <div class="car_img"
-                     style="background: url(../../assets/images/car_1.png) no-repeat center; background-size: cover;"></div>
-                <div class="cross"></div>
+                     style="background: url('<%= @car_2.main_image.file.thumb.url %>') no-repeat center; background-size: cover;"></div>
+                <% if @car_3.present? %>
+                    <%= link_to '', compare_2_cars_path(@car_1, @car_3), class: 'cross' %>
+                <% end %>
               </td>
-              <td class="car car3">
-                <div class="car_img"
-                     style="background: url(../../assets/images/car_1.png) no-repeat center; background-size: cover;"></div>
-                <div class="cross"></div>
-              </td>
+              <% if @car_3.present? %>
+                  <td class="car car3" width="<%= col_width %>">
+                    <div class="car_img"
+                         style="background: url('<%= @car_3.main_image.file.thumb.url %>') no-repeat center; background-size: cover;"></div>
+                    <% if @car_3.present? %>
+                        <%= link_to '', compare_2_cars_path(@car_1, @car_2), class: 'cross' %>
+                    <% end %>
+                  </td>
+              <% end %>
             </tr>
             <tr>
-              <th class="first_margin">Merk</th>
-              <td class="car car1 first_margin">Mercedes-Benz</td>
-              <td class="car car2 first_margin">Mercedes-Benz</td>
-              <td class="car car3 first_margin">Mercedes-Benz</td>
+              <th class="first_margin"><%= phrase 'merk' %></th>
+              <td class="car car1 first_margin"><%= @car_1.brand.name %></td>
+              <td class="car car2 first_margin"><%= @car_2.brand.name %></td>
+              <% if @car_3.present? %>
+                  <td class="car car3 first_margin"><%= @car_3.brand.name %></td>
+              <% end %>
             </tr>
             <tr>
-              <th>Model</th>
-              <td class="car car1">C-Klasse 180</td>
-              <td class="car car2">C-Klasse 180</td>
-              <td class="car car3">C-Klasse 180</td>
+              <th><%= phrase 'model' %></th>
+              <td class="car car1"><%= @car_1.model.name %></td>
+              <td class="car car2"><%= @car_2.model.name %></td>
+              <% if @car_3.present? %>
+                  <td class="car car3"><%= @car_3.model.name %></td>
+              <% end %>
             </tr>
             <tr>
-              <th>Type</th>
-              <td class="car car1">CGI 156PK Automaat BlueEFFICIENCY Avantgarde</td>
-              <td class="car car2">CGI 156PK Automaat BlueEFFICIENCY Avantgarde</td>
-              <td class="car car3">CGI 156PK Automaat BlueEFFICIENCY Avantgarde</td>
+              <th><%= phrase 'type' %></th>
+              <td class="car car1"><%= @car_1.car_type %></td>
+              <td class="car car2"><%= @car_2.car_type %></td>
+              <% if @car_3.present? %>
+                  <td class="car car3"><%= @car_3.car_type %></td>
+              <% end %>
             </tr>
             <tr>
-              <th>Prijs</th>
-              <td class="car car1">€17.900,-</td>
-              <td class="car car2">€17.900,-</td>
-              <td class="car car3">€17.900,-</td>
+              <th><%= phrase 'prijs' %></th>
+              <td class="car car1"><%= format_money @car_1.price_total %></td>
+              <td class="car car2"><%= format_money @car_2.price_total %></td>
+              <% if @car_3.present? %>
+                  <td class="car car3"><%= format_money @car_3.price_total %></td>
+              <% end %>
             </tr>
             <tr>
-              <th>50/50 Deal</th>
-              <td class="car car1">€9.500,-</td>
-              <td class="car car2">€9.500,-</td>
-              <td class="car car3">€9.500,-</td>
+              <th><%= phrase '50_50_deal' %></th>
+              <td class="car car1"><%= format_money @car_1.price_50_50 %></td>
+              <td class="car car2"><%= format_money @car_2.price_50_50 %></td>
+              <% if @car_3.present? %>
+                  <td class="car car3"><%= format_money @car_3.price_50_50 %></td>
+              <% end %>
             </tr>
             <tr>
-              <th>Maandbedrag</th>
-              <td class="car car1">€238,-</td>
-              <td class="car car2">€238,-</td>
-              <td class="car car3">€238,-</td>
+              <th><%= phrase 'maand_bedrag' %></th>
+              <td class="car car1"><%= format_money @car_1.price_month %></td>
+              <td class="car car2"><%= format_money @car_2.price_month %></td>
+              <% if @car_3.present? %>
+                  <td class="car car3"><%= format_money @car_3.price_month %></td>
+              <% end %>
             </tr>
             <tr>
-              <th>Carrosserie</th>
-              <td class="car car1">Sedan (4 deurs)</td>
-              <td class="car car2">Sedan (4 deurs)</td>
-              <td class="car car3">Sedan (4 deurs)</td>
+              <th><%= phrase 'carosserie' %></th>
+              <td class="car car1"><%= @car_1.body_type.name %></td>
+              <td class="car car2"><%= @car_2.body_type.name %></td>
+              <% if @car_3.present? %>
+                  <td class="car car3"><%= @car_3.body_type.name %></td>
+              <% end %>
             </tr>
             <tr>
-              <th>Transmissie</th>
-              <td class="car car1">Automaat</td>
-              <td class="car car2">Automaat</td>
-              <td class="car car3">Automaat</td>
+              <th><%= phrase 'transmissie' %></th>
+              <td class="car car1"><%= @car_1.transmission_type.name %></td>
+              <td class="car car2"><%= @car_2.transmission_type.name %></td>
+              <% if @car_3.present? %>
+                  <td class="car car3"><%= @car_3.transmission_type.name %></td>
+              <% end %>
             </tr>
             <tr>
-              <th>Kleur</th>
-              <td class="car car1">Zwart metallic</td>
-              <td class="car car2">Zwart metallic</td>
-              <td class="car car3">Zwart metallic</td>
+              <th><%= phrase 'kleur' %></th>
+              <td class="car car1"><%= [@car_1.color, @car_1.color_type].join(' ') %></td>
+              <td class="car car2"><%= [@car_2.color, @car_2.color_type].join(' ') %></td>
+              <% if @car_3.present? %>
+                  <td class="car car3"><%= [@car_3.color, @car_3.color_type].join(' ') %></td>
+              <% end %>
             </tr>
             <tr>
-              <th>KM stand</th>
-              <td class="car car1">171 km</td>
-              <td class="car car2">171 km</td>
-              <td class="car car3">171 km</td>
+              <th><%= phrase 'km_stand' %></th>
+              <td class="car car1"><%= @car_1.mileage %> km</td>
+              <td class="car car2"><%= @car_2.mileage %> km</td>
+              <% if @car_3.present? %>
+                  <td class="car car3"><%= @car_3.mileage %> km</td>
+              <% end %>
             </tr>
             <tr>
-              <th>Brandstof</th>
-              <td class="car car1">Benzine</td>
-              <td class="car car2">Benzine</td>
-              <td class="car car3">Benzine</td>
+              <th><%= phrase 'brandstof' %></th>
+              <td class="car car1"><%= @car_1.fuel_type %></td>
+              <td class="car car2"><%= @car_2.fuel_type %></td>
+              <% if @car_3.present? %>
+                  <td class="car car3"><%= @car_3.fuel_type %></td>
+              <% end %>
             </tr>
             <tr>
-              <th>Bouwjaar</th>
-              <td class="car car1">2010</td>
-              <td class="car car2">2010</td>
-              <td class="car car3">2010</td>
+              <th><%= phrase 'bouwjaar' %></th>
+              <td class="car car1"><%= @car_1.manufacture_year %></td>
+              <td class="car car2"><%= @car_2.manufacture_year %></td>
+              <% if @car_3.present? %>
+                  <td class="car car3"><%= @car_3.manufacture_year %></td>
+              <% end %>
             </tr>
             <tr>
-              <th>Cil. inhoud</th>
-              <td class="car car1">1796 cc</td>
-              <td class="car car2">1796 cc</td>
-              <td class="car car3">1796 cc</td>
+              <th><%= phrase 'cil_inhoud' %></th>
+              <td class="car car1"><%= @car_1.engine_size %> cc</td>
+              <td class="car car2"><%= @car_2.engine_size %> cc</td>
+              <% if @car_3.present? %>
+                  <td class="car car3"><%= @car_3.engine_size %> cc</td>
+              <% end %>
             </tr>
             <tr>
-              <th>Aantal cil. 4</th>
-              <td class="car car1">4</td>
-              <td class="car car2">4</td>
-              <td class="car car3">4</td>
+              <th><%= phrase 'aantal_cilinders' %></th>
+              <td class="car car1"><%= @car_1.cylinders %></td>
+              <td class="car car2"><%= @car_2.cylinders %></td>
+              <% if @car_3.present? %>
+                  <td class="car car3"><%= @car_3.cylinders %></td>
+              <% end %>
             </tr>
             <tr>
-              <th>Vermogen</th>
-              <td class="car car1">156 pk</td>
-              <td class="car car2">156 pk</td>
-              <td class="car car3">156 pk</td>
+              <th><%= phrase 'vermogen' %></th>
+              <td class="car car1"><%= @car_1.engine_power %> pk</td>
+              <td class="car car2"><%= @car_2.engine_power %> pk</td>
+              <% if @car_3.present? %>
+                  <td class="car car3"><%= @car_3.engine_power %> pk</td>
+              <% end %>
             </tr>
             <tr>
-              <th>Topsnelheid</th>
-              <td class="car car1">220 km/u</td>
-              <td class="car car2">220 km/u</td>
-              <td class="car car3">220 km/u</td>
+              <th><%= phrase 'top_snelheid' %></th>
+              <td class="car car1"><%= @car_1.top_speed %> km/u</td>
+              <td class="car car2"><%= @car_2.top_speed %> km/u</td>
+              <% if @car_3.present? %>
+                  <td class="car car3"><%= @car_3.top_speed %> km/u</td>
+              <% end %>
             </tr>
             <tr>
-              <th>Interieur</th>
-              <td class="car car1">Half leder / stof (Zwart)</td>
-              <td class="car car2">Half leder / stof (Zwart)</td>
-              <td class="car car3">Half leder / stof (Zwart)</td>
+              <th><%= phrase 'interieur' %></th>
+              <td class="car car1"><%= @car_1.interior %></td>
+              <td class="car car2"><%= @car_2.interior %></td>
+              <% if @car_3.present? %>
+                  <td class="car car3"><%= @car_3.interior %></td>
+              <% end %>
             </tr>
             <tr>
-              <th>Energielabel</th>
-              <td class="car car1">C</td>
-              <td class="car car2">C</td>
-              <td class="car car3">C</td>
+              <th><%= phrase 'energielabel' %></th>
+              <td class="car car1"><%= @car_1.energy_label %></td>
+              <td class="car car2"><%= @car_2.energy_label %></td>
+              <% if @car_3.present? %>
+                  <td class="car car3"><%= @car_3.energy_label %></td>
+              <% end %>
             </tr>
             <tr>
-              <th>Wegenbelasting</th>
-              <td class="car car1">€180 - €205 p/kw</td>
-              <td class="car car2">€180 - €205 p/kw</td>
-              <td class="car car3">€180 - €205 p/kw</td>
+              <th><%= phrase 'wegenbelasting' %></th>
+              <td class="car car1"><%= @car_1.road_tax %> p/kw</td>
+              <td class="car car2"><%= @car_2.road_tax %> p/kw</td>
+              <% if @car_3.present? %>
+                  <td class="car car3"><%= @car_3.road_tax %> p/kw</td>
+              <% end %>
             </tr>
           </table>
         </div>
 
         <div class="second_table_section table_section">
-          <h4>Acessiores</h4>
+          <h4><%= phrase 'accessoires' %></h4>
           <table class="acessiores_table">
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• 7 persoons</td>
-              <td class="car car2">• 7 persoons</td>
-              <td class="car car3">• 7 persoons</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• Achterstoelen uitneembaar</td>
-              <td class="car car2">• Achterstoelen uitneembaar</td>
-              <td class="car car3">• Achterstoelen uitneembaar</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• Airbag(s) hoofd voor en achter</td>
-              <td class="car car2">• Airbag(s) hoofd voor en achter</td>
-              <td class="car car3">• Airbag(s) hoofd voor en achter</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• Airbag bestuurder en passagier</td>
-              <td class="car car2">• Airbag bestuurder en passagier</td>
-              <td class="car car3">• Airbag bestuurder en passagier</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• Airco (automatisch)</td>
-              <td class="car car2">• Airco (automatisch)</td>
-              <td class="car car3">• Airco (automatisch)</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• Alarmsysteem</td>
-              <td class="car car2">• Alarmsysteem</td>
-              <td class="car car3">• Alarmsysteem</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• Antiblokkeersysteem</td>
-              <td class="car car2">• Antiblokkeersysteem</td>
-              <td class="car car3">• Antiblokkeersysteem</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• Antislipregeling</td>
-              <td class="car car2">• Antislipregeling</td>
-              <td class="car car3">• Antislipregeling</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• audio-navigatie full map + hard disk</td>
-              <td class="car car2">• audio-navigatie full map + hard disk</td>
-              <td class="car car3">• audio-navigatie full map + hard disk</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• Audio-navigatie full map + hard disk</td>
-              <td class="car car2">• Audio-navigatie full map + hard disk</td>
-              <td class="car car3">• Audio-navigatie full map + hard disk</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• Autotelefoon voorbereiding</td>
-              <td class="car car2">• Autotelefoon voorbereiding</td>
-              <td class="car car3">• Autotelefoon voorbereiding</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• autotelefoon voorbereiding</td>
-              <td class="car car2">• autotelefoon voorbereiding</td>
-              <td class="car car3">• autotelefoon voorbereiding</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• Bagagedek</td>
-              <td class="car car2">• Bagagedek</td>
-              <td class="car car3">• Bagagedek</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• Bestuurdersstoel in hoogte verstelbaar</td>
-              <td class="car car2">• Bestuurdersstoel in hoogte verstelbaar</td>
-              <td class="car car3">• Bestuurdersstoel in hoogte verstelbaar</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• Binnenspiegel aut.dimmend</td>
-              <td class="car car2">• Binnenspiegel aut.dimmend</td>
-              <td class="car car3">• Binnenspiegel aut.dimmend</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• Boordcomputer</td>
-              <td class="car car2">• Boordcomputer</td>
-              <td class="car car3">• Boordcomputer</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• Buitenspiegels elektrisch verstel- en verwarmbaar</td>
-              <td class="car car2">• Buitenspiegels elektrisch verstel- en verwarmbaar</td>
-              <td class="car car3">• Buitenspiegels elektrisch verstel- en verwarmbaar</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• Buitentemperatuurmeter</td>
-              <td class="car car2">• Buitentemperatuurmeter</td>
-              <td class="car car3">• Buitentemperatuurmeter</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• Bumpers in carrosseriekleur</td>
-              <td class="car car2">• Bumpers in carrosseriekleur</td>
-              <td class="car car3">• Bumpers in carrosseriekleur</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• Centrale deurvergrendeling afstandbediend</td>
-              <td class="car car2">• Centrale deurvergrendeling afstandbediend</td>
-              <td class="car car3">• Centrale deurvergrendeling afstandbediend</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• Cruise control</td>
-              <td class="car car2">• Cruise control</td>
-              <td class="car car3">• Cruise control</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• 7 persoons</td>
-              <td class="car car2">• 7 persoons</td>
-              <td class="car car3">• 7 persoons</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• Achterstoelen uitneembaar</td>
-              <td class="car car2">• Achterstoelen uitneembaar</td>
-              <td class="car car3">• Achterstoelen uitneembaar</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• Airbag(s) hoofd voor en achter</td>
-              <td class="car car2">• Airbag(s) hoofd voor en achter</td>
-              <td class="car car3">• Airbag(s) hoofd voor en achter</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• Airbag bestuurder en passagier</td>
-              <td class="car car2">• Airbag bestuurder en passagier</td>
-              <td class="car car3">• Airbag bestuurder en passagier</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• Airco (automatisch)</td>
-              <td class="car car2">• Airco (automatisch)</td>
-              <td class="car car3">• Airco (automatisch)</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• Alarmsysteem</td>
-              <td class="car car2">• Alarmsysteem</td>
-              <td class="car car3">• Alarmsysteem</td>
-            </tr>
-            <tr>
-              <td class="emty_space"></td>
-              <td class="car car1">• Antiblokkeersysteem</td>
-              <td class="car car2">• Antiblokkeersysteem</td>
-              <td class="car car3">• Antiblokkeersysteem</td>
-            </tr>
+            <% @equal_options.each do |option| %>
+                <tr>
+                  <td class="emty_space" width="<%= col_width %>"></td>
+                  <td class="car car1" width="<%= col_width %>">• <%= option %></td>
+                  <td class="car car2" width="<%= col_width %>">• <%= option %></td>
+                  <% if @car_3.present? %>
+                      <td class="car car3" width="<%= col_width %>">• <%= option %></td>
+                  <% end %>
+                </tr>
+            <% end %>
           </table>
         </div>
       </section>
 
+
+
       <div class="error">
-        <h4>Deze optie is niet beschikbaar voor dit scherm formaat</h4>
+        <h4><%= phrase 'Deze_optie_is_niet_beschikbaar_voor_dit_scherm_formaat' %></h4>
       </div>
     </div>
   </div>

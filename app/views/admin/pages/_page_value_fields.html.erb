@@ -1,0 +1,4 @@
+<%= f.hidden_field :page_template_value_id %>
+<%= f.hidden_field :type %>
+
+<%= render 'admin/pages/page_values/' + f.object.partial_name, {f: f} %>

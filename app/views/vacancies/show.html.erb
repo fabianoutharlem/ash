@@ -1,0 +1,20 @@
+<!-- vacature_voorbeeld_pagina content -->
+<section class="vacature_voorbeeld_pagina">
+  <div class="wrapper">
+    <div class="container-fluid content_container">
+      <%= render 'shared/adress' %>
+
+      <div class="container-fluid vacature_voorbeeld_pagina_container">
+        <a href="<%= vacancies_path %>" class="orange_btn terug_btn"><span class="large"><%= phrase 'Terug naar vacatures' %></span><span class="small">Terug</span></a>
+        <a href="<%= vacancy_path(@vacancy.next) %>" class="orange_btn volgende_btn"><span class="large"><%= phrase 'Volgende vacature' %></span><span class="small">Volgende</span></a>
+
+        <div class="vacature_content">
+          <h3><%= @vacancy.title %></h3>
+          <small><%= @vacancy.sub_title %></small>
+
+          <%= @vacancy.description.html_safe %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -58,6 +58,24 @@
             <span class="nav-label">Marquee items</span>
         <% end %>
       </li>
+      <li class="<%= is_active_controller('vacancies') %>">
+        <%= link_to admin_vacancies_path do %>
+            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            <span class="nav-label">Vacatures</span>
+        <% end %>
+      </li>
+      <li class="<%= is_active_controller('link_partners') %>">
+        <%= link_to admin_link_partners_path do %>
+            <i class="fa fa-external-link" aria-hidden="true"></i>
+            <span class="nav-label">Link Partners</span>
+        <% end %>
+      </li>
+      <li class="<%= is_active_controller('pages') %>">
+        <%= link_to admin_pages_path do %>
+            <i class="fa fa-file-text-o" aria-hidden="true"></i>
+            <span class="nav-label">Pages</span>
+        <% end %>
+      </li>
 
     </ul>
 

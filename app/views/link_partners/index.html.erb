@@ -1,0 +1,36 @@
+<section class="link_partners">
+  <div class="wrapper">
+    <div class="container-fluid content_container">
+
+      <%= render 'shared/adress' %>
+
+      <div class="container-fluid linkpartners_container">
+        <div class="title">
+          <h2><%= phrase 'Linkpartners' %></h2>
+          <p><%= phrase 'Wij werken samen met de volgende partners' %></p>
+        </div>
+
+        <div class="row">
+          <div class="link_blokken left">
+            <ul>
+              <% @link_partners[0..@link_partners.length/2].each do |link_partner| %>
+                  <li>
+                    <%= link_partner.link.html_safe %>
+                  </li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="link_blokken right">
+            <ul>
+              <% @link_partners[(@link_partners.length/2+1)..-1].each do |link_partner| %>
+                  <li>
+                    <%= link_partner.link.html_safe %>
+                  </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
