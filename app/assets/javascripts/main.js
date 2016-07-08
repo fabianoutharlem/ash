@@ -7,7 +7,7 @@ $(document).ready(function () {
     //homepage
     var section_header = $('section.header');
 
-    $("li[data-submenu]", section_header).mouseenter(function() {
+    $("li[data-submenu]", section_header).mouseenter(function () {
         if ($(this).hasClass('active')) return;
 
         $(this).addClass('active');
@@ -33,7 +33,6 @@ $(document).ready(function () {
         // Close all open submenues, e.g.
         $('div.sub_menu, li[data-submenu]', section_header).removeClass('active');
     });
-
 
 
     //smartphone_menu
@@ -143,7 +142,7 @@ $(document).ready(function () {
     });
 
     //voorraad_pagina price sliders
-    $("#slider_prijs_tot").slider({
+    $("#buy_slider_to").slider({
         min: 0,
         max: 50000,
         range: "min",
@@ -152,7 +151,7 @@ $(document).ready(function () {
         create: showLabel
     });
 
-    $("#slider_prijs_maand_tot").slider({
+    $("#buy_slider_month").slider({
         min: 0,
         max: 2000,
         range: "min",
@@ -161,7 +160,25 @@ $(document).ready(function () {
         create: showLabel
     });
 
-         //homepage carousel
+    $("#finance_slider_to").slider({
+        min: 0,
+        max: 50000,
+        range: "min",
+        value: 21000,
+        slide: showLabel,
+        create: showLabel
+    });
+
+    $("#finance_slider_month").slider({
+        min: 0,
+        max: 2000,
+        range: "min",
+        value: 219,
+        slide: showLabel,
+        create: showLabel
+    });
+
+    //homepage carousel
     var owl = $('#owl2row-plugin');
     owl.owlCarousel({
         nav: true,
@@ -178,16 +195,16 @@ $(document).ready(function () {
         responsive: {
             0: {
                 items: 1,
-                slideBy:1,
+                slideBy: 1,
                 dots: false
             },
             700: {
                 items: 2,
-                slideBy:2
+                slideBy: 2
             },
             1040: {
                 items: 3,
-                slideBy:3
+                slideBy: 3
             },
             1281: {
                 items: 4
@@ -216,7 +233,11 @@ $(document).ready(function () {
     $('.auto_uitgelicht .car_slider').unslider({
         autoplay: false,
         delay: 5000,
-        arrows: false,
+        arrows: {
+            prev: '<a class="unslider-arrow prev"><img src="../assets/nav_prev_carousel.png" alt=""></a>',
+            next: '<a class="unslider-arrow next"><img src="../assets/main_slider_next.png" alt=""></a>',
+        },
+        nav: false,
         infinite: true
     });
 
@@ -287,28 +308,55 @@ $(document).ready(function () {
 
     //alle fotos (tab photos)
     var more_btn = $('section.spec_tabs div.photos div.more');
-    more_btn.click( function() {
+    more_btn.click(function () {
         $('section.spec_tabs div.photos li').toggleClass('show_all');
         $('section.spec_tabs div.photos div.more span.plus, section.spec_tabs div.photos div.more span.min').toggleClass('active');
     });
 
-      //overlay_photo_selection slider
-    $('.photo_selection_slider').unslider({
-        arrows: {
-            //  Unslider default behaviour
-            prev: '<a class="unslider-arrow prev"><img src="assets/nav_prev_carousel.png" alt=""></a>',
-            next: '<a class="unslider-arrow next"><img src="assets/main_slider_next.png" alt=""></a>',
-        },
+    //overlay_photo_selection slider
+    var car_thumb_slider = $('#lightSlider').lightSlider({
+        item: 1,
+        gallery: true,
+        enableTouch: true,
+        enableDrag: true,
+        adaptiveHeight: true,
+        speed: 250,
+        galleryMargin: 20,
+        pager: true,
+        responsive: [
+            {
+                breakpoint: 880,
+                settings: {
+                    thumbItem: 7
+                }
+            },
 
-        autoplay: false,
-        delay: 5000,
-        nav: true,
-        infinite: true
+            {
+                breakpoint: 600,
+                settings: {
+                    thumbItem: 5
+                }
+            }
+        ],
+        onSliderLoad: function (el) {
+            el.lightGallery({
+                selector: '#lightSlider'
+            });
+        }
     });
 
-      //overlay_photo_selection vissible
-    //$('section.auto_uitgelicht')
+    //overlay_photo_selection vissible
+    $('section.spec_tabs div.photos li').click(function () {
+        car_thumb_slider.goToSlide($(this).index());
 
+        var timer = setTimeout(function () {
+            $('section.spec_tabs div.overlay_photo_selection').addClass('active bounceInUp');
+        }, 250);
+    });
+    //overlay_photo_selection hide
+    $('section.spec_tabs div.overlay_photo_selection div.cross').click(function () {
+        $('section.spec_tabs div.overlay_photo_selection').removeClass('active bounceInUp');
+    });
 
 
     //detail page carousel  //exclusief smartphone carousel
@@ -328,16 +376,16 @@ $(document).ready(function () {
         responsive: {
             0: {
                 items: 1,
-                slideBy:1,
+                slideBy: 1,
                 dots: false
             },
             700: {
                 items: 2,
-                slideBy:2,
+                slideBy: 2,
             },
             1040: {
                 items: 3,
-                slideBy:3,
+                slideBy: 3,
             },
             1281: {
                 items: 4
@@ -353,12 +401,19 @@ $(document).ready(function () {
 
     //voorraad
 
-       //left menu filters tab active
-    var tab_btn = $('section.all_cars div.left div.tab');
-    tab_btn.click(function () {
+    //left menu filters tab active
+    var data_searchfield = $(this).data('searchfield'),
+        searchfield = $('section.all_cars div.search_fields');
+
+    $('section.all_cars div.left div.tab').click(function () {
+        $('section.all_cars div.left div.tab').removeClass('active');
         $(this).addClass('active');
-        tab_btn.not($(this)).removeClass('active');
+
+        searchfield.removeClass('active');
+        searchfield.filter('.' + $(this).data('searchfield')).addClass('active');
     });
+
+    //left menu tab search _field koppeling
 
     //partial zekerheden carousel
     var owl = $('.owl_carousel_zekerheden');
@@ -377,15 +432,15 @@ $(document).ready(function () {
         responsive: {
             0: {
                 items: 1,
-                slideBy:1,
+                slideBy: 1,
             },
             700: {
                 items: 2,
-                slideBy:2
+                slideBy: 2
             },
             1040: {
                 items: 3,
-                slideBy:3
+                slideBy: 3
             },
             1281: {
                 items: 4
@@ -400,14 +455,14 @@ $(document).ready(function () {
     });
 
     //merken_pagina
-       //lees meer button
-    $('section.merk_uitgelicht p.first_alinea span').click( function () {
+    //lees meer button
+    $('section.merk_uitgelicht p.first_alinea span').click(function () {
         $('section.merk_uitgelicht p.second_alinea').toggleClass('active');
     });
 
     //exclusief
-       //lees meer button
-    $('section.info_blok span.lees_meer').click( function () {
+    //lees meer button
+    $('section.info_blok span.lees_meer').click(function () {
         $('section.info_blok p.small_not_visible').toggleClass('active');
     });
 });

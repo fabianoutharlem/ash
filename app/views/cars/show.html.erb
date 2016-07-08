@@ -7,14 +7,9 @@
 
         <div class="afspraak_container">
           <div class="car_slider_afspraak carslider_responsive">
-            <ul>
-              <% @car.car_images.each do |car_media| %>
-                  <li>
-                    <div class="background"
-                         style="background: url('<%= image_path car_media.file.large %>') no-repeat center; background-size: cover;"></div>
-                  </li>
-              <% end %>
-            </ul>
+            <figure>
+              <%= image_tag @car.main_image.file.large %>
+            </figure>
           </div>
           <form action="">
             <input type="text" class="naam" placeholder="Je naam">
@@ -82,7 +77,7 @@
         </div>
 
         <div class="akp_button">
-          <button class="orange_btn green_btn">Financier deze auto hier!</button>
+          <button class="orange_btn green_btn afspraak_btn">Financier deze auto hier!</button>
         </div>
 
         <p class="binnen_24">Binnen 24 uur rijden! Bepaal jou prijs.</p>
@@ -162,20 +157,16 @@
 
     <h3>Model naam</h3>
 
-    <div class="unslider_wrapper">
-      <div class="photo_selection_slider">
-        <ul>
-          <li>
-            <%= image_tag 'car1.jpg' %>
-          </li>
-          <li>
-            <%= image_tag 'car1.jpg' %>
-          </li>
-          <li>
-            <%= image_tag 'car1.jpg' %>
-          </li>
-        </ul>
-      </div>
+    <div class="slider_container">
+      <ul id="lightSlider">
+        <% @car.car_images.each do |car_image| %>
+            <li data-thumb="<%= car_image.file.thumb.url %>" data-src="<%= car_image.file.large.url %>">
+              <div class="image_container">
+                <%= image_tag car_image.file.thumb %>
+              </div>
+            </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 
@@ -365,15 +356,14 @@
 
         <div class="photos tabs">
           <ul>
-            <% @car.car_images.each do |image| %>
+            <% @car.car_images.each do |car_image| %>
                 <li>
                   <figure>
-                    <%= image_tag image.file.thumb %>
+                    <%= image_tag car_image.file.thumb %>
                   </figure>
                 </li>
             <% end %>
           </ul>
-          <div class="more active">Alle fotos <span class="plus active">+</span><span class="min">-</span></div>
         </div>
       </div>
     </div>

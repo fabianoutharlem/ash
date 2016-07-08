@@ -20,4 +20,5 @@
 //= require unslider.js
 //= require select2.min.js
 //= require phrasing
+//= require lightslider.js
 //= require main.js
