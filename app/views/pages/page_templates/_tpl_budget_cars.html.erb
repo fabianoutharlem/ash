@@ -1,0 +1,42 @@
+<section class="main_slider budget_slider">  <!-- gestyled in main_slider -->
+  <div class="wrapper">
+    <div class="container-fluid">
+      <div class="my-slider">  <!-- nav is uitgezet in main_slider -> section.budget_slider -->
+        <ul>
+          <li class="main_slides _slide4" style="background: url('<%= header_achtergrond.value.url %>') no-repeat center; background-size: cover;">
+
+            <%= image_tag header_logo.value, class: 'ath_logo' %>
+
+            <h1><%= header_titel.value %></h1>
+            <p><%= header_onder_titel.value %></p>
+
+            <a href="<%= header_button_link.value %>" class="orange_btn"><%= header_button_tekst.value %></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="budget_cars_info info_blok"> <!-- gestyled in general -> info_blok -->
+  <div class="wrapper">
+    <div class="container-fluid content_container">
+      <h3><%= tekst_titel.value %> </h3>
+      <div class="wrap_2cols">
+        <%= tekst_content.value.html_safe %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mogelijkheden">
+  <div class="wrapper">
+    <div class="container-fluid content_container" style="background: url('<%= financieren_achtergrond.value.url %>') no-repeat center; background-size: cover">
+
+      <h2><%= financieren_titel.value %></h2>
+      <h3><%= financieren_onder_titel.value %></h3>
+
+      <%= render 'shared/finance_circles' %>
+    </div>
+  </div>
+</section>

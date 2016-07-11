@@ -9,7 +9,7 @@
         <%= link_to 'Pages', admin_pages_path %>
       </li>
       <li class="active">
-        <strong>Page "<%= @page.name %>" aanpassen</strong>
+        <strong>Page "<%= @page.title %>" aanpassen</strong>
       </li>
     </ol>
   </div>
@@ -23,7 +23,7 @@
           <h5>Page "<%= @page.title %>" aanpassen</h5>
         </div>
         <div class="ibox-content">
-          <%= form_for @page, url: admin_page_path(@page), method: :put do |f| %>
+          <%= form_for @page, url: admin_page_path(@page), method: :put, html: {class: 'form-horizontal'} do |f| %>
               <%= render 'form', f: f %>
           <% end %>
         </div>

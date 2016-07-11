@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160707135536) do
+ActiveRecord::Schema.define(version: 20160711145522) do
 
   create_table "alternatives", force: :cascade do |t|
     t.string   "which",        limit: 255
@@ -172,33 +172,41 @@ ActiveRecord::Schema.define(version: 20160707135536) do
   add_index "newsletters", ["newsletter_template_id"], name: "index_newsletters_on_newsletter_template_id", using: :btree
 
   create_table "page_template_values", force: :cascade do |t|
-    t.string  "option_name",      limit: 255
-    t.string  "option_type",      limit: 255
-    t.string  "context",          limit: 255
-    t.integer "page_template_id", limit: 4
+    t.string   "option_name",      limit: 255
+    t.string   "option_type",      limit: 255
+    t.string   "context",          limit: 255
+    t.integer  "page_template_id", limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "page_template_values", ["page_template_id"], name: "index_page_template_values_on_page_template_id", using: :btree
 
   create_table "page_templates", force: :cascade do |t|
-    t.string "name",     limit: 255
-    t.string "template", limit: 255
+    t.string   "name",       limit: 255
+    t.string   "template",   limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "page_values", force: :cascade do |t|
-    t.integer "page_id",                limit: 4
-    t.integer "page_template_value_id", limit: 4
-    t.string  "value",                  limit: 255
-    t.string  "type",                   limit: 255
+    t.integer  "page_id",                limit: 4
+    t.integer  "page_template_value_id", limit: 4
+    t.text     "value",                  limit: 65535
+    t.string   "type",                   limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "page_values", ["page_id"], name: "index_page_values_on_page_id", using: :btree
   add_index "page_values", ["page_template_value_id"], name: "index_page_values_on_page_template_value_id", using: :btree
 
   create_table "pages", force: :cascade do |t|
-    t.string  "title",            limit: 255
-    t.string  "slug",             limit: 255
-    t.integer "page_template_id", limit: 4
+    t.string   "title",            limit: 255
+    t.string   "slug",             limit: 255
+    t.integer  "page_template_id", limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "phrasing_phrase_versions", force: :cascade do |t|

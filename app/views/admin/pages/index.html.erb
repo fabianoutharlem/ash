@@ -1,41 +1,69 @@
-<div class="page-header">
-  <h1>Pages</h1>
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2>Slides</h2>
+    <ol class="breadcrumb">
+      <li>
+        <a href="<%= url_for admin_root_path %>">Home</a>
+      </li>
+      <li class="active">
+        <strong>Pages</strong>
+      </li>
+    </ol>
+  </div>
+  <div class="col-lg-2">
+
+  </div>
 </div>
 
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>Pages</h5>
+          <div class="ibox-tools">
+            <a class="dropdown-toggle btn btn-default" data-toggle="dropdown" href="#">
+              <i class="fa fa-plus"></i><span> Nieuwe page</span>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+              <% ::PageTemplate.all.each do |template| %>
+                  <%= content_tag :li do %>
+                      <%= link_to template.name, new_page_with_template_admin_pages_path(template) %>
+                  <% end %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <div class="ibox-content">
 
-<div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    New Page
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <% ::PageTemplate.all.each do |template| %>
-        <%= content_tag :li do %>
-            <%= link_to template.name, new_page_with_template_admin_pages_path(template) %>
-        <% end %>
-    <% end %>
-  </ul>
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>Titel</th>
+              <th>Slug</th>
+              <th>Aanmaak datum</th>
+              <th>Acties</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <% @pages.each do |page| %>
+                <tr>
+                  <td><%= page.title %></td>
+                  <td><%= page.slug %></td>
+                  <td><%= page.created_at.strftime('%Y-%m-%d - %H:%M') %></td>
+                  <td>
+                    <%= link_to 'Aanpassen', edit_admin_page_path(page), class: 'btn btn-primary btn-sm' %>
+                    <%= link_to 'Bekijk', page_path(page), class: 'btn btn-default btn-sm', target: :blank %>
+                    <%= link_to 'Delete', admin_page_path(page), method: :delete, class: 'btn btn-danger btn-sm' %>
+                  </td>
+                </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
-
-<hr/>
-
-<table class="table">
-  <tr>
-    <th>title</th>
-    <th>slug</th>
-    <th>published at</th>
-    <th>actions</th>
-  </tr>
-
-    <% @pages.each do |page| %>
-      <tr>
-        <td><%= page.title %></td>
-        <td><%= page.slug %></td>
-        <td><%= page.created_at.strftime('%Y/%m/%d %H%M') %></td>
-        <td>
-          <%= link_to 'Edit', edit_admin_page_path(page), class: 'btn btn-default btn-sm' %>
-          <%= link_to 'Delete', admin_page_path(page), method: :delete, class: 'btn btn-danger btn-sm' %>
-        </td>
-      </tr>
-<% end %>
-</table>

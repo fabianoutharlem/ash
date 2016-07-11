@@ -1,0 +1,66 @@
+<section class="main_slider exclusief_slider">
+  <div class="wrapper">
+    <div class="container-fluid">
+      <div class="my-slider">
+        <ul>
+          <li class="main_slides exclusief_slide" style="background: url('<%= header_image.value.url %>') no-repeat center; background-size: cover;">
+
+            <h1 class="animated fadeInRightBig"><%= header_title.value %></h1>
+            <h2 class="animated fadeInLeftBig"><%= header_onder_title.value %></h2>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ash_exclusief info_blok">  <!-- gestyled in general -> info_blok -->
+  <div class="wrapper">
+    <div class="container-fluid content_container">
+      <h3><%= text_titel.value %></h3>
+      <div class="wrap_2cols">
+        <%= text.value.html_safe %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bekijk_voorraad nieuw_binnen">
+  <div class="wrapper">
+    <div class="container-fluid content_container">
+      <h3><%= autos_titel.value %></h3>
+
+      <div class="large_screen">
+        <ul class="autos">
+          <% autos.cars.each do |car| %>
+              <li class="auto">
+                <%= render 'cars/car', car: car %>
+              </li>
+          <% end %>
+        </ul>
+      </div>
+
+      <div class="small_screen_carousel">
+        <div id="owl2row-plugin1" class="owl-carousel_top40">
+          <% autos.cars.each do |car| %>
+              <%= render 'cars/car', car: car %>
+          <% end %>
+        </div>
+      </div>
+
+      <a href="<%= autos_link.value %>" class="orange_btn"><%= autos_button_tekst.value %></a>
+    </div>
+  </div>
+</section>
+
+<section class="mogelijkheden">
+  <div class="wrapper">
+    <div class="container-fluid content_container" style="background: url('<%= financier_achtergrond.value.url %>') no-repeat center; background-size: cover">
+
+      <h2><%= financier_titel.value %></h2>
+      <h3><%= financier_onder_titel.value %></h3>
+
+      <%= render 'shared/finance_circles' %>
+    </div>
+  </div>
+</section>

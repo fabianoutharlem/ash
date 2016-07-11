@@ -1,4 +1,4 @@
 class PageTemplate < ActiveRecord::Base
-  has_many :pages
-  has_many :page_template_values
+  has_many :pages, dependent: :destroy
+  has_many :page_template_values, dependent: :destroy
 end

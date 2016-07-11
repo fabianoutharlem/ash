@@ -75,7 +75,7 @@ class Admin::PagesController < Admin::AdminBaseController
   private
 
   def page_params
-    params.require(:page).permit(:id, :title, :meta_title, :meta_description, :page_template_id, :row_order_position, page_values_attributes: [:id, :value, :type, :page_template_value_id])
+    params.require(:page).permit(:id, :title, :meta_title, :meta_description, :page_template_id, :row_order_position, page_values_attributes: [:id, :value, :type, :page_template_value_id, value: []])
   end
 
 end

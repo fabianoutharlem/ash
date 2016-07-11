@@ -90,4 +90,6 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :pages, only: [:show], path: '/'
+
 end

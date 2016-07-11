@@ -1,6 +1,6 @@
 class Page < ActiveRecord::Base
   belongs_to :page_template
-  has_many :page_values
+  has_many :page_values, dependent: :destroy
 
   extend FriendlyId
   friendly_id :slug_candidates, use: [:slugged, :finders]
@@ -18,6 +18,10 @@ class Page < ActiveRecord::Base
       values.merge! hash
     end
     values
+  end
+
+  def template_variables
+    page_values.includes(:page_template_value).index_by { |value| value.page_template_value.option_name.parameterize.underscore.to_sym }
   end
 
   private

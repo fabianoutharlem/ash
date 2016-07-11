@@ -1,0 +1,152 @@
+<section class="week_actie">
+  <div class="wrapper">
+    <div class="container-fluid content_container">
+      <div class="actie_banner" style="background: url('<%= header_achtergrond.value.url %>') no-repeat center; background-size: cover;">
+
+        <h1><%= header_titel.value %></h1>
+        <h2><%= header_onder_titel.value %></h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bekijk_voorraad">
+  <div class="wrapper">
+    <div class="container-fluid content_container">
+
+      <ul class="autos">
+        <% autos.cars.each do |car| %>
+            <li class="auto">
+              <%= render 'cars/car', car: car %>
+            </li>
+        <% end %>
+      </ul>
+
+      <a href="<%= autos_button_link.value %>" class="orange_btn"><%= autos_button_tekst.value %></a>
+    </div>
+  </div>
+</section>
+
+<section class="zekerheden">
+  <div class="wrapper">
+    <div class="container-fluid content_container">
+
+      <h2><%= zekerheden_titel.value.html_safe %></h2>
+
+      <div class="row row_text_blokken">
+          <div class="col">
+            <div class="image">
+              <span class="helper"></span>
+              <%= image_tag zekerheden_blok_1_logo.value %>
+            </div>
+            <h4><%= zekerheden_blok_1_titel.value %></h4>
+            <%= zekerheden_blok_1_content.value.html_safe %>
+          </div>
+
+          <div class="col">
+            <div class="image">
+              <span class="helper"></span>
+              <%= image_tag zekerheden_blok_2_logo.value %>
+            </div>
+            <h4><%= zekerheden_blok_2_titel.value %></h4>
+            <%= zekerheden_blok_2_content.value.html_safe %>
+          </div>
+
+          <div class="col">
+            <div class="image">
+              <span class="helper"></span>
+              <%= image_tag zekerheden_blok_3_logo.value %>
+            </div>
+            <h4><%= zekerheden_blok_3_titel.value %></h4>
+            <%= zekerheden_blok_3_content.value.html_safe %>
+          </div>
+
+          <div class="col">
+            <div class="image">
+              <span class="helper"></span>
+              <%= image_tag zekerheden_blok_4_logo.value %>
+            </div>
+            <h4><%= zekerheden_blok_4_titel.value %></h4>
+            <%= zekerheden_blok_4_content.value.html_safe %>
+          </div>
+
+          <div class="col">
+            <div class="image">
+              <span class="helper"></span>
+              <%= image_tag zekerheden_blok_5_logo.value %>
+            </div>
+            <h4><%= zekerheden_blok_5_titel.value %></h4>
+            <%= zekerheden_blok_5_content.value.html_safe %>
+          </div>
+
+      </div>
+
+      <div class="owl_carousel_zekerheden">
+        <div class="col">
+          <div class="image">
+            <span class="helper"></span>
+            <%= image_tag zekerheden_blok_1_logo.value %>
+          </div>
+          <h4><%= zekerheden_blok_1_titel.value %></h4>
+          <%= zekerheden_blok_1_content.value.html_safe %>
+        </div>
+
+        <div class="col">
+          <div class="image">
+            <span class="helper"></span>
+            <%= image_tag zekerheden_blok_2_logo.value %>
+          </div>
+          <h4><%= zekerheden_blok_2_titel.value %></h4>
+          <%= zekerheden_blok_2_content.value.html_safe %>
+        </div>
+
+        <div class="col">
+          <div class="image">
+            <span class="helper"></span>
+            <%= image_tag zekerheden_blok_3_logo.value %>
+          </div>
+          <h4><%= zekerheden_blok_3_titel.value %></h4>
+          <%= zekerheden_blok_3_content.value.html_safe %>
+        </div>
+
+        <div class="col">
+          <div class="image">
+            <span class="helper"></span>
+            <%= image_tag zekerheden_blok_4_logo.value %>
+          </div>
+          <h4><%= zekerheden_blok_4_titel.value %></h4>
+          <%= zekerheden_blok_4_content.value.html_safe %>
+        </div>
+
+        <div class="col">
+          <div class="image">
+            <span class="helper"></span>
+            <%= image_tag zekerheden_blok_5_logo.value %>
+          </div>
+          <h4><%= zekerheden_blok_5_titel.value %></h4>
+          <%= zekerheden_blok_5_content.value.html_safe %>
+        </div>
+      </div>
+
+      <div class="row recentie">
+        <%= image_tag review_image.value %>
+        <span class="helper"></span>
+        <p class="recenctie_text">
+          “ <%= review_quote.value %> ”
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mogelijkheden">
+  <div class="wrapper">
+    <div class="container-fluid content_container" style="background: url('<%= financieren_achtergrond.value.url %>') no-repeat center; background-size: cover">
+
+      <h2><%= financieren_titel.value %></h2>
+      <h3><%= financieren_onder_titel.value %></h3>
+
+      <%= render 'shared/finance_circles' %>
+    </div>
+  </div>
+</section>
