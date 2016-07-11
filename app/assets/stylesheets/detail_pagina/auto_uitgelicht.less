@@ -82,7 +82,7 @@ section.auto_uitgelicht {
           margin-left: 50px;
           margin-right: 50px;
           margin-bottom: 20px;
-          font-size: 2em;
+          font-size: 1.5em;
         }
       }
 
@@ -123,6 +123,10 @@ section.auto_uitgelicht {
             height: 205px;
           }
         }
+      }
+
+      .unslider-nav {
+        display: none;
       }
 
       form {
@@ -501,10 +505,6 @@ section.auto_uitgelicht {
       &.next {
         transform: translateY(-100%);
       }
-
-      &.prev {
-        transform: rotate(180deg);
-      }
     }
 
     div.car_slider {
@@ -881,6 +881,14 @@ section.detail_pagina_b { //only b
             font-size: 28px;
             color: #f35026;
             font-family: bebas;
+
+            @media @1000 {
+              font-size: 25px;
+            }
+
+            @media @360 {
+              font-size: 24px;
+            }
           }
 
           small {
@@ -924,7 +932,7 @@ section.detail_pagina_b { //only b
               }
 
               div.button {
-                z-index: 20;
+                z-index: 10;
                 position: absolute;
                 left: 50%;
                 transform: translateX(-50%);

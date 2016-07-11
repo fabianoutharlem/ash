@@ -123,10 +123,10 @@
             </tr>
             <tr>
               <th><%= phrase 'brandstof' %></th>
-              <td class="car car1"><%= @car_1.fuel_type %></td>
-              <td class="car car2"><%= @car_2.fuel_type %></td>
+              <td class="car car1"><%= @car_1.fuel_type.name.try(:capitalize) %></td>
+              <td class="car car2"><%= @car_2.fuel_type.name.try(:capitalize) %></td>
               <% if @car_3.present? %>
-                  <td class="car car3"><%= @car_3.fuel_type %></td>
+                  <td class="car car3"><%= @car_3.fuel_type.name.try(:capitalize) %></td>
               <% end %>
             </tr>
             <tr>
