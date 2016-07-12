@@ -11,5 +11,8 @@
       <%= f.check_box :best_day_deal, class: 'js-switch' %>
     <% end %>
   </td>
-  <td><%= link_to 'Delete', admin_car_path(car), method: :delete, class: 'btn btn-danger' %></td>
+  <td>
+    <%= link_to 'Autokaart', admin_car_edit_car_card_path(car), class: 'btn btn-primary' %>
+    <%= link_to 'Delete', admin_car_path(car), method: :delete, class: 'btn btn-danger' %>
+  </td>
 </tr>

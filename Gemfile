@@ -75,3 +75,6 @@ gem 'gibbon'
 gem 'phrasing'
 
 gem 'simple_abs'
+
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'

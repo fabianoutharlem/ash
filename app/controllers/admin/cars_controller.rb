@@ -30,6 +30,20 @@ class Admin::CarsController < Admin::AdminBaseController
     end
   end
 
+  def edit_car_card
+    @car = Car.find(params[:car_id])
+  end
+
+  def car_card
+    @car = Car.includes(:options).find(params[:car_id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "car_card"
+      end
+    end
+  end
+
   def update
     @car = Car.find(params[:id])
     if @car.present?

@@ -1,0 +1,130 @@
+<div class="row wrapper border-bottom white-bg car-heading">
+  <div class="col-lg-10">
+    <h2>Autokaart aanpassen</h2>
+    <ol class="breadcrumb">
+      <li>
+        <a href="<%= url_for admin_root_path %>">Home</a>
+      </li>
+      <li>
+        <%= link_to 'Autos', admin_cars_path %>
+      </li>
+      <li class="active">
+        <strong>Autokaart aanpassen</strong>
+      </li>
+    </ol>
+  </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>Autokaart aanpassen</h5>
+        </div>
+        <div class="ibox-content">
+          <%= form_for @car, url: admin_car_car_card_path(@car, format: :pdf), method: :post, html: {class: 'form-horizontal'} do |f| %>
+              <div class="form-group">
+
+                <%= f.label :display_name, 'Naam', class: 'col-sm-2 control-label' %>
+                <div class="col-sm-10">
+                  <%= f.text_field :display_name, class: 'form-control' %>
+                </div>
+
+              </div>
+
+              <div class="form-group">
+
+                <%= f.label :price_month, 'Maandprijs', class: 'col-sm-2 control-label' %>
+                <div class="col-sm-10">
+                  <%= f.number_field :price_month, class: 'form-control' %>
+                </div>
+
+              </div>
+
+              <div class="form-group">
+
+                <%= f.label :price_total, 'Totaalprijs', class: 'col-sm-2 control-label' %>
+                <div class="col-sm-10">
+                  <%= f.number_field :price_total, class: 'form-control' %>
+                </div>
+
+              </div>
+
+              <div class="form-group">
+
+                <%= f.label :mileage, 'Kilometerstand', class: 'col-sm-2 control-label' %>
+                <div class="col-sm-10">
+                  <%= f.number_field :mileage, class: 'form-control' %>
+                </div>
+
+              </div>
+
+              <div class="form-group">
+
+                <%= f.label :manufacture_year, 'Bouwjaar', class: 'col-sm-2 control-label' %>
+                <div class="col-sm-10">
+                  <%= f.number_field :manufacture_year, class: 'form-control' %>
+                </div>
+
+              </div>
+
+              <div class="form-group">
+
+                <%= f.label :fuel_type_name, 'Brandstof', class: 'col-sm-2 control-label' %>
+                <div class="col-sm-10">
+                  <%= f.text_field :fuel_type_name, value: f.object.fuel_type.try(:name), class: 'form-control' %>
+                </div>
+
+              </div>
+
+              <div class="form-group">
+
+                <%= f.label :model_name, 'Model', class: 'col-sm-2 control-label' %>
+                <div class="col-sm-10">
+                  <%= f.text_field :model_name, value: f.object.model.name, class: 'form-control' %>
+                </div>
+
+              </div>
+
+              <div class="hr-line-dashed"></div>
+              <div class="form-group">
+                <div class="col-sm-4 col-sm-offset-2">
+                  <%= link_to 'Annuleren', :back, class: 'btn btn-white' %>
+                  <%= f.submit 'Maak autokaart', class: 'btn btn-primary' %>
+                </div>
+              </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :head do %>
+    <%= stylesheet_link_tag 'admin/forms' %>
+<% end %>
+
+<% content_for :javascript do %>
+
+    <%= javascript_include_tag 'admin/forms' %>
+
+    <script type="text/javascript">
+
+
+      $(function () {
+
+        $('.i-checks').iCheck({
+          checkboxClass: 'icheckbox_square-green',
+          radioClass: 'iradio_square-green',
+        });
+
+        $('.summernote').summernote();
+
+      });
+
+    </script>
+
+<% end %>
+
+

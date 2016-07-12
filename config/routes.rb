@@ -45,6 +45,8 @@ Rails.application.routes.draw do
         get :search
         get :best_day_deals
       end
+      get :edit_car_card
+      post :car_card
     end
 
     resources :brands do
