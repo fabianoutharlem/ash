@@ -1,3 +1,87 @@
 body {
-    background-color: black;
+
+  div.container {
+    padding-left: 20px;
+
+    div.header {
+      margin-bottom: 40px;
+
+      div.row {
+
+        div.col {
+          display: inline-block;
+
+          img {
+            width: 109.9px;
+            //height: 97.2px;
+          }
+
+          &.price_info {
+            float: right;
+            margin-right: 17px;
+
+            table {
+              margin-top: 20px;
+
+              td.first {
+                font-size: 26px;
+                line-height: 1.2;
+                color: #595959;
+                padding-right: 20px;
+              }
+
+              td.second {
+                font-size: 26px;
+                line-height: 1.2;
+                color: #f35026;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    div.car_info {
+      font-size: 22px;
+      line-height: 1.3;
+      color: #000000;
+      padding: 0;
+
+      table {
+        margin: 40px 0;
+        width: 100%;
+
+        td {
+          width: 50%;
+        }
+      }
+    }
+
+    div.acessoires {
+
+      h3 {
+        font-size: 22px;
+        color: #000000;
+        font-weight: 400;
+      }
+
+      ul {
+        list-style-type: disc;
+        max-height: 300px;
+        width: 100%;
+        padding: 0;
+
+        li {
+          font-size: 11px;
+          line-height: 2px;
+          display: inline-block;
+          width: 49.5%;
+
+          &:before {
+            content: "• ";
+          }
+        }
+      }
+    }
+  }
 }

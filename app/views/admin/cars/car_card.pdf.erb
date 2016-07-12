@@ -1,15 +1,102 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset='utf-8' />
+  <meta charset='utf-8'/>
   <%= wicked_pdf_stylesheet_link_tag "car_card" -%>
 </head>
 <body onload='number_pages'>
-<div id="header">
-  <%= wicked_pdf_image_tag 'logo_ash2.png' %>
-</div>
-<div id="content">
+<div class="container">
 
+  <div class="header">
+    <div class="row">
+      <div class="col">
+        <%= wicked_pdf_image_tag 'logo_ash2.png'%>
+      </div>
+      <div class="col price_info">
+        <table>
+          <tr>
+            <td class="first">Prijs</td>
+            <td class="second">€ 19.900,-</td>
+          </tr>
+          <tr>
+            <td class="first">Per maand v.a.</td>
+            <td class="second">€ 269,-</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="car_info">
+
+    <p>Mercedes-Benz C-Klasse Sedan 180 Autom. Business Class 125! Avantgarde-Leer-Navi</p>
+
+    <table>
+      <tr>
+        <td>Model: A3</td>
+        <td>Brandstof: Diesel</td>
+      </tr>
+      <tr>
+        <td>Bouwjaar 2012</td>
+        <td>KM stand: 186.000</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="acessoires">
+    <h3>Acessoires</h3>
+    <ul>
+      <li>7 persoons</li>
+      <li>Achterstoelen uitneembaar</li>
+      <li>Airbag(s) hoofd voor en achter</li>
+      <li>Airbag bestuurder en passagier</li>
+      <li>Airco (automatisch)</li>
+      <li>Alarmsysteem</li>
+      <li>Antiblokkeersysteem</li>
+      <li>Antislipregeling</li>
+      <li>audio-navigatie full map + hard disk</li>
+      <li>Audio-navigatie full map + hard disk</li>
+      <li>Autotelefoon voorbereiding</li>
+      <li>autotelefoon voorbereiding</li>
+      <li>Bagagedek</li>
+      <li>Bestuurdersstoel in hoogte verstelbaar</li>
+      <li>Binnenspiegel aut.dimmend</li>
+      <li>Boordcomputer</li>
+      <li>Buitenspiegels elektrisch verstel-en verwarmbaar</li>
+      <li>Buitentemperatuurmeter</li>
+      <li>Bumpers in carrosseriekleur</li>
+      <li>Centrale deurvergrendeling afstandbediend</li>
+      <li>Cruise control</li>
+      <li>Airco (automatisch)</li>
+      <li>Alarmsysteem</li>
+      <li>Antiblokkeersysteem</li>
+
+      <li>7 persoons</li>
+      <li>Achterstoelen uitneembaar</li>
+      <li>Airbag(s) hoofd voor en achter</li>
+      <li>Airbag bestuurder en passagier</li>
+      <li>Airco (automatisch)</li>
+      <li>Alarmsysteem</li>
+      <li>Antiblokkeersysteem</li>
+      <li>Antislipregeling</li>
+      <li>audio-navigatie full map + hard disk</li>
+      <li>Audio-navigatie full map + hard disk</li>
+      <li>Autotelefoon voorbereiding</li>
+      <li>autotelefoon voorbereiding</li>
+      <li>Bagagedek</li>
+      <li>Bestuurdersstoel in hoogte verstelbaar</li>
+      <li>Binnenspiegel aut.dimmend</li>
+      <li>Boordcomputer</li>
+      <li>Buitenspiegels elektrisch verstel-en verwarmbaar</li>
+      <li>Buitentemperatuurmeter</li>
+      <li>Bumpers in carrosseriekleur</li>
+      <li>Centrale deurvergrendeling afstandbediend</li>
+      <li>Cruise control</li>
+      <li>Airco (automatisch)</li>
+      <li>Alarmsysteem</li>
+      <li>Antiblokkeersysteem</li>
+    </ul>
+  </div>
 </div>
 </body>
 </html>
