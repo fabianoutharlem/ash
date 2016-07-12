@@ -1,18 +1,15 @@
-<section class="main_slider budget_slider">  <!-- gestyled in main_slider -->
+<section class="budget_header">  <!-- gestyled in action_page_headers // general -->
   <div class="wrapper">
     <div class="container-fluid">
-      <div class="my-slider">  <!-- nav is uitgezet in main_slider -> section.budget_slider -->
-        <ul>
-          <li class="main_slides _slide4" style="background: url('<%= header_achtergrond.value.url %>') no-repeat center; background-size: cover;">
+      <div class="budget_header_banner" style="background: url('<%= header_achtergrond.value.url %>') no-repeat center; background-size: cover;">
 
-            <%= image_tag header_logo.value, class: 'ath_logo' %>
+        <%= image_tag header_logo.value, class: 'ath_logo' %>
 
-            <h1><%= header_titel.value %></h1>
-            <p><%= header_onder_titel.value %></p>
+        <h1><%= header_titel.value %></h1>
 
-            <a href="<%= header_button_link.value %>" class="orange_btn"><%= header_button_tekst.value %></a>
-          </li>
-        </ul>
+        <p><%= header_onder_titel.value %></p>
+
+        <a href="<%= header_button_link.value %>" class="orange_btn"><%= header_button_tekst.value %></a>
       </div>
     </div>
   </div>
@@ -22,6 +19,7 @@
   <div class="wrapper">
     <div class="container-fluid content_container">
       <h3><%= tekst_titel.value %> </h3>
+
       <div class="wrap_2cols">
         <%= tekst_content.value.html_safe %>
       </div>
@@ -34,6 +32,7 @@
     <div class="container-fluid content_container" style="background: url('<%= financieren_achtergrond.value.url %>') no-repeat center; background-size: cover">
 
       <h2><%= financieren_titel.value %></h2>
+
       <h3><%= financieren_onder_titel.value %></h3>
 
       <%= render 'shared/finance_circles' %>
