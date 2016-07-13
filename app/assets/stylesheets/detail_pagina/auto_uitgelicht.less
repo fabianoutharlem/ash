@@ -409,6 +409,14 @@ section.auto_uitgelicht {
             background-color: #00b04a;
             border-left: 1px solid #23c467;
           }
+
+          &:hover {
+            background-color: #19b75c;
+
+            &:after {
+              background-color: #19b75c;
+            }
+          }
         }
       }
 
@@ -433,12 +441,23 @@ section.auto_uitgelicht {
       }
 
       a {
+        display: inline-block;
+        transition: @trans;
+
+        &.liked {
+
+          i.like {
+            background: #f35026 image-url('hart_white.png') no-repeat center;
+          }
+        }
+
 
         i {
           display: inline-block;
           margin: 0 6px 0 0;
           width: 42px;
           height: 42px;
+          transition: @trans;
 
           &:hover {
             opacity: 0.8;
@@ -453,7 +472,9 @@ section.auto_uitgelicht {
           }
 
           &.like {
-            background: image-url('model_like.png') no-repeat center;
+            background: #B9B9B9 image-url('hart_white.png') no-repeat center;
+            background-size: 21px;
+            border-radius: 50%;
           }
 
           &.vergelijk {
@@ -693,6 +714,7 @@ section.auto_uitgelicht {
           background-color: white;
           margin: 0 8px 0 0;
           padding: 0 0 0 17px;
+          border: 1px solid white;
 
           @media @1280 {
             margin: 0 10px 10px 0;
@@ -721,6 +743,7 @@ section.auto_uitgelicht {
 
           &:hover {
             cursor: pointer;
+            border: 1px solid @orange;
           }
 
           &:last-child {
@@ -1009,6 +1032,17 @@ section.detail_pagina_b { //only b
 
             @media @880 {
               margin: 0 auto;
+            }
+
+            a {
+              display: inline-block;
+
+              &.liked {
+
+                i.like {
+                  background: #f35026 image-url('hart_white.png') no-repeat center;
+                }
+              }
             }
           }
 
