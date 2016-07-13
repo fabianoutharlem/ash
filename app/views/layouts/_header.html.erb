@@ -306,11 +306,6 @@
 
         <div class="expand">
           <ul>
-            <li class="search">
-              <form>
-                <input type="text" placeholder="Type hier je merk..">
-              </form>
-            </li>
             <% @brands.each do |brand| %>
                 <li class="img" class="<%= is_active_url(brand_cars_path(brand)) %>">
                   <%= link_to brand_cars_path(brand) do %>

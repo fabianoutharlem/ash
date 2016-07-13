@@ -2,9 +2,13 @@
   <div class="wrapper">
     <div class="container-fluid content_container">
 
-      <p>U bevind zich: <span>Home</span> • Voorraad</p>
+      <p>
+        <%= render_breadcrumbs :separator => ' • ' %>
+      </p>
 
-      <p class="overzicht">< Terug naar overzicht</p>
+      <% if params[:controller] != 'home' %>
+          <%= link_to '< Terug', :back, class: 'overzicht' %>
+      <% end %>
     </div>
   </div>
 </section>

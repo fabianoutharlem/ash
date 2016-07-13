@@ -3,7 +3,7 @@
     <div class="container-fluid content_container">
 
       <div class="banner_50_50" style="background: url('<%= image_path('bg_50_50.png') %>'); background-size: cover;">
-        <h1>50/50 Deals (Particulier)</h1>
+        <h1><%= phrase '50/50 Deals (Particulier)' %></h1>
       </div>
 
       <%= image_tag 'img_zakelijk.png', class: 'small_device' %>
@@ -11,11 +11,11 @@
       <div class="row">
         <div class="col zakelijk">
           <div class="content">
-            <h3>50/50 Deal:</h3>
-            <h4>betaal de helft van uw auto in termijnen zonder rente!</h4>
+            <h3><%= phrase '50/50 Deal' %>:</h3>
+            <h4><%= phrase 'betaal de helft van uw auto in termijnen zonder rente!' %></h4>
 
             <p class="first_alinea">
-              De meest complete én voordelige deal sluit u nu bij Auto Krediet Plan! Profiteer van de uiterst aantrekkelijke 50/50 Deal op alle jong gebruikte personenauto’s uit ons assortiment.
+              <%= phrase 'De meest complete én voordelige deal sluit u nu bij Auto Krediet Plan! Profiteer van de uiterst aantrekkelijke 50/50 Deal op alle jong gebruikte personenauto’s uit ons assortiment.' %>
             </p>
             <p class="second_alinea">
             </p>
@@ -24,21 +24,18 @@
         <div class="col voordelen">
           <div class="content">
             <%= image_tag 'img_zakelijk.png' %>
-            <h4>Hoe werkt de 50/50 Deal? Heel simpel! </h4>
+            <h4><%= phrase 'Hoe werkt de 50/50 Deal? Heel simpel! ' %></h4>
             <ul>
               <li class="hoe_werkt">
-                1. De helft van de aanschafprijs betaalt u vooraf. Dit kan ook via de eventuele
-                inruil van uw huidige auto. De andere helft wordt gefinancierd.
+                <%= phrase '1. De helft van de aanschafprijs betaalt u vooraf. Dit kan ook via de eventuele
+                inruil van uw huidige auto. De andere helft wordt gefinancierd.' %>
               </li>
               <li class="hoe_werkt">
-                2. U heeft de keuze uit een looptijd van 12, 24, 36 of 48 maanden.
+                <%= phrase '2. U heeft de keuze uit een looptijd van 12, 24, 36 of 48 maanden.' %>
 
               </li>
               <li class="hoe_werkt">
-                3. De aanvraag voor uw financiering wordt direct in behandeling genomen en
-                doorgaans heeft u binnen enkele minuten al duidelijkheid. Kies nu uw jonge
-                Top-Occasion, maak kennis met de meest complete deals en deel de prijs
-                door twee!
+               <%= phrase ' 3. De aanvraag voor uw financiering wordt direct in behandeling genomen' %>
               </li>
             </ul>
           </div>
@@ -72,10 +69,9 @@
 
       <div class="content">
         <span class="helper"></span>
-        <h3><span>U bepaald
-                    hoeveel u betaald!</span>
-          Meer dan 8000
-          klanten gingen u voor.</h3>
+        <h3><span><%= phrase 'U bepaald hoeveel u betaald!' %></span>
+          <%= phrase 'Meer dan 8000
+          klanten gingen u voor' %>.</h3>
       </div>
 
       <div class="let_op"></div>

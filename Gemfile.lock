@@ -63,6 +63,7 @@ GEM
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    breadcrumbs_on_rails (2.3.0)
     builder (3.2.2)
     byebug (9.0.4)
     carrierwave (0.10.0)
@@ -268,6 +269,7 @@ DEPENDENCIES
   acts-as-taggable-on
   bootstrap-kaminari-views
   bootstrap-sass (~> 3.3.6)
+  breadcrumbs_on_rails
   byebug
   carrierwave
   carrierwave-aws

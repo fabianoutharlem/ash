@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
 
   before_filter :prepare_shared_variables
 
+  add_breadcrumb 'Home', :root_path
+
   protected
 
   def get_liked_cars

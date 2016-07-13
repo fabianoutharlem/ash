@@ -78,3 +78,5 @@ gem 'simple_abs'
 
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+
+gem 'breadcrumbs_on_rails'

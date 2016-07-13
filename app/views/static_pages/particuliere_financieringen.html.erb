@@ -3,7 +3,7 @@
     <div class="container-fluid content_container">
 
       <div class="banner_50_50" style="background: url('<%= image_path 'bg_particulier.png' %>'); background-size: cover;">
-        <h1>Particuliere financieringen</h1>
+        <h1><%= phrase 'Particuliere financieringen' %></h1>
       </div>
 
       <%= image_tag 'img_zakelijk.png', class: 'small_device' %>
@@ -11,29 +11,29 @@
       <div class="row">
         <div class="col zakelijk">
           <div class="content">
-            <h3>Particuliere financiering:</h3>
-            <h4>De voordelen van Auto KredietPlan!</h4>
+            <h3><%= phrase 'Particuliere financiering:' %></h3>
+            <h4><%= phrase 'De voordelen van Auto KredietPlan!' %></h4>
 
             <p class="first_alinea">
-              Hebt u de ideale auto gevonden en wilt u graag een financiering afsluiten? Auto Krediet Plan biedt zéér voordelige particuliere financieringsmogelijkheden aan voor uw auto. U hebt zelf invloed op de maandlasten en u profiteert direct van een nieuwe auto!
+              <%= phrase 'Hebt u de ideale auto gevonden en wilt u graag een financiering afsluiten?' %>
             </p>
             <p class="second_alinea">
-              Een particuliere financiering van een auto bij Auto Krediet Plan, gebeurt door middel van een huurkoopovereenkomst. Uw auto betaalt u af in vaste maandelijkse termijnen die van te voren zijn afgesproken. De looptijd varieert van 12 tot 72 maanden. Voor een lager maandtermijn kunt u ervoor kiezen om een slottermijn mee te nemen in de financiering. Over dit bedrag betaalt u alleen rente.
+              <%= phrase 'Een particuliere financiering van een auto bij Auto Krediet Plan, gebeurt door middel van een huurkoopovereenkomst.' %>
             </p>
           </div>
         </div>
         <div class="col voordelen">
           <div class="content">
             <%= image_tag 'img_zakelijk.png' %>
-            <h4>Waarom particulier financieren bij Auto Krediet Plan?</h4>
+            <h4><%= phrase 'Waarom particulier financieren bij Auto Krediet Plan?' %></h4>
             <ul>
               <li class="hoe_werkt">
                 <%= image_tag 'vink.png' %>
-                Slotbetaling altijd mogelijk voor lagere maandkosten
+                <%= phrase 'Slotbetaling altijd mogelijk voor lagere maandkosten' %>
               </li>
               <li class="hoe_werkt">
                 <%= image_tag 'vink.png' %>
-                Vaste maandkosten zijn altijd overzichtelijk voor u
+                <%= phrase 'Vaste maandkosten zijn altijd overzichtelijk voor u' %>
               </li>
               <li class="hoe_werkt">
                 <%= image_tag 'vink.png' %>
@@ -42,7 +42,7 @@
             </ul>
 
             <p class="second_alinea">
-              Interesse? Bezoek een Auto Service Haarlem vestiging of neem contact op met een van onze adviseurs voor vragen over de auto financiering die het beste bij uw situatie past. Maak eenvoudig online een afspraak voor een oriëntatiegesprek.
+              <%= phrase 'Interesse? Bezoek een Auto Service Haarlem vestiging' %>
             </p>
           </div>
         </div>
@@ -59,10 +59,8 @@
 
       <div class="content">
         <span class="helper"></span>
-        <h3><span>U bepaald
-                    hoeveel u betaald!</span>
-          Meer dan 8000
-          klanten gingen u voor.</h3>
+        <h3><span><%= phrase 'U bepaald hoeveel u betaald!' %></span>
+          <%= phrase 'Meer dan 8000 klanten gingen u voor.' %></h3>
       </div>
 
       <div class="let_op"></div>
