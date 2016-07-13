@@ -58,7 +58,7 @@
       <ul class="search">
         <li class="hart">
           <figure>
-            <a href="#">
+            <a href="<%= favourites_cars_path %>">
               <%= image_tag 'header_hart.png' %>
             </a>
           </figure>
@@ -257,7 +257,7 @@
             <div class="search_field">
               <i class="amp"></i>
               <i class="cross"></i>
-              <input type="text" placeholder="<%= phrase 'Type hier je je zoekterm...' %>">
+              <input type="text" placeholder="Type hier je je zoekterm...">
             </div>
             <button class="orange_btn"><%= phrase 'Zoeken' %></button>
           </form>
@@ -292,7 +292,7 @@
       </li>
       <li class="zoeken active">
         <form>
-          <input type="text" placeholder="<%= phrase 'Zoeken...' %>">
+          <input type="text" placeholder="Zoeken...">
         </form>
       </li>
       <li class="home smartmenu <%= is_active_url(root_path) %>">
