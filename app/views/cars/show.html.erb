@@ -85,7 +85,9 @@
         <button class="orange_btn afspraak_btn animated pulse">Afspraak maken</button>
 
         <div class="icons">
-          <a href="<%= car_like_path(@car) %>"><i class="like"></i></a>
+          <%= link_to car_like_path(@car), remote: true do %>
+              <i class="like"></i>
+          <% end %>
           <a href=""><i class="mail"></i></a>
           <a href=""><i class="print"></i></a>
           <a href=""><i class="twitter align_right"></i></a>

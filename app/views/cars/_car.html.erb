@@ -18,7 +18,7 @@
         </table>
 
         <%= link_to phrase('bekijk_deze_auto'), car_path(car), class: :orange_btn %>
-        <p class="click_hier">Deze auto financieren? Klik hieronder!</p>
+        <p class="click_hier"><%= phrase 'Deze auto financieren? Klik hieronder!' %></p>
       </div>
       <div class="finance_mogelijkheden">
         <a href="#" class="zakelijk finance_opties">
@@ -55,7 +55,7 @@
       <%= image_tag car.main_image.file.thumb %>
 
       <div class="best_deal">
-        <p>BEST DAY DEAL</p>
+        <p><%= phrase 'BEST DAY DEAL' %></p>
         <span class="day_deal_star"></span>
         <span class="day_deal_star"></span>
         <span class="day_deal_star"></span>
@@ -72,16 +72,21 @@
       </div>
 
       <div class="aanbieding">
-        <table>
-          <tr>
-            <td><%= phrase 'Van' %></td>
-            <td><%= phrase 'Voor' %></td>
-          </tr>
-          <tr>
-            <td><%= format_money car.price_total %></td>
-            <td><%= format_money car.price_discount %></td>
-          </tr>
-        </table>
+        <% if car.price_discount.present? %>
+            <table>
+              <tr>
+                <td><%= phrase 'Van' %></td>
+                <td><%= phrase 'Voor' %></td>
+              </tr>
+              <tr>
+                <td><%= format_money car.price_total %></td>
+                <td><%= format_money car.price_discount %></td>
+              </tr>
+            </table>
+        <% else %>
+            <!-- TODO: Menno moet dit ff stylen -->
+            <%= format_money car.price_total %>
+        <% end %>
       </div>
 
       <div class="p_m">

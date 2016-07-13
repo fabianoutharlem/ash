@@ -96,6 +96,8 @@ Rails.application.routes.draw do
 
     resources :vacancies
 
+    resources :reviews, only: [:index, :update]
+
     resources :pages do
       collection do
         get '/new/:template_id', to: 'pages#new', as: :new_page_with_template

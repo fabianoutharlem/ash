@@ -82,6 +82,12 @@
             <span class="nav-label">Menus</span>
         <% end %>
       </li>
+      <li class="<%= is_active_controller('reviews') %>">
+        <%= link_to admin_reviews_path do %>
+            <i class="fa fa-comments" aria-hidden="true"></i>
+            <span class="nav-label">Recensies</span>
+        <% end %>
+      </li>
 
     </ul>
 

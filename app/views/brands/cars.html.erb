@@ -14,7 +14,7 @@
             <div class="select">
               <span class="arrow"></span>
               <select name="merk" class="merk_dropdown" onchange="if (this.value) window.location.href=this.value">
-                <option>Selecteer model</option>
+                <option><%= phrase 'Selecteer model' %></option>
                 <% @brand.models.order(:name).each do |model| %>
                     <option value="<%= url_for action: :cars, controller: :models, brand_id: @brand.slug, model_id: model.slug || model.id %>" <%= @model == model ? 'selected' : '' %>><%= model.name %></option>
                 <% end %>

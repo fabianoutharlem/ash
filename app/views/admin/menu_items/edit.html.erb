@@ -9,7 +9,7 @@
         <%= link_to 'MenuItems', admin_menu_menu_items_path(@menu_item.menu) %>
       </li>
       <li class="active">
-        <strong>Slide "<%= @menu_item.name %>" aanpassen</strong>
+        <strong>Menu item "<%= @menu_item.name %>" aanpassen</strong>
       </li>
     </ol>
   </div>
@@ -20,7 +20,7 @@
     <div class="col-lg-12">
       <div class="ibox float-e-margins">
         <div class="ibox-title">
-          <h5>Slide "<%= @menu_item.name %>" aanpassen</h5>
+          <h5>Menu item "<%= @menu_item.name %>" aanpassen</h5>
         </div>
         <div class="ibox-content">
           <%= form_for @menu_item, url: admin_menu_item_path(@menu_item), method: :put, html: {class: 'form-horizontal'} do |f| %>
