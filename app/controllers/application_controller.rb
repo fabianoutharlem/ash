@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   before_filter :get_liked_cars
 
+  before_filter :prepare_shared_variables
+
   protected
 
   def get_liked_cars
@@ -13,5 +15,10 @@ class ApplicationController < ActionController::Base
     else
       @car_likes = Array.new
     end
+  end
+
+  def prepare_shared_variables
+    @menus = MenuItem.includes(:menu).all.group_by(&:location)
+    @brands = Brand.includes(:cars).menu_items.order(:row_order)
   end
 end

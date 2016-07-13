@@ -15,4 +15,8 @@ module ApplicationHelper
     string.gsub(',00', ',-')
   end
 
+  def is_active_url(url)
+    url == request.path ? "active" : nil
+  end
+
 end
