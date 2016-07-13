@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  menu_id: 
+  menu_itemable_id: 1
+  menu_itemable_type: MyString
+  row_order: 1
+
+two:
+  name: MyString
+  menu_id: 
+  menu_itemable_id: 1
+  menu_itemable_type: MyString
+  row_order: 1

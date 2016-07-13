@@ -62,13 +62,23 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :sliders do
+    resources :sliders, except: [:new, :create] do
       resources :slides, only: [:index]
     end
 
     resources :slides, except: [:index] do
       collection do
         get '/new/:template_id/:slider_id', to: 'slides#new', as: :new_slide_with_template
+        post :update_row_order
+      end
+    end
+
+    resources :menus, except: [:new, :create] do
+      resources :menu_items, only: [:index, :new]
+    end
+
+    resources :menu_items, except: [:index] do
+      collection do
         post :update_row_order
       end
     end

@@ -1,0 +1,8 @@
+<tr class="item" data-item-id="<%= menu_item.id %>">
+  <td><%= menu_item.name %></td>
+  <td><%= menu_item.created_at.strftime('%Y-%m-%d - %H:%M') %></td>
+  <td>
+    <%= link_to 'Aanpassen', edit_admin_menu_item_path(menu_item), class: 'btn btn-primary' %>
+    <%= link_to 'Delete', admin_menu_item_path(menu_item), class: 'btn btn-danger', method: :delete %>
+  </td>
+</tr>

@@ -18,4 +18,5 @@
 //= require ./inspinia.js
 //= require ./brands/update_brands_row_order
 //= require ./slides/update_slides_row_order
+//= require ./menu_items/update_menu_items_row_order
 //= require toastr/toastr.min.js

@@ -1,0 +1,52 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2>Slides</h2>
+    <ol class="breadcrumb">
+      <li>
+        <a href="<%= url_for admin_root_path %>">Home</a>
+      </li>
+      <li class="active">
+        <%= link_to 'Menus', admin_menus_path %>
+      </li>
+      <li class="active">
+        <strong>Menu items</strong>
+      </li>
+    </ol>
+  </div>
+  <div class="col-lg-2">
+
+  </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5><%= @menu.name %> - Menu items (<%= @menu_items.count %>)</h5>
+          <div class="ibox-tools">
+            <%= link_to new_admin_menu_menu_item_path(@menu) do %>
+                <i class="fa fa-plus"></i><span> Nieuw menu item</span>
+            <% end %>
+          </div>
+        </div>
+        <div class="ibox-content">
+
+          <table class="table table-striped" id="sortable_menu_items">
+            <thead>
+            <tr>
+              <th>Naam</th>
+              <th>Aanmaak datum</th>
+              <th>Acties</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <%= render @menu_items %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

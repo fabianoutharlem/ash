@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160711183946) do
+ActiveRecord::Schema.define(version: 20160713120414) do
 
   create_table "alternatives", force: :cascade do |t|
     t.string   "which",        limit: 255
@@ -113,9 +113,35 @@ ActiveRecord::Schema.define(version: 20160711183946) do
     t.datetime "updated_at",               null: false
   end
 
+  create_table "links", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.string   "url",        limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "marquee_items", force: :cascade do |t|
     t.string   "title",      limit: 255
     t.string   "link",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "menu_items", force: :cascade do |t|
+    t.string   "name",               limit: 255
+    t.integer  "menu_id",            limit: 4
+    t.integer  "menu_itemable_id",   limit: 4
+    t.string   "menu_itemable_type", limit: 255
+    t.integer  "row_order",          limit: 4
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  add_index "menu_items", ["menu_id"], name: "index_menu_items_on_menu_id", using: :btree
+
+  create_table "menus", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "location",   limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
@@ -321,6 +347,7 @@ ActiveRecord::Schema.define(version: 20160711183946) do
     t.datetime "updated_at",                null: false
   end
 
+  add_foreign_key "menu_items", "menus"
   add_foreign_key "newsletter_template_values", "newsletter_templates"
   add_foreign_key "newsletter_values", "newsletter_template_values"
   add_foreign_key "newsletter_values", "newsletters"

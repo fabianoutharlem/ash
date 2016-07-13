@@ -24,6 +24,17 @@ class Page < ActiveRecord::Base
     page_values.includes(:page_template_value).index_by { |value| value.page_template_value.option_name.parameterize.underscore.to_sym }
   end
 
+  def menu_item_properties
+    [
+        self.title,
+        {class: self.class.name, id: self.id}.to_json
+    ]
+  end
+
+  def route
+    Rails.application.routes.url_helpers.page_path(self)
+  end
+
   private
 
   def slug_candidates
