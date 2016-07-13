@@ -4,7 +4,7 @@
       <div class="container-fluid content_container">
 
         <div class="overlay_afspraak animated">
-          <h2>Afspraak maken voor de <%= [@car.brand.name, @car.model.name].join(' ') %></h2>
+          <h2><%= phrase 'Afspraak maken voor de' %> <%= [@car.brand.name, @car.model.name].join(' ') %></h2>
 
           <div class="afspraak_container">
             <div class="car_slider_afspraak carslider_responsive">
