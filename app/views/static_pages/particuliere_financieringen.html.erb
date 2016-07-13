@@ -37,7 +37,7 @@
               </li>
               <li class="hoe_werkt">
                 <%= image_tag 'vink.png' %>
-                U bepaalt wat u betaald!
+                <%= phrase 'U bepaalt wat u betaald!' %>
               </li>
             </ul>
 
@@ -55,7 +55,23 @@
   <div class="wrapper">
     <div class="container-fluid content_container">
 
-      <div class="banner1 banner"><?php include('../general/article_financieren.php'); ?></div>
+      <div class="banner1 banner">
+        <section class="article_financieren">
+
+          <div class="circle_container">
+            <div class="orange_circle">
+              <h4><%= phrase '50/50 Deals (Particulier)' %></h4>
+
+              <p><%= phrase 'Financial Lease. Zonder kapitaalverlies de snelste weg naar u nieuwe auto.' %></p>
+
+              <a href="<%= financieringen_path %>" class="orange_btn"><%= phrase 'Klik hier' %></a>
+              <div class="white_circle"></div>
+            </div>
+
+            <div class="mini_logo"></div>
+          </div>
+        </section>
+      </div>
 
       <div class="content">
         <span class="helper"></span>

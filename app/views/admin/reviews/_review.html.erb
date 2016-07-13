@@ -1,0 +1,14 @@
+<tr class="item">
+  <td><%= review.name %></td>
+  <td><%= review.email %></td>
+  <td><%= review.review %></td>
+  <td><%= review.rating %></td>
+  <td>
+    <%= form_for review, url: admin_review_path(review), method: :put, remote: true do |f| %>
+      <%= f.check_box :approved, class: 'js-switch' %>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to 'Delete', admin_review_path(review), class: 'btn btn-primary' %>
+  </td>
+</tr>

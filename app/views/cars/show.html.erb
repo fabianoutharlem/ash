@@ -85,8 +85,7 @@
         <button class="orange_btn afspraak_btn animated pulse">Afspraak maken</button>
 
         <div class="icons">
-          <a href=""><i class="like"></i></a>
-          <a href="../vergelijk_pagina/vergelijk_pagina.php"><i class="vergelijk"></i></a>
+          <a href="<%= car_like_path(@car) %>"><i class="like"></i></a>
           <a href=""><i class="mail"></i></a>
           <a href=""><i class="print"></i></a>
           <a href=""><i class="twitter align_right"></i></a>
@@ -210,22 +209,22 @@
           <div class="left">
             <h4><%= phrase 'specifications' %></h4>
             <ul>
-              <li><span>Merk</span>Mercedes-Benz</li>
-              <li><span>Model</span>C-Klasse</li>
-              <li><span>Type</span>180 CGI 156PK Automaat BlueEFFICIENCY Avantgarde</li>
-              <li><span>Carrosserie</span>Sedan (4 deurs)</li>
-              <li><span>Transmissie</span>Automaat</li>
-              <li><span>Kleur</span>Zwart metallic</li>
-              <li><span>KM stand</span>127.171 km</li>
-              <li><span>Brandstof</span>Benzine</li>
-              <li><span>Bouwjaar</span>2010</li>
-              <li><span>Cil. inhoud</span>1796 cc</li>
-              <li><span>Aantal cil.</span>4</li>
-              <li><span>Vermogen</span>156 pk</li>
-              <li><span>Topsnelheid</span>220 km/u</li>
-              <li><span>Interieur</span>Half leder / stof (Zwart)</li>
-              <li><span>Energielabel</span>C</li>
-              <li><span>Wegenbelasting</span>€180 - €205 p/kw</li>
+              <li><span>Merk</span><%= @car.brand.name %></li>
+              <li><span>Model</span><%= @car.model.name %></li>
+              <li><span>Type</span><%= @car.car_type %></li>
+              <li><span>Carrosserie</span><%= @car.body_type.name %></li>
+              <li><span>Transmissie</span><%= @car.transmission_type.name %></li>
+              <li><span>Kleur</span><%= @car.color + ' ' + @car.color_type %></li>
+              <li><span>KM stand</span><%= @car.mileage %> km</li>
+              <li><span>Brandstof</span><%= @car.fuel_type.name %></li>
+              <li><span>Bouwjaar</span><%= @car.manufacture_year %></li>
+              <li><span>Cil. inhoud</span><%= @car.engine_size %> cc</li>
+              <li><span>Aantal cil.</span><%= @car.cylinders %></li>
+              <li><span>Vermogen</span><%= @car.engine_power %> pk</li>
+              <li><span>Topsnelheid</span><%= @car.top_speed %> km/u</li>
+              <li><span>Interieur</span><%= @car.interior %></li>
+              <li><span>Energielabel</span><%= @car.energy_label %></li>
+              <li><span>Wegenbelasting</span><%= @car.road_tax %> p/kw</li>
             </ul>
           </div>
 
@@ -386,25 +385,11 @@
 
             <div class="nav_container"></div>
             <div id="owl2row-plugin1" class="owl-carousel_top40">
-              <?php include('../general/_article_car.php'); ?>
-              <?php include('../general/_article_car.php'); ?>
-              <?php include('../general/_article_car.php'); ?>
-              <?php include('../general/_article_car.php'); ?>
-              <?php include('../general/_article_car.php'); ?>
-              <?php include('../general/_article_car.php'); ?>
-              <?php include('../general/_article_car.php'); ?>
-              <?php include('../general/_article_car.php'); ?>
-
-              <?php include('../general/_article_car.php'); ?>
-              <?php include('../general/_article_car.php'); ?>
-              <?php include('../general/_article_car.php'); ?>
-              <?php include('../general/_article_car.php'); ?>
-              <?php include('../general/_article_car.php'); ?>
-              <?php include('../general/_article_car.php'); ?>
-              <?php include('../general/_article_car.php'); ?>
-              <?php include('../general/_article_car.php'); ?>
+              <% @car.related_cars.each do |car| %>
+                  <%= render car %>
+              <% end %>
             </div>
-            <a href="<%= cars_path %>" class="orange_btn">Bekijk de voorraad</a>
+            <a href="<%= cars_path %>" class="orange_btn"><%= phrase 'Bekijk de voorraad' %></a>
           </div>
         </section>
       </section>

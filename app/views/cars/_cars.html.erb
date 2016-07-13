@@ -34,8 +34,8 @@
 
                 <div class="select">
                   <span class="arrow"></span>
-                  <select name="merk" class="merk_dropdown">
-                    <option>Kies eerst een merk</option>
+                  <select name="model" class="merk_dropdown">
+                    <option>Kies eerst een Model</option>
                     <option>opel</option>
                     <option>fiat</option>
                     <option>fiat</option>
@@ -150,20 +150,20 @@
 
               <div class="row slider">
                 <div class="slider_col col">
-                  <p>Prijs tot:</p>
+                  <p><%= phrase 'Prijs tot' %>:</p>
 
                   <div id="finance_slider_to"></div>
                 </div>
               </div>
               <div class="row slider">
                 <div class="slider_col col">
-                  <p>Prijs per maand tot:</p>
+                  <p><%= phrase 'Prijs per maand tot' %>:</p>
 
                   <div id="finance_slider_month"></div>
                 </div>
               </div>
 
-              <div class="orange_btn">Zoeken (882)</div>
+              <button class="orange_btn"><%= phrase 'Zoeken' %> (882)</button>
             </div>
             <div class="search_fields buy_field active">
 
@@ -321,7 +321,7 @@
                 </div>
               </div>
 
-              <div class="orange_btn">Zoeken (882)</div>
+              <button class="orange_btn">Zoeken (882)</button>
             </div>
           </div>
 

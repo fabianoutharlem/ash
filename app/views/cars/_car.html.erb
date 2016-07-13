@@ -24,7 +24,7 @@
         <a href="#" class="zakelijk finance_opties">
           <table>
             <tr class="options">
-              <td class="first finance">Zakelijk v.a.</td>
+              <td class="first finance"><%= phrase 'Zakelijk vanaf' %></td>
               <td class="finance"><%= format_money car.price_month %> p/m</td>
             </tr>
           </table>
@@ -33,7 +33,7 @@
         <a href="#" class="particulier finance_opties">
           <table>
             <tr>
-              <td class="first finance">Particulier v.a.</td>
+              <td class="first finance"><%= phrase 'Particulier vanaf' %></td>
               <td class="finance"><%= format_money car.price_month %> p/m</td>
             </tr>
           </table>
@@ -42,7 +42,7 @@
         <a href="#" class="fifty_fifty finance_opties">
           <table>
             <tr>
-              <td class="first finance">50/50 Deal</td>
+              <td class="first finance"><%= phrase '50/50 Deal' %></td>
               <td class="finance"><%= format_money car.price_50_50 %></td>
             </tr>
           </table>
@@ -74,8 +74,8 @@
       <div class="aanbieding">
         <table>
           <tr>
-            <td>Van</td>
-            <td>Voor</td>
+            <td><%= phrase 'Van' %></td>
+            <td><%= phrase 'Voor' %></td>
           </tr>
           <tr>
             <td><%= format_money car.price_total %></td>
@@ -87,7 +87,7 @@
       <div class="p_m">
         <table>
           <tr>
-            <td class="rij_deze">Rij deze auto p.m. vanaf</td>
+            <td class="rij_deze"><%= phrase 'Rij deze auto p.m. vanaf' %></td>
             <td class="orange"><%= format_money car.price_month %></td>
           </tr>
         </table>

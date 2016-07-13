@@ -1,0 +1,73 @@
+<section class="referenties">
+  <div class="wrapper">
+    <div class="container-fluid content_container">
+      <h2>Referenties</h2>
+      <p class="header">Laat hier uw mening over ons achter. Ruimte voor 3 a 4 regels tekst.
+        Sed posuere consectetur est at lobortis. Donec ullamcorper nulla non metus auctor fringilla.
+        Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+
+      <section class="beoordelingen">
+        <div class="row first">
+          <div class="col left referentie_achterlaten">
+            <h3>Referentie achterlaten</h3>
+            <p class="beoordelings_cijfer">9.5/10</p>
+            <div class="star stars"></div>
+            <div class="star stars"></div>
+            <div class="star stars"></div>
+            <div class="star stars"></div>
+            <div class="half_star stars"></div>
+            <p class="uitstekend">Uitstekend | 9 beoordelingen</p>
+          </div>
+          <div class="col right">
+            <form action="">
+              <input class="naam first_col nth_col" type="text" placeholder="Naam">
+              <input class="email nth_col" type="text" placeholder="E-mail">
+              <input class="referentie first_col " type="text" placeholder="Referentie">
+              <button class="orange_btn">Verstuur Referentie</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="row second">
+          <div class="col left">
+            <ul>
+              <li><?php include('../referentie_pagina/user_recentie.php'); ?></li>
+              <li><?php include('../referentie_pagina/user_recentie.php'); ?></li>
+              <li><?php include('../referentie_pagina/user_recentie.php'); ?></li>
+              <li><?php include('../referentie_pagina/user_recentie.php'); ?></li>
+              <li><?php include('../referentie_pagina/user_recentie.php'); ?></li>
+              <li><?php include('../referentie_pagina/user_recentie.php'); ?></li>
+              <li><?php include('../referentie_pagina/user_recentie.php'); ?></li>
+              <li><?php include('../referentie_pagina/user_recentie.php'); ?></li>
+            </ul>
+          </div>
+          <div class="col right">
+            <ul>
+              <li><?php include('../referentie_pagina/user_recentie.php'); ?></li>
+              <li><?php include('../referentie_pagina/user_recentie.php'); ?></li>
+              <li><?php include('../referentie_pagina/user_recentie.php'); ?></li>
+              <li><?php include('../referentie_pagina/user_recentie.php'); ?></li>
+              <li><?php include('../referentie_pagina/user_recentie.php'); ?></li>
+              <li><?php include('../referentie_pagina/user_recentie.php'); ?></li>
+              <li><?php include('../referentie_pagina/user_recentie.php'); ?></li>
+              <li><?php include('../referentie_pagina/user_recentie.php'); ?></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<section class="mogelijkheden">
+  <div class="wrapper">
+    <div class="container-fluid content_container" style="background: url('<%= image_url 'bg_mogelijkheden.jpg' %>') no-repeat center; background-size: cover">
+
+      <h2><%= phrase 'finance_header_review' %></h2>
+
+      <h3><%= phrase 'finance_sub_header_review' %></h3>
+
+      <%= render 'shared/finance_circles' %>
+    </div>
+  </div>
+</section>

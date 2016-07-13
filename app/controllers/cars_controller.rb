@@ -16,6 +16,7 @@ class CarsController < ApplicationController
   def show
     @car = Car.includes(:brand, :model, :car_images, :options).find(params[:id])
     @view = ab_test('car_show', ['show', 'show_b'])
+    @car.increment!(:views)
 
     add_breadcrumb [@car.brand.name, @car.model.name].join(' ')
     render @view

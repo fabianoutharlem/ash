@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160713151428) do
+ActiveRecord::Schema.define(version: 20160713172353) do
 
   create_table "alternatives", force: :cascade do |t|
     t.string   "which",        limit: 255
@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 20160713151428) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "best_day_deal",                                   default: false
+    t.integer  "views",                limit: 4
   end
 
   add_index "cars", ["brand_id"], name: "index_cars_on_brand_id", using: :btree
@@ -250,6 +251,16 @@ ActiveRecord::Schema.define(version: 20160713151428) do
     t.text     "value",      limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "email",      limit: 255
+    t.text     "review",     limit: 65535
+    t.integer  "rating",     limit: 4
+    t.boolean  "approved",                 default: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
   end
 
   create_table "slide_template_values", force: :cascade do |t|
