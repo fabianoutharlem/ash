@@ -85,7 +85,7 @@
         <button class="orange_btn afspraak_btn animated pulse">Afspraak maken</button>
 
         <div class="icons">
-          <%= link_to car_like_path(@car), remote: true do %>
+          <%= link_to car_like_path(@car), class: "like_button #{@car_likes.include?(@car.slug) ? 'liked' : nil}", remote: true do %>
               <i class="like"></i>
           <% end %>
           <a href=""><i class="mail"></i></a>

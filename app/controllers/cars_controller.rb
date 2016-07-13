@@ -41,7 +41,6 @@ class CarsController < ApplicationController
 
     likes << params[:car_id]
     cookies[:liked_cars] = likes.uniq.to_json
-    render nothing: true
   end
 
   def favourites
@@ -50,7 +49,7 @@ class CarsController < ApplicationController
     else
       likes = Array.new
     end
-    @cars = Car.find(likes)
+    @cars = Car.where(slug: likes).order(created_at: :desc)
     add_breadcrumb 'Favorieten'
   end
 
