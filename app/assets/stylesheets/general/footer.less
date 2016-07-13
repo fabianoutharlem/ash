@@ -322,6 +322,7 @@ section.footer {
 
                &:last-child {
                  border-bottom: solid 1px #dedede;
+                 padding-bottom: 10px;
                }
 
                a {
@@ -338,7 +339,19 @@ section.footer {
             &.active {
               display: block;
             }
+
+            li.active {
+
+              a {
+                color: @orange;
+              }
+            }
           }
+        }
+
+        &.klantenservice {
+
+
         }
 
         &.voorraad {
@@ -441,6 +454,13 @@ section.contact {  //footer_main
         font-size: 13px;
         line-height: 2;
         color: #595959;
+        
+        &.active {
+          
+          a {
+            color: @orange;
+          }
+        }
 
         &:first-child {
           border-left: 1px solid #fc8161;
