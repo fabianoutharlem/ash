@@ -243,17 +243,41 @@ section.referenties {
               }
 
               &.referentie {
+                vertical-align: top;
                 height: 120px;
               }
             }
 
-            .orange_btn {
+            div.star_rating {
               display: inline-block;
-              line-height: 36px;
-              vertical-align: bottom;
 
-              @media @650 {
-                display: block;
+              div.star_wrapper {
+
+                small {
+                  vertical-align: top;
+                  display: inline-block;
+                  font-size: 16px;
+                  color: #9b9b9b;
+                  height: 30px;
+                  line-height: 30px;
+                }
+
+                .input_star_rating_wrapper {
+                  display: inline-block;
+                  margin-left: 10px;
+                }
+              }
+
+              .orange_btn {
+                display: inline-block;
+                line-height: 36px;
+                vertical-align: bottom;
+                margin-top: 37px;
+
+                @media @650 {
+                  display: block;
+                  margin-top: 20px;
+                }
               }
             }
           }

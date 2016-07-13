@@ -465,4 +465,9 @@ $(document).ready(function () {
     $('section.info_blok span.lees_meer').click(function () {
         $('section.info_blok p.small_not_visible').toggleClass('active');
     });
+
+    //review page
+    $('#input_star_rating').barrating({
+        theme: 'fontawesome-stars-o'
+    });
 });

@@ -2,6 +2,7 @@
   <div class="wrapper">
     <div class="container-fluid content_container">
       <h2>Referenties</h2>
+
       <p class="header">Laat hier uw mening over ons achter. Ruimte voor 3 a 4 regels tekst.
         Sed posuere consectetur est at lobortis. Donec ullamcorper nulla non metus auctor fringilla.
         Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
@@ -10,7 +11,9 @@
         <div class="row first">
           <div class="col left referentie_achterlaten">
             <h3>Referentie achterlaten</h3>
+
             <p class="beoordelings_cijfer">9.5/10</p>
+
             <div class="star stars"></div>
             <div class="star stars"></div>
             <div class="star stars"></div>
@@ -23,7 +26,22 @@
               <input class="naam first_col nth_col" type="text" placeholder="Naam">
               <input class="email nth_col" type="text" placeholder="E-mail">
               <input class="referentie first_col " type="text" placeholder="Referentie">
-              <button class="orange_btn">Verstuur Referentie</button>
+
+              <div class="star_rating">
+                <div class="star_wrapper">
+                  <small>Waardering:</small>
+                  <div class="input_star_rating_wrapper">
+                    <select id="input_star_rating">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+                  </div>
+                </div>
+                <button class="orange_btn">Verstuur Referentie</button>
+              </div>
             </form>
           </div>
         </div>
