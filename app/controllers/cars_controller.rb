@@ -38,7 +38,12 @@ class CarsController < ApplicationController
   end
 
   def favourites
-    @cars = Car.all
+    if cookies[:liked_cars].present?
+      likes = JSON.parse cookies[:liked_cars]
+    else
+      likes = Array.new
+    end
+    @cars = Car.find(likes)
   end
 
 end
