@@ -1,0 +1,61 @@
+section.favourites {
+
+  div.content_container {
+
+    h1 {
+      font-size: 26px;
+      color: #f35026;
+      font-weight: bold;
+      margin: 30px 0 15px 70px;
+
+      @media @640 {
+        text-align: center;
+        margin: 0 0 25px 0;
+      }
+    }
+
+    div.favourite_cars {
+      background-color: #f4f4f4;
+      padding: 50px 0;
+
+      @media @640 {
+        padding: 30px 0;
+      }
+
+      ul {
+        width: 1231px;
+        margin: 0 auto;
+
+        @media @1279 {
+          width: 924px;
+        }
+
+        @media @960 {
+          width: 615px;
+        }
+
+        @media @640 {
+          width: 100%;
+        }
+
+        li {
+          display: inline-block;
+          margin: 0 10px;
+
+          @media @640 {
+            margin: 0 0 20px 0;
+            display: block;
+
+            div.item {
+              width: 100%;
+
+              .article_car {
+                margin: 0 auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

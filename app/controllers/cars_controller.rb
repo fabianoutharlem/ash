@@ -37,6 +37,10 @@ class CarsController < ApplicationController
     render nothing: true
   end
 
+  def favourites
+    @cars = Car.all
+  end
+
 end
 
 
