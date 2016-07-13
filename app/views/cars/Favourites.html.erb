@@ -1,0 +1,20 @@
+<section class="favourites">
+  <div class="wrapper">
+    <div class="container-fuid content_container">
+
+      <%= render 'shared/adress' %>
+
+      <h1>Favorieten</h1>
+
+      <div class="favourite_cars">
+        <ul>
+          <% @cars.each do |car| %>
+              <li>
+                <%= render car %>
+              </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
