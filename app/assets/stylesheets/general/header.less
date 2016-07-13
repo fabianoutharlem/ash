@@ -567,7 +567,7 @@ div.sub_menu {
   }
 
   &.contact_menu {
-    display: none;
+    //display: none;
 
     &.active {
       display: block;
@@ -590,6 +590,13 @@ div.sub_menu {
 
       li {
         display: block;
+
+        &.active {
+
+          a {
+            color: @orange;
+          }
+        }
       }
 
       div.Klantenservice {
@@ -1118,6 +1125,13 @@ div.smartphone {
             padding: 0 0 0 20px;
             border: none;
             min-height: 25px;
+
+            &.active {
+
+              a {
+                color: @orange;
+              }
+            }
 
             &:first-child {
               border-left: 1px solid #f35026;
