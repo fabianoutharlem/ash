@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :reviews
+
   resources :vacancies, only: [:index, :show], path: 'vacatures'
 
   resources :link_partners, only: [:index]
