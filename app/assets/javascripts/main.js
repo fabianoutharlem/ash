@@ -482,4 +482,12 @@ $(document).ready(function () {
     $('#input_star_rating').barrating({
         theme: 'fontawesome-stars-o'
     });
+
+    //chat functie
+    var footer_contact = $('section.footer_contact li.chat, section.footer_contact li.text_chat'),
+        chat_btns = footer_contact;
+    chat_btns.click( function () {
+        //$('.loquendo-chat-label').addClass('loquendo-open');
+        $('.loquendo-chat-label').click();
+    });
 });

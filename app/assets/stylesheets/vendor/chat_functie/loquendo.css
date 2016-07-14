@@ -35,18 +35,20 @@
 .loquendo-chat p {
     margin: 0 0 1em;
     line-height: 1.5em;
+    color: white;
+    text-align: left;
 }
 
 .loquendo-chat-label {
-    border-radius: .5em .5em 0 0;
     width: 60%;
     margin: 0;
     padding: .25em .75em;
     cursor: pointer;
     line-height: 1.3em;
     text-align: right;
-    border-bottom: .075em solid #fff;
-    background-color: #eee;
+    border-bottom: .075em solid black;
+    background-color: black;
+    color: white;
 }
 /* shadow below tab */
 .loquendo-chat-label:after {
@@ -140,10 +142,11 @@
 }
 
 .loquendo-chat-content {
-    border-radius: .5em 0 0 0;
     clear: both;
-    background-color: #eee;
+    background-color: black;
+    color: white;
     padding: .75em;
+    text-align: center;
 }
 .loquendo-left .loquendo-chat-content {
     border-radius: 0 0 .5em 0;
@@ -169,7 +172,9 @@
     line-height: 2em;
     margin: 0;
     padding: 0;
-    width: auto;
+    width: 17.5em;
+    color: white;
+    text-align: left;
 }
 
 .loquendo-chat-content input,
@@ -191,14 +196,16 @@
 }
 
 .loquendo-chat button {
-    margin: .5em 0;
+    margin: 1.1em 0;
     border: 0;
     line-height: 1.5em;
-    border-radius: .4em;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.38) .1em .1em .1em 0;
     cursor: pointer;
     padding: 1px 6px;
+
+    color: white;
+    width: 17.5em;
+    height: 50px;
+    background-color: #f35026;
 }
 .loquendo-chat button[type="reset"] {
     float: right;
@@ -333,7 +340,9 @@ html[xmlns] .clearfix {
 
 .loquendo-red .loquendo-chat-label {
     border-bottom-color: #ff4940;
-    background-color: #ff4940;
+    background-color: black;
+    border-radius: 0;
+    color: white;
 }
 .loquendo-red .loquendo-chat-content {
     background-color: #ff4940;
