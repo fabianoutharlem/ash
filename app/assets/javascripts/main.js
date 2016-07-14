@@ -484,10 +484,10 @@ $(document).ready(function () {
     });
 
     //chat functie
-    var footer_contact = $('section.footer_contact li.chat, section.footer_contact li.text_chat'),
-        chat_btns = footer_contact;
-    chat_btns.click( function () {
-        //$('.loquendo-chat-label').addClass('loquendo-open');
-        $('.loquendo-chat-label').click();
+    $('.open_chat').click( function (e) {
+        e.preventDefault();
+        setTimeout(function() {
+            $('.loquendo-chat-label').trigger('click');
+        }, 200);
     });
 });
