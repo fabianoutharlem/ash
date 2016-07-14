@@ -1,0 +1,197 @@
+.text_center {
+    text-align: center;
+}
+
+.link {
+    display: inline-block;
+    color: #F35026;
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+.bg_gray {
+    background-color: #f3f3f3;
+}
+
+.width_50 {
+    width: 50%;
+}
+
+.width_100 {
+    width: 100%;
+}
+
+.car_info {
+    width: 250px;
+    height: 180px;
+    background-color: #ffffff;
+}
+
+.merk_naam {
+    font-size: 16px;
+    color: #414141;
+}
+
+.model_naam {
+    color: #414141;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.van_voor {
+    font-size: 13px;
+    color: #757575;
+    display: inline-block;
+}
+
+.prijs_van {
+    font-size: 16px;
+    color: #757575;
+    display: inline-block;
+}
+
+.van, .voor {
+    font-size: 16px;
+    color: #757575;
+    display: inline-block;
+    height: 25px;
+}
+
+.van {
+    width: 50%;
+}
+
+.focus_price {
+    font-size: 20px;
+    color: #f35026;
+}
+
+.prijs_voor {
+    display: inline-block;
+    font-size: 20px;
+    color: #f35026;
+}
+
+.p_m {
+    display: inline-block;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #595959;
+}
+
+.maand_prijs {
+    display: inline-block;
+    font-size: 22px;
+    line-height: 1.5;
+    color: #f35026;
+    margin-bottom: 0;
+    margin-top: 4px;
+}
+
+.car {
+    margin: 0 auto;
+}
+
+.info_text_blok {
+    margin: 0 0 10px 0;
+}
+
+.info_text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #595959;
+}
+
+.banner_p {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #ffffff;
+    font-weight: 200;
+    margin: 0;
+}
+
+.second_row_p {
+    margin-left: 20px;
+    vertical-align: top;
+}
+
+.blue_button {
+    display: inline-block;
+    background: url("http://ash-html.fabianoudhaarlem.nl/assets/images/button_newsletter1.jpg") no-repeat center;
+    background-size: contain;
+    width: 160px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+h3 {
+    font-size: 16px;
+    color: #595959;
+    font-weight: 600;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.contact_table {
+}
+
+.adres_list {
+    font-size: 13px;
+    line-height: 2;
+    color: #595959;
+}
+
+ul {
+    margin-top: 13px;
+    margin-bottom: 25px;
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding-left: 20px;
+}
+
+.orange_border {
+    border-left: 1px solid #fc8161;
+}
+
+.table_like {
+    margin-top: 25px;
+    margin-bottom: 35px;
+}
+
+.footer_text {
+    font-size: 12px;
+    color: #010101;
+    margin-top: 12px;
+}
+
+.right_align {
+    text-align: right;
+}
+
+.social_media {
+    padding-bottom: 10px;
+}
+
+.social_img {
+    margin: 0 auto;
+}
+
+.block_content {
+    font-size: 13px;
+    color: #595959;
+}
+
+.block_content_price {
+    font-size: 22px;
+    color: #f35026;
+}
+
+.large-6, .small-12 {
+    padding-bottom: 10px;
+}
