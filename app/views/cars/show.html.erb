@@ -80,7 +80,7 @@
           <button class="orange_btn green_btn afspraak_btn finance_btn">Financier deze auto hier!</button>
         </div>
 
-        <p class="binnen_24">Binnen 24 uur rijden! Bepaal jou prijs.</p>
+        <p class="binnen_24"><%= phrase 'Binnen 24 uur rijden! Bepaal jouw prijs' %>.</p>
 
         <button class="orange_btn afspraak_btn appointment_btn animated pulse">Afspraak maken</button>
 
@@ -89,9 +89,9 @@
               <i class="like"></i>
           <% end %>
           <a href=""><i class="mail"></i></a>
-          <a href=""><i class="print"></i></a>
-          <a href=""><i class="twitter align_right"></i></a>
-          <a href=""><i class="fb align_right"></i></a>
+          <a onclick="window.print();"><i class="print"></i></a>
+          <a target="_blank" href="https://twitter.com/intent/tweet?url=<%= url_encode(car_url(@car)) %>&text=<%= url_encode('Bekijk deze auto op autoservicehaarlem.nl') %>&hashtags=ash,autoservicehaarlem"><i class="twitter align_right"></i></a>
+          <a target="_blank" href=""><i class="fb align_right"></i></a>
         </div>
       </div>
 
@@ -156,7 +156,7 @@
   <div class="overlay_photo_selection animated">
     <div class="cross"><%= image_tag 'cross.png' %></div>
 
-    <h3>Model naam</h3>
+    <h3><%= @car.display_name %></h3>
 
     <div class="slider_container">
       <ul id="lightSlider">
