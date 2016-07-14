@@ -23,9 +23,7 @@
           <h5>Nieuwsbrief "<%= @newsletter.title %>" preview</h5>
         </div>
         <div class="ibox-content">
-
           <%= render partial: 'admin/newsletters/templates/' + @newsletter.newsletter_template.template, locals: @newsletter.template_variables %>
-
         </div>
       </div>
     </div>

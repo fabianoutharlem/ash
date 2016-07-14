@@ -1,8 +1,8 @@
-module PageValues
-  class ImageField < PageValue
+module NewsletterValues
+  class ImageField < NewsletterValue
     include SlideValues::PersistenceTypes::PlainText
 
-    mount_uploader :value, PageImageUploader
+    mount_uploader :value, NewsletterImageUploader
 
     def form_field
       :image_field
