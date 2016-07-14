@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   get 'zakelijke_financieringen', to: 'static_pages#zakelijke_financieringen'
   get '50_50_deals', to: 'static_pages#deals_50_50', as: :deal_50_50
   get 'disclaimer', to: 'static_pages#disclaimer'
+  get 'site_map', to: 'static_pages#site_map'
 
   namespace :admin do
 
@@ -108,6 +109,18 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  resources Phrasing.route, as: 'phrasing_phrases', controller: 'phrasing_phrases', only: [:index, :edit, :update, :destroy] do
+    collection do
+      get 'help'
+      get 'import_export'
+      get 'sync'
+      get 'download'
+      post 'upload'
+      put 'remote_update_phrase'
+    end
+  end
+  resources :phrasing_phrase_versions, as: 'phrasing_phrase_versions', controller: 'phrasing_phrase_versions', only: [:destroy]
 
   resources :pages, only: [:show], path: '/'
 

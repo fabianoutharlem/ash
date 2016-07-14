@@ -293,91 +293,72 @@
             <h4><%= phrase 'finance_information' %></h4>
 
             <div class="cols">
-              <div class="prijzen">
-                <span class="helper"></span>
+            <div class="prijzen">
+              <span class="helper"></span>
 
-                <p>Contante
-                  prijs</p>
+              <p><%= phrase 'Contante prijs' %></p>
 
-                <p class="bottom">€ 10.931,00</p>
-              </div>
-              <div class="prijzen">
-                <span class="helper"></span>
-
-                <p>Aanbetaling</p>
-
-                <p class="bottom">€ 2.597,75</p>
-              </div>
-              <div class="prijzen">
-                <span class="helper"></span>
-
-                <p>Totaal
-                  kredietbedrag</p>
-
-                <p class="bottom">€ 2.597,75</p>
-              </div>
-              <div class="prijzen">
-                <span class="helper"></span>
-
-                <p>Slottermijn</p>
-
-                <p class="bottom">€ 5.195,50</p>
-              </div>
-              <div class="prijzen">
-                <span class="helper"></span>
-
-                <p>Termijn
-                  bedrag</p>
-
-                <p class="bottom">€ 117,02</p>
-              </div>
-              <div class="prijzen">
-                <span class="helper"></span>
-
-                <p>Totale door
-                  de consument
-                  te betalen
-                  bedrag</p>
-
-                <p class="bottom">€ 9.408,22</p>
-              </div>
-              <div class="prijzen">
-                <span class="helper"></span>
-
-                <p>Jaarlijks
-                  kosten
-                  percentage</p>
-
-                <p class="bottom">€ 9.408,22</p>
-              </div>
-              <div class="prijzen">
-                <span class="helper"></span>
-
-                <p>Debet
-                  rentevoet</p>
-
-                <p class="bottom">€ 8,49</p>
-              </div>
-              <div class="prijzen">
-                <span class="helper"></span>
-
-                <p>Looptijd
-                  in maanden</p>
-
-                <p class="bottom">36</p>
-              </div>
+              <p class="bottom"><%= format_money Setting.get('car_detail_staffel_cash') %></p>
             </div>
+            <div class="prijzen">
+              <span class="helper"></span>
 
-            <p class="financierings_voorwaarden">Financiering wordt verstrekt door Volkswagen Bank te
-              Amersfoort. Volkswagen Bank is ingeschreven in het Handelsregister met de statutaire naam
-              Volkswagen Bank GmbH Zweigniederlassung Niederlande onder nummer 32099980 en is gevestigd te
-              Amersfoort. Volkswagen Bank biedt financieringen en Financial lease aan en bemiddelt in
-              verzekeringen voor zowel de particuliere als de zakelijke rijder, AFM vergunning nummer
-              12000996. Financieringsaanbieding 5,99% op basis van een niet-doorlopend krediet i.c.m. een
-              verzekering. Debetrentevoet (vaste rente gedurende de looptijd) zonder deze verzekering 6,99%.
-              Toetsing en registratie bij BKR te Tiel. Dienstenwijzer op aanvraag verkrijgbaar of te
-              downloaden via www.volkswagenbank.nl. Rentewijzigingen en drukfouten voorbehouden. Actieaanbod
-              geldig t/m 30 december 2015.</p>
+              <p><%= phrase 'Aanbetaling' %></p>
+
+              <p class="bottom"><%= format_money Setting.get('car_detail_staffel_deposit') %></p>
+            </div>
+            <div class="prijzen">
+              <span class="helper"></span>
+
+              <p><%= phrase 'Totaal kredietbedrag' %></p>
+
+              <p class="bottom"><%= format_money Setting.get('car_detail_staffel_credit_amount') %></p>
+            </div>
+            <div class="prijzen">
+              <span class="helper"></span>
+
+              <p><%= phrase 'Slottermijn' %></p>
+
+              <p class="bottom"><%= format_money Setting.get('car_detail_staffel_closing_payment') %></p>
+            </div>
+            <div class="prijzen">
+              <span class="helper"></span>
+
+              <p><%= phrase 'Termijn bedrag' %></p>
+
+              <p class="bottom"><%= format_money Setting.get('car_detail_staffel_term_amount') %></p>
+            </div>
+            <div class="prijzen">
+              <span class="helper"></span>
+
+              <p><%= phrase 'Totale door de consument te betalen bedrag' %></p>
+
+              <p class="bottom"><%= format_money Setting.get('car_detail_staffel_consumer_total') %></p>
+            </div>
+            <div class="prijzen">
+              <span class="helper"></span>
+
+              <p><%= phrase 'Jaarlijks kosten percentage' %></p>
+
+              <p class="bottom"><%= format_money Setting.get('car_detail_staffel_yearly') %></p>
+            </div>
+            <div class="prijzen">
+              <span class="helper"></span>
+
+              <p><%= phrase 'Debet rentevoet' %></p>
+
+              <p class="bottom"><%= format_money Setting.get('car_detail_staffel_interest_foot') %></p>
+            </div>
+            <div class="prijzen">
+              <span class="helper"></span>
+
+              <p><%= phrase 'Looptijd in maanden' %></p>
+
+              <p class="bottom"><%= Setting.get('car_detail_staffel_duration') %></p>
+            </div>
+          </div>
+
+            <p class="financierings_voorwaarden"><%= phrase 'Financiering wordt verstrekt door Volkswagen Bank' %></p>
 
             <div class="logo logo_letop"></div>
             <div class="let_op logo_letop"></div>

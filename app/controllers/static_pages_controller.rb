@@ -25,4 +25,8 @@ class StaticPagesController < ApplicationController
     add_breadcrumb 'Disclaimer'
   end
 
+  def site_map
+    add_breadcrumb 'Sitemap'
+  end
+
 end
