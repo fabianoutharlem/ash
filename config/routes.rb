@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       get :favourites
       get 'compare/:car_1_id/:car_2_id', to: 'cars#compare', as: :compare_2
       get 'compare/:car_1_id/:car_2_id/:car_3_id', to: 'cars#compare', as: :compare_3
+      get :nieuw_binnen, to: 'cars#new_cars', as: :new_cars
     end
   end
 
