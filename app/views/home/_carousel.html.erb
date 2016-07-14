@@ -3,13 +3,13 @@
     <div class="container-fluid">
       <section id="demos">
         <div class="row">
-          <h3>Nieuw binnen</h3>
+          <h3><%= phrase 'Nieuw binnen' %></h3>
 
           <div class="nav_container"></div>
           <div id="owl2row-plugin" class="owl-carousel_top40">
                 <%= render partial: 'cars/car', collection: @nieuw_binnen %>
           </div>
-          <a href="" class="orange_btn">Bekijk de voorraad</a>
+          <a href="<%= new_cars_cars_path %>" class="orange_btn"><%= phrase 'Bekijk de voorraad' %></a>
         </div>
       </section>
     </div>

@@ -8,8 +8,14 @@ class CarsController < ApplicationController
     @cars = order_by_params(@cars, params).page(params[:page]).per(params[:per_page])
   end
 
-  def search
+  def new_cars
+    @cars = Car.includes(:brand, :model).all.limit(36).order(created_at: :desc)
+    @cars = order_by_params(@cars, params).page(params[:page]).per(params[:per_page])
+    add_breadcrumb 'Nieuw binnen'
+    render :index
+  end
 
+  def search
     add_breadcrumb 'Zoeken'
   end
 
