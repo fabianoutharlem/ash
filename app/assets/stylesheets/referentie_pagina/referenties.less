@@ -112,9 +112,18 @@ section.referenties {
             }
 
             &.left {
+              width: 100%;
 
               @media @1040 {
                 width: 100%;
+              }
+
+              ul {
+                width: 100%;
+
+                li {
+                  width: 100%;
+                }
               }
             }
 
@@ -249,10 +258,21 @@ section.referenties {
                   margin: 0 auto 20px auto;
                 }
               }
+            }
 
-              &.referentie {
-                vertical-align: top;
-                height: 120px;
+            .referentie {
+              vertical-align: top;
+              height: 120px;
+              width: 279px;
+              margin-right: 20px;
+              border: solid 1px #e1e1e1;
+              padding: 20px;
+              font-size: 16px;
+              color: #9b9b9b;
+
+              @media @650 {
+                margin-right: 0;
+                margin-bottom: 20px;
               }
             }
 
@@ -295,15 +315,12 @@ section.referenties {
 
     article.user_recentie {
       position: relative;
-      width: 600px;
-      height: 120px;
-      padding: 20px 0 20px 30px;
+      width: 100%;
+      min-height: 120px;
+      padding: 20px;
       background-color: white;
       margin-bottom: 20px;
-
-      @media @1279 {
-        width: 460px;
-      }
+      word-wrap: break-word;
 
       @media @1040 {
         text-align: left;
@@ -313,7 +330,7 @@ section.referenties {
 
       @media @650 {
         width: 320px;
-        height: 100px;
+        min-height: 100px;
       }
 
       h4 {
@@ -330,6 +347,7 @@ section.referenties {
         font-size: 20px;
         line-height: 1.6;
         font-weight: @lato-light;
+        margin-top: 5px;
 
         @media @650 {
           font-size: 16px;

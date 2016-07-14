@@ -252,19 +252,31 @@ $(document).ready(function () {
     //afspraak_maken button click overlay visible
     var afspraak_overlay = $('section.auto_uitgelicht .overlay_afspraak');
 
-    $('section.auto_uitgelicht div.model .afspraak_btn, section.auto_uitgelicht a.appointment_btn').click(function () {
+    $('section.auto_uitgelicht div.model .appointment_btn, section.auto_uitgelicht a.appointment_btn').click(function () {
         afspraak_overlay.addClass('bounceInUp active');
     });
 
     $('section.auto_uitgelicht div.overlay_afspraak img.cross').click(function () {
-        afspraak_overlay.removeClass('active bounceInUp');
+        afspraak_overlay.addClass('bounceOutUp');
+        afspraak_overlay.removeClass('bounceInUp');
+        var timeOut = setTimeout( function () {
+            afspraak_overlay.removeClass('active bounceOutUp');
+        }, 600);
     });
 
     //financier button click overlay visible
     var financier_overlay = $('section.auto_uitgelicht .overlay_financier');
 
-    $('section.auto_uitgelicht div.model .green_btn').click(function () {
-        financier_overlay.addClass('active');
+    $('section.auto_uitgelicht div.model .finance_btn').click(function () {
+        financier_overlay.addClass('active bounceInUp');
+    });
+
+    $('section.auto_uitgelicht .overlay_financier img.cross').click(function () {
+        financier_overlay.addClass('bounceOutUp');
+        financier_overlay.removeClass('bounceInUp');
+        var timeOut = setTimeout( function () {
+            financier_overlay.removeClass('active bounceOutUp');
+        }, 600);
     });
 
 

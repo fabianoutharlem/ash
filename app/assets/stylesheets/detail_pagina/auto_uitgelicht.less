@@ -8,7 +8,7 @@ section.auto_uitgelicht {
     position: relative;
     padding: 30px 30px 30px 70px;
     background-color: #f4f4f4;
-    overflow: hidden;
+    //overflow: hidden;
 
     @media @1280 {
       padding: 3%;
@@ -181,22 +181,64 @@ section.auto_uitgelicht {
       display: none;
       z-index: 20;
       position: absolute;
-      top: 0;
-      right: -100%;
+      top: -120%;
       transition: @trans;
-      padding-left: 70px;
+      left: 0;
+      width: 100%;
 
       &.active {
-        right: 0;
+        top: 10px;
+        display: block;
+      }
+
+      div.content_container {
+
+        @media @700 {
+          padding-bottom: 60px;
+        }
+      }
+
+      h2 {
+
+        @media @700 {
+          font-size: 2.3em;
+        }
+
+        @media @500 {
+          font-size: 1.5em;
+        }
+      }
+
+      h3 {
+
+        @media @700 {
+          font-size: 1.8em;
+        }
+
+        @media @500 {
+          font-size: 1.2em;
+        }
       }
 
       section.article_financieren {
         margin: 0 35px 0 35px;
       }
 
+      .circle_container {
+        margin-bottom: 20px;
+      }
+
       img.cross {
-        display: block;
-        margin: 50px auto 0 auto;
+        //display: block;
+        //margin: 50px auto 0 auto;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 50px;
+
+        @media @800 {
+          bottom: 30px;
+        }
 
         &:hover {
           cursor: pointer;
