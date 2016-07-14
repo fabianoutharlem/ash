@@ -100,6 +100,16 @@ section.zoek_nu {
             }
           }
 
+          @media @320 {
+            display: block;
+            width: 310px;
+            margin: 0 auto;
+
+            &:nth-child(2) {
+              border-radius: 0;
+            }
+          }
+
           &:hover {
             cursor: pointer;
             background-color: #ffffff;
@@ -170,6 +180,10 @@ section.zoek_nu {
         @media @650 {
           width: 320px;
           height: auto;
+        }
+
+        @media @320 {
+          width: 310px;
         }
 
         div.select_col {
