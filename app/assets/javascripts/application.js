@@ -22,5 +22,4 @@
 //= require phrasing
 //= require jquery.barrating
 //= require lightslider.js
-//= require loquendo
 //= require main.js

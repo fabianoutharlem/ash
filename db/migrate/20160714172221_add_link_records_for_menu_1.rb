@@ -12,7 +12,7 @@ class AddLinkRecordsForMenu1 < ActiveRecord::Migration
     Link.create(title: 'Auto kredietplan', url: 'http://autokredietplan.nl')
     Link.create(title: 'Auto totaal haarlem', url: 'http://autototaalhaarlem.nl')
     Link.create(title: 'Sitemap', url: '/site_map')
-    Link.create(title: 'Vacatures', url: '/vacancies')
+    Link.create(title: 'Vacatures', url: '/vacatures')
     Link.create(title: 'Link partners', url: '/link_partners')
   end
 end
