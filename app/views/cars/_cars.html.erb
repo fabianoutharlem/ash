@@ -353,8 +353,10 @@
           <% end %>
 
           <li class="banner">
-            <article class="car_subsection_banner" style="background: image_url('banner_ford.jpg') no-repeat center; background-size: cover">
-            </article>
+            <%= link_to Setting.get('cars_banner_big_link') do %>
+                <article class="car_subsection_banner" style="background: url('<%= image_url(Setting.get('cars_banner_big')) %>') no-repeat center; background-size: cover">
+                </article>
+            <% end %>
           </li>
 
           <% cars[6..-1].each do |car| %>
