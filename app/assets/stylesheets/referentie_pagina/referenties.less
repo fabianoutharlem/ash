@@ -119,10 +119,10 @@ section.referenties {
               }
 
               ul {
-                columns: 2;
+                width: 100%;
 
-                @media @1040 {
-                  columns: 1;
+                li {
+                  width: 100%;
                 }
               }
             }
@@ -316,10 +316,11 @@ section.referenties {
     article.user_recentie {
       position: relative;
       width: 100%;
-      height: 120px;
-      padding: 20px 0 20px 30px;
+      min-height: 120px;
+      padding: 20px;
       background-color: white;
       margin-bottom: 20px;
+      word-wrap: break-word;
 
       @media @1040 {
         text-align: left;
@@ -329,7 +330,7 @@ section.referenties {
 
       @media @650 {
         width: 320px;
-        height: 100px;
+        min-height: 100px;
       }
 
       h4 {
@@ -346,6 +347,7 @@ section.referenties {
         font-size: 20px;
         line-height: 1.6;
         font-weight: @lato-light;
+        margin-top: 5px;
 
         @media @650 {
           font-size: 16px;
