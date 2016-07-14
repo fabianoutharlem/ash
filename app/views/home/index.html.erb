@@ -63,10 +63,10 @@
         <p><%= phrase 'Meer dan u gewend bent' %></p>
       </article>
 
-      <article class="vw_banner _actie" style="background: url('<%= image_url '2011-vw-golf-r.png' %>') no-repeat center; background-size: calc(100% * 0.8);">
-        <h5>VOLKSWAGEN WEKEN</h5>
-        <p>Ook zakelijk zeer voordelig te financieren met Auto Krediet Plan</p>
-        <a href="../actie_pagina/actie_pagina.php" class="orange_btn">Bekijk deze actie</a>
+      <article class="vw_banner _actie" style="background: url('<%= image_url Setting.get('home_action_img') %>') no-repeat center; background-size: calc(100% * 0.8);">
+        <h5><%= phrase 'home_actie_titel' %></h5>
+        <p><%= phrase 'home_actie_sub_titel' %></p>
+        <%= link_to phrase('Bekijk deze actie'), page_path(Setting.get('home_action_page')), class: 'orange_btn' %>
       </article>
     </div>
   </div>

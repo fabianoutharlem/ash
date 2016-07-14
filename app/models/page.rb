@@ -2,6 +2,9 @@ class Page < ActiveRecord::Base
   belongs_to :page_template
   has_many :page_values, dependent: :destroy
 
+  has_many :menu_items, dependent: :nullify, foreign_key: :menu_itemable_id
+  has_many :settings, dependent: :nullify, foreign_key: :value
+
   extend FriendlyId
   friendly_id :slug_candidates, use: [:slugged, :finders]
 

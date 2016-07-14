@@ -20,6 +20,6 @@ production:
 staging:
   <<: *default
   host: localhost
-  database: ash
-  username: ash
-  password: E#E0J1uQ0ZJX5s
+  database: ash_staging
+  username: ash_staging_user
+  password: ftSdwa4w

@@ -96,6 +96,8 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :settings, only: [:index, :edit, :update]
+
     resources :vacancies
 
     resources :reviews, only: [:index, :update]

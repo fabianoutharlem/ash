@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160713172353) do
+ActiveRecord::Schema.define(version: 20160714115211) do
 
   create_table "alternatives", force: :cascade do |t|
     t.string   "which",        limit: 255
@@ -261,6 +261,15 @@ ActiveRecord::Schema.define(version: 20160713172353) do
     t.boolean  "approved",                 default: false
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "setting",    limit: 255
+    t.string   "value",      limit: 255
+    t.string   "type",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "slide_template_values", force: :cascade do |t|
