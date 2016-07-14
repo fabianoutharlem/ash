@@ -1,0 +1,481 @@
+/******************************************************************************
+ *** outer div
+ ******************************************************************************/
+.loquendo-chat {
+    width: 20em;
+    z-index: 9999;
+    text-align: left;
+}
+.loquendo-chat.loquendo-chatting {
+    width: 40em;
+}
+
+.loquendo-chat,
+.loquendo-chat input,
+.loquendo-chat textarea,
+.loquendo-chat select,
+.loquendo-chat table,
+.loquendo-chat label,
+.loquendo-chat button {
+    font: 100%/1.2em Arial, Helvetica, sans-serif;
+    color: #555;
+}
+/*
+  prevent ios zooming in...
+  http://www.456bereastreet.com/archive/201212/ios_webkit_browsers_and_auto-zooming_form_controls/
+*/
+@media only screen and (max-device-width:568px) {
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus,
+    select:focus {
+        font-size: 16px;
+    }
+}
+.loquendo-chat p {
+    margin: 0 0 1em;
+    line-height: 1.5em;
+}
+
+.loquendo-chat-label {
+    border-radius: .5em .5em 0 0;
+    width: 60%;
+    margin: 0;
+    padding: .25em .75em;
+    cursor: pointer;
+    line-height: 1.3em;
+    text-align: right;
+    border-bottom: .075em solid #fff;
+    background-color: #eee;
+}
+/* shadow below tab */
+.loquendo-chat-label:after {
+    content: "\0020";
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px; /* when 0 no shadow is displayed*/
+    box-shadow: #333 0 0 8px 0;
+}
+.loquendo-chat-label:after {
+    bottom: -1px; /* because of height: 1*/
+}
+.loquendo-open .loquendo-chat-label:after {
+    display: none;
+}
+
+.loquendo-top .loquendo-chat-label {
+    border-radius: 0 0 .5em .5em;
+}
+.loquendo-top .loquendo-chat-label:after {
+    top: 0;
+}
+
+.loquendo-left .loquendo-chat-label,
+.loquendo-right .loquendo-chat-label {
+    border-radius: 0 .5em .5em 0;
+    width: 28px;
+    height: 180px;
+    padding: 0;
+    border-width: 0 0 0 0.075em;
+    background-image: url(gfx/label-left-555.png);
+    background-position: -28px 8px;
+    background-repeat: no-repeat;
+}
+.loquendo-offline.loquendo-left .loquendo-chat-label {
+    background-position: 2px 8px;
+}
+.loquendo-left .loquendo-chat-label:after,
+.loquendo-right .loquendo-chat-label:after {
+    width: 1px;
+    height: 180px;
+}
+
+.loquendo-right .loquendo-chat-label {
+    border-radius: .5em 0 0 .5em;
+    border-width: 0 0.075em 0 0;
+    background-image: url(gfx/label-right-555.png);
+    background-position: 5px -6px;
+}
+.loquendo-offline.loquendo-right .loquendo-chat-label {
+    background-position: -25px -6px;
+}
+.loquendo-right .loquendo-chat-label:after {
+    left: 100%;
+}
+
+.loquendo-left.loquendo-red .loquendo-chat-label,
+.loquendo-left.loquendo-blue .loquendo-chat-label,
+.loquendo-left.loquendo-green .loquendo-chat-label,
+.loquendo-left.loquendo-orange .loquendo-chat-label {
+    background-image: url(gfx/label-left.png);
+    background-position: -25px 8px;
+}
+.loquendo-offline.loquendo-left.loquendo-red .loquendo-chat-label,
+.loquendo-offline.loquendo-left.loquendo-blue .loquendo-chat-label,
+.loquendo-offline.loquendo-left.loquendo-green .loquendo-chat-label,
+.loquendo-offline.loquendo-left.loquendo-orange .loquendo-chat-label {
+    background-image: url(gfx/label-left.png);
+    background-position: 4px 8px;
+}
+
+.loquendo-right.loquendo-red .loquendo-chat-label,
+.loquendo-right.loquendo-blue .loquendo-chat-label,
+.loquendo-right.loquendo-green .loquendo-chat-label,
+.loquendo-righT.loquendo-orange .loquendo-chat-label {
+    background-image: url(gfx/label-right.png);
+    background-position: 2px 4px;
+}
+.loquendo-offline.loquendo-right.loquendo-red .loquendo-chat-label,
+.loquendo-offline.loquendo-right.loquendo-blue .loquendo-chat-label,
+.loquendo-offline.loquendo-right.loquendo-green .loquendo-chat-label,
+.loquendo-offline.loquendo-righT.loquendo-orange .loquendo-chat-label {
+    background-position: -25px 4px;
+}
+
+.loquendo-right .loquendo-chat-label span,
+.loquendo-left .loquendo-chat-label span {
+    display: none;
+}
+
+.loquendo-chat-content {
+    border-radius: .5em 0 0 0;
+    clear: both;
+    background-color: #eee;
+    padding: .75em;
+}
+.loquendo-left .loquendo-chat-content {
+    border-radius: 0 0 .5em 0;
+    min-height: 180px;
+}
+.loquendo-right .loquendo-chat-content {
+    border-radius: 0 0 0 .5em;
+    min-height: 180px;
+}
+.loquendo-top .loquendo-chat-content {
+    border-radius: 0 0 0 .5em;
+}
+
+/******************************************************************************
+ *** form stuff
+ ******************************************************************************/
+.loquendo-chat-content form {
+    margin: 0;
+    padding: 0;
+}
+
+.loquendo-chat-content label {
+    line-height: 2em;
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
+.loquendo-chat-content input,
+.loquendo-chat-content textarea {
+    width: 17.5em;
+    margin: 0;
+    padding: .5em;
+    border: .1em solid #aaa;
+    outline: none;
+    background: white url(/gfx/trans.gif) 0 0 no-repeat;
+}
+.loquendo-chat-content textarea {
+    height: 3.5em;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.loquendo-chat.loquendo-chatting textarea {
+    width: 37.4em;
+}
+
+.loquendo-chat button {
+    margin: .5em 0;
+    border: 0;
+    line-height: 1.5em;
+    border-radius: .4em;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.38) .1em .1em .1em 0;
+    cursor: pointer;
+    padding: 1px 6px;
+}
+.loquendo-chat button[type="reset"] {
+    float: right;
+}
+
+input.loquendo-input-required,
+textarea.loquendo-input-required {
+    background-color: #fcc;
+}
+
+.loquendo-chat ::-webkit-input-placeholder,
+.loquendo-chat :-moz-placeholder,
+.loquendo-chat ::-moz-placeholder,
+.loquendo-chat :-ms-input-placeholder,
+textarea.loquendo-placeholder-blur {
+    color: #a9a9a9;
+}
+
+.loquendo-agent {
+    display: none;
+    clear: both;
+}
+.loquendo-agent p {
+    margin: 0;
+    text-align: right;
+}
+.loquendo-agent img {
+    float: right;
+    margin: 0 0 1em 1em;
+    width: 75px;
+    height: 75px;
+}
+.loquendo-bottom .loquendo-agent p {
+    text-align: left;
+}
+.loquendo-bottom .loquendo-agent img {
+    float: left;
+    margin: 0 1em 1em 0;
+}
+
+/******************************************************************************
+ *** messages area
+ ******************************************************************************/
+.loquendo-messages {
+    height: 10em;
+    background-color: #fff;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.loquendo-messages table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.loquendo-messages table th,
+.loquendo-messages table td {
+    vertical-align: top;
+    border-bottom: .075em solid #eee;
+    padding: .25em
+}
+.loquendo-messages table th {
+    font-weight: bold;
+    text-align: left;
+    width: 1%;
+    white-space: nowrap;
+}
+
+.loquendo-typing {
+    border: 0;
+    font-style: italic;
+    color: #a9a9a9;
+    font-size: 80%;
+    padding: .25em;
+}
+
+.loquendo-online {
+}
+.loquendo-offline {
+}
+
+.loquendo-clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+* html .loquendo-clearfix, /* IE6 */
+*:first-child+html .loquendo-clearfix {
+    zoom: 1;  /* IE7 */
+}
+/*
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+html[xmlns] .clearfix {
+  display: block;
+}
+* html .clearfix {
+  height: 1%;
+}
+*/
+
+
+/*** red ***/
+.loquendo-red,
+.loquendo-red label,
+.loquendo-red button {
+    color: white;
+}
+.loquendo-red input,
+.loquendo-red textarea,
+.loquendo-red select {
+    color: #a60800;
+}
+.loquendo-red ::-webkit-input-placeholder,
+.loquendo-red :-moz-placeholder,
+.loquendo-red ::-moz-placeholder,
+.loquendo-red :-ms-input-placeholder,
+.loquendo-red textarea.loquendo-placeholder-blur {
+    color: #ff7a73;
+}
+
+.loquendo-red .loquendo-chat-label {
+    border-bottom-color: #ff4940;
+    background-color: #ff4940;
+}
+.loquendo-red .loquendo-chat-content {
+    background-color: #ff4940;
+}
+.loquendo-red .loquendo-chat-content input,
+.loquendo-red .loquendo-chat-content textarea {
+    border-color: #a60800;
+}
+.loquendo-red button {
+    background-color: #a60800;
+}
+.loquendo-red .loquendo-messages table th,
+.loquendo-red .loquendo-messages table td {
+    border-bottom-color: #ff7a73;
+    color: #a60800;
+}
+.loquendo-red .loquendo-typing {
+    color: #ff7a73;
+}
+
+/*** blue ***/
+.loquendo-blue,
+.loquendo-blue label,
+.loquendo-blue button {
+    color: white;
+}
+.loquendo-blue input,
+.loquendo-blue textarea,
+.loquendo-blue select {
+    color: #062270;
+}
+.loquendo-blue ::-webkit-input-placeholder,
+.loquendo-blue :-moz-placeholder,
+.loquendo-blue ::-moz-placeholder,
+.loquendo-blue :-ms-input-placeholder,
+.loquendo-blue textarea.loquendo-placeholder-blur {
+    color: #6d89d5;
+}
+
+.loquendo-blue .loquendo-chat-label {
+    border-bottom-color: #476dd5;
+    background-color: #476dd5;
+}
+.loquendo-blue .loquendo-chat-content {
+    background-color: #476dd5;
+}
+.loquendo-blue .loquendo-chat-content input,
+.loquendo-blue .loquendo-chat-content textarea {
+    border-color: #062270;
+}
+.loquendo-blue button {
+    background-color: #062270;
+}
+.loquendo-blue .loquendo-messages table th,
+.loquendo-blue .loquendo-messages table td {
+    border-bottom-color: #6d89d5;
+    color: #062270;
+}
+.loquendo-blue .loquendo-typing {
+    color: #6d89d5;
+}
+
+/*** green ***/
+.loquendo-green,
+.loquendo-green label,
+.loquendo-green button {
+    color: white;
+}
+.loquendo-green input,
+.loquendo-green textarea,
+.loquendo-green select {
+    color: #008209;
+}
+.loquendo-green ::-webkit-input-placeholder,
+.loquendo-green :-moz-placeholder,
+.loquendo-green ::-moz-placeholder,
+.loquendo-green :-ms-input-placeholder,
+.loquendo-green textarea.loquendo-placeholder-blur {
+    color: #67e46f;
+}
+
+.loquendo-green .loquendo-chat-label {
+    border-bottom-color: #26972d;
+    background-color: #26972d;
+}
+.loquendo-green .loquendo-chat-content {
+    background-color: #26972d;
+}
+.loquendo-green .loquendo-chat-content input,
+.loquendo-green .loquendo-chat-content textarea {
+    border-color: #008209;
+}
+.loquendo-green button {
+    background-color: #008209;
+}
+.loquendo-green .loquendo-messages table th,
+.loquendo-green .loquendo-messages table td {
+    border-bottom-color: #67e46f;
+    color: #008209;
+}
+.loquendo-green .loquendo-typing {
+    color: #67e46f;
+}
+
+/*** orange ***/
+.loquendo-orange,
+.loquendo-orange label,
+.loquendo-orange button {
+    color: white;
+}
+.loquendo-orange input,
+.loquendo-orange textarea,
+.loquendo-orange select {
+    color: #bf8030;
+}
+.loquendo-orange ::-webkit-input-placeholder,
+.loquendo-orange :-moz-placeholder,
+.loquendo-orange ::-moz-placeholder,
+.loquendo-orange :-ms-input-placeholder,
+.loquendo-orange textarea.loquendo-placeholder-blur {
+    color: #ffc173;
+}
+
+.loquendo-orange .loquendo-chat-label {
+    border-bottom-color: #ffbe00;
+    background-color: #ffbe00;
+}
+.loquendo-orange .loquendo-chat-content {
+    background-color: #ffbe00;
+}
+.loquendo-orange .loquendo-chat-content input,
+.loquendo-orange .loquendo-chat-content textarea {
+    border-color: #bf8030;
+}
+.loquendo-orange button {
+    background-color: #bf8030;
+}
+.loquendo-orange .loquendo-messages table th,
+.loquendo-orange .loquendo-messages table td {
+    border-bottom-color: #ffc173;
+    color: #bf8030;
+}
+.loquendo-orange .loquendo-typing {
+    color: #ffc173;
+}

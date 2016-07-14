@@ -17,6 +17,6 @@ class Setting < ActiveRecord::Base
   end
 
   def self.get(setting_name)
-    self.find_by_setting(setting_name).try(:template_value)
+    self.find_by_setting(setting_name).try(:template_value) rescue nil
   end
 end

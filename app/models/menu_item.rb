@@ -2,7 +2,6 @@ class MenuItem < ActiveRecord::Base
   belongs_to :menu
   belongs_to :menu_itemable, polymorphic: true
 
-  delegate :route, to: :menu_itemable
   delegate :location, to: :menu
 
   include RankedModel
@@ -18,6 +17,10 @@ class MenuItem < ActiveRecord::Base
       memo
     end
     records
+  end
+
+  def route
+    menu_itemable.try(:route)
   end
 
 end
