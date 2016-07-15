@@ -3,6 +3,56 @@
  */
 $(document).ready(function () {
 
+    //header overlays & popups
+          //newsletter_popup ->show
+    var content_box = $('div.popup_newsletter div.content');
+    var overlay = $('div.popup_newsletter');
+    var registered_massege = $('div.popup_newsletter div.registered');
+
+    $('.newsletter_form').click( function() {
+        overlay.addClass('active animated fadeIn');
+        var t = setTimeout( function() {
+            content_box.addClass('active animated fadeInUp');
+        }, 700);
+    });
+
+          //newsletter_popup ->show
+    $('div.popup_newsletter div.cross').click( function() {
+
+        content_box.removeClass('fadeInUp').addClass('fadeOutDown');
+
+        var t = setTimeout( function() {
+            content_box.removeClass('active fadeOutDown');
+        }, 700);
+
+        var t2 = setTimeout( function() {
+            overlay.removeClass('fadeIn').addClass('fadeOut');
+
+            var t3 = setTimeout( function() {
+                overlay.removeClass('active fadeOut');
+            }, 700);
+        }, 700);
+    });
+
+         //newsletter_popup -> registerd message
+    $('div.popup_newsletter .send_btn').click( function() {
+        content_box.removeClass('fadeInUp').addClass('fadeOutDown');
+
+        var tr1 = setTimeout( function () {
+            registered_massege.addClass('active animated fadeInUp');
+            content_box.removeClass('active fadeOutDown')
+        }, 700);
+
+        var tr2 = setTimeout( function() {
+            registered_massege.removeClass('fadeInUp').addClass('fadeOutDown');
+
+            var t3 = setTimeout( function() {
+                registered_massege.removeClass('active fadeOutDown');
+                content_box.addClass('fadeInUp active');
+            }, 700);
+        }, 4500);
+    });
+
 
     //homepage
     var section_header = $('section.header');
