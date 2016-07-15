@@ -39,6 +39,105 @@ section.header {
       padding-top: 5px;
     }
 
+    //overlay & pop-ups
+    div.popup_newsletter {
+      display: none;
+      z-index: 30;
+      position: fixed;
+      background-color: rgba(0, 0, 0, 0.9);
+      height: 100vh;
+      width: 100vw;
+      top: 0;
+      left: 0;
+
+      &.active {
+        display: block;
+      }
+
+      h3 {
+        font-size: 28px;
+        color: #4a4a4a;
+      }
+
+      h4 {
+        font-size: 28px;
+        color: #00b04a;
+      }
+
+      small {
+        font-size: 24px;
+        color: #4a4a4a;
+        font-weight: @lato-light;
+      }
+
+      div.content {
+        display: none;
+        background-color: white;
+        position: fixed;
+        top: 30vh;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 50px 30px;
+
+        &.active {
+          display: block;
+        }
+
+        form {
+          width: 590px;
+          margin: 25px auto 0 auto;
+
+          input {
+            display: inline-block;
+            margin: 5px;
+            background-color: #d8d8d8;
+            border: solid 1px #00b04a;
+            font-size: 16px;
+            line-height: 1.9;
+            color: #595959;
+            width: 280px;
+            height: 50px;
+          }
+
+          .send_btn {
+            display: inline-block;
+            margin: 5px;
+          }
+        }
+
+        div.cross {
+          width: 25px;
+          height: 25px;
+          margin: 25px auto 0 auto;
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+      div.registered {
+        display: none;
+        background-color: white;
+        position: fixed;
+        top: 30vh;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 100px 0;
+
+        &.active {
+          display: block;
+        }
+      }
+    }
+
     a {
       display: inline-block;
 

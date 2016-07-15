@@ -3,8 +3,31 @@
     <div class="container-fluid header_content_container">
       <%= link_to image_tag('logo_ash.png'), root_path, class: :logo %>
 
+      <!-- Overlay / Pop-ups -->
+      <div class="popup_newsletter"> <!-- add class newsletter_form to element to make it visible on click -->
+        <div class="content">
+          <h3>Op de hoogte blijven van onze dagelijks vernieuwende voorraad?</h3>
+          <small>Schrijf je dan hier in voor onze nieuwsbrief!</small>
+          <form action="">
+            <input type="text" placeholder="Voornaam">
+            <input type="text" placeholder="Achternaam">
+            <input type="text" placeholder="E-mail adres">
+            <a href="#" class="orange_btn send_btn">Verstuur inschrijving</a>
+          </form>
+          <div class="cross">
+            <%= image_tag 'cross_afspraak.png' %>
+          </div>
+        </div>
+        <div class="registered">
+          <h4>Bedankt voor uw inschrijving!</h4>
+          <small>Wilt u meerdere email adressen aanmelden? Wacht dan 3 seconden.</small>
+        </div>
+      </div>
+      <!-- end -->
+
       <div class="smartphone_menu">
         <span class="helper"></span>
+
         <p>Menu</p>
         <%= image_tag 'arrow_down_orange.png' %>
       </div>
@@ -109,6 +132,7 @@
         <h2><span
         class="large">Kies de financiering die het beste bij jou past met Auto KredietPlan!</span><span
         class="small">Wilt uw een auto financieren?</span></h2>
+
         <p class="small">Bekijk hier de mogelijkheden!</p>
 
         <%= render 'shared/finance_circles' %>
@@ -122,6 +146,7 @@
         <div class="container-fluid content-container">
           <div class="Klantenservice">
             <h4><%= phrase 'Klantenservice & Financieringen' %></h4>
+
             <div class="first_col">
               <ul>
                 <% @menus['sub_menu_1'].each do |menu_item| %>
@@ -214,31 +239,37 @@
           <li>
             <span class="helper"></span>
             <i class="nl"></i>
+
             <p><%= phrase 'Nederlands' %></p>
           </li>
           <li>
             <span class="helper"></span>
             <i class="gb"></i>
+
             <p><%= phrase 'English' %></p>
           </li>
           <li>
             <span class="helper"></span>
             <i class="de"></i>
+
             <p><%= phrase 'German' %></p>
           </li>
           <li>
             <span class="helper"></span>
             <i class="fr"></i>
+
             <p><%= phrase 'French' %></p>
           </li>
           <li>
             <span class="helper"></span>
             <i class="es"></i>
+
             <p><%= phrase 'Spanish' %></p>
           </li>
           <li>
             <span class="helper"></span>
             <i class="tr"></i>
+
             <p><%= phrase 'Turkish' %></p>
           </li>
         </ul>
@@ -251,6 +282,7 @@
       <div class="container-fluid content-container">
         <div class="zoeken">
           <p><%= phrase 'Zoek op merk, type, model etc.. ( Bijv: audi, A3, cabrio of vw golf 1.2 tsi )' %></p>
+
           <p class="uitgebreid"><%= phrase 'Uitgebreid zoeken >' %></p>
 
           <form>
@@ -296,7 +328,8 @@
         </form>
       </li>
       <li class="home smartmenu <%= is_active_url(root_path) %>">
-        <a href="<% root_path %>"><%= phrase 'Home' %></a>
+        <a href="
+          <% root_path %>"><%= phrase 'Home' %></a>
       </li>
       <li class="voorraad smartmenu <%= is_active_url(cars_path) %>">
         <a href="<%= cars_path %>">
