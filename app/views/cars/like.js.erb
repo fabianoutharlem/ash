@@ -1,1 +1,6 @@
-$('.like_button').addClass('liked animated tada');
+if (!$('.like_button').hasClass('liked')) {
+  $('.like_button').addClass('liked animated tada');
+  setTimeout(function () {
+    $('li.hart').addClass('animated tada');
+  }, 1000);
+}
