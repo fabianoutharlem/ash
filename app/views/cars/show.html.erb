@@ -28,13 +28,13 @@
           <div class="wrapper">
             <div class="container-fluid content_container" style="background: url('<%= image_url 'bg_mogelijkheden.jpg' %>') no-repeat center; background-size: cover">
 
+              <%= image_tag 'remove-button.png', class: 'cross' %>
+
               <h2><%= phrase 'finance_header_car_detail_page' %></h2>
 
               <h3><%= phrase 'finance_sub_header_car_detail_page' %></h3>
 
               <%= render 'shared/finance_circles' %>
-
-              <%= image_tag 'remove-button.png', class: 'cross' %>
             </div>
           </div>
         </section>

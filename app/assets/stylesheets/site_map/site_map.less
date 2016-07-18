@@ -1,0 +1,65 @@
+section.sitemap {
+
+  div.info_links {
+
+    div.info_col {
+      width: 49%;
+
+      div.first_col, div.second_col {
+        width: 49%;
+
+        @media @360 {
+          width: 100%;
+          display: block;
+        }
+      }
+
+      &.tot_voorraad {
+
+        div.first_col {
+          width: 100%;
+        }
+
+        ul.brands {
+          columns: 2;
+          break-inside: avoid-column;
+
+          @media @700 {
+            columns: 1;
+          }
+
+          li {
+            display: inline-block;
+            border: 0;
+            padding: 0;
+
+            a {
+              padding-left: 20px;
+            }
+
+            &:first-child {
+
+              a {
+                border-left: 1px solid @orange;
+                display: inline-block;
+                height: 100%;
+              }
+            }
+          }
+        }
+
+        ul.models {
+
+          li {
+            border: none;
+            padding-left: 30px;
+
+            &:first-child {
+              padding-left: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
