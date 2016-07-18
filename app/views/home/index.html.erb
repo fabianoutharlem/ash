@@ -11,15 +11,10 @@
     <div class="container-fluid">
 
       <div class="left">
-        <h3>Verkoop uw auto aan Auto Service Haarlem</h3>
-        <p><span>Stap 1</span> - Kenteken & tellerstand van uw voertuig.</p>
-        <p>&nbsp;<span>Stap 2</span> - Vul uw n.a.w. gegevens in.</p>
+        <h3><%= phrase 'Verkoop uw auto aan Auto Service Haarlem' %></h3>
+        <p>Stap 1 - Kenteken & tellerstand van uw voertuig. Stap 2 - Vul uw n.a.w. gegevens in</p>
 
-        <form class="sell_car">
-          <input type="text" placeholder="Vul hier je kenteken in">
-          <input type="text" placeholder="Vul hier je kilometerstand in">
-          <button class="orange_btn">Verstuur aanvraag</button>
-        </form>
+        <button class="orange_btn"><%= phrase 'Taxatie aanvragen' %></button>
       </div>
 
       <div class="right">
@@ -44,8 +39,8 @@
   <div class="wrapper">
     <div class="container-fluid content_container" style="background: url('<%= image_url 'bg_mogelijkheden.jpg' %>') no-repeat center; background-size: cover">
 
-      <h2>Wilt uw deze auto financieren?</h2>
-      <h3>Bekijk hier de mogelijkheden!</h3>
+      <h2><%= phrase 'Wilt u deze auto financieren?' %></h2>
+      <h3><%= phrase 'Bekijk hier de mogelijkheden!' %></h3>
 
       <%= render 'shared/finance_circles' %>
 

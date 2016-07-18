@@ -26,6 +26,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :car_sale_requests, only: [:create]
+
   resources :appointment_requests, only: [:create]
 
   resources :reviews
@@ -105,6 +107,8 @@ Rails.application.routes.draw do
     resources :vacancies
 
     resources :reviews, only: [:index, :update]
+
+    resources :car_sale_requests, only: [:index, :destroy]
 
     resources :appointment_requests, only: [:index, :destroy]
 

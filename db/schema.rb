@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160718131052) do
+ActiveRecord::Schema.define(version: 20160718142228) do
 
   create_table "alternatives", force: :cascade do |t|
     t.string   "which",        limit: 255
@@ -65,6 +65,17 @@ ActiveRecord::Schema.define(version: 20160718131052) do
   end
 
   add_index "car_media", ["car_id"], name: "index_car_media_on_car_id", using: :btree
+
+  create_table "car_sale_requests", force: :cascade do |t|
+    t.string   "name",          limit: 255
+    t.string   "phone",         limit: 255
+    t.string   "email",         limit: 255
+    t.string   "license_plate", limit: 255
+    t.string   "mileage",       limit: 255
+    t.text     "message",       limit: 65535
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
 
   create_table "cars", force: :cascade do |t|
     t.string   "slug",                 limit: 255
