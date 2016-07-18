@@ -7,26 +7,49 @@
 <%= render 'carousel' %>
 
 <section class="like_ons">
+
+  <div class="overlay_taxation animated">
+    <div class="cross"></div>
+    <div class="content">
+      <form action="">
+        <div class="left">
+          <input type="text" placeholder="Je naam">
+          <input type="text" placeholder=" Je telefoon nummer">
+          <input type="text" placeholder="Je email adres">
+          <input type="text" placeholder="Vul hier je tenteken in">
+        </div>
+        <div class="right">
+          <textarea placeholder="Persoonlijk bericht"></textarea>
+          <input type="text" placeholder="Vul hier je kilometerstand in">
+          <button class="orange_btn">Taxatie aanvragen</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <div class="wrapper">
     <div class="container-fluid">
 
       <div class="left">
         <h3><%= phrase 'Verkoop uw auto aan Auto Service Haarlem' %></h3>
+
         <p>Stap 1 - Kenteken & tellerstand van uw voertuig. Stap 2 - Vul uw n.a.w. gegevens in</p>
 
-        <button class="orange_btn"><%= phrase 'Taxatie aanvragen' %></button>
+        <button class="orange_btn taxation_btn"><%= phrase 'Taxatie aanvragen' %></button>
       </div>
 
       <div class="right">
 
         <a href="https://www.facebook.com/autoservicehaarlem" class="facebook social_media">
           <i></i>
+
           <p>Like ons</p>
           <%= image_tag 'plus_icon.png' %>
         </a>
 
         <a href="https://www.instagram.com/autoservicehaarlem/" class="instagram social_media">
           <i></i>
+
           <p>Volg ons</p>
           <%= image_tag 'plus_icon.png' %>
         </a>
@@ -40,6 +63,7 @@
     <div class="container-fluid content_container" style="background: url('<%= image_url 'bg_mogelijkheden.jpg' %>') no-repeat center; background-size: cover">
 
       <h2><%= phrase 'Wilt u deze auto financieren?' %></h2>
+
       <h3><%= phrase 'Bekijk hier de mogelijkheden!' %></h3>
 
       <%= render 'shared/finance_circles' %>
@@ -55,11 +79,13 @@
       <article class="expectaion _actie">
         <%= image_tag 'logo_ash2.png' %>
         <h5><%= phrase 'Wat kan je allemaal van ons verwachten' %></h5>
+
         <p><%= phrase 'Meer dan u gewend bent' %></p>
       </article>
 
       <article class="vw_banner _actie" style="background: url('<%= image_url Setting.get('home_action_img') %>') no-repeat center; background-size: calc(100% * 0.8);">
         <h5><%= phrase 'home_actie_titel' %></h5>
+
         <p><%= phrase 'home_actie_sub_titel' %></p>
         <%= link_to phrase('Bekijk deze actie'), page_path(Setting.get('home_action_page')), class: 'orange_btn' %>
       </article>
