@@ -6,7 +6,6 @@
           <% @slider.slides.each do |slide| %>
               <%= render ('admin/slides/templates/' + slide.slide_template.template), slide_values: slide.template_variables %>
           <% end %>
-          <%= render 'admin/slides/templates/tpl_slide6.html.erb' %>
         </ul>
       </div>
 
