@@ -7,6 +7,11 @@ section.sitemap {
 
       div.first_col, div.second_col {
         width: 49%;
+
+        @media @360 {
+          width: 100%;
+          display: block;
+        }
       }
 
       &.tot_voorraad {
@@ -17,6 +22,10 @@ section.sitemap {
 
         ul.brands {
           columns: 2;
+
+          @media @700 {
+            columns: 1;
+          }
 
           li {
             border: 0;
