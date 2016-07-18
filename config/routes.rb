@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :cars, only: [:index, :show], path: 'autos' do
     get :like
+    get 'finance_car/:car_id/:type', to: 'cars#finance_car', as: :finance_car
     collection do
       get :favourites
       get 'compare/:car_1_id/:car_2_id', to: 'cars#compare', as: :compare_2

@@ -94,6 +94,12 @@
             <span class="nav-label">Afpsraak aanvragen</span>
         <% end %>
       </li>
+      <li class="<%= is_active_controller('car_sale_requests') %>">
+        <%= link_to admin_car_sale_requests_path do %>
+            <i class="fa fa-money" aria-hidden="true"></i>
+            <span class="nav-label">Taxatie aanvragen</span>
+        <% end %>
+      </li>
 
 
 

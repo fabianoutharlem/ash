@@ -5,6 +5,7 @@ class AppointmentRequestsController < ApplicationController
 
     respond_to do |format|
       if @appointment_request.save
+        converted!('car_show')
         format.html { redirect_to :back }
         format.js
       end

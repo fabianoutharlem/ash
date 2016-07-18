@@ -5,22 +5,6 @@
 
         <!-- afspraak -->
         <%= render 'appointment_request', car: @car %>
-        <div class="overlay_financier">
-          <section class="mogelijkheden">
-            <div class="wrapper">
-              <div class="container-fluid content_container">
-
-                <h2><%= phrase 'car_detail_finance_1' %></h2>
-
-                <h3><%= phrase 'car_detail_finance_2' %></h3>
-
-                <%= render 'shared/finance_circles' %>
-
-                <%= image_tag 'cross_afspraak.png', class: 'cross' %>
-              </div>
-            </div>
-          </section>
-        </div>
 
         <div class="upper_container">
           <div class="car_slider carslider_responsive">
@@ -71,21 +55,21 @@
 
               <div class="banners">
                 <div class="finace_circle circle_1">
-                  <h5><%= phrase 'ZAKELIJKE FINANCIERINGEN' %></h5>
+                  <h5>ZAKELIJKE FINANCIERINGEN</h5>
 
-                  <div class="button"><a href="#" class="orange_btn"></a></div>
+                  <div class="button"><a href="<%= car_finance_car_path(@car, 'bussiness') %>" class="orange_btn">Klik hier</a></div>
                   <div class="white_circle"></div>
                 </div>
                 <div class="finace_circle circle_2">
-                  <h5><%= phrase 'Particuliere FINANCIERINGEN' %></h5>
+                  <h5>Particuliere FINANCIERINGEN</h5>
 
-                  <div class="button"><a href="#" class="orange_btn"><%= phrase 'Klik hier' %></a></div>
+                  <div class="button"><a href="<%= car_finance_car_path(@car, 'private') %>" class="orange_btn">Klik hier</a></div>
                   <div class="white_circle"></div>
                 </div>
                 <div class="finace_circle circle_3">
-                  <h5><%= phrase '50/50 deals Particulier' %></h5>
+                  <h5>50/50 deals Particulier</h5>
 
-                  <div class="button"><a href="#" class="orange_btn"><%= phrase 'Klik hier' %></a></div>
+                  <div class="button"><a href="<%= car_finance_car_path(@car, '50_50') %>" class="orange_btn">Klik hier</a></div>
                   <div class="white_circle"></div>
                 </div>
               </div>
@@ -390,7 +374,51 @@
 
         <h3><%= phrase 'finance_sub_header_car_detail_page' %></h3>
 
-        <%= render 'shared/finance_circles' %>
+        <section class="article_financieren">
+
+          <div class="circle_container">
+            <div class="orange_circle">
+              <h4>50/50 DEALS (PARTICULIER)</h4>
+
+              <p><%= phrase('finance-circle-1-text') %></p>
+
+              <a href="<%= car_finance_car_path(@car, '50_50') %>" class="orange_btn"><%= phrase('finance-circle-1-button') %></a>
+              <div class="white_circle"></div>
+            </div>
+
+            <div class="mini_logo"></div>
+          </div>
+        </section>
+        <section class="article_financieren">
+
+          <div class="circle_container">
+            <div class="orange_circle">
+              <h4>PARTICULIER FINANCIEREN</h4>
+
+              <p><%= phrase('finance-circle-2-text') %></p>
+
+              <a href="<%= car_finance_car_path(@car, 'private') %>" class="orange_btn"><%= phrase('finance-circle-2-button') %></a>
+              <div class="white_circle"></div>
+            </div>
+
+            <div class="mini_logo"></div>
+          </div>
+        </section>
+        <section class="article_financieren">
+
+          <div class="circle_container">
+            <div class="orange_circle">
+              <h4>ZAKELIJK <br>FINANCIEREN</h4>
+
+              <p><%= phrase('finance-circle-3-text') %></p>
+
+              <a href="<%= car_finance_car_path(@car, 'bussiness') %>" class="orange_btn"><%= phrase('finance-circle-3-button') %></a>
+              <div class="white_circle"></div>
+            </div>
+
+            <div class="mini_logo"></div>
+          </div>
+        </section>
       </div>
     </div>
   </section>

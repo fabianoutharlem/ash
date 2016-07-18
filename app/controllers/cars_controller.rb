@@ -59,6 +59,16 @@ class CarsController < ApplicationController
     add_breadcrumb 'Favorieten'
   end
 
+  def finance_car
+    car = Car.find(params[:car_id])
+    if car.present?
+      converted!('car_show')
+      redirect_to "http://autokredietplan.nl/cars/finance_ash_car/#{car.vehicle_number_hexon}/#{params[:type]}"
+    else
+      redirect_to :back
+    end
+  end
+
 end
 
 
