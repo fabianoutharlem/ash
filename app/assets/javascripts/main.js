@@ -191,6 +191,22 @@ $(document).ready(function () {
         create: showLabel
     });
 
+    //homepage overlay taxeren
+    var overlay = $('section.like_ons div.overlay_taxation');
+
+    $('section.like_ons .taxation_btn').click(function () {
+        overlay.addClass('active fadeIn');
+    });
+
+    $('section.like_ons div.overlay_taxation div.cross').click(function () {
+        overlay.removeClass('fadeIn')
+        overlay.addClass('fadeOut');
+
+        var t = setTimeout( function() {
+            overlay.removeClass('active fadeOut');
+        }, 500);
+    });
+
     //voorraad_pagina price sliders
     $("#buy_slider_to").slider({
         min: 0,
