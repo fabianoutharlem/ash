@@ -53,20 +53,6 @@
               <% end %>
             </ul>
           </div>
-          <div class="second_col">
-            <ul class="brands">
-              <% @brands[(@brands.length/2)..-1].each do |brand| %>
-                  <li>
-                    <%= link_to "#{brand.name} (#{brand.cars.count})", brand_cars_path(brand) %>
-                    <ul class="models">
-                      <li>merk1</li>
-                      <li>merk2</li>
-                      <li>merk3</li>
-                    </ul>
-                  </li>
-              <% end %>
-            </ul>
-          </div>
         </div>
       </div>
 
