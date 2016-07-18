@@ -1,0 +1,8 @@
+<tr>
+  <td><%= [appointment_request.first_name, appointment_request.last_name].join(' ') %></td>
+  <td><%= appointment_request.phone %></td>
+  <td><%= mail_to appointment_request.email %></td>
+  <td><%= appointment_request.comment %></td>
+  <td><%= link_to appointment_request.car.display_name, car_path(appointment_request.car), target: '_blank' %></td>
+  <td><%= link_to 'Delete', admin_appointment_request_path(appointment_request), method: :delete, class: 'btn btn-danger' %></td>
+</tr>

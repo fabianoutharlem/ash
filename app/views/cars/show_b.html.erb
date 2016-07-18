@@ -3,32 +3,8 @@
     <div class="wrapper">
       <div class="container-fluid content_container">
 
-        <div class="overlay_afspraak animated">
-          <h2><%= phrase 'Afspraak maken voor de' %> <%= [@car.brand.name, @car.model.name].join(' ') %></h2>
-
-          <div class="afspraak_container">
-            <div class="car_slider_afspraak carslider_responsive">
-              <ul>
-                <% @car.car_images.each do |car_media| %>
-                    <li>
-                      <div class="background"
-                           style="background: url('<%= image_path car_media.file.large %>') no-repeat center; background-size: cover;"></div>
-                    </li>
-                <% end %>
-              </ul>
-            </div>
-            <form action="">
-              <input type="text" class="naam" placeholder="Je naam">
-              <input type="text" class="achternaam" placeholder="Je achternaam">
-              <input type="text" class="telefoon" placeholder="Je telefoon nummer">
-              <input type="text" class="email" placeholder="Je email adres">
-              <input type="text" class="vragen" placeholder="Eventuele vragen of opmerkingen">
-
-              <div class="orange_btn"><%= phrase 'verstuur_aanvraag' %></div>
-            </form>
-          </div>
-          <%= image_tag 'cross_afspraak.png', class: 'cross' %>
-        </div>
+        <!-- afspraak -->
+        <%= render 'appointment_request', car: @car %>
         <div class="overlay_financier">
           <section class="mogelijkheden">
             <div class="wrapper">

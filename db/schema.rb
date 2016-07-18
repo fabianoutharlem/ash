@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160718121910) do
+ActiveRecord::Schema.define(version: 20160718131052) do
 
   create_table "alternatives", force: :cascade do |t|
     t.string   "which",        limit: 255
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(version: 20160718121910) do
   end
 
   add_index "alternatives", ["which"], name: "index_alternatives_on_which", using: :btree
+
+  create_table "appointment_requests", force: :cascade do |t|
+    t.string   "first_name", limit: 255
+    t.string   "last_name",  limit: 255
+    t.string   "phone",      limit: 255
+    t.string   "email",      limit: 255
+    t.text     "comment",    limit: 65535
+    t.integer  "car_id",     limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "body_types", force: :cascade do |t|
     t.string   "name",       limit: 255

@@ -26,6 +26,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :appointment_requests, only: [:create]
+
   resources :reviews
 
   resources :vacancies, only: [:index, :show], path: 'vacatures'
@@ -103,6 +105,8 @@ Rails.application.routes.draw do
     resources :vacancies
 
     resources :reviews, only: [:index, :update]
+
+    resources :appointment_requests, only: [:index, :destroy]
 
     resources :pages do
       collection do

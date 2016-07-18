@@ -1,0 +1,24 @@
+<div class="overlay_afspraak animated">
+  <h2>Afspraak maken voor de <%= [@car.brand.name, @car.model.name].join(' ') %></h2>
+
+  <div class="afspraak_container">
+    <div class="car_slider_afspraak carslider_responsive">
+      <figure>
+        <%= image_tag @car.main_image.file.large %>
+      </figure>
+    </div>
+
+    <%= form_for AppointmentRequest.new, method: :post do |f| %>
+        <%= f.hidden_field :car_id, value: car.id %>
+
+        <%= f.text_field :first_name, placeholder: 'Je naam', required: true %>
+        <%= f.text_field :last_name, placeholder: 'Je achternaam', required: true %>
+        <%= f.text_field :phone, placeholder: 'Je telefoon nummer', required: true %>
+        <%= f.email_field :email, placeholder: 'Je email adres', required: true %>
+        <%= f.text_field :comment, placeholder: 'Eventuele vragen of opmerkingen' %>
+
+        <button type="submit" class="orange_btn"><%= phrase 'verstuur_aanvraag' %></button>
+    <% end %>
+  </div>
+  <%= image_tag 'cross_afspraak.png', class: 'cross' %>
+</div>

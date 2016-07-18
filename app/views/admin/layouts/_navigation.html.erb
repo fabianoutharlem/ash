@@ -88,6 +88,14 @@
             <span class="nav-label">Recensies</span>
         <% end %>
       </li>
+      <li class="<%= is_active_controller('appointment_requests') %>">
+        <%= link_to admin_appointment_requests_path do %>
+            <i class="fa fa-calendar-o" aria-hidden="true"></i>
+            <span class="nav-label">Afpsraak aanvragen</span>
+        <% end %>
+      </li>
+
+
 
       <li class="<%= is_active_controller('settings') %>">
         <%= link_to admin_settings_path do %>
