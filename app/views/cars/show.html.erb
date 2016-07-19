@@ -3,7 +3,67 @@
     <div class="container-fluid content_container">
 
       <!-- afspraak -->
+      <%= render 'appointment_request', car: @car %>
+      <div class="overlay_financier animated">
+        <section class="mogelijkheden">
+          <div class="wrapper">
+            <div class="container-fluid content_container" style="background: url('<%= image_url 'bg_mogelijkheden.jpg' %>') no-repeat center; background-size: cover">
 
+              <%= image_tag 'remove-button.png', class: 'cross' %>
+
+              <h2><%= phrase 'finance_header_car_detail_page' %></h2>
+
+              <h3><%= phrase 'finance_sub_header_car_detail_page' %></h3>
+
+              <section class="article_financieren">
+
+                <div class="circle_container">
+                  <div class="orange_circle">
+                    <h4>50/50 DEALS (PARTICULIER)</h4>
+
+                    <p><%= phrase('finance-circle-1-text') %></p>
+
+                    <a href="<%= car_finance_car_path(@car, '50_50') %>" class="orange_btn"><%= phrase('finance-circle-1-button') %></a>
+                    <div class="white_circle"></div>
+                  </div>
+
+                  <div class="mini_logo"></div>
+                </div>
+              </section>
+              <section class="article_financieren">
+
+                <div class="circle_container">
+                  <div class="orange_circle">
+                    <h4>PARTICULIER FINANCIEREN</h4>
+
+                    <p><%= phrase('finance-circle-2-text') %></p>
+
+                    <a href="<%= car_finance_car_path(@car, 'private') %>" class="orange_btn"><%= phrase('finance-circle-2-button') %></a>
+                    <div class="white_circle"></div>
+                  </div>
+
+                  <div class="mini_logo"></div>
+                </div>
+              </section>
+              <section class="article_financieren">
+
+                <div class="circle_container">
+                  <div class="orange_circle">
+                    <h4>ZAKELIJK <br>FINANCIEREN</h4>
+
+                    <p><%= phrase('finance-circle-3-text') %></p>
+
+                    <a href="<%= car_finance_car_path(@car, 'bussiness') %>" class="orange_btn"><%= phrase('finance-circle-3-button') %></a>
+                    <div class="white_circle"></div>
+                  </div>
+
+                  <div class="mini_logo"></div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
+      </div>
 
       <div class="car_slider carslider_responsive">
         <ul>
