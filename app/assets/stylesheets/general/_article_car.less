@@ -347,5 +347,26 @@ article.article_car {
       }
     }
   }
+
+  div.overlay_compare {
+    position: absolute;
+    z-index: 45;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    bottom: -100%;
+    transition: @trans;
+
+    &.active {
+      bottom: 0;
+    }
+
+    .orange_btn {
+      width: 90%;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+    }
+  }
 }
 
