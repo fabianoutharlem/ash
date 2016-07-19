@@ -13,7 +13,10 @@ class CarsController < ApplicationController
 
     respond_to do |format|
       format.json { render json: {cars: @cars.count} }
-      format.html { render :index }
+      format.html {
+        @cars = @cars.includes(:brand, :model).page(params[:page])
+        render :index
+      }
     end
     add_breadcrumb 'Zoeken'
   end

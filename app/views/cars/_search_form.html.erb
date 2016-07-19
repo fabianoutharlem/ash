@@ -1,0 +1,102 @@
+<div class="select_row">
+  <p><%= phrase 'Merk' %>:</p>
+
+  <div class="select">
+    <span class="arrow"></span>
+    <select name="brand_id" class="search_dropdown merk_dropdown">
+      <option value="">Selecteer merk</option>
+      <%= options_from_collection_for_select Brand.all.order(:name), :id, :name, params[:brand_id] %>
+    </select>
+  </div>
+</div>
+<div class="select_row">
+  <p><%= phrase 'Model' %>:</p>
+
+  <div class="select">
+    <span class="arrow"></span>
+    <select name="model_id" class="search_dropdown model_dropdown">
+      <option value="">Kies eerst een merk</option>
+    </select>
+  </div>
+</div>
+<div class="select_row">
+  <p><%= phrase 'Brandstof' %>:</p>
+
+  <div class="select">
+    <span class="arrow"></span>
+    <select name="fuel_type_id" class="search_dropdown fuel_dropdown">
+      <option value="">Selecteer voorkeur</option>
+      <%= options_from_collection_for_select(FuelType.all.order(:name), :id, :name, params[:fuel_type_id]) %>
+    </select>
+  </div>
+</div>
+<div class="select_row">
+  <p><%= phrase 'Carrosserie' %>:</p>
+
+  <div class="select">
+    <span class="arrow"></span>
+    <select name="body_type_id" class="search_dropdown body_dropdown">
+      <option value="">Selecteer voorkeur</option>
+      <%= options_from_collection_for_select(BodyType.all.order(:name), :id, :name, params[:body_type_id]) %>
+    </select>
+  </div>
+</div>
+<div class="select_row">
+  <p><%= phrase 'Transmissie' %>:</p>
+
+  <div class="select">
+    <span class="arrow"></span>
+    <select name="transmission_type_id" class="search_dropdown transmission_dropdown">
+      <option value="">Selecteer voorkeur</option>
+      <%= options_from_collection_for_select(TransmissionType.all.order(:name), :id, :name, params[:transmission_type_id]) %>
+    </select>
+  </div>
+</div>
+<div class="row select">
+  <div class="select_col col left">
+    <p><%= phrase 'Bouwjaar van' %>:</p>
+
+    <div class="select">
+      <span class="arrow"></span>
+      <select name="manufacture_year_from" class="search_dropdown manufacture_dropdown">
+        <option value="">Selecteer</option>
+        <%= options_for_select (1995..Date.today.year), params[:manufacture_year_from] %>
+      </select>
+    </div>
+  </div>
+
+  <div class="select_col col right">
+    <p><%= phrase 'Bouwjaar tot' %>:</p>
+
+    <div class="select">
+      <span class="arrow"></span>
+      <select name="manufacture_year_to" class="search_dropdown manufacture_dropdown">
+        <option value="">Selecteer</option>
+        <%= options_for_select (1995..Date.today.year), params[:manufacture_year_to] %>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="row slider">
+  <div class="slider_col col">
+    <p><%= phrase 'Prijs per maand tot' %>
+      <small class="label"></small>
+    </p>
+
+    <div class="slider_maand_financieren"></div>
+    <input type="hidden" name="month_price" class="amount" value="<%= params[:month_price] %>" readonly style="border:0; color:#f6931f; font-weight:bold;">
+  </div>
+</div>
+<div class="row slider">
+  <div class="slider_col col">
+    <p><%= phrase 'Prijs tot' %>
+      <small class="label"></small>
+    </p>
+
+    <div class="slider_buy_financieren"></div>
+    <input type="hidden" name="total_price" class="amount" value="<%= params[:total_price] %>" readonly style="border:0; color:#f6931f; font-weight:bold;">
+  </div>
+</div>
+
+<button type="submit" class="orange_btn search_submit_button">Zoeken (<small>-</small>)</button>

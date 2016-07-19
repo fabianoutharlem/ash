@@ -31,7 +31,7 @@
           <p class="nav-text">Resultaten per pagina:</p>
           <div class="select">
             <span class="arrow"></span>
-            <select name="merk" class="merk_dropdown" onchange="if (this.value) window.location.href=this.value">
+            <select name="merk" class="search_dropdown" onchange="if (this.value) window.location.href=this.value">
               <option>Getoonde voertuigen: <%= params[:per_page] || Car.default_per_page %> stuks</option>
               <option value="<%= url_for params.merge(per_page: 12) %>">12</option>
               <option value="<%= url_for params.merge(per_page: 24) %>">24</option>

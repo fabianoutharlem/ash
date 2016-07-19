@@ -281,17 +281,17 @@
     <div class="wrapper">
       <div class="container-fluid content-container">
         <div class="zoeken">
-          <p><%= phrase 'Zoek op merk, type, model etc.. ( Bijv: audi, A3, cabrio of vw golf 1.2 tsi )' %></p>
+          <p><%= phrase 'header_search_description' %></p>
 
-          <p class="uitgebreid"><%= phrase 'Uitgebreid zoeken >' %></p>
+          <a class="uitgebreid" href="<%= cars_path %>"><%= phrase 'Uitgebreid zoeken >' %></a>
 
-          <form>
+          <form action="<%= search_cars_path %>" method="get">
             <div class="search_field">
               <i class="amp"></i>
               <i class="cross"></i>
-              <input type="text" placeholder="Type hier je je zoekterm...">
+              <input type="text" name="query" placeholder="Type hier je je zoekterm...">
             </div>
-            <button class="orange_btn"><%= phrase 'Zoeken' %></button>
+            <button type="submit" class="orange_btn"><%= phrase 'Zoeken' %></button>
           </form>
         </div>
       </div>

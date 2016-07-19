@@ -174,15 +174,15 @@ class Car < ActiveRecord::Base
                 :must => [
                     {
                         :range => {
-                            :"car.mileage" => {
-                                :from => "0",
-                                :to => (params[:mileage].to_i > 0 ? params[:mileage].to_i : 2000000).to_i
+                            :"mileage" => {
+                                :gte => "0",
+                                :lte => (params[:mileage].to_i > 0 ? params[:mileage].to_i : 2000000).to_i
                             }
                         }
                     },
                     {
                         :range => {
-                            :"car.manufacture_year" => {
+                            :"manufacture_year" => {
                                 :gte => params[:manufacture_year_from].to_i,
                                 :lte => params[:manufacture_year_to].to_i > 0 ? params[:manufacture_year_to].to_i : Date.today.year
                             }
@@ -192,7 +192,8 @@ class Car < ActiveRecord::Base
                 :must_not => [],
                 :should => [
 
-                ]
+                ],
+                minimum_should_match: 1,
             }
         },
         :from => 0, :size => 999, :sort => []
@@ -207,46 +208,54 @@ class Car < ActiveRecord::Base
 
     query[:query][:bool][:must] << {
         :query_string => {
-            :default_field => "car.brand.id",
+            :default_field => "brand.id",
             :query => params[:brand_id]
         }
     } unless params[:brand_id].blank?
     query[:query][:bool][:must] <<{
         :query_string => {
-            :default_field => "car.model.id",
+            :default_field => "model.id",
             :query => params[:model_id]
         }
     } unless params[:model_id].blank?
 
     query[:query][:bool][:must] << {
         :query_string => {
-            :default_field => "car.body_type.id",
+            :default_field => "body_type.id",
             :query => params[:body_type_id]
         }
     } unless params[:body_type_id].blank?
     query[:query][:bool][:must] << {
         :query_string => {
-            :default_field => "car.fuel_type.id",
+            :default_field => "fuel_type.id",
             :query => params[:fuel_type_id]
         }
     } unless params[:fuel_type_id].blank?
     query[:query][:bool][:must] << {
         :query_string => {
-            :default_field => "car.energy_label",
+            :default_field => "energy_label",
             :query => params[:energy]
         }
     } unless params[:energy].blank?
+
     query[:query][:bool][:must] << {
+        :query_string => {
+            :default_field => "transmission_type.id",
+            :query => params[:transmission_type_id]
+        }
+    } unless params[:transmission_type_id].blank?
+
+    query[:query][:bool][:should] << {
         :range => {
-            :"car.price_total" => {
+            :"price_total" => {
                 :gte => 0,
                 :lte => params[:total_price].to_i
             }
         }
-    } unless params[:price_range].blank?
-    query[:query][:bool][:must] << {
+    } unless params[:total_price].blank?
+    query[:query][:bool][:should] << {
         :range => {
-            :"car.price_month" => {
+            :"price_month" => {
                 :gte => 0,
                 :lte => params[:month_price].to_i
             }

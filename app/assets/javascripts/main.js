@@ -148,15 +148,18 @@ $(document).ready(function () {
 
     //homepage price slider
     var showLabel = function (event, ui) {
-        var curValue = ui.value || $(this).slider("option", "value");
         var target = $(this).parents('.slider_col').find('small.label');
         var input = $(this).parents('.slider_col').find('input.amount');
+        if (input.val()) {
+            $(this).slider('value', input.val());
+        }
+        var curValue = ui.value || $(this).slider("option", "value");
         var tooltip = '€' + curValue + ',- p.m.';
         $(target).html(tooltip);
         input.val(curValue).trigger('change');
     };
 
-    $("#slider_maand_financieren").slider({
+    $(".slider_maand_financieren").slider({
         min: 0,
         max: 2000,
         range: "min",
@@ -166,7 +169,7 @@ $(document).ready(function () {
         create: showLabel
     });
 
-    $("#slider_buy_financieren").slider({
+    $(".slider_buy_financieren").slider({
         min: 0,
         max: 75000,
         range: "min",
@@ -176,7 +179,7 @@ $(document).ready(function () {
         create: showLabel
     });
 
-    $("#slider_maand_kopen").slider({
+    $(".slider_maand_kopen").slider({
         min: 0,
         max: 2000,
         range: "min",
@@ -186,7 +189,7 @@ $(document).ready(function () {
         create: showLabel
     });
 
-    $("#slider_buy_kopen").slider({
+    $(".slider_buy_kopen").slider({
         min: 0,
         max: 75000,
         range: "min",
