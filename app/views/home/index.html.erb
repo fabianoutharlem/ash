@@ -11,19 +11,19 @@
   <div class="overlay_taxation animated">
     <div class="cross"></div>
     <div class="content">
-      <form action="">
-        <div class="left">
-          <input type="text" placeholder="Je naam">
-          <input type="text" placeholder=" Je telefoon nummer">
-          <input type="text" placeholder="Je email adres">
-          <input type="text" placeholder="Vul hier je tenteken in">
-        </div>
+      <%= form_for CarSaleRequest.new, method: :post do |f| %>
+          <div class="left">
+            <%= f.text_field :name, placeholder: 'Je naam', required: true %>
+            <%= f.text_field :phone, placeholder: 'Je telefoon nummer', required: true %>
+            <%= f.text_field :email, placeholder: 'Je email adres', required: true %>
+            <%= f.text_field :license_plate, placeholder: 'Vul hier je kenteken in', required: true %>
+          </div>
         <div class="right">
-          <textarea placeholder="Persoonlijk bericht"></textarea>
-          <input type="text" placeholder="Vul hier je kilometerstand in">
-          <button class="orange_btn">Taxatie aanvragen</button>
+          <%= f.text_area :message, placeholder: 'Persoonlijk bericht' %>
+          <%= f.text_field :mileage, placeholder: 'Vul hier je kilometerstand in', required: true %>
+          <button type="submit" class="orange_btn"><%= phrase 'Taxatie aanvragen' %></button>
         </div>
-      </form>
+      <% end %>
     </div>
   </div>
 
@@ -33,7 +33,7 @@
       <div class="left">
         <h3><%= phrase 'Verkoop uw auto aan Auto Service Haarlem' %></h3>
 
-        <p>Stap 1 - Kenteken & tellerstand van uw voertuig. Stap 2 - Vul uw n.a.w. gegevens in</p>
+        <p><%= phrase 'Stap 1 - Kenteken & tellerstand van uw voertuig. Stap 2 - Vul uw n.a.w. gegevens in' %></p>
 
         <button class="orange_btn taxation_btn"><%= phrase 'Taxatie aanvragen' %></button>
       </div>

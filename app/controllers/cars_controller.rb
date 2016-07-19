@@ -8,15 +8,21 @@ class CarsController < ApplicationController
     @cars = order_by_params(@cars, params).page(params[:page]).per(params[:per_page])
   end
 
+  def search
+    @cars = Car.query(params)
+
+    respond_to do |format|
+      format.json { render json: {cars: @cars.count} }
+      format.html { render :index }
+    end
+    add_breadcrumb 'Zoeken'
+  end
+
   def new_cars
     @cars = Car.includes(:brand, :model).all.limit(36).order(created_at: :desc)
     @cars = order_by_params(@cars, params).page(params[:page]).per(params[:per_page])
     add_breadcrumb 'Nieuw binnen'
     render :index
-  end
-
-  def search
-    add_breadcrumb 'Zoeken'
   end
 
   def show

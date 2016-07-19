@@ -137,7 +137,7 @@ $(document).ready(function () {
     });
 
     //homepage select2
-    $('.merk_dropdown').select2({
+    $('.search_dropdown').select2({
         minimumResultsForSearch: Infinity
     });
 
@@ -149,9 +149,11 @@ $(document).ready(function () {
     //homepage price slider
     var showLabel = function (event, ui) {
         var curValue = ui.value || $(this).slider("option", "value");
-        var target = ui.handle || $('.ui-slider-handle');
-        var tooltip = '<div id="tooltip">€' + curValue + ',- p.m.</div>';
+        var target = $(this).parents('.slider_col').find('small.label');
+        var input = $(this).parents('.slider_col').find('input.amount');
+        var tooltip = '€' + curValue + ',- p.m.';
         $(target).html(tooltip);
+        input.val(curValue).trigger('change');
     };
 
     $("#slider_maand_financieren").slider({
@@ -159,16 +161,17 @@ $(document).ready(function () {
         max: 2000,
         range: "min",
         value: 200,
+        step: 10,
         slide: showLabel,
         create: showLabel
     });
 
-
     $("#slider_buy_financieren").slider({
         min: 0,
-        max: 2000,
+        max: 75000,
         range: "min",
-        value: 200,
+        value: 2000,
+        step: 500,
         slide: showLabel,
         create: showLabel
     });
@@ -178,15 +181,17 @@ $(document).ready(function () {
         max: 2000,
         range: "min",
         value: 200,
+        step: 10,
         slide: showLabel,
         create: showLabel
     });
 
     $("#slider_buy_kopen").slider({
         min: 0,
-        max: 2000,
+        max: 75000,
         range: "min",
-        value: 200,
+        value: 2000,
+        step: 500,
         slide: showLabel,
         create: showLabel
     });
