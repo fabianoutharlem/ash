@@ -63,13 +63,6 @@ section.auto_uitgelicht {
         //padding: 30px 0 40px 0;
       }
 
-      @media @360 {
-        height: 100%;
-        top: 0;
-        transform: translateY(0) translateX(0);
-        left: 0;
-      }
-
       &.active {
         display: block;
       }
@@ -79,6 +72,13 @@ section.auto_uitgelicht {
         top: 50%;
         left: 50%;
         transform: translateY(-50%) translateX(-50%);
+
+        @media @360 {
+          height: 100%;
+          top: 0;
+          transform: translateY(0) translateX(0);
+          left: 0;
+        }
 
         h2 {
           font-size: 34px;
