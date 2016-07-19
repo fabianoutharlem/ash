@@ -14,7 +14,8 @@ class CarsController < ApplicationController
     respond_to do |format|
       format.json { render json: {cars: @cars.count} }
       format.html {
-        @cars = @cars.includes(:brand, :model).page(params[:page])
+        @cars = @cars.includes(:brand, :model)
+        @cars = order_by_params(@cars, params).page(params[:page]).per(params[:per_page])
         render :index
       }
     end

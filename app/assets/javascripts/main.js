@@ -173,7 +173,7 @@ $(document).ready(function () {
         min: 0,
         max: 75000,
         range: "min",
-        value: 2000,
+        value: 15000,
         step: 500,
         slide: showLabel,
         create: showLabel
@@ -193,7 +193,7 @@ $(document).ready(function () {
         min: 0,
         max: 75000,
         range: "min",
-        value: 2000,
+        value: 15000,
         step: 500,
         slide: showLabel,
         create: showLabel
