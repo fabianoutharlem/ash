@@ -191,7 +191,7 @@
         <% @car.car_images.each do |car_image| %>
             <li data-thumb="<%= car_image.file.thumb.url %>" data-src="<%= car_image.file.large.url %>">
               <div class="image_container">
-                <%= image_tag car_image.file.thumb %>
+                <%= image_tag car_image.file %>
               </div>
             </li>
         <% end %>
