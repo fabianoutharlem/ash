@@ -8,9 +8,18 @@ article.article_car {
 
   &:hover {
 
-    div.hover_element {
-      bottom: 0;
+    &.compare_active {
+      .overlay_compare {
+        bottom: 0;
+      }
     }
+
+    &:not(.compare_active) {
+      div.hover_element {
+        bottom: 0;
+      }
+    }
+
   }
 
   &.hart {
@@ -357,15 +366,10 @@ article.article_car {
     bottom: -100%;
     transition: @trans;
 
-    &.active {
-      bottom: 0;
-    }
-
     .orange_btn {
+      display: block;
       width: 90%;
-      top: 50%;
-      left: 50%;
-      transform: translateY(-50%) translateX(-50%);
+      margin: 50% auto 0;
     }
   }
 }

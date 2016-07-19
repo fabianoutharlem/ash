@@ -1,17 +1,10 @@
 <section class="select_compare">
   <div class="wrapper">
     <div class="container-fluid content_container">
-      <div class="compare_btn">Auto’s met elkaar vergelijken</div>
+      <div class="compare_btn"><%= phrase 'Autos met elkaar vergelijken' %></div>
 
       <div class="compare_selection animated">
-        <div class="start_compare">
-          <div class="remove_cross"></div>
-          <p> Vergelijk deze auto’s</p>
-          <a href="#" class="orange_btn">Start vergelijking</a>
-        </div>
-        <ul>
-
-        </ul>
+        <%= render 'compare_selection_cars' %>
       </div>
     </div>
   </div>

@@ -1,6 +1,8 @@
 class CarsController < ApplicationController
   include CarManipulations
 
+  before_filter :ensure_compare_cars_session
+
   add_breadcrumb 'Autos', :cars_path
 
   def index
@@ -20,6 +22,20 @@ class CarsController < ApplicationController
       }
     end
     add_breadcrumb 'Zoeken'
+  end
+
+  def add_to_compare_selection
+    @car = Car.find(params[:car_id])
+    session[:compare_car_ids].push(@car.id)
+    session[:compare_car_ids].uniq!
+    session[:compare_car_ids] = session[:compare_car_ids].last(3)
+    render :update_compare_selection
+  end
+
+  def remove_from_compare_selection
+    @car = Car.find(params[:car_id])
+    session[:compare_car_ids].delete(@car.id)
+    render :update_compare_selection
   end
 
   def new_cars
@@ -77,6 +93,12 @@ class CarsController < ApplicationController
     else
       redirect_to :back
     end
+  end
+
+  private
+
+  def ensure_compare_cars_session
+    session[:compare_car_ids] ||= []
   end
 
 end

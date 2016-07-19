@@ -499,26 +499,18 @@ $(document).ready(function () {
 
     $('section.select_compare div.compare_btn').click( function() {
         compare_section.toggleClass('active fadeIn');
-        $('article.article_car div.overlay_compare').toggleClass('active');
+        $('article.article_car').toggleClass('compare_active');
     });
 
     $('section.select_compare div.start_compare div.remove_cross').click(function() {
         compare_section.removeClass('fadeIn');
-        $('article.article_car div.overlay_compare').removeClass('active');
+        $('article.article_car').removeClass('compare_active');
         compare_section.addClass('fadeOut');
 
-        var t = setTimeout(function() {
+        setTimeout(function() {
             compare_section.removeClass('active fadeOut');
-        }, 700);
+        }, 200);
     });
-
-          //compare add cars to list
-    //$('article.article_car div.overlay_compare button.orange_btn').click(function () {
-    //
-    //    var selected_car = $(this).parents('.item');
-    //
-    //    $('section.select_compare div.compare_selection ul').append('<li>'+selected_car+'</li>');
-    //});
 
           //compare remove cars from list
     $('section.select_compare div.compare_selection li div.remove_cross').click(function () {

@@ -52,7 +52,7 @@
     </div>
 
     <div class="overlay_compare">
-      <button class="orange_btn">vergelijken</button>
+      <%= link_to phrase('vergelijken'), car_add_to_compare_selection_path(car), class: 'orange_btn', remote: true %>
     </div>
 
     <figure class="main_image">
