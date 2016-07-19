@@ -327,7 +327,7 @@ $(document).ready(function () {
         afspraak_overlay.removeClass('bounceInUp');
         var timeOut = setTimeout(function () {
             afspraak_overlay.removeClass('active bounceOutUp');
-        }, 600);
+        }, 400);
     });
 
     //financier button click overlay visible
