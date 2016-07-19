@@ -1,0 +1,136 @@
+section.select_compare {
+
+  @media @1040 {
+    display: none;
+  }
+
+  div.content_container {
+    padding: 0 110px 20px 110px;
+
+    @media @1280 {
+      padding: 0 20px 20px 20px;
+    }
+
+    div.compare_btn {
+      width: 239px;
+      height: 40px;
+      border-radius: 42px;
+      background-color: #dddddd;
+      color: white;
+      line-height: 40px;
+      text-align: center;
+      float: right;
+
+      &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+      }
+    }
+
+    div.compare_selection {
+      display: none;
+      margin-top: 60px;
+      padding: 20px;
+      min-height: 440px;
+      background-color: #f1f1f1;
+
+      &.active {
+        display: flex;
+
+        @media @1279 {
+          display: block;
+        }
+      }
+
+      @media @1279 {
+        display: block;
+        padding: 30px;
+      }
+
+      div.remove_cross {
+        background: image-url('cross_afspraak.png') no-repeat center;
+        background-size: cover;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      div.start_compare {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        width: 260px;
+        margin-right: 15px;
+        padding-top: 140px;
+        height: 100%;
+
+        @media @1279 {
+          display: block;
+          height: auto;
+          padding: 0;
+        }
+
+        div.remove_cross {
+          left: 0;
+          top: 10px;
+
+          @media @1279 {
+            left: 0;
+            top: 6px;
+          }
+        }
+
+        p {
+          font-size: 21px;
+          color: #595959;
+          margin-bottom: 15px;
+
+          @media @1279 {
+            text-align: right;
+          }
+        }
+
+        .orange_btn {
+          display: inline-block;
+          width: 260px;
+        }
+      }
+
+      ul {
+        flex-grow: 2;
+        display: inline-block;
+
+        @media @1280 {
+          text-align: center;
+        }
+
+        @media @1279 {
+          display: block;
+          margin-top: 20px;
+          text-align: left;
+        }
+
+        li {
+          position: relative;
+          text-align: center;
+          display: inline-block;
+          padding-right: 10px;
+
+          .article_car {
+            margin: 0 auto;
+          }
+
+          div.remove_cross {
+            top: 10px;
+            right: 20px;
+            z-index: 50;
+          }
+        }
+      }
+    }
+  }
+}

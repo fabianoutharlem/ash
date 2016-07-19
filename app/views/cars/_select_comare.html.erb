@@ -1,0 +1,29 @@
+<section class="select_compare">
+  <div class="wrapper">
+    <div class="container-fluid content_container">
+      <div class="compare_btn">Auto’s met elkaar vergelijken</div>
+
+      <div class="compare_selection animated">
+        <div class="start_compare">
+          <div class="remove_cross"></div>
+          <p> Vergelijk deze auto’s</p>
+          <a href="#" class="orange_btn">Start vergelijking</a>
+        </div>
+        <ul>
+          <li>
+            <div class="remove_cross"></div>
+            <%= render 'car', car: Car.first %>
+          </li>
+          <li>
+            <div class="remove_cross"></div>
+            <%= render 'car', car: Car.first %>
+          </li>
+          <li>
+            <div class="remove_cross"></div>
+            <%= render 'car', car: Car.first %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

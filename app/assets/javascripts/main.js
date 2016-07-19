@@ -479,6 +479,30 @@ $(document).ready(function () {
 
     //voorraad
 
+    //voorraad_pagina compare section
+    var compare_section =  $('section.select_compare div.compare_selection');
+
+    $('section.select_compare div.compare_btn').click( function() {
+        compare_section.addClass('active fadeIn');
+    });
+
+    $('section.select_compare div.start_compare div.remove_cross').click(function() {
+        compare_section.removeClass('fadeIn');
+        compare_section.addClass('fadeOut');
+
+        var t = setTimeout(function() {
+            compare_section.removeClass('active fadeOut')
+        }, 700);
+    });
+
+          //compare remove cars from list
+    $('section.select_compare div.compare_selection li div.remove_cross').click(function () {
+        var list_item =  $(this).parent('li');
+
+        list_item.remove();
+
+    });
+
     //left menu filters tab active
     var data_searchfield = $(this).data('searchfield'),
         searchfield = $('section.all_cars div.search_fields');
