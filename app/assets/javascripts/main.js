@@ -324,14 +324,15 @@ $(document).ready(function () {
     var afspraak_overlay = $('section.auto_uitgelicht .overlay_afspraak');
 
     $('section.auto_uitgelicht div.model .appointment_btn, section.auto_uitgelicht a.appointment_btn').click(function () {
-        afspraak_overlay.addClass('bounceInUp active');
+        afspraak_overlay.addClass('fadeIn active');
     });
 
     $('section.auto_uitgelicht div.overlay_afspraak img.cross').click(function () {
-        afspraak_overlay.addClass('bounceOutUp');
-        afspraak_overlay.removeClass('bounceInUp');
+        afspraak_overlay.removeClass('fadeIn');
+        afspraak_overlay.addClass('fadeOut');
+
         var timeOut = setTimeout(function () {
-            afspraak_overlay.removeClass('active bounceOutUp');
+            afspraak_overlay.removeClass('active fadeOut');
         }, 600);
     });
 
@@ -488,24 +489,33 @@ $(document).ready(function () {
     var compare_section =  $('section.select_compare div.compare_selection');
 
     $('section.select_compare div.compare_btn').click( function() {
-        compare_section.addClass('active fadeIn');
+        compare_section.toggleClass('active fadeIn');
+        $('article.article_car div.overlay_compare').toggleClass('active');
     });
 
     $('section.select_compare div.start_compare div.remove_cross').click(function() {
         compare_section.removeClass('fadeIn');
+        $('article.article_car div.overlay_compare').removeClass('active');
         compare_section.addClass('fadeOut');
 
         var t = setTimeout(function() {
-            compare_section.removeClass('active fadeOut')
+            compare_section.removeClass('active fadeOut');
         }, 700);
     });
+
+          //compare add cars to list
+    //$('article.article_car div.overlay_compare button.orange_btn').click(function () {
+    //
+    //    var selected_car = $(this).parents('.item');
+    //
+    //    $('section.select_compare div.compare_selection ul').append('<li>'+selected_car+'</li>');
+    //});
 
           //compare remove cars from list
     $('section.select_compare div.compare_selection li div.remove_cross').click(function () {
         var list_item =  $(this).parent('li');
 
         list_item.remove();
-
     });
 
     //left menu filters tab active
