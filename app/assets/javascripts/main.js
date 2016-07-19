@@ -343,14 +343,15 @@ $(document).ready(function () {
     var financier_overlay = $('section.auto_uitgelicht .overlay_financier');
 
     $('section.auto_uitgelicht div.model .finance_btn').click(function () {
-        financier_overlay.addClass('active bounceInUp');
+        financier_overlay.addClass('active fadeIn');
     });
 
     $('section.auto_uitgelicht .overlay_financier img.cross').click(function () {
-        financier_overlay.addClass('bounceOutUp');
-        financier_overlay.removeClass('bounceInUp');
+        financier_overlay.addClass('fadeOut');
+        financier_overlay.removeClass('fadeIn');
+
         var timeOut = setTimeout(function () {
-            financier_overlay.removeClass('active bounceOutUp');
+            financier_overlay.removeClass('active fadeOut');
         }, 600);
     });
 
@@ -437,12 +438,17 @@ $(document).ready(function () {
         car_thumb_slider.goToSlide($(this).index());
 
         var timer = setTimeout(function () {
-            $('section.spec_tabs div.overlay_photo_selection').addClass('active bounceInUp');
+            $('section.spec_tabs div.overlay_photo_selection').addClass('active fadeIn');
         }, 250);
     });
     //overlay_photo_selection hide
     $('section.spec_tabs div.overlay_photo_selection div.cross').click(function () {
-        $('section.spec_tabs div.overlay_photo_selection').removeClass('active bounceInUp');
+        $('section.spec_tabs div.overlay_photo_selection').addClass('fadeOut')
+        $('section.spec_tabs div.overlay_photo_selection').removeClass('fadeIn');
+
+        var t = setTimeout(function() {
+            $('section.spec_tabs div.overlay_photo_selection').removeClass('fadeOut active');
+        }, 500);
     });
 
 

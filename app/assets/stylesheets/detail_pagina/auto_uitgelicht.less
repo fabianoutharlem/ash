@@ -49,7 +49,7 @@ section.auto_uitgelicht {
       display: none;
       background-color: rgba(0, 0, 0, 0.9);
       text-align: center;
-      width: 100vw;
+      width: 100%;
       height: 100vh;
       overflow: auto;
       //padding: 70px 0 90px 0;
@@ -59,15 +59,8 @@ section.auto_uitgelicht {
       left: 0;
       transition: @trans;
 
-      @media @1279 {
-        //padding: 30px 0 40px 0;
-      }
-
       @media @360 {
         height: 100%;
-        top: 0;
-        transform: translateY(0) translateX(0);
-        left: 0;
       }
 
       &.active {
@@ -75,10 +68,17 @@ section.auto_uitgelicht {
       }
 
       div.content {
+        width: 100%;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translateY(-50%) translateX(-50%);
+
+        @media @360 {
+          top: 20px;
+          transform: translateY(0) translateX(0);
+          left: 0;
+        }
 
         h2 {
           font-size: 34px;
@@ -202,14 +202,16 @@ section.auto_uitgelicht {
       display: none;
       z-index: 20;
       position: absolute;
-      top: -120%;
-      transition: @trans;
+      top: 0;
       left: 0;
       width: 100%;
 
       &.active {
-        top: 10px;
         display: block;
+      }
+
+      @media @360 {
+        top: 10px;
       }
 
       div.content_container {
