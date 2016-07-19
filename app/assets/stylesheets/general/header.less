@@ -901,21 +901,22 @@ div.sub_menu {
         display: inline-block;
         font-size: 16px;
         color: #595959;
-        margin: 0 0 7px 0;
+        margin: 0 0 7px 2px;
+      }
 
-        &.uitgebreid {
-          margin-left: 170px;
-          font-size: 16px;
-          color: #f35026;
-          text-decoration: underline;
+      a.uitgebreid {
+        margin-left: 170px;
+        font-size: 16px;
+        color: #f35026;
+        text-decoration: underline;
+        float: right;
 
-          @media @1040 {
-            margin-left: 80px;
-          }
+        @media @1040 {
+          margin-left: 80px;
+        }
 
-          &:hover {
-            cursor: pointer;
-          }
+        &:hover {
+          cursor: pointer;
         }
       }
 
@@ -969,7 +970,7 @@ div.sub_menu {
           height: 50px;
           background-color: #f35026;
           margin-top: 1px;
-
+          float: right;
         }
       }
     }
