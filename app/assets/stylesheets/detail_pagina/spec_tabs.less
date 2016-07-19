@@ -1,16 +1,17 @@
 section.spec_tabs {
 
   div.overlay_photo_selection {
+    //display: none;
     position: fixed;
     height: 100vh;
     width: 100vw;
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 30;
-    top: -100%;
-    transition: @trans;
+    top: -150%;
+   // transition: @trans;
 
     &.active {
-      top: 0;
+      top: 0
     }
 
     h3 {

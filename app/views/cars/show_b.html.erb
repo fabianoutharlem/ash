@@ -4,7 +4,7 @@
       <div class="container-fluid content_container">
 
         <!-- afspraak -->
-
+        <%= render 'appointment_request', car: @car %>
 
         <div class="upper_container">
           <div class="car_slider carslider_responsive">
@@ -57,19 +57,22 @@
                 <div class="finace_circle circle_1">
                   <h5>ZAKELIJKE FINANCIERINGEN</h5>
 
-                  <div class="button"><a href="<%= car_finance_car_path(@car, 'bussiness') %>" class="orange_btn">Klik hier</a></div>
+                  <div class="button">
+                    <a href="<%= car_finance_car_path(@car, 'bussiness') %>" class="orange_btn">Klik hier</a></div>
                   <div class="white_circle"></div>
                 </div>
                 <div class="finace_circle circle_2">
                   <h5>Particuliere FINANCIERINGEN</h5>
 
-                  <div class="button"><a href="<%= car_finance_car_path(@car, 'private') %>" class="orange_btn">Klik hier</a></div>
+                  <div class="button">
+                    <a href="<%= car_finance_car_path(@car, 'private') %>" class="orange_btn">Klik hier</a></div>
                   <div class="white_circle"></div>
                 </div>
                 <div class="finace_circle circle_3">
                   <h5>50/50 deals Particulier</h5>
 
-                  <div class="button"><a href="<%= car_finance_car_path(@car, '50_50') %>" class="orange_btn">Klik hier</a></div>
+                  <div class="button">
+                    <a href="<%= car_finance_car_path(@car, '50_50') %>" class="orange_btn">Klik hier</a></div>
                   <div class="white_circle"></div>
                 </div>
               </div>
@@ -251,70 +254,70 @@
             <h4><%= phrase 'finance_information' %></h4>
 
             <div class="cols">
-            <div class="prijzen">
-              <span class="helper"></span>
+              <div class="prijzen">
+                <span class="helper"></span>
 
-              <p><%= phrase 'Contante prijs' %></p>
+                <p><%= phrase 'Contante prijs' %></p>
 
-              <p class="bottom"><%= format_money Setting.get('car_detail_staffel_cash') %></p>
+                <p class="bottom"><%= format_money Setting.get('car_detail_staffel_cash') %></p>
+              </div>
+              <div class="prijzen">
+                <span class="helper"></span>
+
+                <p><%= phrase 'Aanbetaling' %></p>
+
+                <p class="bottom"><%= format_money Setting.get('car_detail_staffel_deposit') %></p>
+              </div>
+              <div class="prijzen">
+                <span class="helper"></span>
+
+                <p><%= phrase 'Totaal kredietbedrag' %></p>
+
+                <p class="bottom"><%= format_money Setting.get('car_detail_staffel_credit_amount') %></p>
+              </div>
+              <div class="prijzen">
+                <span class="helper"></span>
+
+                <p><%= phrase 'Slottermijn' %></p>
+
+                <p class="bottom"><%= format_money Setting.get('car_detail_staffel_closing_payment') %></p>
+              </div>
+              <div class="prijzen">
+                <span class="helper"></span>
+
+                <p><%= phrase 'Termijn bedrag' %></p>
+
+                <p class="bottom"><%= format_money Setting.get('car_detail_staffel_term_amount') %></p>
+              </div>
+              <div class="prijzen">
+                <span class="helper"></span>
+
+                <p><%= phrase 'Totale door de consument te betalen bedrag' %></p>
+
+                <p class="bottom"><%= format_money Setting.get('car_detail_staffel_consumer_total') %></p>
+              </div>
+              <div class="prijzen">
+                <span class="helper"></span>
+
+                <p><%= phrase 'Jaarlijks kosten percentage' %></p>
+
+                <p class="bottom"><%= format_money Setting.get('car_detail_staffel_yearly') %></p>
+              </div>
+              <div class="prijzen">
+                <span class="helper"></span>
+
+                <p><%= phrase 'Debet rentevoet' %></p>
+
+                <p class="bottom"><%= format_money Setting.get('car_detail_staffel_interest_foot') %></p>
+              </div>
+              <div class="prijzen">
+                <span class="helper"></span>
+
+                <p><%= phrase 'Looptijd in maanden' %></p>
+
+                <p class="bottom"><%= Setting.get('car_detail_staffel_duration') %></p>
+              </div>
             </div>
-            <div class="prijzen">
-              <span class="helper"></span>
-
-              <p><%= phrase 'Aanbetaling' %></p>
-
-              <p class="bottom"><%= format_money Setting.get('car_detail_staffel_deposit') %></p>
-            </div>
-            <div class="prijzen">
-              <span class="helper"></span>
-
-              <p><%= phrase 'Totaal kredietbedrag' %></p>
-
-              <p class="bottom"><%= format_money Setting.get('car_detail_staffel_credit_amount') %></p>
-            </div>
-            <div class="prijzen">
-              <span class="helper"></span>
-
-              <p><%= phrase 'Slottermijn' %></p>
-
-              <p class="bottom"><%= format_money Setting.get('car_detail_staffel_closing_payment') %></p>
-            </div>
-            <div class="prijzen">
-              <span class="helper"></span>
-
-              <p><%= phrase 'Termijn bedrag' %></p>
-
-              <p class="bottom"><%= format_money Setting.get('car_detail_staffel_term_amount') %></p>
-            </div>
-            <div class="prijzen">
-              <span class="helper"></span>
-
-              <p><%= phrase 'Totale door de consument te betalen bedrag' %></p>
-
-              <p class="bottom"><%= format_money Setting.get('car_detail_staffel_consumer_total') %></p>
-            </div>
-            <div class="prijzen">
-              <span class="helper"></span>
-
-              <p><%= phrase 'Jaarlijks kosten percentage' %></p>
-
-              <p class="bottom"><%= format_money Setting.get('car_detail_staffel_yearly') %></p>
-            </div>
-            <div class="prijzen">
-              <span class="helper"></span>
-
-              <p><%= phrase 'Debet rentevoet' %></p>
-
-              <p class="bottom"><%= format_money Setting.get('car_detail_staffel_interest_foot') %></p>
-            </div>
-            <div class="prijzen">
-              <span class="helper"></span>
-
-              <p><%= phrase 'Looptijd in maanden' %></p>
-
-              <p class="bottom"><%= Setting.get('car_detail_staffel_duration') %></p>
-            </div>
-          </div>
 
             <p class="financierings_voorwaarden"><%= phrase 'Financiering wordt verstrekt door Volkswagen Bank' %></p>
 
@@ -383,6 +386,7 @@
               <p><%= phrase('finance-circle-1-text') %></p>
 
               <a href="<%= car_finance_car_path(@car, '50_50') %>" class="orange_btn"><%= phrase('finance-circle-1-button') %></a>
+
               <div class="white_circle"></div>
             </div>
 
@@ -398,6 +402,7 @@
               <p><%= phrase('finance-circle-2-text') %></p>
 
               <a href="<%= car_finance_car_path(@car, 'private') %>" class="orange_btn"><%= phrase('finance-circle-2-button') %></a>
+
               <div class="white_circle"></div>
             </div>
 
@@ -413,6 +418,7 @@
               <p><%= phrase('finance-circle-3-text') %></p>
 
               <a href="<%= car_finance_car_path(@car, 'bussiness') %>" class="orange_btn"><%= phrase('finance-circle-3-button') %></a>
+
               <div class="white_circle"></div>
             </div>
 

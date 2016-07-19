@@ -202,14 +202,16 @@ section.auto_uitgelicht {
       display: none;
       z-index: 20;
       position: absolute;
-      top: -120%;
-      transition: @trans;
+      top: 0;
       left: 0;
       width: 100%;
 
       &.active {
-        top: 10px;
         display: block;
+      }
+
+      @media @360 {
+        top: 10px;
       }
 
       div.content_container {
