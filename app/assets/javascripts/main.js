@@ -319,15 +319,16 @@ $(document).ready(function () {
     var afspraak_overlay = $('section.auto_uitgelicht .overlay_afspraak');
 
     $('section.auto_uitgelicht div.model .appointment_btn, section.auto_uitgelicht a.appointment_btn').click(function () {
-        afspraak_overlay.addClass('bounceInUp active');
+        afspraak_overlay.addClass('fadeIn active');
     });
 
     $('section.auto_uitgelicht div.overlay_afspraak img.cross').click(function () {
-        afspraak_overlay.addClass('bounceOutUp');
-        afspraak_overlay.removeClass('bounceInUp');
+        afspraak_overlay.removeClass('fadeIn');
+        afspraak_overlay.addClass('fadeOut');
+
         var timeOut = setTimeout(function () {
-            afspraak_overlay.removeClass('active bounceOutUp');
-        }, 400);
+            afspraak_overlay.removeClass('active fadeOut');
+        }, 600);
     });
 
     //financier button click overlay visible
