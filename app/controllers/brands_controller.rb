@@ -11,4 +11,14 @@ class BrandsController < ApplicationController
     add_breadcrumb @brand.name
   end
 
+  def models
+    @brand = Brand.find(params[:brand_id])
+    @models = @brand.models.order(:name)
+    respond_to do |format|
+      format.json {
+        render json: @models
+      }
+    end
+  end
+
 end

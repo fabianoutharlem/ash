@@ -1,12 +1,12 @@
 <div class="row wrapper border-bottom white-bg page-heading">
   <div class="col-lg-10">
-    <h2>Afspraak aanvragen</h2>
+    <h2>Taxatie aanvragen</h2>
     <ol class="breadcrumb">
       <li>
         <a href="<%= url_for admin_root_path %>">Home</a>
       </li>
       <li class="active">
-        <strong>Afspraak aanvragen</strong>
+        <strong>Taxatie aanvragen</strong>
       </li>
     </ol>
   </div>
@@ -19,7 +19,7 @@
     <div class="col-lg-12">
       <div class="ibox float-e-margins">
         <div class="ibox-title">
-          <h5>Afspraak aanvragen</h5>
+          <h5>Taxatie aanvragen</h5>
         </div>
         <div class="ibox-content">
 
@@ -30,17 +30,18 @@
               <th>Telefoon</th>
               <th>Email</th>
               <th>Opmerking</th>
-              <th>Auto</th>
+              <th>Kenteken</th>
+              <th>Kilometerstand</th>
               <th>Acties</th>
             </tr>
             </thead>
 
             <tbody>
-            <%= render @appointment_requests %>
+            <%= render @car_sale_requests %>
             </tbody>
           </table>
 
-          <%= paginate @appointment_requests, theme: 'twitter-bootstrap-3', :pagination_class => "pagination-small pagination-centered" %>
+          <%= paginate @car_sale_requests, theme: 'twitter-bootstrap-3', :pagination_class => "pagination-small pagination-centered" %>
 
         </div>
       </div>

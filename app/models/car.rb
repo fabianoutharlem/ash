@@ -176,15 +176,15 @@ class Car < ActiveRecord::Base
                         :range => {
                             :"car.mileage" => {
                                 :from => "0",
-                                :to => (params[:usage].to_i > 0 ? params[:usage].to_i : 2000000).to_i
+                                :to => (params[:mileage].to_i > 0 ? params[:mileage].to_i : 2000000).to_i
                             }
                         }
                     },
                     {
                         :range => {
                             :"car.manufacture_year" => {
-                                :gte => params[:year].to_i,
-                                :lte => "2300"
+                                :gte => params[:manufacture_year_from].to_i,
+                                :lte => params[:manufacture_year_to].to_i > 0 ? params[:manufacture_year_to].to_i : Date.today.year
                             }
                         }
                     }
@@ -195,7 +195,7 @@ class Car < ActiveRecord::Base
                 ]
             }
         },
-        :from => 0, :size => 999, :sort => [], :facets => {}
+        :from => 0, :size => 999, :sort => []
     }
     query[:query][:bool][:must] << {
         :query_string => {
@@ -207,29 +207,29 @@ class Car < ActiveRecord::Base
 
     query[:query][:bool][:must] << {
         :query_string => {
-            :default_field => "car.brand.name",
-            :query => params[:brand]
+            :default_field => "car.brand.id",
+            :query => params[:brand_id]
         }
-    } unless params[:brand].blank?
+    } unless params[:brand_id].blank?
     query[:query][:bool][:must] <<{
         :query_string => {
-            :default_field => "car.model.name",
-            :query => params[:model]
+            :default_field => "car.model.id",
+            :query => params[:model_id]
         }
-    } unless params[:model].blank?
+    } unless params[:model_id].blank?
 
     query[:query][:bool][:must] << {
         :query_string => {
-            :default_field => "car.body_type.name",
-            :query => params[:type]
+            :default_field => "car.body_type.id",
+            :query => params[:body_type_id]
         }
-    } unless params[:type].blank?
+    } unless params[:body_type_id].blank?
     query[:query][:bool][:must] << {
         :query_string => {
-            :default_field => "car.fuel_type.name",
-            :query => params[:fuel]
+            :default_field => "car.fuel_type.id",
+            :query => params[:fuel_type_id]
         }
-    } unless params[:fuel].blank?
+    } unless params[:fuel_type_id].blank?
     query[:query][:bool][:must] << {
         :query_string => {
             :default_field => "car.energy_label",
@@ -238,20 +238,20 @@ class Car < ActiveRecord::Base
     } unless params[:energy].blank?
     query[:query][:bool][:must] << {
         :range => {
-            :"car.price_50_50" => {
-                :gte => params[:price_range].split('-').first,
-                :lte => params[:price_range].split('-').last
+            :"car.price_total" => {
+                :gte => 0,
+                :lte => params[:total_price].to_i
             }
         }
-    } unless (params[:price_range].blank? or params[:price_range].split('-').length != 2)
+    } unless params[:price_range].blank?
     query[:query][:bool][:must] << {
         :range => {
             :"car.price_month" => {
-                :gte => params[:monthly_price_range].split('-').first,
-                :lte => params[:monthly_price_range].split('-').last
+                :gte => 0,
+                :lte => params[:month_price].to_i
             }
         }
-    } unless (params[:monthly_price_range].blank? or params[:monthly_price_range].split('-').length != 2)
+    } unless params[:month_price].blank?
     return query
   end
 

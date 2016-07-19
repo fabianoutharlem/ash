@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   resources :cars, only: [:index, :show], path: 'autos' do
     get :like
+    get 'finance_car/:car_id/:type', to: 'cars#finance_car', as: :finance_car
     collection do
+      get :search
       get :favourites
       get 'compare/:car_1_id/:car_2_id', to: 'cars#compare', as: :compare_2
       get 'compare/:car_1_id/:car_2_id/:car_3_id', to: 'cars#compare', as: :compare_3
@@ -21,6 +23,7 @@ Rails.application.routes.draw do
 
   resources :brands do
     get :cars
+    get :models, on: :collection
     resources :models, only: [] do
       get :cars
     end
