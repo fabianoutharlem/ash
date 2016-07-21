@@ -1043,6 +1043,7 @@ section.detail_pagina_b { //only b
                   background-color: #00b04a;
                   padding-right: 30px;
                   line-height: 30px;
+                  overflow: hidden;
 
                   @media @1370 {
                     width: 75px;
@@ -1051,6 +1052,20 @@ section.detail_pagina_b { //only b
                     line-height: 25px;
                   }
 
+                  //&:before{
+                  //  content: '';
+                  //  display: block;
+                  //  position: absolute;
+                  //  background: rgba(0, 176, 80, 0.5);
+                  //  width: 10px;
+                  //  height: 100%;
+                  //  left: 0;
+                  //  top: 0;
+                  //  opacity: .2;
+                  //  filter: blur(30px);
+                  //  transform: translateX(-100px)  skewX(-15deg);
+                  //}
+
                   &:after {
                     width: 30px;
                     background-color: #00b04a;
@@ -1058,6 +1073,20 @@ section.detail_pagina_b { //only b
 
                     @media @1370 {
                       width: 25px;
+                    }
+                  }
+
+                  &:hover {
+                    background-color: #00b05e;
+
+                    &:before {
+                      transform: translateX(300px) skewX(-15deg);
+                      opacity: 0.6;
+                      transition: .7s;
+                    }
+
+                    &:after {
+                      background-color: #00b05e;
                     }
                   }
                 }

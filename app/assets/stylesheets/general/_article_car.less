@@ -146,7 +146,7 @@ article.article_car {
       font-weight: 500;
       height: 24px;
       vertical-align: middle;
-      margin-right: 5px;
+      margin-right: 2px;
     }
 
     span.day_deal_star {
@@ -155,7 +155,7 @@ article.article_car {
       background-size: cover;
       width: 14px;
       height: 14px;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
   }
 
@@ -282,7 +282,7 @@ article.article_car {
         position: relative;
         display: inline-block;
         width: 100%;
-        height: percentage(1/3);
+        height: 31.333333%;
         background-color: green;
         padding-left: 20px;
         padding-right: 50px;
@@ -292,7 +292,7 @@ article.article_car {
         }
 
         table {
-          height: 90%;
+          height: 96%;
           width: 100%;
 
           td {
@@ -365,11 +365,14 @@ article.article_car {
     background-color: rgba(0, 0, 0, 0.8);
     bottom: -100%;
     transition: @trans;
+    text-align: center;
 
     .orange_btn {
-      display: block;
+      display: inline-block;
       width: 90%;
-      margin: 50% auto 0;
+      top: 50%;
+      transform: translateY(-50%);
+      margin: 0 auto;
     }
   }
 }

@@ -89,6 +89,11 @@
         <p><%= phrase 'home_actie_sub_titel' %></p>
         <%= link_to phrase('Bekijk deze actie'), page_path(Setting.get('home_action_page')), class: 'orange_btn' %>
       </article>
+
+      <ul id="banner_carousel">
+        <li class="banners" style="background: url('<%= image_url 'banner_vw_homepage.jpg' %>') no-repeat center; background-size: cover"></li>
+        <li class="banners" style="background: url('<%= image_url 'slide_desktopapp.jpg' %>') no-repeat center; background-size: cover"></li>
+      </ul>
     </div>
   </div>
 </section>
