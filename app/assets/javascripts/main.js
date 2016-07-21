@@ -209,7 +209,7 @@ $(document).ready(function () {
         overlay.removeClass('fadeIn')
         overlay.addClass('fadeOut');
 
-        var t = setTimeout( function() {
+        var t = setTimeout(function () {
             overlay.removeClass('active fadeOut');
         }, 500);
     });
@@ -260,6 +260,16 @@ $(document).ready(function () {
         nav: false,
         arrows: false,
         infinite: true
+    });
+
+    //homepage banner slider section.actie
+    $('section.actie #banner_carousel').lightSlider({
+        item: 1,
+        slideMove: 1,
+        pauseOnHover: true,
+        loop: true,
+        pause: 5000,
+        auto: true
     });
 
 
@@ -408,7 +418,7 @@ $(document).ready(function () {
         $('section.spec_tabs div.overlay_photo_selection').addClass('fadeOut')
         $('section.spec_tabs div.overlay_photo_selection').removeClass('fadeIn');
 
-        var t = setTimeout(function() {
+        var t = setTimeout(function () {
             $('section.spec_tabs div.overlay_photo_selection').removeClass('fadeOut active');
         }, 500);
     });
@@ -457,26 +467,26 @@ $(document).ready(function () {
     //voorraad
 
     //voorraad_pagina compare section
-    var compare_section =  $('section.select_compare div.compare_selection');
+    var compare_section = $('section.select_compare div.compare_selection');
 
-    $('section.aantal_paginas div.compare_btn').click( function() {
+    $('section.aantal_paginas div.compare_btn').click(function () {
         compare_section.toggleClass('active fadeIn');
         $('article.article_car').toggleClass('compare_active');
     });
 
-    $('section.select_compare div.start_compare div.remove_cross').click(function() {
+    $('section.select_compare div.start_compare div.remove_cross').click(function () {
         compare_section.removeClass('fadeIn');
         $('article.article_car').removeClass('compare_active');
         compare_section.addClass('fadeOut');
 
-        setTimeout(function() {
+        setTimeout(function () {
             compare_section.removeClass('active fadeOut');
         }, 200);
     });
 
-          //compare remove cars from list
+    //compare remove cars from list
     $('section.select_compare div.compare_selection li div.remove_cross').click(function () {
-        var list_item =  $(this).parent('li');
+        var list_item = $(this).parent('li');
 
         list_item.remove();
     });
