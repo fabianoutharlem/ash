@@ -141,6 +141,7 @@ class Car < ActiveRecord::Base
         price_total: params[:verkoopprijs_particulier],
         price_month: (params[:lease]['maandbedrag'] rescue nil),
         price_50_50: params[:verkoopprijs_handel],
+        price_discount: params[:actieprijs],
         manufacture_year: params[:bouwjaar],
         cylinders: params[:cilinder_aantal],
         engine_power: params[:vermogen_motor_pk],
