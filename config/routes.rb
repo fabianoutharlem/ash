@@ -50,6 +50,8 @@ Rails.application.routes.draw do
   get 'disclaimer', to: 'static_pages#disclaimer'
   get 'site_map', to: 'static_pages#site_map'
 
+  get '/select_language/:language_code', to: 'language#select_language', as: :select_language
+
   namespace :admin do
 
     root 'admin#home'

@@ -143,10 +143,7 @@
                   <%= image_tag 'akp_zoek_logo.svg' %>
                 </div>
                 <div class="zoeken_col col">
-                  <button type="submit" class="orange_btn search_submit_button">Zoeken (
-                    <small>-</small>
-                    )
-                  </button>
+                  <button type="submit" class="orange_btn search_submit_button">Zoeken (<small><%= Car.count %></small>)</button>
                 </div>
               </div>
             </form>
@@ -278,10 +275,7 @@
                 <div class="zoeken_col col">
                 </div>
                 <div class="zoeken_col col">
-                  <button type="submit" class="orange_btn search_submit_button">Zoeken (
-                    <small>-</small>
-                    )
-                  </button>
+                  <button type="submit" class="orange_btn search_submit_button">Zoeken (<small><%= Car.count %></small>)</button>
                 </div>
               </div>
             </form>

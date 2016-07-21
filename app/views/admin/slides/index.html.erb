@@ -28,7 +28,7 @@
               <i class="fa fa-plus"></i><span> Nieuwe slide</span>
             </a>
             <ul class="dropdown-menu dropdown-user">
-              <% SlideTemplate.all.each do |template| %>
+              <% @slider.slide_templates.each do |template| %>
                   <li>
                     <%= link_to template.name, new_slide_with_template_admin_slides_path(template, @slider) %>
                   </li>
