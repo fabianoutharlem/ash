@@ -24,7 +24,7 @@
 
       <div class="row page_search">
 
-        <% if defined? compare && compare %>
+        <% if (defined? compare) && (compare == true) %>
             <div class="compare_btn"><%= phrase 'Autos met elkaar vergelijken' %></div>
         <% end %>
 
@@ -77,7 +77,7 @@
   </div>
 </section>
 
-<% if defined? compare && compare %>
+<% if (defined? compare) && (compare == true) %>
 <section class="select_compare">
   <div class="wrapper">
     <div class="container-fluid content_container">
