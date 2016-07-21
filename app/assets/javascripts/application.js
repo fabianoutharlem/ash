@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
+//= require jquerytouch.js
 //= require jquery.marquee.min.js
 //= require owl.carousel.min.js
 //= require top_car_carousel.js
