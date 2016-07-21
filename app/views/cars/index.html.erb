@@ -17,7 +17,9 @@
   </div>
 </section>
 
-<%= render 'pagination', cars: @cars %>
+<section class="compare_select_container">
+  <%= render 'pagination', cars: @cars, compare: true %>
+</section>
 
 <%= render 'cars', cars: @cars %>
 
@@ -28,6 +30,7 @@
     <div class="container-fluid content_container" style="background: url('<%= image_url 'bg_mogelijkheden.jpg' %>') no-repeat center; background-size: cover">
 
       <h2><%= phrase 'Wilt uw deze auto financieren?' %></h2>
+
       <h3><%= phrase 'Bekijk hier de mogelijkheden!' %></h3>
 
       <%= render 'shared/finance_circles' %>

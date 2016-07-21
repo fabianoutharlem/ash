@@ -4,11 +4,13 @@
 
       <div class="aantal_pages">
         <p class="nav-text">Aantal pagina’s:</p>
+
         <p class="nav-text_small">Volgende:</p>
         <nav class="pagination">
           <span class="prev">
             <%= link_to_previous_page @cars, '' %>
           </span>
+
           <div class="page_indicator">
             <small><%= @cars.current_page %></small>
             /
@@ -22,26 +24,42 @@
 
       <div class="row page_search">
 
-        <div class="compare_btn"><%= phrase 'Autos met elkaar vergelijken' %></div>
+        <% if defined? compare && compare %>
+            <div class="compare_btn"><%= phrase 'Autos met elkaar vergelijken' %></div>
+        <% end %>
 
         <div class="select_col col">
           <p class="nav-text">Sorteer op:</p>
+
           <div class="select">
             <span class="arrow"></span>
             <select name="merk" class="cars_filter_select" onchange="if (this.value) window.location.href=this.value">
               <option>Merk Model Prijs</option>
-              <option value="<%= url_for params.merge({order: {type: "brand", direction: "asc"}}) %>" <%= params[:order].try(:symbolize_keys) == {type: "brand", direction: "asc"} ? 'selected' : '' %>>Merk A-Z</option>
-              <option value="<%= url_for params.merge({order: {type: "brand", direction: "desc"}}) %>" <%= params[:order].try(:symbolize_keys) == {type: "brand", direction: "desc"} ? 'selected' : '' %>>Merk Z-A</option>
-              <option value="<%= url_for params.merge({order: {type: "model", direction: "asc"}}) %>" <%= params[:order].try(:symbolize_keys) == {type: "model", direction: "asc"} ? 'selected' : '' %>>Model A-Z</option>
-              <option value="<%= url_for params.merge({order: {type: "model", direction: "desc"}}) %>" <%= params[:order].try(:symbolize_keys) == {type: "model", direction: "desc"} ? 'selected' : '' %>>Model Z-A</option>
-              <option value="<%= url_for params.merge({order: {type: "price", direction: "asc"}}) %>" <%= params[:order].try(:symbolize_keys) == {type: "price", direction: "asc"} ? 'selected' : '' %>>Prijs Oplopend</option>
-              <option value="<%= url_for params.merge({order: {type: "price", direction: "desc"}}) %>" <%= params[:order].try(:symbolize_keys) == {type: "price", direction: "desc"} ? 'selected' : '' %>>Prijs Aflopend</option>
+              <option value="<%= url_for params.merge({order: {type: "brand", direction: "asc"}}) %>" <%= params[:order].try(:symbolize_keys) == {type: "brand", direction: "asc"} ? 'selected' : '' %>>Merk
+                A-Z
+              </option>
+              <option value="<%= url_for params.merge({order: {type: "brand", direction: "desc"}}) %>" <%= params[:order].try(:symbolize_keys) == {type: "brand", direction: "desc"} ? 'selected' : '' %>>Merk
+                Z-A
+              </option>
+              <option value="<%= url_for params.merge({order: {type: "model", direction: "asc"}}) %>" <%= params[:order].try(:symbolize_keys) == {type: "model", direction: "asc"} ? 'selected' : '' %>>Model
+                A-Z
+              </option>
+              <option value="<%= url_for params.merge({order: {type: "model", direction: "desc"}}) %>" <%= params[:order].try(:symbolize_keys) == {type: "model", direction: "desc"} ? 'selected' : '' %>>Model
+                Z-A
+              </option>
+              <option value="<%= url_for params.merge({order: {type: "price", direction: "asc"}}) %>" <%= params[:order].try(:symbolize_keys) == {type: "price", direction: "asc"} ? 'selected' : '' %>>Prijs
+                Oplopend
+              </option>
+              <option value="<%= url_for params.merge({order: {type: "price", direction: "desc"}}) %>" <%= params[:order].try(:symbolize_keys) == {type: "price", direction: "desc"} ? 'selected' : '' %>>Prijs
+                Aflopend
+              </option>
             </select>
           </div>
         </div>
 
         <div class="select_col col small_not_visible">
           <p class="nav-text">Resultaten per pagina:</p>
+
           <div class="select">
             <span class="arrow"></span>
             <select name="merk" class="search_dropdown" onchange="if (this.value) window.location.href=this.value">
@@ -59,6 +77,7 @@
   </div>
 </section>
 
+<% if defined? compare && compare %>
 <section class="select_compare">
   <div class="wrapper">
     <div class="container-fluid content_container">
@@ -69,3 +88,4 @@
     </div>
   </div>
 </section>
+<% end %>

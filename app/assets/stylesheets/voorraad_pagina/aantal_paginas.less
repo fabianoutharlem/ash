@@ -1,7 +1,7 @@
 section.aantal_paginas {
 
   div.content_container {
-    padding: 20px 110px 25px 110px;
+    padding: 20px 20px 25px 20px;
 
     @media @1280 {
       padding: 20px;
@@ -216,10 +216,10 @@ section.select_compare {
   }
 
   div.content_container {
-    padding: 0 110px 0 110px;
+    //padding: 0 110px 0 110px;
 
     @media @1280 {
-      padding: 0 20px 0 20px;
+      //padding: 0 20px 0 20px;
     }
 
     div.compare_selection {
@@ -332,6 +332,31 @@ section.select_compare {
 
     div.overlay_compare {
       display: none;
+    }
+  }
+}
+
+section.compare_select_container {
+
+  section.aantal_paginas {
+
+    div.content_container {
+      padding: 20px 110px 25px 110px;
+
+      @media @1280 {
+        padding: 20px;
+      }
+    }
+  }
+
+  section.select_compare {
+
+    div.content_container {
+      padding: 0 110px 0 110px;
+
+      @media @1280 {
+        padding: 0 20px 0 20px;
+      }
     }
   }
 }
