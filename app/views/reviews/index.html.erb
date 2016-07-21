@@ -1,10 +1,11 @@
 <section class="referenties">
   <div class="wrapper">
     <div class="container-fluid content_container">
-      <h2><%= phrase 'Referenties' %></h2>
+      <div class="content">
+        <h2><%= phrase 'Referenties' %></h2>
 
-      <p class="header"><%= phrase 'Laat hier uw mening over ons achter' %></p>
-
+        <p class="header"><%= phrase 'Laat hier uw mening over ons achter' %></p>
+      </div>
       <section class="beoordelingen">
         <div class="row first">
           <div class="col left referentie_achterlaten">
@@ -22,15 +23,15 @@
                 <%= f.text_field :email, placeholder: 'E-mail', class: 'email nth_col' %>
                 <%= f.text_area :review, placeholder: 'Recensie', class: 'referentie first_col' %>
 
-              <div class="star_rating">
-                <div class="star_wrapper">
-                  <small>Waardering:</small>
-                  <div class="input_star_rating_wrapper">
-                    <%= f.select :rating, (1..5), {}, id: 'input_star_rating' %>
+                <div class="star_rating">
+                  <div class="star_wrapper">
+                    <small>Waardering:</small>
+                    <div class="input_star_rating_wrapper">
+                      <%= f.select :rating, (1..5), {}, id: 'input_star_rating' %>
+                    </div>
                   </div>
+                  <button type="submit" class="orange_btn"><%= phrase 'Verstuur Referentie' %></button>
                 </div>
-                <button type="submit" class="orange_btn"><%= phrase 'Verstuur Referentie' %></button>
-              </div>
             <% end %>
           </div>
         </div>
