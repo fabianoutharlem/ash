@@ -4,6 +4,18 @@ section.main_slider, section.exclusief_slider, section.budget_slider {
 
     .my-slider {
       position: relative;
+
+      ul {
+        height: 760px;
+
+        @media @1040 {
+          height: 530px;
+        }
+
+        @media @360 {
+          height: 240px;
+        }
+      }
     }
 
     .unslider {
