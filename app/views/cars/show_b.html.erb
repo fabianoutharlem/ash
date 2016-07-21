@@ -86,10 +86,19 @@
                 <%= link_to car_like_path(@car), class: "like_button #{@car_likes.include?(@car.slug) ? 'liked' : nil}", remote: true do %>
                     <i class="like"></i>
                 <% end %>
-                <a href=""><i class="mail"></i></a>
+                <a href="mailto:info@autoservicehaarlem.nl?subject=<%= url_encode("Ik heb deze #{@car.display_name} gevonden op autoservicehaarlem.nl") %>&body=<%= url_encode("Ik heb deze #{@car.display_name} gevonden op autoservicehaarlem.nl, bekijk hem op #{car_url(@car)}!") %>"><i class="mail"></i></a>
                 <!--<a onclick="window.print();"><i class="print"></i></a>-->
                 <a target="_blank" href="https://twitter.com/intent/tweet?url=<%= url_encode(car_url(@car)) %>&text=<%= url_encode('Bekijk deze auto op autoservicehaarlem.nl') %>&hashtags=ash,autoservicehaarlem"><i class="twitter align_right"></i></a>
-                <a target="_blank" href=""><i class="fb align_right"></i></a>
+                <a target="_blank" id="shareBtn" href=""><i class="fb align_right"></i></a>
+                <script type="text/javascript" charset="utf-8">
+                  document.getElementById('shareBtn').onclick = function() {
+                    FB.ui({
+                      method: 'share',
+                      href: '<%= car_url(@car) %>',
+                    }, function (response) {
+                    });
+                  }
+                </script>
               </div>
             </div>
           </div>
@@ -429,3 +438,11 @@
     </div>
   </section>
 </section>
+
+<% content_for :meta do %>
+    <meta property="og:title" content="<%= @car.display_name %>" />
+    <meta property="og:url" content="<%= car_url(@car) %>" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="<%= @car.main_image.try(:file).try(:url) %>" />
+    <meta property="og:description" content="<%= @car.display_name %>" />
+<% end %>
