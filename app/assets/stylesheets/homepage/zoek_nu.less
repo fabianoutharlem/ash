@@ -2,6 +2,7 @@ section.zoek_nu {
 
   div.container-fluid {
     background: image-url('bg_zoeknu.png') no-repeat center;
+    background-size: cover;
 
     @media @1280 {
       background: 0;
@@ -50,7 +51,7 @@ section.zoek_nu {
     }
 
     div.search {
-      height: 590px;
+      //height: 590px;
       width: 1440px;
       padding: 140px 50px 0 50px;
       font-size: 0;
@@ -168,8 +169,9 @@ section.zoek_nu {
         padding: 20px 0 20px 20px;
         background-color: white;
         width: 620px;
-        height: 401px;
-        margin: 0 auto;
+        //height: 401px;
+        height: auto;
+        margin: 0 auto 50px auto;
         border-radius: 18px;
 
         @media @1280 {
@@ -184,6 +186,7 @@ section.zoek_nu {
 
         @media @320 {
           width: 310px;
+          margin-bottom: 30px;
         }
 
         div.select_col {
