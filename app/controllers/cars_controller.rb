@@ -7,7 +7,7 @@ class CarsController < ApplicationController
 
   def index
     @cars = Car.all.includes(:brand, :model)
-    @cars = order_by_params(@cars, params).page(params[:page]).per(params[:per_page])
+    @cars = manipulate_by_params(@cars, params).page(params[:page]).per(params[:per_page])
   end
 
   def search
@@ -17,7 +17,7 @@ class CarsController < ApplicationController
       format.json { render json: {cars: @cars.count} }
       format.html {
         @cars = @cars.includes(:brand, :model)
-        @cars = order_by_params(@cars, params).page(params[:page]).per(params[:per_page])
+        @cars = manipulate_by_params(@cars, params).page(params[:page]).per(params[:per_page])
         render :index
       }
     end
@@ -40,7 +40,7 @@ class CarsController < ApplicationController
 
   def new_cars
     @cars = Car.includes(:brand, :model).all.limit(36).order(created_at: :desc)
-    @cars = order_by_params(@cars, params).page(params[:page]).per(params[:per_page])
+    @cars = manipulate_by_params(@cars, params).page(params[:page]).per(params[:per_page])
     add_breadcrumb 'Nieuw binnen'
     render :index
   end

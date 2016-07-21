@@ -79,12 +79,12 @@
           <div class="lease_budget">
             <h5><%= phrase 'Wat is uw Lease buget per maand?' %></h5>
 
-            <div class="tot"><a href="#"><span class="helper"></span>TOT €200,-</a></div>
-            <div class="tot"><a href="#"><span class="helper"></span>€200,- & €300,-</a></div>
-            <div class="tot active"><a href="#"><span class="helper"></span>€300,- & €400,-</a></div>
-            <div class="tot"><a href="#"><span class="helper"></span>€400,- & €500,-</a></div>
-            <div class="tot"><a href="#"><span class="helper"></span>€500,- & €600,-</a></div>
-            <div class="tot"><a href="#"><span class="helper"></span>BOVEN €600,-</a></div>
+            <div class="tot <%= params[:q].present? && params[:q][:price_month_lte] == '200' ? 'active' : nil %>"><a href="<%= url_for params.merge({q: {price_month_lte: 200}}) %>"><span class="helper"></span>TOT €200,-</a></div>
+            <div class="tot <%= params[:q].present? && params[:q][:price_month_lte] == '300' && params[:q][:price_month_gte] == '200' ? 'active' : nil %>"><a href="<%= url_for params.merge({q: {price_month_lte: 300, price_month_gte: 200}}) %>"><span class="helper"></span>€200,- & €300,-</a></div>
+            <div class="tot <%= params[:q].present? && params[:q][:price_month_lte] == '400' && params[:q][:price_month_gte] == '300' ? 'active' : nil %>"><a href="<%= url_for params.merge({q: {price_month_lte: 400, price_month_gte: 300}}) %>"><span class="helper"></span>€300,- & €400,-</a></div>
+            <div class="tot <%= params[:q].present? && params[:q][:price_month_lte] == '500' && params[:q][:price_month_gte] == '400' ? 'active' : nil %>"><a href="<%= url_for params.merge({q: {price_month_lte: 500, price_month_gte: 400}}) %>"><span class="helper"></span>€400,- & €500,-</a></div>
+            <div class="tot <%= params[:q].present? && params[:q][:price_month_lte] == '600' && params[:q][:price_month_gte] == '500' ? 'active' : nil %>"><a href="<%= url_for params.merge({q: {price_month_lte: 600, price_month_gte: 500}}) %>"><span class="helper"></span>€500,- & €600,-</a></div>
+            <div class="tot <%= params[:q].present? && params[:q][:price_month_gte] == '600' ? 'active' : nil %>"><a href="<%= url_for params.merge({q: {price_month_gte: 600}}) %>"><span class="helper"></span>BOVEN €600,-</a></div>
           </div>
         </div>
       </div>

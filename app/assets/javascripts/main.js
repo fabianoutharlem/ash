@@ -263,17 +263,6 @@ $(document).ready(function () {
         infinite: true
     });
 
-    //homepage banner slider
-    $('#banner_carousel').lightSlider({
-        item: 1,
-        slideMove: 1,
-        auto: true,
-        pauseOnHover: true,
-        loop: true,
-        speed: 400,
-        pause: 5000
-    });
-
 
     //detail pagina
 

@@ -60,7 +60,7 @@ class Car < ActiveRecord::Base
     if search.results.total
       search.records
     else
-      nil
+      Car.none
     end
   end
 
