@@ -3,9 +3,8 @@
     <div class="container-fluid content_container">
 
       <div class="aantal_pages">
-        <% if @cars.total_pages > 1 %><p class="nav-text">Aantal pagina’s:</p><% end %>
+        <p class="nav-text">Aantal pagina’s:</p>
         <p class="nav-text_small">Volgende:</p>
-
         <nav class="pagination">
           <span class="prev">
             <%= link_to_previous_page @cars, '' %>
@@ -19,10 +18,12 @@
             <%= link_to_next_page @cars, '' %>
           </span>
         </nav>
-
       </div>
 
       <div class="row page_search">
+
+        <div class="compare_btn"><%= phrase 'Autos met elkaar vergelijken' %></div>
+
         <div class="select_col col">
           <p class="nav-text">Sorteer op:</p>
           <div class="select">
@@ -53,6 +54,17 @@
             </select>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="select_compare">
+  <div class="wrapper">
+    <div class="container-fluid content_container">
+
+      <div class="compare_selection animated">
+        <%= render 'cars/compare_selection_cars' %>
       </div>
     </div>
   </div>

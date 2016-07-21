@@ -470,7 +470,7 @@ $(document).ready(function () {
     //voorraad_pagina compare section
     var compare_section =  $('section.select_compare div.compare_selection');
 
-    $('section.select_compare div.compare_btn').click( function() {
+    $('section.aantal_paginas div.compare_btn').click( function() {
         compare_section.toggleClass('active fadeIn');
         $('article.article_car').toggleClass('compare_active');
     });
