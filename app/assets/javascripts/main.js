@@ -572,35 +572,34 @@ $(document).ready(function () {
     //exclusief smartphone carousel
     var owl = $('#small_screen_carousel');
     owl.owlCarousel({
-        nav: true,
+        //nav: true,
         owl2row: false, // enable plugin
-        owl2rowTarget: 'item',    // class for items in carousel div
-        owl2rowContainer: 'owl2row-item', // class for items container
-        owl2rowDirection: 'utd', // ltr : directions
+        //owl2rowTarget: 'item',    // class for items in carousel div
+        //owl2rowContainer: 'owl2row-item', // class for items container
+        //owl2rowDirection: 'utd', // ltr : directions
         dots: true,
-        //items: 4,
         navText: [' ', ' '],
         slideBy: 1,
         items: 1,
-        navContainer: '.nav_container',
-        responsive: {
-            0: {
-                items: 1,
-                slideBy: 1,
-                dots: false
-            },
-            700: {
-                items: 2,
-                slideBy: 2
-            },
-            1040: {
-                items: 3,
-                slideBy: 3
-            },
-            1281: {
-                items: 4
-            },
-        }
+        //navContainer: '.nav_container',
+        //responsive: {
+        //    0: {
+        //        items: 1,
+        //        slideBy: 1,
+        //        dots: false
+        //    },
+        //    700: {
+        //        items: 2,
+        //        slideBy: 2
+        //    },
+        //    1040: {
+        //        items: 3,
+        //        slideBy: 3
+        //    },
+        //    1281: {
+        //        items: 4
+        //    },
+        //}
     });
 
     //homepage car sale sell_car_form
