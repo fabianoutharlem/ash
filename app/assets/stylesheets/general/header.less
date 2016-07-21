@@ -791,7 +791,7 @@ div.sub_menu {
   }
 
   &.taal_menu {
-    display: none;
+    //display: none;
 
     &.active {
       display: block;
@@ -823,46 +823,51 @@ div.sub_menu {
           border: solid 2px #f35026;
         }
 
-        i {
-          display: inline-block;
-          vertical-align: middle;
-          background-size: cover;
-          width: 26px;
-          height: 20px;
-          margin: 0 9px 0 0;
+        a {
+          width: 100%;
+          height: 100%;
 
-          &.nl {
-            background: image-url('nl.png') no-repeat center;
+          i {
+            display: inline-block;
+            vertical-align: middle;
+            background-size: cover;
+            width: 26px;
+            height: 20px;
+            margin: 0 9px 0 0;
+
+            &.nl {
+              background: image-url('nl.png') no-repeat center;
+            }
+
+            &.gb {
+              background: image-url('gb.png') no-repeat center;
+            }
+
+            &.de {
+              background: image-url('de.png') no-repeat center;
+            }
+
+            &.fr {
+              background: image-url('fr.png') no-repeat center;
+            }
+
+            &.es {
+              background: image-url('es.png') no-repeat center;
+            }
+
+            &.tr {
+              background: image-url('tr.png') no-repeat center;
+            }
           }
 
-          &.gb {
-            background: image-url('gb.png') no-repeat center;
+          p {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0;
+            font-size: 14px;
+            line-height: 2;
+            color: #595959;
           }
-
-          &.de {
-            background: image-url('de.png') no-repeat center;
-          }
-
-          &.fr {
-            background: image-url('fr.png') no-repeat center;
-          }
-
-          &.es {
-            background: image-url('es.png') no-repeat center;
-          }
-
-          &.tr {
-            background: image-url('tr.png') no-repeat center;
-          }
-        }
-
-        p {
-          display: inline-block;
-          vertical-align: middle;
-          margin: 0;
-          font-size: 14px;
-          line-height: 2;
-          color: #595959;
         }
       }
     }
