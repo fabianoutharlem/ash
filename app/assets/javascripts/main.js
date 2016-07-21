@@ -580,8 +580,8 @@ $(document).ready(function () {
         dots: true,
         //items: 4,
         navText: [' ', ' '],
-        slideBy: 4,
-        items: 4,
+        slideBy: 1,
+        items: 1,
         navContainer: '.nav_container',
         responsive: {
             0: {
@@ -591,11 +591,11 @@ $(document).ready(function () {
             },
             700: {
                 items: 2,
-                slideBy: 2,
+                slideBy: 2
             },
             1040: {
                 items: 3,
-                slideBy: 3,
+                slideBy: 3
             },
             1281: {
                 items: 4
