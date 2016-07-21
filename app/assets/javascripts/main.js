@@ -171,7 +171,7 @@ $(document).ready(function () {
 
     $(".slider_buy_financieren").slider({
         min: 0,
-        max: 75000,
+        max: 125000,
         range: "min",
         value: 15000,
         step: 500,
@@ -191,7 +191,7 @@ $(document).ready(function () {
 
     $(".slider_buy_kopen").slider({
         min: 0,
-        max: 75000,
+        max: 125000,
         range: "min",
         value: 15000,
         step: 500,
@@ -213,45 +213,6 @@ $(document).ready(function () {
         var t = setTimeout( function() {
             overlay.removeClass('active fadeOut');
         }, 500);
-    });
-
-    //homepage banner carousel
-
-    //voorraad_pagina price sliders
-    $("#buy_slider_to").slider({
-        min: 0,
-        max: 50000,
-        range: "min",
-        value: 21000,
-        slide: showLabel,
-        create: showLabel
-    });
-
-    $("#buy_slider_month").slider({
-        min: 0,
-        max: 2000,
-        range: "min",
-        value: 219,
-        slide: showLabel,
-        create: showLabel
-    });
-
-    $("#finance_slider_to").slider({
-        min: 0,
-        max: 50000,
-        range: "min",
-        value: 21000,
-        slide: showLabel,
-        create: showLabel
-    });
-
-    $("#finance_slider_month").slider({
-        min: 0,
-        max: 2000,
-        range: "min",
-        value: 219,
-        slide: showLabel,
-        create: showLabel
     });
 
     //homepage carousel
