@@ -6,7 +6,19 @@
         <% if @cars.total_pages > 1 %><p class="nav-text">Aantal pagina’s:</p><% end %>
         <p class="nav-text_small">Volgende:</p>
 
-        <%= paginate @cars, views_prefix: 'shared' %>
+        <nav class="pagination">
+          <span class="prev">
+            <%= link_to_previous_page @cars, '' %>
+          </span>
+          <div class="page_indicator">
+            <small><%= @cars.current_page %></small>
+            /
+            <small><%= @cars.num_pages %></small>
+          </div>
+          <span class="next">
+            <%= link_to_next_page @cars, '' %>
+          </span>
+        </nav>
 
       </div>
 
