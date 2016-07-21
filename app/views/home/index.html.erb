@@ -91,8 +91,9 @@
       </article>
 
       <ul id="banner_carousel">
-        <li class="banners" style="background: url('<%= image_url 'banner_vw_homepage.jpg' %>') no-repeat center; background-size: cover"></li>
-        <li class="banners" style="background: url('<%= image_url 'slide_desktopapp.jpg' %>') no-repeat center; background-size: cover"></li>
+        <% @actie_slider.slides.each do |slide| %>
+            <%= render ('admin/slides/templates/' + slide.slide_template.template), slide_values: slide.template_variables %>
+        <% end %>
       </ul>
     </div>
   </div>

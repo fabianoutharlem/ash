@@ -97,8 +97,8 @@
         </li>
         <li class="taal" data-submenu="taal_menu" data-smartmenus="talen">
           <span class="helper"></span>
-          <%= image_tag 'nl_vlag.svg', class: 'nl_vlag.svg' %>
-          <p>NL</p>
+          <%= image_tag session[:current_language] || 'nl' + '_vlag.svg', class: 'nl_vlag.svg' %>
+          <p><%= (session[:current_language] || 'nl').upcase %></p>
           <%= image_tag 'header_arrow.png', class: 'header_arrow.png' %>
           <div class="border-bottom"></div>
         </li>
@@ -132,10 +132,10 @@
     <div class="wrapper">
       <div class="container-fluid content-container">
         <h2><span
-        class="large">Kies de financiering die het beste bij jou past met Auto KredietPlan!</span><span
-        class="small">Wilt uw een auto financieren?</span></h2>
+        class="large"><%= phrase 'Kies de financiering die het beste bij jou past met Auto KredietPlan!' %></span><span
+        class="small"><%= phrase 'Wilt u een auto financieren?' %></span></h2>
 
-        <p class="small">Bekijk hier de mogelijkheden!</p>
+        <p class="small"><%= phrase 'Bekijk hier de mogelijkheden' %></p>
 
         <%= render 'shared/finance_circles' %>
       </div>
@@ -239,7 +239,7 @@
       <div class="container-fluid content-container">
         <ul>
           <li>
-            <a href="#">
+            <a href="<%= select_language_path('nl') %>">
               <span class="helper"></span>
               <i class="nl"></i>
 
@@ -247,7 +247,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="<%= select_language_path('en') %>">
               <span class="helper"></span>
               <i class="gb"></i>
 
@@ -255,7 +255,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="<%= select_language_path('de') %>">
               <span class="helper"></span>
               <i class="de"></i>
 
@@ -263,7 +263,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="<%= select_language_path('fr') %>">
               <span class="helper"></span>
               <i class="fr"></i>
 
@@ -271,7 +271,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="<%= select_language_path('es') %>">
               <span class="helper"></span>
               <i class="es"></i>
 
@@ -279,7 +279,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="<%= select_language_path('tr') %>">
               <span class="helper"></span>
               <i class="tr"></i>
 
@@ -317,22 +317,22 @@
     <ul>
       <li class="talen smartmenu active">
         <span class="helper"></span>
-        <a href="#"><i class="nl active active_border">
+        <a href="<%= select_language_path('nl') %>"><i class="nl active">
           <div class="border_bottom"></div>
         </i></a>
-        <a href="#"><i class="gb active">
+        <a href="<%= select_language_path('en') %>"><i class="gb active">
           <div class="border_bottom"></div>
         </i></a>
-        <a href="#"><i class="de active">
+        <a href="<%= select_language_path('de') %>"><i class="de active">
           <div class="border_bottom"></div>
         </i></a>
-        <a href="#"><i class="fr active">
+        <a href="<%= select_language_path('fr') %>"><i class="fr active">
           <div class="border_bottom"></div>
         </i></a>
-        <a href="#"><i class="es active">
+        <a href="<%= select_language_path('es') %>"><i class="es active">
           <div class="border_bottom"></div>
         </i></a>
-        <a href="#"><i class="tr active">
+        <a href="<%= select_language_path('tr') %>"><i class="tr active">
           <div class="border_bottom"></div>
         </i></a>
       </li>
