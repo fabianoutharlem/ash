@@ -3,6 +3,20 @@
  */
 $(document).ready(function () {
 
+    //homepage main_slider  //exclusief main slider //budget slider
+    $('.my-slider').unslider({
+        arrows: {
+            //  Unslider default behaviour
+            prev: '<a class="unslider-arrow prev"><img src="assets/nav_prev_carousel.png" alt=""></a>',
+            next: '<a class="unslider-arrow next"><img src="assets/main_slider_next.png" alt=""></a>',
+        },
+
+        autoplay: false,
+        delay: 5000,
+        nav: true,
+        infinite: true
+    });
+
     //header overlays & popups
     //newsletter_popup ->show
     var content_box = $('div.popup_newsletter div.content');
@@ -111,21 +125,6 @@ $(document).ready(function () {
     $('section.footer section.footer_smart ul.menu li.expand_menu').click(function () {
         $(this).toggleClass('active');
         $(this).find('div.expand').toggleClass('active');
-    });
-
-
-    //homepage main_slider  //exclusief main slider //budget slider
-    $('.my-slider').unslider({
-        arrows: {
-            //  Unslider default behaviour
-            prev: '<a class="unslider-arrow prev"><img src="assets/nav_prev_carousel.png" alt=""></a>',
-            next: '<a class="unslider-arrow next"><img src="assets/main_slider_next.png" alt=""></a>',
-        },
-
-        autoplay: false,
-        delay: 5000,
-        nav: true,
-        infinite: true
     });
 
     //homepage main_slider > ticker
