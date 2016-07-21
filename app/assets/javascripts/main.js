@@ -215,6 +215,8 @@ $(document).ready(function () {
         }, 500);
     });
 
+    //homepage banner carousel
+
     //voorraad_pagina price sliders
     $("#buy_slider_to").slider({
         min: 0,
@@ -298,6 +300,17 @@ $(document).ready(function () {
         nav: false,
         arrows: false,
         infinite: true
+    });
+
+    //homepage banner slider
+    $('#banner_carousel').lightSlider({
+        item: 1,
+        slideMove: 1,
+        auto: true,
+        pauseOnHover: true,
+        loop: true,
+        speed: 400,
+        pause: 5000
     });
 
 

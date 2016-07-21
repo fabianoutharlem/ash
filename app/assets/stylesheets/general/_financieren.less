@@ -89,6 +89,7 @@ section.article_financieren {
         width: 200.4px;
         height: 50px;
         background-color: #00b04a;
+        overflow: hidden;
 
         @media @1279 {
           width: 145px;
@@ -99,6 +100,20 @@ section.article_financieren {
           padding-left: 21px;
         }
 
+        &:before{
+          content: '';
+          display: block;
+          position: absolute;
+          background: rgba(0, 176, 80, 0.5);
+          width: 60px;
+          height: 100%;
+          left: 0;
+          top: 0;
+          opacity: .5;
+          filter: blur(30px);
+          transform: translateX(-100px)  skewX(-15deg);
+        }
+
         &:after {
           background-color: #00b04a;
           border-left: 1px solid #23c467;
@@ -106,6 +121,21 @@ section.article_financieren {
           @media @1279 {
             background-size: 6.3px 10px;
             width: 32px;
+          }
+        }
+
+        &:hover {
+          background-color: #00b05e;
+          cursor: pointer;
+
+          &:before {
+            transform: translateX(300px) skewX(-15deg);
+            opacity: 0.6;
+            transition: .7s;
+          }
+
+          &:after {
+            background-color: #00b05e;
           }
         }
       }

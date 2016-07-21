@@ -365,11 +365,14 @@ article.article_car {
     background-color: rgba(0, 0, 0, 0.8);
     bottom: -100%;
     transition: @trans;
+    text-align: center;
 
     .orange_btn {
-      display: block;
+      display: inline-block;
       width: 90%;
-      margin: 50% auto 0;
+      top: 50%;
+      transform: translateY(-50%);
+      margin: 0 auto;
     }
   }
 }
