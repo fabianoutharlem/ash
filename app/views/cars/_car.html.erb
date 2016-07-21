@@ -6,16 +6,22 @@
         <h4><%= car.brand.name %></h4>
         <h5><%= car.model.name %> <%= car.car_type %></h5>
 
-        <table>
-          <tr>
-            <td>Van</td>
-            <td>Voor</td>
-          </tr>
-          <tr>
-            <td class="first"><%= format_money car.price_total %></td>
-            <td class="second"><%= format_money car.price_discount %></td>
-          </tr>
-        </table>
+        <% if car.price_discount.present? %>
+            <table>
+              <tr>
+                <td><%= phrase 'Van' %></td>
+                <td><%= phrase 'Voor' %></td>
+              </tr>
+              <tr>
+                <td><%= format_money car.price_total %></td>
+                <td><%= format_money car.price_discount %></td>
+              </tr>
+            </table>
+        <% else %>
+            <small>
+              <%= format_money car.price_total %>
+            </small>
+        <% end %>
 
         <%= link_to phrase('bekijk_deze_auto'), car_path(car), class: :orange_btn %>
         <p class="click_hier"><%= phrase 'Deze auto financieren? Klik hieronder!' %></p>
@@ -90,7 +96,6 @@
             </table>
         <% else %>
             <small>
-              <!-- TODO: Menno moet dit ff stylen -->
               <%= format_money car.price_total %>
             </small>
         <% end %>
