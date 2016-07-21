@@ -1052,20 +1052,6 @@ section.detail_pagina_b { //only b
                     line-height: 25px;
                   }
 
-                  //&:before{
-                  //  content: '';
-                  //  display: block;
-                  //  position: absolute;
-                  //  background: rgba(0, 176, 80, 0.5);
-                  //  width: 10px;
-                  //  height: 100%;
-                  //  left: 0;
-                  //  top: 0;
-                  //  opacity: .2;
-                  //  filter: blur(30px);
-                  //  transform: translateX(-100px)  skewX(-15deg);
-                  //}
-
                   &:after {
                     width: 30px;
                     background-color: #00b04a;
@@ -1078,6 +1064,8 @@ section.detail_pagina_b { //only b
 
                   &:hover {
                     background-color: #00b05e;
+                    box-shadow: 0px 0px 20px #000;
+                    filter:progid:DXImageTransform.Microsoft.Glow(Color=black,Strength=20);
 
                     &:before {
                       transform: translateX(300px) skewX(-15deg);
@@ -1147,10 +1135,15 @@ section.detail_pagina_b { //only b
             display: inline-block;
             background-color: #888888;
             margin-bottom: 10px;
+            transition: @trans;
 
             &:after {
               border-left: 1px solid white;
               background-color: #888888;
+            }
+
+            &:hover {
+              opacity: 0.8;
             }
           }
         }
