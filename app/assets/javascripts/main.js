@@ -14,7 +14,8 @@ $(document).ready(function () {
         autoplay: false,
         delay: 5000,
         nav: true,
-        infinite: true
+        infinite: true,
+        animateHeight: true
     });
 
     //header overlays & popups
@@ -153,7 +154,7 @@ $(document).ready(function () {
             $(this).slider('value', input.val());
         }
         var curValue = ui.value || $(this).slider("option", "value");
-        var tooltip = '€' + curValue + ',- p.m.';
+        var tooltip = '€' + curValue + '';
         $(target).html(tooltip);
         input.val(curValue).trigger('change');
     };
@@ -574,9 +575,9 @@ $(document).ready(function () {
     owl.owlCarousel({
         //nav: true,
         owl2row: false, // enable plugin
-        //owl2rowTarget: 'item',    // class for items in carousel div
-        //owl2rowContainer: 'owl2row-item', // class for items container
-        //owl2rowDirection: 'utd', // ltr : directions
+        owl2rowTarget: 'item',    // class for items in carousel div
+        owl2rowContainer: 'owl2row-item', // class for items container
+        owl2rowDirection: 'utd', // ltr : directions
         dots: true,
         navText: [' ', ' '],
         slideBy: 1,
