@@ -337,8 +337,8 @@
         </i></a>
       </li>
       <li class="zoeken active">
-        <form>
-          <input type="text" placeholder="Zoeken...">
+        <form action="<%= search_cars_path %>">
+          <input type="text" name="query" placeholder="Zoeken...">
         </form>
       </li>
       <li class="home smartmenu <%= is_active_url(root_path) %>">
