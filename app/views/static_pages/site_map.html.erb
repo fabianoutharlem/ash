@@ -45,9 +45,11 @@
                   <li>
                     <%= link_to "#{brand.name} (#{brand.cars.count})", brand_cars_path(brand) %>
                     <ul class="models">
-                      <li>merk1</li>
-                      <li>merk2</li>
-                      <li>merk3</li>
+                      <% brand.models.order(:name).each do |model| %>
+                        <li>
+                          <a href="<%= brand_model_cars_path(brand, model) %>"><%= model.name %></a>
+                        </li>
+                      <% end %>
                     </ul>
                   </li>
               <% end %>

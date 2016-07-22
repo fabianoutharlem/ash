@@ -163,7 +163,7 @@ $(document).ready(function () {
         min: 0,
         max: 2000,
         range: "min",
-        value: 200,
+        value: 0,
         step: 10,
         slide: showLabel,
         create: showLabel
@@ -173,7 +173,7 @@ $(document).ready(function () {
         min: 0,
         max: 125000,
         range: "min",
-        value: 15000,
+        value: 0,
         step: 500,
         slide: showLabel,
         create: showLabel
@@ -183,7 +183,7 @@ $(document).ready(function () {
         min: 0,
         max: 2000,
         range: "min",
-        value: 200,
+        value: 0,
         step: 10,
         slide: showLabel,
         create: showLabel
@@ -193,7 +193,7 @@ $(document).ready(function () {
         min: 0,
         max: 125000,
         range: "min",
-        value: 15000,
+        value: 0,
         step: 500,
         slide: showLabel,
         create: showLabel
