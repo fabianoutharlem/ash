@@ -12,7 +12,8 @@
         <div class="altabs">
           <div class="tab finance" data-submenu="financieren"><p><%= phrase 'Ik wil graag een auto financieren' %></p>
             <span><%= phrase 'Auto financieren' %></span></div>
-          <div class="tab kopen active" data-submenu="kopen"><p><%= phrase 'Ik wil graag een auto kopen' %></p><span><%= phrase 'Auto kopen' %></span>
+          <div class="tab kopen active" data-submenu="kopen"><p><%= phrase 'Ik wil graag een auto kopen' %></p>
+            <span><%= phrase 'Auto kopen' %></span>
           </div>
         </div>
 
@@ -120,16 +121,20 @@
                     <small class="label"></small>
                   </p>
 
-                  <div class="slider_maand_financieren"></div>
-                  <input type="hidden" name="month_price" class="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                  <div class="slidercontainer">
+                    <div class="slider_maand_financieren"></div>
+                    <input type="hidden" name="month_price" class="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                  </div>
                 </div>
                 <div class="slider_col col">
                   <p><%= phrase 'Prijs tot' %>
                     <small class="label"></small>
                   </p>
 
-                  <div class="slider_buy_financieren"></div>
-                  <input type="hidden" name="total_price" class="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                  <div class="slidercontainer">
+                    <div class="slider_buy_financieren"></div>
+                    <input type="hidden" name="total_price" class="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                  </div>
                 </div>
               </div>
 
@@ -249,16 +254,20 @@
                     <small class="label"></small>
                   </p>
 
-                  <div class="slider_maand_kopen"></div>
-                  <input type="hidden" name="month_price" class="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                  <div class="slidercontainer">
+                    <div class="slider_maand_kopen"></div>
+                    <input type="hidden" name="month_price" class="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                  </div>
                 </div>
                 <div class="slider_col col">
                   <p><%= phrase 'Prijs tot' %>
                     <small class="label"></small>
                   </p>
 
-                  <div class="slider_buy_kopen"></div>
-                  <input type="hidden" name="total_price" class="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                  <div class="slidercontainer">
+                    <div class="slider_buy_kopen"></div>
+                    <input type="hidden" name="total_price" class="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                  </div>
                 </div>
               </div>
 

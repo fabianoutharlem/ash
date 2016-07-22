@@ -84,8 +84,10 @@
       <small class="label"></small>
     </p>
 
-    <div class="slider_maand_financieren"></div>
-    <input type="hidden" name="month_price" class="amount" value="<%= params[:month_price] %>" readonly style="border:0; color:#f6931f; font-weight:bold;">
+    <div class="slidercontainer">
+      <div class="slider_maand_financieren"></div>
+      <input type="hidden" name="month_price" class="amount" value="<%= params[:month_price] %>" readonly style="border:0; color:#f6931f; font-weight:bold;">
+    </div>
   </div>
 </div>
 <div class="row slider">
@@ -94,8 +96,10 @@
       <small class="label"></small>
     </p>
 
-    <div class="slider_buy_financieren"></div>
-    <input type="hidden" name="total_price" class="amount" value="<%= params[:total_price] %>" readonly style="border:0; color:#f6931f; font-weight:bold;">
+    <div class="slidercontainer">
+      <div class="slider_buy_financieren"></div>
+      <input type="hidden" name="total_price" class="amount" value="<%= params[:total_price] %>" readonly style="border:0; color:#f6931f; font-weight:bold;">
+    </div>
   </div>
 </div>
 

@@ -29,7 +29,7 @@
         <span class="helper"></span>
 
         <p>Menu</p>
-        <%= image_tag 'arrow_down_orange.png' %>
+        <%= image_tag 'arrow_down_orange.svg' %>
       </div>
 
       <ul class="menu">
@@ -347,7 +347,7 @@
       </li>
       <li class="voorraad smartmenu <%= is_active_url(cars_path) %>">
         <%= phrase 'Voorraad' %>
-        <%= image_tag 'arrow_down_orange.png', class: 'arrow_down_orange.png' %>
+        <%= image_tag 'arrow_down_orange.svg', class: 'arrow_down_orange.png' %>
         <div class="expand">
           <ul>
             <% @brands.each do |brand| %>
@@ -368,7 +368,7 @@
 
       <li class="Financieringen smartmenu">
         <%= phrase 'Financieringen' %>
-        <%= image_tag 'arrow_down_orange.png', class: 'arrow_down_orange.png' %>
+        <%= image_tag 'arrow_down_orange.svg', class: 'arrow_down_orange.png' %>
 
         <div class="expand">
           <%= render 'shared/finance_circles' %>
@@ -385,7 +385,7 @@
 
       <li class="Contact smartmenu <%= is_active_url(contact_path) %>">
         <%= phrase 'Contact' %>
-        <%= image_tag 'arrow_down_orange.png', class: 'arrow_down_orange.png' %>
+        <%= image_tag 'arrow_down_orange.svg', class: 'arrow_down_orange.png' %>
 
         <div class="expand">
           <ul>

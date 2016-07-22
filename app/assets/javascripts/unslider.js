@@ -580,7 +580,7 @@
 			//  to match the current slide, you can set
 			//  {animateHeight: true}
 			if (self.options.animateHeight) {
-				self._move(self.$context, {height: self.$slides.eq(to).outerHeight()}, false);
+				self._move(self.$context, {height: self.$slides.eq(to).outerHeight()}, true);
 			}
 		};
 
