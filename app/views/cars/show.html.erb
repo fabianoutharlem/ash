@@ -270,7 +270,7 @@
           <div class="right">
             <h4><%= phrase 'accessoiries' %></h4>
             <ul>
-              <% @car.option_list.each do |option| %>
+              <% @car.option_list.first(44).each do |option| %>
                   <li><%= option %></li>
               <% end %>
             </ul>
@@ -289,7 +289,7 @@
 
           <div class="list">
             <ul>
-              <% @car.option_list.first(44).each do |option| %>
+              <% @car.option_list.each do |option| %>
                   <li><%= option %></li>
               <% end %>
             </ul>
