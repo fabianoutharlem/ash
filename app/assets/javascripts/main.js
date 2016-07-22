@@ -11,8 +11,8 @@ $(document).ready(function () {
             next: '<a class="unslider-arrow next"><img src="assets/main_slider_next.png" alt=""></a>',
         },
 
-        autoplay: false,
-        delay: 5000,
+        autoplay: true,
+        delay: 4000,
         nav: true,
         infinite: true,
         animateHeight: true
