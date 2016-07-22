@@ -446,9 +446,12 @@ section.all_cars {
       }
 
       div.car_info {
-        width: 240px;
         margin: 0 auto;
         text-align: left;
+
+        @media @1279 {
+          width: 240px;
+        }
 
         @media @1040 {
           width: 200px;
