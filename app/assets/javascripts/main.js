@@ -584,7 +584,9 @@ $(document).ready(function () {
     //    items: 1
     //});
 
-    $('#small_screen_carousel').owlCarousel({
+    var owl3 = $('#small_screen_carousel');
+
+    owl3.owlCarousel({
         owl2Row: false,
         items: 1,
         slideBy: 1
