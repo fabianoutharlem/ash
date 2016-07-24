@@ -571,6 +571,12 @@ $(document).ready(function () {
     });
 
     //exclusief smartphone carousel
+    var owl3 = $('div#owl2row-plugin3');
+    owl3.owlCarousel({
+        items: 1,
+        slideBy: 1,
+        owl2row: false
+    });
 
     //homepage car sale sell_car_form
 
