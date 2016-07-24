@@ -39,7 +39,9 @@
 
       <div id="small_screen_carousel">
         <% autos.cars.each do |car| %>
-            <%= render 'cars/car', car: car %>
+            <div>
+              <%= render 'cars/car', car: car %>
+            </div>
         <% end %>
       </div>
 

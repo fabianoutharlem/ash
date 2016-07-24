@@ -585,6 +585,7 @@ $(document).ready(function () {
     //});
 
     $('#small_screen_carousel').owlCarousel({
+        owl2Row: false,
         items: 1,
         slideBy: 1
     });
