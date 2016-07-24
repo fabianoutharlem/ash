@@ -571,26 +571,6 @@ $(document).ready(function () {
     });
 
     //exclusief smartphone carousel
-    //var owl = $('#small_screen_carousel');
-    //owl.owlCarousel({
-    //    //nav: true,
-    //    owl2row: false, // enable plugin
-    //    //owl2rowTarget: 'item',    // class for items in carousel div
-    //    //owl2rowContainer: 'owl2row-item', // class for items container
-    //    //owl2rowDirection: 'utd', // ltr : directions
-    //    //dots: true,
-    //    //navText: [' ', ' '],
-    //    slideBy: 1,
-    //    items: 1
-    //});
-
-    var owl3 = $('#small_screen_carousel');
-
-    owl3.owlCarousel({
-        owl2Row: false,
-        items: 1,
-        slideBy: 1
-    });
 
     //homepage car sale sell_car_form
 
