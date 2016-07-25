@@ -757,6 +757,14 @@ section.auto_uitgelicht {
           position: relative;
         }
 
+        @media @960 {
+          padding-top: 0;
+        }
+
+        @media @880 {
+          padding-top: 30px;
+        }
+
         p {
           display: block;
 
@@ -875,8 +883,12 @@ section.detail_pagina_b { //only b
 
       div.model {
         //flex-grow: 1;
-        margin-left: 50px;
-        width: 500px;
+        margin-left: 25px;
+        width: 525px;
+
+        @media @1280 {
+          margin-left: 30px;
+        }
 
         @media @1370 {
           width: 400px;
@@ -1003,12 +1015,13 @@ section.detail_pagina_b { //only b
               border: solid 0 #ffffff;
               border-radius: 50%;
               overflow: hidden;
-              padding: 15px 5px;
+              padding: 21px 5px;
               margin: 0 7px;
 
               @media @1370 {
                 width: 106.7px;
                 height: 107px;
+                padding-top: 16px;
               }
 
               h5 {
@@ -1028,10 +1041,10 @@ section.detail_pagina_b { //only b
                 position: absolute;
                 left: 50%;
                 transform: translateX(-50%);
-                bottom: 23px;
+                bottom: 21px;
 
                 @media @1370 {
-                  bottom: 15px;
+                  bottom: 14px;
                 }
 
                 a.orange_btn {
@@ -1099,8 +1112,14 @@ section.detail_pagina_b { //only b
           }
 
           div.icons {
-            display: block;
-            margin: 0 0 15px 0;
+            width: 195px;
+            margin: 5px 0 0 30px;
+            float: left;
+
+            @media @1370 {
+              margin-left: 0;
+              float: none;
+            }
 
             @media @880 {
               margin: 0 auto;
@@ -1123,6 +1142,11 @@ section.detail_pagina_b { //only b
             background-color: #888888;
             margin-bottom: 10px;
             transition: @trans;
+            float: left;
+
+            @media @880 {
+              float: none;
+            }
 
             &:after {
               border-left: 1px solid white;
