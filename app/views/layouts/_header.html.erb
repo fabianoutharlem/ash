@@ -97,7 +97,7 @@
         </li>
         <li class="taal" data-submenu="taal_menu" data-smartmenus="talen">
           <span class="helper"></span>
-          <%= image_tag session[:current_language] || 'nl' + '_vlag.svg', class: 'nl_vlag.svg' %>
+          <%= image_tag 'vlag.gif', class: 'nl_vlag.svg' %>
           <p><%= (session[:current_language] || 'nl').upcase %></p>
           <%= image_tag 'header_arrow.png', class: 'header_arrow.png' %>
           <div class="border-bottom"></div>

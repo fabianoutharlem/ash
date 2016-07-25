@@ -3,6 +3,9 @@
  */
 $(document).ready(function () {
 
+    //general
+    new WOW().init();
+
     //homepage main_slider  //exclusief main slider //budget slider
     $('.my-slider').unslider({
         arrows: {
