@@ -11,8 +11,8 @@ $(document).ready(function () {
             next: '<a class="unslider-arrow next"><img src="assets/main_slider_next.png" alt=""></a>',
         },
 
-        autoplay: false,
-        delay: 5000,
+        autoplay: true,
+        delay: 4000,
         nav: true,
         infinite: true,
         animateHeight: true
@@ -571,36 +571,11 @@ $(document).ready(function () {
     });
 
     //exclusief smartphone carousel
-    var owl = $('#small_screen_carousel');
-    owl.owlCarousel({
-        //nav: true,
-        owl2row: false, // enable plugin
-        owl2rowTarget: 'item',    // class for items in carousel div
-        owl2rowContainer: 'owl2row-item', // class for items container
-        owl2rowDirection: 'utd', // ltr : directions
-        dots: true,
-        navText: [' ', ' '],
-        slideBy: 1,
+    var owl3 = $('div#owl2row-plugin3');
+    owl3.owlCarousel({
         items: 1,
-        //navContainer: '.nav_container',
-        //responsive: {
-        //    0: {
-        //        items: 1,
-        //        slideBy: 1,
-        //        dots: false
-        //    },
-        //    700: {
-        //        items: 2,
-        //        slideBy: 2
-        //    },
-        //    1040: {
-        //        items: 3,
-        //        slideBy: 3
-        //    },
-        //    1281: {
-        //        items: 4
-        //    },
-        //}
+        slideBy: 1,
+        owl2row: false
     });
 
     //homepage car sale sell_car_form

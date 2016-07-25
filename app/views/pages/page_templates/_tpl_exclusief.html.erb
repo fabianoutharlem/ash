@@ -3,6 +3,7 @@
     <div class="container-fluid">
       <div class="exclusive_header_banner" style="background: url('<%= header_image.value.url %>') no-repeat center; background-size: cover;">
         <h1 class="animated fadeInRightBig"><%= header_title.value %></h1>
+
         <h2 class="animated fadeInLeftBig"><%= header_onder_title.value %></h2>
       </div>
     </div>
@@ -13,6 +14,7 @@
   <div class="wrapper">
     <div class="container-fluid content_container">
       <h3><%= text_titel.value %></h3>
+
       <div class="wrap_2cols">
         <%= text.value.html_safe %>
       </div>
@@ -36,15 +38,19 @@
       </div>
 
       <div id="small_screen_carousel">
-        <div id="owl2row-plugin1" class="owl-carousel_top40">
-          <% autos.cars.each do |car| %>
-              <%= render 'cars/car', car: car %>
-          <% end %>
-        </div>
+        <section id="demos">
+          <div class="row">
+            <div id="owl2row-plugin3">
+              <% autos.cars.each do |car| %>
+                  <%= render 'cars/car', car: car %>
+              <% end %>
+            </div>
+          </div>
+        </section>
       </div>
 
       <div class="button_container">
-      <a href="<%= autos_link.value %>" class="orange_btn"><%= autos_button_tekst.value %></a>
+        <a href="<%= autos_link.value %>" class="orange_btn"><%= autos_button_tekst.value %></a>
       </div>
     </div>
   </div>
@@ -55,6 +61,7 @@
     <div class="container-fluid content_container" style="background: url('<%= financier_achtergrond.value.url %>') no-repeat center; background-size: cover">
 
       <h2><%= financier_titel.value %></h2>
+
       <h3><%= financier_onder_titel.value %></h3>
 
       <%= render 'shared/finance_circles' %>
