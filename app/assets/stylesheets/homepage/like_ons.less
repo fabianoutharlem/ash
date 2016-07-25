@@ -19,31 +19,12 @@ section.like_ons {
       display: block;
     }
 
-    div.cross {
-      background: image-url("cross_afspraak.svg") no-repeat center;
-      background-size: cover;
-      width: 25px;
-      height: 25px;
-      position: absolute;
-      top: 50px;
-      right: 50px;
-
-      @media @360 {
-        top: 40px;
-        left: 50%;
-        transform: translateY(-50%);
-      }
-      
-      &:hover {
-        cursor: pointer;
-      }
-    }
-
     div.content {
       position: absolute;
       top: 50%;
-      left: 50%;
-      transform: translateY(-50%) translateX(-50%);
+      transform: translateY(-50%);
+      width: 100%;
+      text-align: center;
 
       @media @360 {
         margin-bottom: 50px;
@@ -51,6 +32,25 @@ section.like_ons {
 
       @media @320 {
         margin-top: 50px;
+      }
+
+      div.cross {
+        background: image-url("cross_afspraak.svg") no-repeat center;
+        background-size: cover;
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        @media @360 {
+          top: -20px;
+        }
       }
 
       form {

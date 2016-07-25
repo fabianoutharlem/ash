@@ -9,8 +9,8 @@
 <section class="like_ons">
 
   <div class="overlay_taxation animated">
-    <div class="cross"></div>
     <div class="content">
+      <div class="cross"></div>
       <%= form_for CarSaleRequest.new, method: :post do |f| %>
           <div class="left">
             <%= f.text_field :name, placeholder: 'Je naam', required: true %>
