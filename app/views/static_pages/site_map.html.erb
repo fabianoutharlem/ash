@@ -41,7 +41,7 @@
           <h4><%= phrase 'Totale voorraad' %></h4>
           <div class="first_col">
             <ul class="brands">
-              <% @brands[0..(@brands.length/2-1)].each do |brand| %>
+              <% @brands.each do |brand| %>
                   <li>
                     <%= link_to "#{brand.name} (#{brand.cars.count})", brand_cars_path(brand) %>
                     <ul class="models">
