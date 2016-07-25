@@ -3,7 +3,6 @@ section.sitemap {
   div.info_links {
 
     div.info_col {
-      width: 49%;
 
       div.first_col, div.second_col {
         width: 49%;
@@ -14,14 +13,23 @@ section.sitemap {
         }
       }
 
+      &.algemeen {
+        width: 30%;
+
+        div.first_col, div.second_col {
+          display: block;
+        }
+      }
+
       &.tot_voorraad {
+        width: 70%;
 
         div.first_col {
           width: 100%;
         }
 
         ul.brands {
-          columns: 2;
+          columns: 4;
           break-inside: avoid-column;
 
           @media @700 {
