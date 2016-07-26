@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160721220011) do
+ActiveRecord::Schema.define(version: 20160726112558) do
 
   create_table "alternatives", force: :cascade do |t|
     t.string   "which",        limit: 255
@@ -200,10 +200,10 @@ ActiveRecord::Schema.define(version: 20160721220011) do
   create_table "newsletter_values", force: :cascade do |t|
     t.integer  "newsletter_id",                limit: 4
     t.integer  "newsletter_template_value_id", limit: 4
-    t.string   "value",                        limit: 255
+    t.text     "value",                        limit: 65535
     t.string   "type",                         limit: 255
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
   end
 
   add_index "newsletter_values", ["newsletter_id"], name: "index_newsletter_values_on_newsletter_id", using: :btree
