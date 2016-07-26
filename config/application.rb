@@ -23,10 +23,9 @@ module Ash
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-    config.assets.precompile += [ 'admin/appviews.css', 'admin/cssanimations.css', 'admin/dashboards.css', 'admin/forms.css', 'admin/gallery.css', 'admin/graphs.css', 'admin/mailbox.css', 'admin/miscellaneous.css', 'admin/pages.css', 'admin/tables.css', 'admin/uielements.css', 'admin/widgets.css', 'admin/commerce.css' ]
+    config.assets.precompile += [ 'admin/application.css', 'admin/appviews.css', 'admin/cssanimations.css', 'admin/dashboards.css', 'admin/forms.css', 'admin/gallery.css', 'admin/graphs.css', 'admin/mailbox.css', 'admin/miscellaneous.css', 'admin/pages.css', 'admin/tables.css', 'admin/uielements.css', 'admin/widgets.css', 'admin/commerce.css' ]
     config.assets.precompile += [ 'admin/appviews.js', 'admin/cssanimations.js', 'admin/dashboards.js', 'admin/forms.js', 'admin/gallery.js', 'admin/graphs.js', 'admin/mailbox.js', 'admin/miscellaneous.js', 'admin/pages.js', 'admin/tables.js', 'admin/uielements.js', 'admin/widgets.js', 'admin/commerce.js' ]
-    config.assets.precompile += ["fontawesome-webfont.ttf", "fontawesome-webfont.eot", "fontawesome-webfont.svg", "fontawesome-webfont.woff"]
-    config.assets.precompile += %w(*.svg)
+    config.assets.precompile += %w( .svg .eot .woff .ttf )
 
 
     config.to_prepare do
