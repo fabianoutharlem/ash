@@ -21,6 +21,7 @@
 //= require ui_mobile.js
 //= require unslider.js
 //= require select2.min.js
+//= require jquery.cookie
 //= require phrasing
 //= require jquery.barrating
 //= require lightslider.js
