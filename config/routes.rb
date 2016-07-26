@@ -75,6 +75,7 @@ Rails.application.routes.draw do
       get :prepare_for_send
       post :send_newsletter
       get :preview
+      get :preview_content
       collection do
         get '/new/:template_id', to: 'newsletters#new', as: :new_newsletter_with_template
       end

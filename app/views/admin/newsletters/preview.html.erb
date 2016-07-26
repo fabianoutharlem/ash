@@ -21,14 +21,24 @@
       <div class="ibox float-e-margins">
         <div class="ibox-title">
           <h5>Nieuwsbrief "<%= @newsletter.title %>" preview</h5>
+          <div class="ibox-tools">
+            <a class="btn btn-primary" href="<%= admin_newsletter_prepare_for_send_path(@newsletter) %>">
+              Versturen
+            </a>
+          </div>
         </div>
         <div class="ibox-content">
-          <%= render partial: 'admin/newsletters/templates/' + @newsletter.newsletter_template.template, locals: @newsletter.template_variables %>
+          <iframe src="<%= admin_newsletter_preview_content_path(@newsletter) %>" frameborder="0" width="100%" onload="resizeIframe(this)"></iframe>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+<script language="javascript" type="text/javascript">
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
 
 

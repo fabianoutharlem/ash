@@ -67,7 +67,7 @@ class Newsletter < ActiveRecord::Base
   end
 
   def generate_html
-    ApplicationController.new.render_to_string(partial: 'admin/newsletters/templates/' + self.newsletter_template.template, locals: template_variables)
+    ApplicationController.new.render_to_string(template: 'admin/newsletters/templates/' + self.newsletter_template.template, locals: template_variables, layout: false)
   end
 
   def template_variables
