@@ -100,6 +100,12 @@
             <span class="nav-label">Taxatie aanvragen</span>
         <% end %>
       </li>
+      <li class="<%= is_active_controller('ab_tests') %>">
+        <%= link_to admin_ab_tests_path do %>
+            <i class="fa fa-flask" aria-hidden="true"></i>
+            <span class="nav-label">A/B test resultaten</span>
+        <% end %>
+      </li>
 
 
 
