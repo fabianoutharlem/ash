@@ -10,8 +10,8 @@ $(document).ready(function () {
     $('.my-slider').unslider({
         arrows: {
             //  Unslider default behaviour
-            prev: '<a class="unslider-arrow prev"><img src="assets/nav_prev_carousel.png" alt=""></a>',
-            next: '<a class="unslider-arrow next"><img src="assets/main_slider_next.png" alt=""></a>',
+            prev: '<a class="unslider-arrow prev"><img src="assets/nav_prev_carousel.svg" alt=""></a>',
+            next: '<a class="unslider-arrow next"><img src="assets/main_slider_next.svg" alt=""></a>',
         },
 
         autoplay: true,
@@ -284,8 +284,8 @@ $(document).ready(function () {
         autoplay: false,
         delay: 5000,
         arrows: {
-            prev: '<a class="unslider-arrow prev"><img src="../assets/nav_prev_carousel.png" alt=""></a>',
-            next: '<a class="unslider-arrow next"><img src="../assets/main_slider_next.png" alt=""></a>',
+            prev: '<a class="unslider-arrow prev"><img src="../assets/nav_prev_carousel.svg" alt=""></a>',
+            next: '<a class="unslider-arrow next"><img src="../assets/main_slider_next.svg" alt=""></a>',
         },
         nav: false,
         infinite: true

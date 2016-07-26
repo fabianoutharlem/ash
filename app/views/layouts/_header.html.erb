@@ -44,7 +44,7 @@
           <a href="<%= cars_path %>">
             <span class="helper"></span>
             <%= phrase 'Voorraad' %>
-            <%= image_tag 'header_arrow.png', class: 'header_arrow.png' %>
+            <%= image_tag 'header_arrow.svg', class: 'header_arrow.png' %>
             <div class="border-bottom"></div>
             <div class="left_border"></div>
           </a>
@@ -53,7 +53,7 @@
           <a href="<%= financieringen_path %>">
             <span class="helper"></span>
             <%= phrase 'Financieringen' %>
-            <%= image_tag 'header_arrow.png', class: 'header_arrow.png' %>
+            <%= image_tag 'header_arrow.svg', class: 'header_arrow.png' %>
             <div class="border-bottom"></div>
             <div class="left_border"></div>
           </a>
@@ -72,7 +72,7 @@
           <a href="<%= contact_path %>">
             <span class="helper"></span>
             <%= phrase 'Contact' %>
-            <%= image_tag 'header_arrow.png', class: 'header_arrow.png' %>
+            <%= image_tag 'header_arrow.svg', class: 'header_arrow.png' %>
             <div class="border-bottom"></div>
           </a>
         </li>
@@ -83,7 +83,7 @@
             <li class="hart">
               <figure>
                 <a href="<%= favourites_cars_path %>">
-                  <%= image_tag 'header_hart.png' %>
+                  <%= image_tag 'header_hart.svg' %>
                 </a>
               </figure>
               <span class="helper"></span>
@@ -91,7 +91,7 @@
         <% end %>
         <li class="zoeken" data-submenu="zoeken_menu" data-smartmenus="zoeken">
           <span class="helper"></span>
-          <%= image_tag 'Search.png' %>
+          <%= image_tag 'search.svg' %>
           <div class="border-bottom"></div>
           <div class="left_border"></div>
         </li>
@@ -99,7 +99,7 @@
           <span class="helper"></span>
           <%= image_tag 'vlag.gif', class: 'nl_vlag.svg' %>
           <p><%= (session[:current_language] || 'nl').upcase %></p>
-          <%= image_tag 'header_arrow.png', class: 'header_arrow.png' %>
+          <%= image_tag 'header_arrow.svg', class: 'header_arrow.png' %>
           <div class="border-bottom"></div>
         </li>
       </ul>
