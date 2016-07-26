@@ -3,48 +3,8 @@
     <div class="wrapper">
       <div class="container-fluid content_container">
 
-        <div class="overlay_afspraak animated">
-          <h2><%= phrase 'Afspraak maken voor de' %> <%= [@car.brand.name, @car.model.name].join(' ') %></h2>
-
-          <div class="afspraak_container">
-            <div class="car_slider_afspraak carslider_responsive">
-              <ul>
-                <% @car.car_images.each do |car_media| %>
-                    <li>
-                      <div class="background"
-                           style="background: url('<%= image_path car_media.file.large %>') no-repeat center; background-size: cover;"></div>
-                    </li>
-                <% end %>
-              </ul>
-            </div>
-            <form action="">
-              <input type="text" class="naam" placeholder="Je naam">
-              <input type="text" class="achternaam" placeholder="Je achternaam">
-              <input type="text" class="telefoon" placeholder="Je telefoon nummer">
-              <input type="text" class="email" placeholder="Je email adres">
-              <input type="text" class="vragen" placeholder="Eventuele vragen of opmerkingen">
-
-              <div class="orange_btn"><%= phrase 'verstuur_aanvraag' %></div>
-            </form>
-          </div>
-          <%= image_tag 'cross_afspraak.png', class: 'cross' %>
-        </div>
-        <div class="overlay_financier">
-          <section class="mogelijkheden">
-            <div class="wrapper">
-              <div class="container-fluid content_container">
-
-                <h2><%= phrase 'car_detail_finance_1' %></h2>
-
-                <h3><%= phrase 'car_detail_finance_2' %></h3>
-
-                <%= render 'shared/finance_circles' %>
-
-                <%= image_tag 'cross_afspraak.png', class: 'cross' %>
-              </div>
-            </div>
-          </section>
-        </div>
+        <!-- afspraak -->
+        <%= render 'appointment_request', car: @car %>
 
         <div class="upper_container">
           <div class="car_slider carslider_responsive">
@@ -95,21 +55,24 @@
 
               <div class="banners">
                 <div class="finace_circle circle_1">
-                  <h5><%= phrase 'ZAKELIJKE FINANCIERINGEN' %></h5>
+                  <h5>ZAKELIJKE FINANCIERINGEN</h5>
 
-                  <div class="button"><a href="#" class="orange_btn"><%= phrase 'Klik hier' %></a></div>
+                  <div class="button">
+                    <a href="<%= car_finance_car_path(@car, 'bussiness') %>" class="orange_btn">Klik hier</a></div>
                   <div class="white_circle"></div>
                 </div>
                 <div class="finace_circle circle_2">
-                  <h5><%= phrase 'Particuliere FINANCIERINGEN' %></h5>
+                  <h5>Particuliere FINANCIERINGEN</h5>
 
-                  <div class="button"><a href="#" class="orange_btn"><%= phrase 'Klik hier' %></a></div>
+                  <div class="button">
+                    <a href="<%= car_finance_car_path(@car, 'private') %>" class="orange_btn">Klik hier</a></div>
                   <div class="white_circle"></div>
                 </div>
                 <div class="finace_circle circle_3">
-                  <h5><%= phrase '50/50 deals Particulier' %></h5>
+                  <h5>50/50 deals Particulier</h5>
 
-                  <div class="button"><a href="#" class="orange_btn"><%= phrase 'Klik hier' %></a></div>
+                  <div class="button">
+                    <a href="<%= car_finance_car_path(@car, '50_50') %>" class="orange_btn">Klik hier</a></div>
                   <div class="white_circle"></div>
                 </div>
               </div>
@@ -121,14 +84,21 @@
 
               <div class="icons">
                 <%= link_to car_like_path(@car), class: "like_button #{@car_likes.include?(@car.slug) ? 'liked' : nil}", remote: true do %>
-                    <i class="like">
-
-                    </i>
+                    <i class="like"></i>
                 <% end %>
-                <a href="#"><i class="mail"></i></a>
-                <a href="#"><i class="print"></i></a>
-                <a href="#"><i class="twitter "></i></a>
-                <a href="#"><i class="fb "></i></a>
+                <a href="mailto:info@autoservicehaarlem.nl?subject=<%= url_encode("Ik heb deze #{@car.display_name} gevonden op autoservicehaarlem.nl") %>&body=<%= url_encode("Ik heb deze #{@car.display_name} gevonden op autoservicehaarlem.nl, bekijk hem op #{car_url(@car)}!") %>"><i class="mail"></i></a>
+                <!--<a onclick="window.print();"><i class="print"></i></a>-->
+                <a target="_blank" href="https://twitter.com/intent/tweet?url=<%= url_encode(car_url(@car)) %>&text=<%= url_encode('Bekijk deze auto op autoservicehaarlem.nl') %>&hashtags=ash,autoservicehaarlem"><i class="twitter align_right"></i></a>
+                <a target="_blank" id="shareBtn" href=""><i class="fb align_right"></i></a>
+                <script type="text/javascript" charset="utf-8">
+                  document.getElementById('shareBtn').onclick = function() {
+                    FB.ui({
+                      method: 'share',
+                      href: '<%= car_url(@car) %>',
+                    }, function (response) {
+                    });
+                  }
+                </script>
               </div>
             </div>
           </div>
@@ -184,7 +154,7 @@
     <div class="overlay_photo_selection animated">
       <div class="cross"><%= image_tag 'cross.png' %></div>
 
-      <h3>Model naam</h3>
+      <h3><%= @car.display_name %></h3>
 
       <div class="slider_container">
         <ul id="lightSlider">
@@ -207,26 +177,26 @@
             <span class="helper"></span>
 
             <p><%= phrase 'specifications' %></p>
-            <%= image_tag 'arrow_down_orange.png' %>
+            <%= image_tag 'arrow_down_orange.svg' %>
           </div>
           <div class="_Accesoires tab" data-submenu="accesoires">
             <span class="helper"></span>
 
             <p><%= phrase 'accessoiries' %></p>
-            <%= image_tag 'arrow_down_orange.png' %>
+            <%= image_tag 'arrow_down_orange.svg' %>
           </div>
           <div class="_Financiering tab" data-submenu="financiering">
             <span class="helper"></span>
 
             <p><%= phrase 'finance_information' %></p>
-            <%= image_tag 'arrow_down_orange.png' %>
+            <%= image_tag 'arrow_down_orange.svg' %>
           </div>
 
           <div class="_photos tab" data-submenu="photos">
             <span class="helper"></span>
 
             <p>Fotos</p>
-            <%= image_tag 'arrow_down_orange.png' %>
+            <%= image_tag 'arrow_down_orange.svg' %>
           </div>
 
           <div class="specs tabs active">
@@ -261,7 +231,7 @@
             <div class="right">
               <h4><%= phrase 'accessoiries' %></h4>
               <ul>
-                <% @car.option_list.each do |option| %>
+                <% @car.option_list.first(42).each do |option| %>
                     <li><%= option %></li>
                 <% end %>
               </ul>
@@ -296,88 +266,69 @@
               <div class="prijzen">
                 <span class="helper"></span>
 
-                <p>Contante
-                  prijs</p>
+                <p><%= phrase 'Contante prijs' %></p>
 
-                <p class="bottom">€ 10.931,00</p>
+                <p class="bottom"><%= format_money Setting.get('car_detail_staffel_cash') %></p>
               </div>
               <div class="prijzen">
                 <span class="helper"></span>
 
-                <p>Aanbetaling</p>
+                <p><%= phrase 'Aanbetaling' %></p>
 
-                <p class="bottom">€ 2.597,75</p>
+                <p class="bottom"><%= format_money Setting.get('car_detail_staffel_deposit') %></p>
               </div>
               <div class="prijzen">
                 <span class="helper"></span>
 
-                <p>Totaal
-                  kredietbedrag</p>
+                <p><%= phrase 'Totaal kredietbedrag' %></p>
 
-                <p class="bottom">€ 2.597,75</p>
+                <p class="bottom"><%= format_money Setting.get('car_detail_staffel_credit_amount') %></p>
               </div>
               <div class="prijzen">
                 <span class="helper"></span>
 
-                <p>Slottermijn</p>
+                <p><%= phrase 'Slottermijn' %></p>
 
-                <p class="bottom">€ 5.195,50</p>
+                <p class="bottom"><%= format_money Setting.get('car_detail_staffel_closing_payment') %></p>
               </div>
               <div class="prijzen">
                 <span class="helper"></span>
 
-                <p>Termijn
-                  bedrag</p>
+                <p><%= phrase 'Termijn bedrag' %></p>
 
-                <p class="bottom">€ 117,02</p>
+                <p class="bottom"><%= format_money Setting.get('car_detail_staffel_term_amount') %></p>
               </div>
               <div class="prijzen">
                 <span class="helper"></span>
 
-                <p>Totale door
-                  de consument
-                  te betalen
-                  bedrag</p>
+                <p><%= phrase 'Totale door de consument te betalen bedrag' %></p>
 
-                <p class="bottom">€ 9.408,22</p>
+                <p class="bottom"><%= format_money Setting.get('car_detail_staffel_consumer_total') %></p>
               </div>
               <div class="prijzen">
                 <span class="helper"></span>
 
-                <p>Jaarlijks
-                  kosten
-                  percentage</p>
+                <p><%= phrase 'Jaarlijks kosten percentage' %></p>
 
-                <p class="bottom">€ 9.408,22</p>
+                <p class="bottom"><%= format_money Setting.get('car_detail_staffel_yearly') %></p>
               </div>
               <div class="prijzen">
                 <span class="helper"></span>
 
-                <p>Debet
-                  rentevoet</p>
+                <p><%= phrase 'Debet rentevoet' %></p>
 
-                <p class="bottom">€ 8,49</p>
+                <p class="bottom"><%= format_money Setting.get('car_detail_staffel_interest_foot') %></p>
               </div>
               <div class="prijzen">
                 <span class="helper"></span>
 
-                <p>Looptijd
-                  in maanden</p>
+                <p><%= phrase 'Looptijd in maanden' %></p>
 
-                <p class="bottom">36</p>
+                <p class="bottom"><%= Setting.get('car_detail_staffel_duration') %></p>
               </div>
             </div>
 
-            <p class="financierings_voorwaarden">Financiering wordt verstrekt door Volkswagen Bank te
-              Amersfoort. Volkswagen Bank is ingeschreven in het Handelsregister met de statutaire naam
-              Volkswagen Bank GmbH Zweigniederlassung Niederlande onder nummer 32099980 en is gevestigd te
-              Amersfoort. Volkswagen Bank biedt financieringen en Financial lease aan en bemiddelt in
-              verzekeringen voor zowel de particuliere als de zakelijke rijder, AFM vergunning nummer
-              12000996. Financieringsaanbieding 5,99% op basis van een niet-doorlopend krediet i.c.m. een
-              verzekering. Debetrentevoet (vaste rente gedurende de looptijd) zonder deze verzekering 6,99%.
-              Toetsing en registratie bij BKR te Tiel. Dienstenwijzer op aanvraag verkrijgbaar of te
-              downloaden via www.volkswagenbank.nl. Rentewijzigingen en drukfouten voorbehouden. Actieaanbod
-              geldig t/m 30 december 2015.</p>
+            <p class="financierings_voorwaarden"><%= phrase 'Financiering wordt verstrekt door Volkswagen Bank' %></p>
 
             <div class="logo logo_letop"></div>
             <div class="let_op logo_letop"></div>
@@ -435,8 +386,63 @@
 
         <h3><%= phrase 'finance_sub_header_car_detail_page' %></h3>
 
-        <%= render 'shared/finance_circles' %>
+        <section class="article_financieren">
+
+          <div class="circle_container">
+            <div class="orange_circle">
+              <h4>50/50 DEALS (PARTICULIER)</h4>
+
+              <p><%= phrase('finance-circle-1-text') %></p>
+
+              <a href="<%= car_finance_car_path(@car, '50_50') %>" class="orange_btn"><%= phrase('finance-circle-1-button') %></a>
+
+              <div class="white_circle"></div>
+            </div>
+
+            <div class="mini_logo"></div>
+          </div>
+        </section>
+        <section class="article_financieren">
+
+          <div class="circle_container">
+            <div class="orange_circle">
+              <h4>PARTICULIER FINANCIEREN</h4>
+
+              <p><%= phrase('finance-circle-2-text') %></p>
+
+              <a href="<%= car_finance_car_path(@car, 'private') %>" class="orange_btn"><%= phrase('finance-circle-2-button') %></a>
+
+              <div class="white_circle"></div>
+            </div>
+
+            <div class="mini_logo"></div>
+          </div>
+        </section>
+        <section class="article_financieren">
+
+          <div class="circle_container">
+            <div class="orange_circle">
+              <h4>ZAKELIJK <br>FINANCIEREN</h4>
+
+              <p><%= phrase('finance-circle-3-text') %></p>
+
+              <a href="<%= car_finance_car_path(@car, 'bussiness') %>" class="orange_btn"><%= phrase('finance-circle-3-button') %></a>
+
+              <div class="white_circle"></div>
+            </div>
+
+            <div class="mini_logo"></div>
+          </div>
+        </section>
       </div>
     </div>
   </section>
 </section>
+
+<% content_for :meta do %>
+    <meta property="og:title" content="<%= @car.display_name %>" />
+    <meta property="og:url" content="<%= car_url(@car) %>" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="<%= @car.main_image.try(:file).try(:url) %>" />
+    <meta property="og:description" content="<%= @car.display_name %>" />
+<% end %>

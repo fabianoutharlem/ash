@@ -3,6 +3,74 @@
  */
 $(document).ready(function () {
 
+    //general
+    new WOW().init();
+
+    //homepage main_slider  //exclusief main slider //budget slider
+    $('.my-slider').unslider({
+        arrows: {
+            //  Unslider default behaviour
+            prev: '<a class="unslider-arrow prev"><img src="assets/nav_prev_carousel.svg" alt=""></a>',
+            next: '<a class="unslider-arrow next"><img src="assets/main_slider_next.svg" alt=""></a>',
+        },
+
+        autoplay: true,
+        delay: 4000,
+        nav: true,
+        infinite: true,
+        animateHeight: true
+    });
+
+    //header overlays & popups
+    //newsletter_popup ->show
+    var content_box = $('div.popup_newsletter div.content');
+    var overlay = $('div.popup_newsletter');
+    var registered_massege = $('div.popup_newsletter div.registered');
+
+    $('.newsletter_form').click(function () {
+        overlay.addClass('active animated fadeIn');
+        var t = setTimeout(function () {
+            content_box.addClass('active animated fadeInUp');
+        }, 700);
+    });
+
+    //newsletter_popup ->show
+    $('div.popup_newsletter div.cross').click(function () {
+
+        content_box.removeClass('fadeInUp').addClass('fadeOutDown');
+
+        var t = setTimeout(function () {
+            content_box.removeClass('active fadeOutDown');
+        }, 700);
+
+        var t2 = setTimeout(function () {
+            overlay.removeClass('fadeIn').addClass('fadeOut');
+
+            var t3 = setTimeout(function () {
+                overlay.removeClass('active fadeOut');
+            }, 700);
+        }, 700);
+    });
+
+    //newsletter_popup -> registerd message
+    $('div.popup_newsletter .send_btn').click(function () {
+        content_box.removeClass('fadeInUp').addClass('fadeOutDown');
+
+        var tr1 = setTimeout(function () {
+            registered_massege.addClass('active animated fadeInUp');
+            content_box.removeClass('active fadeOutDown')
+        }, 700);
+
+        var tr2 = setTimeout(function () {
+            registered_massege.removeClass('fadeInUp').addClass('fadeOutDown');
+
+            var t3 = setTimeout(function () {
+                registered_massege.removeClass('active fadeOutDown');
+                content_box.addClass('fadeInUp active');
+            }, 700);
+        }, 4500);
+    });
+
 
     //homepage
     var section_header = $('section.header');
@@ -63,21 +131,6 @@ $(document).ready(function () {
         $(this).find('div.expand').toggleClass('active');
     });
 
-
-    //homepage main_slider  //exclusief main slider //budget slider
-    $('.my-slider').unslider({
-        arrows: {
-            //  Unslider default behaviour
-            prev: '<a class="unslider-arrow prev"><img src="assets/nav_prev_carousel.png" alt=""></a>',
-            next: '<a class="unslider-arrow next"><img src="assets/main_slider_next.png" alt=""></a>',
-        },
-
-        autoplay: false,
-        delay: 5000,
-        nav: true,
-        infinite: true
-    });
-
     //homepage main_slider > ticker
     $('.marquee').marquee({
         duplicated: true,
@@ -87,7 +140,7 @@ $(document).ready(function () {
     });
 
     //homepage select2
-    $('.merk_dropdown').select2({
+    $('.search_dropdown').select2({
         minimumResultsForSearch: Infinity
     });
 
@@ -98,84 +151,71 @@ $(document).ready(function () {
 
     //homepage price slider
     var showLabel = function (event, ui) {
+        var target = $(this).parents('.slider_col').find('small.label');
+        var input = $(this).parents('.slider_col').find('input.amount');
+        if (input.val()) {
+            $(this).slider('value', input.val());
+        }
         var curValue = ui.value || $(this).slider("option", "value");
-        var target = ui.handle || $('.ui-slider-handle');
-        var tooltip = '<div id="tooltip">€' + curValue + ',- p.m.</div>';
+        var tooltip = '€' + curValue + '';
         $(target).html(tooltip);
+        input.val(curValue).trigger('change');
     };
 
-    $("#slider_maand_financieren").slider({
+    $(".slider_maand_financieren").slider({
         min: 0,
         max: 2000,
         range: "min",
-        value: 200,
+        value: 0,
+        step: 10,
         slide: showLabel,
         create: showLabel
     });
 
+    $(".slider_buy_financieren").slider({
+        min: 0,
+        max: 125000,
+        range: "min",
+        value: 0,
+        step: 500,
+        slide: showLabel,
+        create: showLabel
+    });
 
-    $("#slider_buy_financieren").slider({
+    $(".slider_maand_kopen").slider({
         min: 0,
         max: 2000,
         range: "min",
-        value: 200,
+        value: 0,
+        step: 10,
         slide: showLabel,
         create: showLabel
     });
 
-    $("#slider_maand_kopen").slider({
+    $(".slider_buy_kopen").slider({
         min: 0,
-        max: 2000,
+        max: 125000,
         range: "min",
-        value: 200,
+        value: 0,
+        step: 500,
         slide: showLabel,
         create: showLabel
     });
 
-    $("#slider_buy_kopen").slider({
-        min: 0,
-        max: 2000,
-        range: "min",
-        value: 200,
-        slide: showLabel,
-        create: showLabel
+    //homepage overlay taxeren
+    var overlay = $('section.like_ons div.overlay_taxation');
+
+    $('section.like_ons .taxation_btn').click(function () {
+        overlay.addClass('active fadeIn');
     });
 
-    //voorraad_pagina price sliders
-    $("#buy_slider_to").slider({
-        min: 0,
-        max: 50000,
-        range: "min",
-        value: 21000,
-        slide: showLabel,
-        create: showLabel
-    });
+    $('section.like_ons div.overlay_taxation div.cross').click(function () {
+        overlay.removeClass('fadeIn')
+        overlay.addClass('fadeOut');
 
-    $("#buy_slider_month").slider({
-        min: 0,
-        max: 2000,
-        range: "min",
-        value: 219,
-        slide: showLabel,
-        create: showLabel
-    });
-
-    $("#finance_slider_to").slider({
-        min: 0,
-        max: 50000,
-        range: "min",
-        value: 21000,
-        slide: showLabel,
-        create: showLabel
-    });
-
-    $("#finance_slider_month").slider({
-        min: 0,
-        max: 2000,
-        range: "min",
-        value: 219,
-        slide: showLabel,
-        create: showLabel
+        var t = setTimeout(function () {
+            overlay.removeClass('active fadeOut');
+        }, 500);
     });
 
     //homepage carousel
@@ -226,6 +266,16 @@ $(document).ready(function () {
         infinite: true
     });
 
+    //homepage banner slider section.actie
+    $('section.actie #banner_carousel').lightSlider({
+        item: 1,
+        slideMove: 1,
+        pauseOnHover: true,
+        loop: true,
+        pause: 5000,
+        auto: true
+    });
+
 
     //detail pagina
 
@@ -234,8 +284,8 @@ $(document).ready(function () {
         autoplay: false,
         delay: 5000,
         arrows: {
-            prev: '<a class="unslider-arrow prev"><img src="../assets/nav_prev_carousel.png" alt=""></a>',
-            next: '<a class="unslider-arrow next"><img src="../assets/main_slider_next.png" alt=""></a>',
+            prev: '<a class="unslider-arrow prev"><img src="../assets/nav_prev_carousel.svg" alt=""></a>',
+            next: '<a class="unslider-arrow next"><img src="../assets/main_slider_next.svg" alt=""></a>',
         },
         nav: false,
         infinite: true
@@ -252,19 +302,33 @@ $(document).ready(function () {
     //afspraak_maken button click overlay visible
     var afspraak_overlay = $('section.auto_uitgelicht .overlay_afspraak');
 
-    $('section.auto_uitgelicht div.model .afspraak_btn, section.auto_uitgelicht a.appointment_btn').click(function () {
-        afspraak_overlay.addClass('bounceInUp active');
+    $('section.auto_uitgelicht div.model .appointment_btn, section.auto_uitgelicht a.appointment_btn').click(function () {
+        afspraak_overlay.addClass('fadeIn active');
     });
 
     $('section.auto_uitgelicht div.overlay_afspraak img.cross').click(function () {
-        afspraak_overlay.removeClass('active bounceInUp');
+        afspraak_overlay.removeClass('fadeIn');
+        afspraak_overlay.addClass('fadeOut');
+
+        var timeOut = setTimeout(function () {
+            afspraak_overlay.removeClass('active fadeOut');
+        }, 600);
     });
 
     //financier button click overlay visible
     var financier_overlay = $('section.auto_uitgelicht .overlay_financier');
 
-    $('section.auto_uitgelicht div.model .green_btn').click(function () {
-        financier_overlay.addClass('active');
+    $('section.auto_uitgelicht div.model .finance_btn').click(function () {
+        financier_overlay.addClass('active fadeIn');
+    });
+
+    $('section.auto_uitgelicht .overlay_financier img.cross').click(function () {
+        financier_overlay.addClass('fadeOut');
+        financier_overlay.removeClass('fadeIn');
+
+        var timeOut = setTimeout(function () {
+            financier_overlay.removeClass('active fadeOut');
+        }, 600);
     });
 
 
@@ -350,16 +414,21 @@ $(document).ready(function () {
         car_thumb_slider.goToSlide($(this).index());
 
         var timer = setTimeout(function () {
-            $('section.spec_tabs div.overlay_photo_selection').addClass('active bounceInUp');
+            $('section.spec_tabs div.overlay_photo_selection').addClass('active fadeIn');
         }, 250);
     });
     //overlay_photo_selection hide
     $('section.spec_tabs div.overlay_photo_selection div.cross').click(function () {
-        $('section.spec_tabs div.overlay_photo_selection').removeClass('active bounceInUp');
+        $('section.spec_tabs div.overlay_photo_selection').addClass('fadeOut')
+        $('section.spec_tabs div.overlay_photo_selection').removeClass('fadeIn');
+
+        var t = setTimeout(function () {
+            $('section.spec_tabs div.overlay_photo_selection').removeClass('fadeOut active');
+        }, 500);
     });
 
 
-    //detail page carousel  //exclusief smartphone carousel
+    //detail page carousel
     var owl = $('#owl2row-plugin1');
     owl.owlCarousel({
         nav: true,
@@ -400,6 +469,31 @@ $(document).ready(function () {
     });
 
     //voorraad
+
+    //voorraad_pagina compare section
+    var compare_section = $('section.select_compare div.compare_selection');
+
+    $('section.aantal_paginas div.compare_btn').click(function () {
+        compare_section.toggleClass('active fadeIn');
+        $('article.article_car').toggleClass('compare_active');
+    });
+
+    $('section.select_compare div.start_compare div.remove_cross').click(function () {
+        compare_section.removeClass('fadeIn');
+        $('article.article_car').removeClass('compare_active');
+        compare_section.addClass('fadeOut');
+
+        setTimeout(function () {
+            compare_section.removeClass('active fadeOut');
+        }, 200);
+    });
+
+    //compare remove cars from list
+    $('section.select_compare div.compare_selection li div.remove_cross').click(function () {
+        var list_item = $(this).parent('li');
+
+        list_item.remove();
+    });
 
     //left menu filters tab active
     var data_searchfield = $(this).data('searchfield'),
@@ -469,5 +563,31 @@ $(document).ready(function () {
     //review page
     $('#input_star_rating').barrating({
         theme: 'fontawesome-stars-o'
+    });
+
+    //chat functie
+    $('.open_chat').click(function (e) {
+        e.preventDefault();
+        setTimeout(function () {
+            $('.loquendo-chat-label').trigger('click');
+        }, 200);
+    });
+
+    //exclusief smartphone carousel
+    var owl3 = $('div#owl2row-plugin3');
+    owl3.owlCarousel({
+        items: 1,
+        slideBy: 1,
+        owl2row: false
+    });
+
+    //homepage car sale sell_car_form
+
+    var sell_car_form = $('#sell_car_form');
+    sell_car_form.steps({
+        headerTag: "h3",
+        bodyTag: "section",
+        transitionEffect: "slideLeft",
+        autoFocus: true
     });
 });

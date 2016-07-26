@@ -11,8 +11,14 @@
 @trans: all 300ms ease-in-out;
 
 @font-face {
-  font-family: bebas;
-  src: url(../../../assets/fonts/BEBAS___.TTF)
+  font-family: 'bebas';
+  src: asset-url('Bebas.eot');
+  src: asset-url('Bebas.eot?#iefix') format('embedded-opentype'),
+  asset-url('Bebas.woff') format('woff'),
+  asset-url('Bebas.ttf') format('truetype'),
+  asset-url('Bebas.svg#Bebas') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @1440: ~"only screen and (min-width: 1443px)";

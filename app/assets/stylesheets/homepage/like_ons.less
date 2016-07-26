@@ -1,5 +1,125 @@
 section.like_ons {
 
+  div.overlay_taxation {
+    display: none;
+    z-index: 30;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.84);
+    overflow: auto;
+
+    @media @360 {
+      padding-top: 50px;
+    }
+
+    &.active {
+      display: block;
+    }
+
+    div.content {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      text-align: center;
+
+      @media @360 {
+        margin-bottom: 50px;
+      }
+
+      @media @320 {
+        margin-top: 50px;
+      }
+
+      div.cross {
+        background: image-url("cross_afspraak.svg") no-repeat center;
+        background-size: cover;
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        @media @360 {
+          top: -20px;
+        }
+      }
+
+      form {
+
+        input {
+          background-color: #f8f8f8;
+          display: block;
+          margin-bottom: 10px;
+          margin-right: 0;
+        }
+
+        textarea {
+          width: 570px;
+          height: 170px;
+          max-width: 570px;
+          max-height: 170px;
+          background-color: #f8f8f8;
+          display: block;
+          margin-bottom: 10px;
+          padding: 20px;
+          color: #555555;
+
+          @media @905 {
+            margin-left: 0;
+            width: 100%;
+          }
+        }
+      }
+
+      div.left, div.right {
+        display: inline-block;
+        vertical-align: top;
+
+        @media @905 {
+          display: block;
+          width: 280px;
+          margin: 0 auto;
+        }
+      }
+
+      div.right {
+        margin-left: 10px;
+
+        @media @905 {
+          margin: 0 auto;
+        }
+
+        input {
+          display: inline-block;
+          margin: 0 10px 0 0;
+          vertical-align: top;
+
+          @media @905 {
+            display: block;
+          }
+        }
+
+        .orange_btn {
+          display: inline-block;
+          margin-left: -2px;
+
+          @media @905 {
+            margin: 10px 0 0 0;
+          }
+        }
+      }
+    }
+  }
+
   div.container-fluid {
     padding: 58px 130px 62px 130px;
 
@@ -23,14 +143,23 @@ section.like_ons {
     div.left {
       position: relative;
       display: inline-block;
-      margin-top: 35px;
+      margin-top: 21px;
+
+      @media @1280 {
+        display: block;
+      }
 
       @media @650 {
-        display: none;
+        //display: none;
+      }
+
+      @media @360 {
+        margin: 0 auto 20px auto;
+        width: 300px;
       }
 
       h3 {
-        height: 39px;
+        //height: 39px;
         font-size: 32px;
         color: @dark_gray;
         margin: 0 0 7px 0;
@@ -38,14 +167,19 @@ section.like_ons {
         @media @1280 {
           font-size: 32px;
         }
+
+        @media @360 {
+          font-size: 1.7em;
+        }
       }
 
       p {
-        display: inline-block;
-        height: 27px;
+        //display: inline-block;
+        //height: 27px;
         font-size: 22px;
         color: @dark_gray;
         font-weight: @lato-light;
+        margin-bottom: 20px;
 
         span {
           font-weight: @lato-regular;
@@ -53,6 +187,10 @@ section.like_ons {
 
         @media @1280 {
           font-size: 22px;
+        }
+
+        @media @360 {
+          font-size: 1.3em;
         }
       }
 
@@ -66,6 +204,13 @@ section.like_ons {
             display: block;
             margin: 0 auto 10px auto;
           }
+        }
+      }
+
+      .orange_btn {
+
+        @media @360 {
+          margin-left: -10px;
         }
       }
     }
@@ -115,7 +260,7 @@ section.like_ons {
           display: inline-block;
           font-size: 18px;
           color: #ffffff;
-          height: 48px;
+          height: 56px;
           vertical-align: middle;
         }
 
@@ -138,7 +283,7 @@ section.like_ons {
           }
 
           i {
-            background: image-url('fb_icon.png') no-repeat center;
+            background: image-url('fb_icon.svg') no-repeat center;
             background-size: cover;
           }
         }
@@ -147,7 +292,7 @@ section.like_ons {
           background-color: #517fa4;
 
           i {
-            background: image-url('instagram_icon.png') no-repeat center;
+            background: image-url('instagram_icon.svg') no-repeat center;
             background-size: cover;
           }
         }

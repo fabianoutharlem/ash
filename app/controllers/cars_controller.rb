@@ -1,16 +1,48 @@
 class CarsController < ApplicationController
   include CarManipulations
 
+  before_filter :ensure_compare_cars_session
+
   add_breadcrumb 'Autos', :cars_path
 
   def index
     @cars = Car.all.includes(:brand, :model)
-    @cars = order_by_params(@cars, params).page(params[:page]).per(params[:per_page])
+    @cars = manipulate_by_params(@cars, params).page(params[:page]).per(params[:per_page])
   end
 
   def search
+    @cars = Car.query(params)
 
+    respond_to do |format|
+      format.json { render json: {cars: @cars.count} }
+      format.html {
+        @cars = @cars.includes(:brand, :model)
+        @cars = manipulate_by_params(@cars, params).page(params[:page]).per(params[:per_page])
+        render :index
+      }
+    end
     add_breadcrumb 'Zoeken'
+  end
+
+  def add_to_compare_selection
+    @car = Car.find(params[:car_id])
+    session[:compare_car_ids].push(@car.id)
+    session[:compare_car_ids].uniq!
+    session[:compare_car_ids] = session[:compare_car_ids].last(3)
+    render :update_compare_selection
+  end
+
+  def remove_from_compare_selection
+    @car = Car.find(params[:car_id])
+    session[:compare_car_ids].delete(@car.id)
+    render :update_compare_selection
+  end
+
+  def new_cars
+    @cars = Car.includes(:brand, :model).all.limit(36).order(created_at: :desc)
+    @cars = manipulate_by_params(@cars, params).page(params[:page]).per(params[:per_page])
+    add_breadcrumb 'Nieuw binnen'
+    render :index
   end
 
   def show
@@ -51,6 +83,22 @@ class CarsController < ApplicationController
     end
     @cars = Car.where(slug: likes).order(created_at: :desc)
     add_breadcrumb 'Favorieten'
+  end
+
+  def finance_car
+    car = Car.find(params[:car_id])
+    if car.present?
+      converted!('car_show')
+      redirect_to "http://autokredietplan.nl/cars/finance_ash_car/#{car.vehicle_number_hexon}/#{params[:type]}"
+    else
+      redirect_to :back
+    end
+  end
+
+  private
+
+  def ensure_compare_cars_session
+    session[:compare_car_ids] ||= []
   end
 
 end

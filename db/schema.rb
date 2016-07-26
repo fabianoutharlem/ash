@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160714115211) do
+ActiveRecord::Schema.define(version: 20160726112558) do
 
   create_table "alternatives", force: :cascade do |t|
     t.string   "which",        limit: 255
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(version: 20160714115211) do
   end
 
   add_index "alternatives", ["which"], name: "index_alternatives_on_which", using: :btree
+
+  create_table "appointment_requests", force: :cascade do |t|
+    t.string   "first_name", limit: 255
+    t.string   "last_name",  limit: 255
+    t.string   "phone",      limit: 255
+    t.string   "email",      limit: 255
+    t.text     "comment",    limit: 65535
+    t.integer  "car_id",     limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "body_types", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -54,6 +65,17 @@ ActiveRecord::Schema.define(version: 20160714115211) do
   end
 
   add_index "car_media", ["car_id"], name: "index_car_media_on_car_id", using: :btree
+
+  create_table "car_sale_requests", force: :cascade do |t|
+    t.string   "name",          limit: 255
+    t.string   "phone",         limit: 255
+    t.string   "email",         limit: 255
+    t.string   "license_plate", limit: 255
+    t.string   "mileage",       limit: 255
+    t.text     "message",       limit: 65535
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
 
   create_table "cars", force: :cascade do |t|
     t.string   "slug",                 limit: 255
@@ -178,10 +200,10 @@ ActiveRecord::Schema.define(version: 20160714115211) do
   create_table "newsletter_values", force: :cascade do |t|
     t.integer  "newsletter_id",                limit: 4
     t.integer  "newsletter_template_value_id", limit: 4
-    t.string   "value",                        limit: 255
+    t.text     "value",                        limit: 65535
     t.string   "type",                         limit: 255
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
   end
 
   add_index "newsletter_values", ["newsletter_id"], name: "index_newsletter_values_on_newsletter_id", using: :btree
@@ -285,7 +307,10 @@ ActiveRecord::Schema.define(version: 20160714115211) do
     t.string   "template",   limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.integer  "slider_id",  limit: 4
   end
+
+  add_index "slide_templates", ["slider_id"], name: "index_slide_templates_on_slider_id", using: :btree
 
   create_table "slide_values", force: :cascade do |t|
     t.integer  "slide_id",                limit: 4
@@ -375,5 +400,6 @@ ActiveRecord::Schema.define(version: 20160714115211) do
   add_foreign_key "page_template_values", "page_templates"
   add_foreign_key "page_values", "page_template_values"
   add_foreign_key "page_values", "pages"
+  add_foreign_key "slide_templates", "sliders"
   add_foreign_key "slides", "sliders"
 end

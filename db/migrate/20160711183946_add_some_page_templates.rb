@@ -1,21 +1,15 @@
 class AddSomePageTemplates < ActiveRecord::Migration
   def change
     execute <<-EOF
-LOCK TABLES `page_templates` WRITE;
-/*!40000 ALTER TABLE `page_templates` DISABLE KEYS */;
-
 INSERT INTO `page_templates` (`id`, `name`, `template`, `created_at`, `updated_at`)
 VALUES
 	(2,'ASH Exclusief','tpl_exclusief','2016-07-08 16:18:34','2016-07-08 16:18:34'),
 	(3,'Budget Cars','tpl_budget_cars','2016-07-11 17:44:35','2016-07-11 17:44:35'),
 	(4,'Actie Pagina','tpl_actie_pagina','2016-07-11 18:37:20','2016-07-11 18:37:20');
+EOF
 
-/*!40000 ALTER TABLE `page_templates` ENABLE KEYS */;
-UNLOCK TABLES;
 
-LOCK TABLES `page_template_values` WRITE;
-/*!40000 ALTER TABLE `page_template_values` DISABLE KEYS */;
-
+    execute <<-EOF
 INSERT INTO `page_template_values` (`id`, `option_name`, `option_type`, `context`, `page_template_id`, `created_at`, `updated_at`)
 VALUES
 	(3,'header_title','PageValues::TextField','header',2,NOW(),NOW()),
@@ -68,9 +62,6 @@ VALUES
 	(50,'financieren_titel','PageValues::TextField','financieren',4,NOW(),NOW()),
 	(51,'financieren_onder_titel','PageValues::TextField','financieren',4,NOW(),NOW()),
 	(52,'financieren_achtergrond','PageValues::ImageField','financieren',4,NOW(),NOW());
-
-/*!40000 ALTER TABLE `page_template_values` ENABLE KEYS */;
-UNLOCK TABLES;
-    EOF
+EOF
   end
 end

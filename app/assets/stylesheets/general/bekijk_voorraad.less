@@ -76,6 +76,16 @@ section.bekijk_voorraad, section.nieuw_binnen {
       }
     }
   }
+
+  div.button_container {
+    width: 100%;
+    text-align: center;
+
+    .orange_btn {
+      display: inline-block;
+      margin-bottom: 75px;
+    }
+  }
 }
 
 section.bekijk_voorraad {
@@ -103,9 +113,10 @@ section.nieuw_binnen {
     background: image-url('bg_bekijk_voorraad.png') no-repeat center;
     background-size: cover;
 
+
     @media @360 {
-      background: image-url('bg_carousel_detail.png') no-repeat center;
-      padding-top: 0px;
+      background: image-url('bg_carousel_detail.png') no-repeat top;
+      padding-top: 40px;
       padding-bottom: 30px;
     }
   }
@@ -117,28 +128,18 @@ section.nieuw_binnen {
     }
   }
 
-  div.small_screen_carousel {
+  div#small_screen_carousel {
     display: none;
 
     @media @360 {
       display: block;
     }
-
-    .article_car {
-
-      @media @360 {
-        margin: 0 auto 40px auto;
-      }
-    }
   }
 
-  div.button_container {
-    width: 100%;
-    text-align: center;
+  .article_car {
 
-    .orange_btn {
-      display: inline-block;
-      margin-bottom: 75px;
+    @media @360 {
+      margin: 0 auto 40px auto;
     }
   }
 }

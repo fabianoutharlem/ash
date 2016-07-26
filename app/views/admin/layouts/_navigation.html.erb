@@ -4,7 +4,7 @@
       <li class="nav-header">
         <div class="dropdown profile-element">
                     <span>
-                        <img alt="image" class="img-circle" src="<%= image_url 'profile_small.jpg' %>"/>
+                        <%= link_to image_tag('logo_ash2.png', style: 'width: 130px; margin-bottom: 20px;'), root_path %>
                     </span>
           <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
@@ -88,6 +88,26 @@
             <span class="nav-label">Recensies</span>
         <% end %>
       </li>
+      <li class="<%= is_active_controller('appointment_requests') %>">
+        <%= link_to admin_appointment_requests_path do %>
+            <i class="fa fa-calendar-o" aria-hidden="true"></i>
+            <span class="nav-label">Afpsraak aanvragen</span>
+        <% end %>
+      </li>
+      <li class="<%= is_active_controller('car_sale_requests') %>">
+        <%= link_to admin_car_sale_requests_path do %>
+            <i class="fa fa-money" aria-hidden="true"></i>
+            <span class="nav-label">Taxatie aanvragen</span>
+        <% end %>
+      </li>
+      <li class="<%= is_active_controller('ab_tests') %>">
+        <%= link_to admin_ab_tests_path do %>
+            <i class="fa fa-flask" aria-hidden="true"></i>
+            <span class="nav-label">A/B test resultaten</span>
+        <% end %>
+      </li>
+
+
 
       <li class="<%= is_active_controller('settings') %>">
         <%= link_to admin_settings_path do %>

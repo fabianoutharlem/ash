@@ -1,19 +1,25 @@
 <section class="banners">
   <div class="wrapper">
     <div class="container-fluid content_container">
-
-      <article class="banner1 banner" style="background: url('<%= image_url 'banner_bmw_voorraad_pagina.png' %>') no-repeat center; background-size: cover;"></article>
-
-      <article class="banner2 banner" style="background: url('<%= image_url 'banner_akp_voorraad_pagina.png' %>') no-repeat center; background-size: cover;"></article>
-
-      <article class="banner3 banner" style="background: url('<%= image_url 'banner_hoogte_voorraad_pagina.png' %>') no-repeat center; background-size: cover;"></article>
-
-      <article class="banner4 banner" style="background: url('<%= image_url 'banner_vw_voorraad_pagina.png' %>') no-repeat center; background-size: cover;"></article>
+      <%= link_to Setting.get('cars_banner_1_link') do %>
+          <article class="banner1 banner" style="background: url('<%= image_url Setting.get('cars_banner_1') %>') no-repeat center; background-size: cover;"></article>
+      <% end %>
+      <%= link_to Setting.get('cars_banner_2_link') do %>
+          <article class="banner2 banner" style="background: url('<%= image_url Setting.get('cars_banner_2') %>') no-repeat center; background-size: cover;"></article>
+      <% end %>
+      <%= link_to Setting.get('cars_banner_3_link') do %>
+          <article class="banner3 banner" style="background: url('<%= image_url Setting.get('cars_banner_3') %>') no-repeat center; background-size: cover;"></article>
+      <% end %>
+      <%= link_to Setting.get('cars_banner_4_link') do %>
+          <article class="banner4 banner" style="background: url('<%= image_url Setting.get('cars_banner_4') %>') no-repeat center; background-size: cover;"></article>
+      <% end %>
     </div>
   </div>
 </section>
 
-<%= render 'pagination', cars: @cars %>
+<section class="compare_select_container">
+  <%= render 'pagination', cars: @cars, compare: true %>
+</section>
 
 <%= render 'cars', cars: @cars %>
 
@@ -23,8 +29,9 @@
   <div class="wrapper">
     <div class="container-fluid content_container" style="background: url('<%= image_url 'bg_mogelijkheden.jpg' %>') no-repeat center; background-size: cover">
 
-      <h2>Wilt uw deze auto financieren?</h2>
-      <h3>Bekijk hier de mogelijkheden!</h3>
+      <h2><%= phrase 'Wilt uw deze auto financieren?' %></h2>
+
+      <h3><%= phrase 'Bekijk hier de mogelijkheden!' %></h3>
 
       <%= render 'shared/finance_circles' %>
     </div>

@@ -14,7 +14,6 @@
 
                 <div class="voertuigen_vergelijken">
                   <p><%= @car_3.present? ? 3 : 2 %> <%= phrase 'voertuigen_vergelijken' %></p>
-                  <div class="orange_btn"><%= phrase 'verschillen_tonen' %></div>
                 </div>
               </th>
               <td class="car car1" width="<%= col_width %>">
@@ -213,7 +212,17 @@
         </div>
       </section>
 
+      <section class="mogelijkheden">
+        <div class="wrapper">
+          <div class="container-fluid content_container" style="background: url('<%= image_url 'bg_mogelijkheden.jpg' %>') no-repeat center; background-size: cover">
 
+            <h2><%= phrase 'Wilt uw deze auto financieren?' %></h2>
+            <h3><%= phrase 'Bekijk hier de mogelijkheden!' %></h3>
+
+            <%= render 'shared/finance_circles' %>
+          </div>
+        </div>
+      </section>
 
       <div class="error">
         <h4><%= phrase 'Deze_optie_is_niet_beschikbaar_voor_dit_scherm_formaat' %></h4>

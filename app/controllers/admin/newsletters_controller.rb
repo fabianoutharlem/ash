@@ -79,6 +79,12 @@ class Admin::NewslettersController < Admin::AdminBaseController
     @newsletter = Newsletter.find(params[:newsletter_id])
   end
 
+  def preview_content
+    @newsletter = Newsletter.find(params[:newsletter_id])
+    template_variables = @newsletter.template_variables
+    render 'admin/newsletters/templates/' + @newsletter.newsletter_template.template, layout: false, locals: template_variables
+  end
+
   def destroy
     if Newsletter.find(params[:id]).destroy
       flash[:notice] = 'Nieuwsbrief is verwijderd'

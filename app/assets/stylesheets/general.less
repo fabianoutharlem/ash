@@ -62,6 +62,10 @@ html {
       padding: 0;
     }
 
+    .fadeIn, .fadeOut {
+      animation-duration: 200ms;
+    }
+
     input {
 
       &:focus {
@@ -110,7 +114,7 @@ html {
       }
 
       &:after {
-        background: image-url('btn_arrow.png') no-repeat center;
+        background: image-url('btn_arrow.svg') no-repeat center;
         display: block;
         position: absolute;
         width: 50px;
@@ -222,6 +226,8 @@ html {
         height: 10.1px;
         background: #e6e6e6;
         border: 0;
+        //width: 250px;
+        //margin: 0 auto;
       }
 
       .ui-slider-range {
@@ -231,7 +237,7 @@ html {
       .ui-slider-horizontal {
 
         .ui-state-default {
-          background: image-url('slider_handle.png') no-repeat scroll 50% 50%;
+          background: image-url('slider_handle.svg') no-repeat scroll 50% 50%;
           width: 45px;
           height: 46px;
           border: 0;
@@ -253,6 +259,24 @@ html {
             width: 95px;
           }
         }
+      }
+    }
+
+    div.slidercontainer {
+      position: relative;
+      width: 100%;
+      border-radius: 4px;
+
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f35026+14,e6e6e6+15,e6e6e6+15 */
+      background: #f35026; /* Old browsers */
+      background: -moz-linear-gradient(left,  #f35026 14%, #e6e6e6 15%, #e6e6e6 15%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(left,  #f35026 14%,#e6e6e6 15%,#e6e6e6 15%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to right,  #f35026 14%,#e6e6e6 15%,#e6e6e6 15%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f35026', endColorstr='#e6e6e6',GradientType=1 ); /* IE6-9 */
+
+      .ui-slider-horizontal {
+        width: 87%;
+        margin: 0 auto;
       }
     }
 
@@ -381,22 +405,22 @@ html {
           display: inline-block;
 
           &.phone {
-            background: image-url('iphone_orange.png') no-repeat center;
+            background: image-url('iphone_orange.svg') no-repeat center;
             background-size: 19px 33px;
           }
 
           &.whatsapp {
-            background: image-url('whatsapp_orange.png') no-repeat center;
+            background: image-url('whatsapp_orange.svg') no-repeat center;
             background-size: 35px 35px;
           }
 
           &.mail {
-            background: image-url('mail_orange.png') no-repeat center;
+            background: image-url('mail_orange.svg') no-repeat center;
             background-size: 29px 23px;
           }
 
           &.chat {
-            background: image-url('chat_orange.png') no-repeat center;
+            background: image-url('chat_orange.svg') no-repeat center;
             background-size: 24px 21px;
           }
         }

@@ -1,1 +1,170 @@
-admin/home.html.erb
+<div class="wrapper wrapper-content animated fadeIn">
+
+  <div class="p-w-md m-t-sm">
+    <div class="row">
+
+      <div class="col-sm-3">
+        <h1 class="m-b-xs">
+          <%= Car.where('created_at > ?', Time.now.beginning_of_month).count %>
+        </h1>
+        <small>
+          Nieuwe autos deze maand
+        </small>
+      </div>
+      <div class="col-sm-3">
+        <h1 class="m-b-xs">
+          <%= AppointmentRequest.where('created_at > ?', Time.now.beginning_of_month).count %>
+        </h1>
+        <small>
+          Afspraken aangevraagd deze maand
+        </small>
+      </div>
+      <div class="col-sm-3">
+        <h1 class="m-b-xs">
+          <%= CarSaleRequest.where('created_at > ?', Time.now.beginning_of_month).count %>
+        </h1>
+        <small>
+          Taxatie aanvragen deze maand
+        </small>
+      </div>
+      <div class="col-sm-3">
+        <h1 class="m-b-xs">
+          <%= Newsletter.where('created_at > ?', Time.now.beginning_of_month).count %>
+        </h1>
+        <small>
+          Nieuwsbrieven aangemaakt deze maand
+        </small>
+      </div>
+    </div>
+
+  </div>
+
+  <br>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>AB Test Auto detail pagina</h5>
+        </div>
+        <div class="ibox-content">
+
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>Test waarde</th>
+              <th>Conversies</th>
+              <th>Deelnemers</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <% SimpleAbs::Alternative.where(experiment: 'car_show').each do |alternative| %>
+                <tr>
+                  <td><%= alternative.which %></td>
+                  <td><%= alternative.conversions %></td>
+                  <td><%= alternative.participants %></td>
+                </tr>
+            <% end %>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+
+      <div class="row m-t-xs">
+        <div class="col-xs-6">
+          <h5 class="m-b-xs">Autos bezocht</h5>
+          <h1 class="no-margins"><%= Car.all.sum(:views) %></h1>
+        </div>
+        <div class="col-xs-6">
+          <h5 class="m-b-xs">Conversies</h5>
+          <h1 class="no-margins"><%= SimpleAbs::Alternative.where(experiment: 'car_show').sum(:conversions) %></h1>
+        </div>
+      </div>
+
+
+      <table class="table small m-t-sm">
+        <tbody>
+        <tr>
+          <td>
+            <strong><%= Car.count %></strong> Autos
+          </td>
+          <td>
+            <strong><%= CarMedia.count %></strong> Fotos
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <strong><%= Brand.count %></strong> Merken
+          </td>
+          <td>
+            <strong><%= Model.count %></strong> Modellen
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>Nieuwsbrief statistieken </h5>
+        </div>
+        <div class="ibox-content">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th>#</th>
+                <th>Nieuwsbrief</th>
+                <th>Onderwerp</th>
+                <th>Ontvangers</th>
+                <th>Geopend</th>
+                <th>Uniek geopend</th>
+              </tr>
+              </thead>
+              <tbody>
+              <% @newsletter_stats.each do |ns| %>
+                  <tr>
+                    <td><%= ns['id'] %></td>
+                    <td><%= ns['settings']['title'] %></td>
+                    <td><%= ns['settings']['subject_line'] %></td>
+                    <td><%= ns['recipients']['recipient_count'] %></td>
+                    <td><%= ns['report_summary']['opens'] %></td>
+                    <td valign="middle"><span class="pie"><%= ns['report_summary']['unique_opens'] %>/<%= ns['recipients']['recipient_count'] %></span> <%= ns['report_summary']['unique_opens'] %></td>
+                  </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<% content_for :head do %>
+    <%= stylesheet_link_tag 'admin/dashboards' %>
+<% end %>
+
+<%= content_for :javascript do %>
+    <%= javascript_include_tag 'admin/dashboards' %>
+
+    <script type="text/javascript" charset="utf-8">
+$(document).ready(function () {
+  $("span.pie").peity("pie", {
+    fill: ['#1ab394', '#d7d7d7', '#ffffff']
+  })
+});
+    </script>
+<% end %>

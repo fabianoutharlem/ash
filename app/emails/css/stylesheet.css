@@ -1,0 +1,197 @@
+.ash_newsletter .text_center {
+    text-align: center;
+}
+
+.ash_newsletter .link {
+    display: inline-block;
+    color: #F35026;
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+.ash_newsletter .bg_gray {
+    background-color: #f3f3f3;
+}
+
+.ash_newsletter .width_50 {
+    width: 50%;
+}
+
+.ash_newsletter .width_100 {
+    width: 100%;
+}
+
+.ash_newsletter .car_info {
+    width: 250px;
+    height: 180px;
+    background-color: #ffffff;
+}
+
+.ash_newsletter .merk_naam {
+    font-size: 16px;
+    color: #414141;
+}
+
+.ash_newsletter .model_naam {
+    color: #414141;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.ash_newsletter .van_voor {
+    font-size: 13px;
+    color: #757575;
+    display: inline-block;
+}
+
+.ash_newsletter .prijs_van {
+    font-size: 16px;
+    color: #757575;
+    display: inline-block;
+}
+
+.ash_newsletter .van, .voor {
+    font-size: 16px;
+    color: #757575;
+    display: inline-block;
+    height: 25px;
+}
+
+.ash_newsletter .van {
+    width: 50%;
+}
+
+.ash_newsletter .focus_price {
+    font-size: 20px;
+    color: #f35026;
+}
+
+.ash_newsletter .prijs_voor {
+    display: inline-block;
+    font-size: 20px;
+    color: #f35026;
+}
+
+.ash_newsletter .p_m {
+    display: inline-block;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #595959;
+}
+
+.ash_newsletter .maand_prijs {
+    display: inline-block;
+    font-size: 22px;
+    line-height: 1.5;
+    color: #f35026;
+    margin-bottom: 0;
+    margin-top: 4px;
+}
+
+.ash_newsletter .car {
+    margin: 0 auto;
+}
+
+.ash_newsletter .info_text_blok {
+    margin: 0 0 10px 0;
+}
+
+.ash_newsletter .info_text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #595959;
+}
+
+.ash_newsletter .banner_p {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #ffffff;
+    font-weight: 200;
+    margin: 0;
+}
+
+.ash_newsletter .second_row_p {
+    margin-left: 20px;
+    vertical-align: top;
+}
+
+.ash_newsletter .blue_button {
+    display: inline-block;
+    background: url("http://ash-html.fabianoudhaarlem.nl/assets/images/button_newsletter1.jpg") no-repeat center;
+    background-size: contain;
+    width: 160px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+h3 {
+    font-size: 16px;
+    color: #595959;
+    font-weight: 600;
+}
+
+.ash_newsletter .bold {
+    font-weight: 600;
+}
+
+.ash_newsletter .contact_table {
+}
+
+.ash_newsletter .adres_list {
+    font-size: 13px;
+    line-height: 2;
+    color: #595959;
+}
+
+.ash_newsletter ul {
+    margin-top: 13px;
+    margin-bottom: 25px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.ash_newsletter li {
+    padding-left: 20px;
+}
+
+.ash_newsletter .orange_border {
+    border-left: 1px solid #fc8161;
+}
+
+.ash_newsletter .table_like {
+    margin-top: 25px;
+    margin-bottom: 35px;
+}
+
+.ash_newsletter .footer_text {
+    font-size: 12px;
+    color: #010101;
+    margin-top: 12px;
+}
+
+.ash_newsletter .right_align {
+    text-align: right;
+}
+
+.ash_newsletter .social_media {
+    padding-bottom: 10px;
+}
+
+.ash_newsletter .social_img {
+    margin: 0 auto;
+}
+
+.ash_newsletter .block_content {
+    font-size: 13px;
+    color: #595959;
+}
+
+.ash_newsletter .block_content_price {
+    font-size: 22px;
+    color: #f35026;
+}
+
+.ash_newsletter .large-6, .small-12 {
+    padding-bottom: 10px;
+}

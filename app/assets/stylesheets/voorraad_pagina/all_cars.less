@@ -2,6 +2,7 @@ section.all_cars {
 
   .content_container {
     padding: 5px 110px 10px 110px;
+    min-height: 1140px;
 
     @media @1280 {
       padding: 20px;
@@ -13,6 +14,7 @@ section.all_cars {
 
     @media @680 {
       text-align: center;
+      min-height: auto;
     }
 
     @media @320 {
@@ -105,6 +107,10 @@ section.all_cars {
             display: block;
           }
 
+          form {
+            margin: 0;
+          }
+
           div.row {
             width: 280px;
           }
@@ -176,8 +182,8 @@ section.all_cars {
               width: 280px;
 
               .ui-state-default {
-                width: 40px;
-                height: 40px;
+                width: 43px;
+                height: 42px;
               }
 
               div#tooltip {
@@ -188,7 +194,13 @@ section.all_cars {
           }
         }
 
-        div.orange_btn {
+        small.label {
+          font-size: 14px;
+          color: #000000;
+          font-weight: 400;
+        }
+
+        .orange_btn {
           font-size: 18px;
         }
       }
@@ -279,8 +291,43 @@ section.all_cars {
         padding: 20px 0;
       }
 
+      ul {
+        list-style-type: none;
+        margin-left: 7px;
+
+        @media @1280 {
+          width: 110%;
+          margin-left: 0;
+        }
+
+        @media @905 {
+          width: 100%;
+        }
+
+        @media @880 {
+          margin-left: 40px;
+        }
+
+        @media @800 {
+          margin-left: 15%;
+        }
+
+        @media @700 {
+          margin-left: 10%;
+        }
+
+        @media @360 {
+          margin-left: 0;
+        }
+      }
+
       li {
-        display: inline-block;
+        //display: inline-block;
+        float: left;
+
+        @media @1280 {
+          width: 31%;
+        }
 
         @media @1279 {
           width: 45%;
@@ -294,20 +341,24 @@ section.all_cars {
           width: 40%;
         }
 
-        @media @500 {
-          width: 70%;
+        @media @360 {
+          width: 49%;
         }
 
-        @media @400 {
-          width: 80%;
+        @media @500 {
+          width: 100%;
+          float: none;
         }
 
         div.item {
           display: inline-block;
           margin: 0 13px 0 0;
 
-          @media @500 {
-            margin-right: -30px;
+          article.article_car {
+
+            @media @360 {
+              margin: 0 auto 25px auto;
+            }
           }
 
           div.container-fluid {
@@ -316,7 +367,7 @@ section.all_cars {
         }
 
         article.car_subsection_banner {
-          margin: 0 0 25px 0;
+          margin: 0 auto 25px auto;
 
           a {
             width: 100%;
@@ -324,28 +375,28 @@ section.all_cars {
             display: inline-block;
           }
         }
+      }
 
-        &.banner {
+      li.banner {
+        width: 90%;
 
-          @media @1280 {
-            margin-left: -13px;
-          }
+        @media @1280 {
+          padding-left: 12px;
+        }
 
-          @media @1279 {
-            display: block;
-            width: 80%;
-            height: 280px;
-            margin: 0 auto 25px auto;
-            padding-right: 12px;
-          }
+        @media @1279 {
+          display: block;
+          width: 83%;
+          height: 280px;
+          margin: 0 auto 25px auto;
+        }
 
-          @media @1140 {
-            width: 85%;
-          }
+        @media @1140 {
+          width: 80%;
+        }
 
-          @media @880 {
-            display: none;
-          }
+        @media @880 {
+          display: none;
         }
       }
     }
@@ -384,11 +435,37 @@ section.all_cars {
         }
       }
 
+      &.best_day_deal {
+
+        div.car_info {
+
+          p {
+            margin: 0;
+          }
+        }
+      }
+
       div.car_info {
+        margin: 0 auto;
+        text-align: left;
+
+        @media @1279 {
+          width: 240px;
+        }
+
+        @media @1040 {
+          width: 200px;
+        }
+
+        @media @880 {
+          width: 170px;
+        }
+
+        @media @800 {
+          width: 85%;
+        }
 
         p {
-          max-width: 240px;
-          margin: 0 auto;
 
           @media @1200 {
             max-width: 200px;
@@ -406,6 +483,10 @@ section.all_cars {
 
         @media @680 {
           padding-top: 2px;
+        }
+
+        @media @500 {
+          padding-top: 7px;
         }
       }
 
@@ -431,6 +512,24 @@ section.all_cars {
       }
 
       div.aanbieding {
+
+        @media @1279 {
+          padding: 10px 10px 10px 0;
+          width: 240px;
+          margin: 0 auto;
+        }
+
+        @media @1040 {
+          width: 200px;
+        }
+
+        @media @880 {
+          width: 170px;
+        }
+
+        @media @800 {
+          width: 85%;
+        }
 
         tr {
 

@@ -1,0 +1,92 @@
+section.sitemap {
+
+  div.info_links {
+
+    div.info_col {
+
+      div.first_col, div.second_col {
+        width: 49%;
+
+        @media @360 {
+          width: 100%;
+          display: block;
+        }
+      }
+
+      &.algemeen {
+        width: 30%;
+
+        @media @360 {
+          width: 280px;
+        }
+
+        div.first_col, div.second_col {
+          display: block;
+        }
+      }
+
+      &.tot_voorraad {
+        width: 70%;
+
+        @media @700 {
+          width: 30%;
+          margin-top: 50px;
+        }
+
+        @media @360 {
+          width: 280px;
+        }
+
+        div.first_col {
+          width: 100%;
+        }
+
+        ul.brands {
+          columns: 4;
+          break-inside: avoid-column;
+
+          @media @1100 {
+            columns: 3;
+          }
+
+          @media @700 {
+            columns: 1;
+          }
+
+          li {
+            border: 0;
+            padding: 0;
+            -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+            break-inside: avoid;
+
+            a {
+              padding-left: 20px;
+            }
+
+            &:first-child {
+
+              a {
+                border-left: 1px solid @orange;
+                display: inline-block;
+                height: 100%;
+              }
+            }
+          }
+        }
+
+        ul.models {
+
+          li {
+            border: none;
+
+            a.inner_link {
+              border: none;
+              color: #A0A0A0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

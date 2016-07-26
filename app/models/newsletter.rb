@@ -67,11 +67,16 @@ class Newsletter < ActiveRecord::Base
   end
 
   def generate_html
-    ApplicationController.new.render_to_string(partial: 'admin/newsletters/templates/' + self.newsletter_template.template, locals: template_variables)
+    ApplicationController.new.render_to_string(template: 'admin/newsletters/templates/' + self.newsletter_template.template, locals: template_variables, layout: false)
   end
 
   def template_variables
     newsletter_values.includes(:newsletter_template_value).index_by { |value| value.newsletter_template_value.option_name.to_sym }
+  end
+
+  def get_campaign_statistics
+    gibbon = Gibbon::Request.new
+    gibbon.campaigns(self.campaign_id).retrieve rescue nil
   end
 
 end

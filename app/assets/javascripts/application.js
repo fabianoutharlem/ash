@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
+//= require jquerytouch.js
+//= require wow.min.js
 //= require jquery.marquee.min.js
 //= require owl.carousel.min.js
 //= require top_car_carousel.js
@@ -22,4 +24,7 @@
 //= require phrasing
 //= require jquery.barrating
 //= require lightslider.js
+//= require jquery.steps.min
 //= require main.js
+
+

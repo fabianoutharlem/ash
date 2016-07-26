@@ -30,36 +30,42 @@ li.main_slides {
   }
 
   &._slide1 {
+    padding-top: 228px;
+
+    @media @1040 {
+      padding-top: 158px;
+    }
 
     @media @360 {
-      padding: 76px 0 0 0;
+      padding: 93px 0 0 0;
       height: 240px;
     }
 
     h1 {
-      margin: 228px auto 32px auto;
+      //margin: 228px auto 32px auto;
+      margin: 0px auto 32px auto;
       max-width: 790px;
       font-weight: @lato-bold;
 
       @media @1280 {
-        margin: 14% auto 32px auto;
+        margin: 0 auto 32px auto;
       }
 
       @media @880 {
-        margin: 16% auto 32px auto;
+        margin: 0 auto 32px auto;
       }
 
       @media @750 {
-        margin: 23% auto 32px auto;
+        margin: 0 auto 32px auto;
       }
 
       @media @630 {
-        margin: 27% auto 32px auto;
+        margin: 0 auto 32px auto;
       }
 
       @media @360 {
         font-size: 26px;
-        margin: 17px 0 14px 0;
+        margin: 0 0 14px 0;
       }
     }
 
@@ -172,7 +178,7 @@ li.main_slides {
       display: inline-block;
 
       @media @1040 {
-        margin-top: -13px;
+        margin-top: -19px;
         width: 280px;
       }
     }
@@ -403,6 +409,87 @@ li.main_slides {
         @media @360 {
           font-size: 1.3em;
         }
+      }
+    }
+  }
+
+  &._slide6 {
+    padding: 200px 50px 0 50px;
+    text-align: center;
+
+    @media @1040 {
+      padding-top: 130px;
+    }
+
+    @media @940 {
+      padding-top: 150px;
+    }
+
+    @media @360 {
+      padding: 50px 20px 0 20px;
+    }
+
+    h1 {
+      font-size: 64px;
+      text-align: center;
+      color: #ffffff;
+
+      @media @1200 {
+        font-size: 3.5em;
+      }
+
+      @media @940 {
+        font-size: 2.8em;
+      }
+
+      @media @360 {
+        font-size: 1.8em;
+      }
+    }
+
+    h3 {
+      font-size: 36px;
+      text-align: center;
+      color: #ffffff;
+
+      @media @1200 {
+        font-size: 2.5em;
+      }
+
+      @media @940 {
+        font-size: 1.8em;
+      }
+
+      @media @360 {
+        font-size: 1.1em;
+      }
+    }
+
+    figure {
+      width: 830px;
+      height: 130px;
+      margin: 60px auto;
+
+      @media @1200 {
+        width: calc(830px * 0.75);
+        height: calc(130px * 0.75);
+      }
+
+      @media @940 {
+        width: calc(830px * 0.6);
+        height: calc(130px * 0.6);
+        margin: 40px auto;
+      }
+
+      @media @360 {
+        width: calc(830px * 0.3);
+        height: calc(130px * 0.3);
+        margin: 20px auto;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
       }
     }
   }

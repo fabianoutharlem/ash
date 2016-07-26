@@ -20,7 +20,7 @@
           </tr>
           <tr>
             <td class="first">Per maand v.a.</td>
-            <td class="second"><%= format_money params[:car][:price_month] %></td>
+            <td class="second large"><%= format_money params[:car][:price_month] %></td>
           </tr>
         </table>
       </div>
@@ -44,7 +44,7 @@
   </div>
 
   <div class="acessoires">
-    <h3>Acessoires</h3>
+    <h3>Accessoires</h3>
     <ul>
       <% @car.option_list.each do |option| %>
           <%= content_tag :li, option %>

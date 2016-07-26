@@ -5,335 +5,89 @@
       <div class="left_container">
         <div class="left">
           <div class="select_menu">
-            <div class="tab auto_financieren" data-searchfield="finance_field"><span class="helper"></span>Auto financieren</div>
+            <div class="tab auto_financieren" data-searchfield="finance_field"><span class="helper"></span>Auto
+              financieren
+            </div>
             <div class="tab active auto_kopen" data-searchfield="buy_field"><span class="helper"></span>Auto kopen</div>
             <div class="search_fields finance_field">
-
-              <div class="select_row">
-                <p>Merk:</p>
-
-                <div class="select">
-                  <span class="arrow"></span>
-                  <select name="merk" class="merk_dropdown">
-                    <option>Selecteer merk</option>
-                    <option>opel</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                  </select>
-                </div>
-              </div>
-              <div class="select_row">
-                <p>Model:</p>
-
-                <div class="select">
-                  <span class="arrow"></span>
-                  <select name="model" class="merk_dropdown">
-                    <option>Kies eerst een Model</option>
-                    <option>opel</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                  </select>
-                </div>
-              </div>
-              <div class="select_row">
-                <p>Brandstof:</p>
-
-                <div class="select">
-                  <span class="arrow"></span>
-                  <select name="merk" class="merk_dropdown">
-                    <option>Selecteer voorkeur</option>
-                    <option>opel</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                  </select>
-                </div>
-              </div>
-              <div class="select_row">
-                <p>Carrosserie:</p>
-
-                <div class="select">
-                  <span class="arrow"></span>
-                  <select name="merk" class="merk_dropdown">
-                    <option>Selecteer voorkeur</option>
-                    <option>opel</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                  </select>
-                </div>
-              </div>
-              <div class="select_row">
-                <p>Transmissie:</p>
-
-                <div class="select">
-                  <span class="arrow"></span>
-                  <select name="merk" class="merk_dropdown">
-                    <option>Selecteer voorkeur</option>
-                    <option>opel</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                  </select>
-                </div>
-              </div>
-              <div class="row select">
-                <div class="select_col col left">
-                  <p>Bouwjaar van:</p>
-
-                  <div class="select">
-                    <span class="arrow"></span>
-                    <select name="merk" class="merk_dropdown">
-                      <option>Selecteer</option>
-                      <option>opel</option>
-                      <option>fiat</option>
-                      <option>fiat</option>
-                      <option>fiat</option>
-                      <option>fiat</option>
-                      <option>fiat</option>
-                      <option>fiat</option>
-                      <option>fiat</option>
-                      <option>fiat</option>
-                      <option>fiat</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="select_col col right">
-                  <p>Bouwjaar tot:</p>
-
-                  <div class="select">
-                    <span class="arrow"></span>
-                    <select name="merk" class="merk_dropdown">
-                      <option>Selecteer</option>
-                      <option>opel</option>
-                      <option>fiat</option>
-                      <option>fiat</option>
-                      <option>fiat</option>
-                      <option>fiat</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row slider">
-                <div class="slider_col col">
-                  <p><%= phrase 'Prijs tot' %>:</p>
-
-                  <div id="finance_slider_to"></div>
-                </div>
-              </div>
-              <div class="row slider">
-                <div class="slider_col col">
-                  <p><%= phrase 'Prijs per maand tot' %>:</p>
-
-                  <div id="finance_slider_month"></div>
-                </div>
-              </div>
-
-              <button class="orange_btn"><%= phrase 'Zoeken' %> (882)</button>
+              <form class="car_search_form" action="<%= search_cars_path %>" method="GET">
+                <%= render 'search_form' %>
+              </form>
             </div>
+
             <div class="search_fields buy_field active">
-
-              <div class="select_row">
-                <p>Merk:</p>
-
-                <div class="select">
-                  <span class="arrow"></span>
-                  <select name="merk" class="merk_dropdown">
-                    <option>Selecteer merk</option>
-                    <option>opel</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                  </select>
-                </div>
-              </div>
-              <div class="select_row">
-                <p>Model:</p>
-
-                <div class="select">
-                  <span class="arrow"></span>
-                  <select name="merk" class="merk_dropdown">
-                    <option>Kies eerst een merk</option>
-                    <option>opel</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                  </select>
-                </div>
-              </div>
-              <div class="select_row">
-                <p>Brandstof:</p>
-
-                <div class="select">
-                  <span class="arrow"></span>
-                  <select name="merk" class="merk_dropdown">
-                    <option>Selecteer voorkeur</option>
-                    <option>opel</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                  </select>
-                </div>
-              </div>
-              <div class="select_row">
-                <p>Carrosserie:</p>
-
-                <div class="select">
-                  <span class="arrow"></span>
-                  <select name="merk" class="merk_dropdown">
-                    <option>Selecteer voorkeur</option>
-                    <option>opel</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                  </select>
-                </div>
-              </div>
-              <div class="select_row">
-                <p>Transmissie:</p>
-
-                <div class="select">
-                  <span class="arrow"></span>
-                  <select name="merk" class="merk_dropdown">
-                    <option>Selecteer voorkeur</option>
-                    <option>opel</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                    <option>fiat</option>
-                  </select>
-                </div>
-              </div>
-              <div class="row select">
-                <div class="select_col col left">
-                  <p>Bouwjaar van:</p>
-
-                  <div class="select">
-                    <span class="arrow"></span>
-                    <select name="merk" class="merk_dropdown">
-                      <option>Selecteer</option>
-                      <option>opel</option>
-                      <option>fiat</option>
-                      <option>fiat</option>
-                      <option>fiat</option>
-                      <option>fiat</option>
-                      <option>fiat</option>
-                      <option>fiat</option>
-                      <option>fiat</option>
-                      <option>fiat</option>
-                      <option>fiat</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="select_col col right">
-                  <p>Bouwjaar tot:</p>
-
-                  <div class="select">
-                    <span class="arrow"></span>
-                    <select name="merk" class="merk_dropdown">
-                      <option>Selecteer</option>
-                      <option>opel</option>
-                      <option>fiat</option>
-                      <option>fiat</option>
-                      <option>fiat</option>
-                      <option>fiat</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row slider">
-                <div class="slider_col col">
-                  <p>Prijs tot:</p>
-
-                  <div id="buy_slider_to"></div>
-                </div>
-              </div>
-              <div class="row slider">
-                <div class="slider_col col">
-                  <p>Prijs per maand tot:</p>
-
-                  <div id="buy_slider_month"></div>
-                </div>
-              </div>
-
-              <button class="orange_btn">Zoeken (882)</button>
+              <form class="car_search_form" action="<%= search_cars_path %>" method="GET">
+                <%= render 'search_form' %>
+              </form>
             </div>
           </div>
+
+          <script type="text/javascript" charset="utf-8">
+            var current_form_submit = false;
+            $(document).ready(function () {
+              $('.merk_dropdown').on('change', function () {
+                var select = $(this);
+                if (select.val() != '') {
+                  $.ajax({
+                    url: '<%= models_brands_path %>',
+                    method: 'GET',
+                    data: {
+                      brand_id: select.val()
+                    },
+                    success: function (models) {
+                      var options = ['<option value="" selected>Selecteer een model</option>'];
+                      $.each(models, function (index, model) {
+                        options.push('<option value="' + model.id + '">' + model.name + '</option>');
+                      });
+                      model_dropdown = select.parents('.search_fields').find('.model_dropdown')
+                      model_dropdown.empty().append(options.join(''));
+                      model_dropdown.select2({
+                        minimumResultsForSearch: Infinity
+                      });
+                    }
+                  });
+                }
+              });
+
+              $('.merk_dropdown').trigger('change');
+
+              $('form.car_search_form').on('change', function () {
+                var self = $(this);
+                var form_data = $(this).find(":input").filter(function () {
+                  return $.trim(this.value).length > 0
+                });
+
+                if (current_form_submit) {
+                  current_form_submit.abort();
+                }
+
+                current_form_submit = $.ajax({
+                  url: '<%= search_cars_path(format: :json) %>',
+                  method: 'GET',
+                  data: form_data,
+                  success: function (data) {
+                    current_form_submit = false;
+                    $('.search_submit_button small', self).text(data.cars);
+                  }
+                });
+              });
+
+              $('form.car_search_form').each(function() {
+                $(this).trigger('change');
+                current_form_submit = false;
+              });
+            });
+          </script>
 
           <div class="lease_budget">
             <h5><%= phrase 'Wat is uw Lease buget per maand?' %></h5>
 
-            <div class="tot"><a href="#"><span class="helper"></span>TOT €200,-</a></div>
-            <div class="tot"><a href="#"><span class="helper"></span>€200,- & €300,-</a></div>
-            <div class="tot active"><a href="#"><span class="helper"></span>€300,- & €400,-</a></div>
-            <div class="tot"><a href="#"><span class="helper"></span>€400,- & €500,-</a></div>
-            <div class="tot"><a href="#"><span class="helper"></span>€500,- & €600,-</a></div>
-            <div class="tot"><a href="#"><span class="helper"></span>BOVEN €600,-</a></div>
+            <div class="tot <%= params[:q].present? && params[:q][:price_month_lte] == '200' ? 'active' : nil %>"><a href="<%= url_for params.merge({q: {price_month_lte: 200}}) %>"><span class="helper"></span>TOT €200,-</a></div>
+            <div class="tot <%= params[:q].present? && params[:q][:price_month_lte] == '300' && params[:q][:price_month_gte] == '200' ? 'active' : nil %>"><a href="<%= url_for params.merge({q: {price_month_lte: 300, price_month_gte: 200}}) %>"><span class="helper"></span>€200,- & €300,-</a></div>
+            <div class="tot <%= params[:q].present? && params[:q][:price_month_lte] == '400' && params[:q][:price_month_gte] == '300' ? 'active' : nil %>"><a href="<%= url_for params.merge({q: {price_month_lte: 400, price_month_gte: 300}}) %>"><span class="helper"></span>€300,- & €400,-</a></div>
+            <div class="tot <%= params[:q].present? && params[:q][:price_month_lte] == '500' && params[:q][:price_month_gte] == '400' ? 'active' : nil %>"><a href="<%= url_for params.merge({q: {price_month_lte: 500, price_month_gte: 400}}) %>"><span class="helper"></span>€400,- & €500,-</a></div>
+            <div class="tot <%= params[:q].present? && params[:q][:price_month_lte] == '600' && params[:q][:price_month_gte] == '500' ? 'active' : nil %>"><a href="<%= url_for params.merge({q: {price_month_lte: 600, price_month_gte: 500}}) %>"><span class="helper"></span>€500,- & €600,-</a></div>
+            <div class="tot <%= params[:q].present? && params[:q][:price_month_gte] == '600' ? 'active' : nil %>"><a href="<%= url_for params.merge({q: {price_month_gte: 600}}) %>"><span class="helper"></span>BOVEN €600,-</a></div>
           </div>
         </div>
       </div>
@@ -347,11 +101,10 @@
           <% end %>
 
           <li class="banner">
-            <article class="car_subsection_banner">
-              <a href="#">
-                <h3>Auto Service Haarlem Ford weken!</h3>
-              </a>
-            </article>
+            <%= link_to Setting.get('cars_banner_big_link') do %>
+                <article class="car_subsection_banner" style="background: url('<%= image_url(Setting.get('cars_banner_big')) %>') no-repeat center; background-size: cover">
+                </article>
+            <% end %>
           </li>
 
           <% cars[6..-1].each do |car| %>

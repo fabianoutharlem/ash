@@ -60,7 +60,7 @@ class Car < ActiveRecord::Base
     if search.results.total
       search.records
     else
-      nil
+      Car.none
     end
   end
 
@@ -89,7 +89,7 @@ class Car < ActiveRecord::Base
   def share_on_facebook(image_url)
     return unless Rails.env.production?
     begin
-      @page_graph = Koala::Facebook::API.new('CAAHvZBlZAPcdQBAOp3Rq1SZBJISVyZB9ocs9wwNdel966PjhbZCWBjO8eAp3VbqZBZBZCqRkXvPUSMSxO3mIUo0pYRoUhqh5qvVaM02U6dTaewe2LSbXS2mO3ZBmNZBI437sYMmhy7gz4aH95KdA5JXG5pwl20Sm2T7YqipJPJYhOrZABgihOqqGuUe')
+      @page_graph = Koala::Facebook::API.new('EAAKDDvGWy9EBAOsZCoyuxb8e8VMItHrXJfn0f3fk3PPkcFjET17JJK98agZBbNLEhVXObQMkNW9imGaA1EfZBa9t1Ed3sbyXOLfH5358GWGTrytoUxnKGJRiOSGb5R9tez2oZAkm7L4COCTZBGDADCZCpkiSNv4mZBeYSHbYjvpWai6iQitGPCw')
       @page_graph.put_connections('1486194365036244', 'feed', :message => self.display_name, :picture => image_url, :link => car_url(self))
     rescue Exception => e
       Rails.logger.debug 'The car with id ' + self.id.to_s + ' was not shared on facebook'
@@ -141,6 +141,7 @@ class Car < ActiveRecord::Base
         price_total: params[:verkoopprijs_particulier],
         price_month: (params[:lease]['maandbedrag'] rescue nil),
         price_50_50: params[:verkoopprijs_handel],
+        price_discount: params[:actieprijs],
         manufacture_year: params[:bouwjaar],
         cylinders: params[:cilinder_aantal],
         engine_power: params[:vermogen_motor_pk],
@@ -174,17 +175,17 @@ class Car < ActiveRecord::Base
                 :must => [
                     {
                         :range => {
-                            :"car.mileage" => {
-                                :from => "0",
-                                :to => (params[:usage].to_i > 0 ? params[:usage].to_i : 2000000).to_i
+                            :"mileage" => {
+                                :gte => "0",
+                                :lte => (params[:mileage].to_i > 0 ? params[:mileage].to_i : 2000000).to_i
                             }
                         }
                     },
                     {
                         :range => {
-                            :"car.manufacture_year" => {
-                                :gte => params[:year].to_i,
-                                :lte => "2300"
+                            :"manufacture_year" => {
+                                :gte => params[:manufacture_year_from].to_i,
+                                :lte => params[:manufacture_year_to].to_i > 0 ? params[:manufacture_year_to].to_i : Date.today.year
                             }
                         }
                     }
@@ -192,10 +193,11 @@ class Car < ActiveRecord::Base
                 :must_not => [],
                 :should => [
 
-                ]
+                ],
+                minimum_should_match: 1,
             }
         },
-        :from => 0, :size => 999, :sort => [], :facets => {}
+        :from => 0, :size => 999, :sort => []
     }
     query[:query][:bool][:must] << {
         :query_string => {
@@ -207,51 +209,59 @@ class Car < ActiveRecord::Base
 
     query[:query][:bool][:must] << {
         :query_string => {
-            :default_field => "car.brand.name",
-            :query => params[:brand]
+            :default_field => "brand.id",
+            :query => params[:brand_id]
         }
-    } unless params[:brand].blank?
+    } unless params[:brand_id].blank?
     query[:query][:bool][:must] <<{
         :query_string => {
-            :default_field => "car.model.name",
-            :query => params[:model]
+            :default_field => "model.id",
+            :query => params[:model_id]
         }
-    } unless params[:model].blank?
+    } unless params[:model_id].blank?
 
     query[:query][:bool][:must] << {
         :query_string => {
-            :default_field => "car.body_type.name",
-            :query => params[:type]
+            :default_field => "body_type.id",
+            :query => params[:body_type_id]
         }
-    } unless params[:type].blank?
+    } unless params[:body_type_id].blank?
     query[:query][:bool][:must] << {
         :query_string => {
-            :default_field => "car.fuel_type.name",
-            :query => params[:fuel]
+            :default_field => "fuel_type.id",
+            :query => params[:fuel_type_id]
         }
-    } unless params[:fuel].blank?
+    } unless params[:fuel_type_id].blank?
     query[:query][:bool][:must] << {
         :query_string => {
-            :default_field => "car.energy_label",
+            :default_field => "energy_label",
             :query => params[:energy]
         }
     } unless params[:energy].blank?
+
     query[:query][:bool][:must] << {
+        :query_string => {
+            :default_field => "transmission_type.id",
+            :query => params[:transmission_type_id]
+        }
+    } unless params[:transmission_type_id].blank?
+
+    query[:query][:bool][:should] << {
         :range => {
-            :"car.price_50_50" => {
-                :gte => params[:price_range].split('-').first,
-                :lte => params[:price_range].split('-').last
+            :"price_total" => {
+                :gte => 0,
+                :lte => params[:total_price].to_i
             }
         }
-    } unless (params[:price_range].blank? or params[:price_range].split('-').length != 2)
-    query[:query][:bool][:must] << {
+    } unless params[:total_price].blank?
+    query[:query][:bool][:should] << {
         :range => {
-            :"car.price_month" => {
-                :gte => params[:monthly_price_range].split('-').first,
-                :lte => params[:monthly_price_range].split('-').last
+            :"price_month" => {
+                :gte => 0,
+                :lte => params[:month_price].to_i
             }
         }
-    } unless (params[:monthly_price_range].blank? or params[:monthly_price_range].split('-').length != 2)
+    } unless params[:month_price].blank?
     return query
   end
 

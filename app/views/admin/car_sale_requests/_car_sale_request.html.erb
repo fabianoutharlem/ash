@@ -1,0 +1,9 @@
+<tr>
+  <td><%= car_sale_request.name %></td>
+  <td><%= car_sale_request.phone %></td>
+  <td><%= mail_to car_sale_request.email %></td>
+  <td><%= car_sale_request.message %></td>
+  <td><%= car_sale_request.license_plate %></td>
+  <td><%= car_sale_request.mileage %></td>
+  <td><%= link_to 'Delete', admin_car_sale_request_path(car_sale_request), method: :delete, class: 'btn btn-danger' %></td>
+</tr>

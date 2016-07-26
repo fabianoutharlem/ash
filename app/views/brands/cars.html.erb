@@ -13,8 +13,8 @@
           <div class="select_col">
             <div class="select">
               <span class="arrow"></span>
-              <select name="merk" class="merk_dropdown" onchange="if (this.value) window.location.href=this.value">
-                <option><%= phrase 'Selecteer model' %></option>
+              <select name="merk" class="search_dropdown" onchange="if (this.value) window.location.href=this.value">
+                <option value="<%= brand_cars_path(@brand) %>">Alle modellen</option>
                 <% @brand.models.order(:name).each do |model| %>
                     <option value="<%= url_for action: :cars, controller: :models, brand_id: @brand.slug, model_id: model.slug || model.id %>" <%= @model == model ? 'selected' : '' %>><%= model.name %></option>
                 <% end %>
@@ -32,7 +32,8 @@
   </div>
 </section>
 
-<%= render 'cars/pagination', cars: @cars %>
+
+<%= render 'cars/pagination', cars: @cars, compare: true %>
 
 <section class="bekijk_voorraad">
   <div class="wrapper">

@@ -8,9 +8,18 @@ article.article_car {
 
   &:hover {
 
-    div.hover_element {
-      bottom: 0;
+    &.compare_active {
+      .overlay_compare {
+        bottom: 0;
+      }
     }
+
+    &:not(.compare_active) {
+      div.hover_element {
+        bottom: 0;
+      }
+    }
+
   }
 
   &.hart {
@@ -30,6 +39,10 @@ article.article_car {
       padding: 12px 0 16px 16px;
       border: solid 4px #f35026;
       border-top: 0;
+
+      p {
+        margin: 0;
+      }
     }
   }
 
@@ -137,7 +150,7 @@ article.article_car {
       font-weight: 500;
       height: 24px;
       vertical-align: middle;
-      margin-right: 5px;
+      margin-right: 2px;
     }
 
     span.day_deal_star {
@@ -146,7 +159,7 @@ article.article_car {
       background-size: cover;
       width: 14px;
       height: 14px;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
   }
 
@@ -170,12 +183,12 @@ article.article_car {
 
     div.aanbieding {
       height: 40px;
-      text-align: center;
-      padding: 10px;
+      text-align: left;
+      padding: 10px 10px 10px 0;
 
       small {
-        color: #757575;
-        font-size: 16px;
+        color: @orange;
+        font-size: 20px;
       }
     }
 
@@ -197,11 +210,11 @@ article.article_car {
             padding: 2px 0 0 0;
 
             &.rij_deze {
-              width: 154px;
+              width: 145px;
             }
 
             &.orange {
-              font-size: 24px;
+              font-size: 23px;
               line-height: 1.5;
               color: @orange;
               font-weight: @lato-light;
@@ -241,6 +254,11 @@ article.article_car {
         margin-top: 10px;
       }
 
+      small {
+        color: #757575;
+        font-size: 16px;
+      }
+
       a.orange_btn {
         display: inline-block;
         width: 238.3px;
@@ -273,7 +291,7 @@ article.article_car {
         position: relative;
         display: inline-block;
         width: 100%;
-        height: percentage(1/3);
+        height: 31.333333%;
         background-color: green;
         padding-left: 20px;
         padding-right: 50px;
@@ -283,16 +301,16 @@ article.article_car {
         }
 
         table {
-          height: 90%;
+          height: 96%;
           width: 100%;
 
           td {
             color: white;
-            font-size: 17px;
+            font-size: 15px;
             font-weight: @lato-regular;
 
             &.first {
-              width: 60%;
+              width: 55%;
             }
           }
         }
@@ -345,6 +363,25 @@ article.article_car {
           }
         }
       }
+    }
+  }
+
+  div.overlay_compare {
+    position: absolute;
+    z-index: 45;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    bottom: -100%;
+    transition: @trans;
+    text-align: center;
+
+    .orange_btn {
+      display: inline-block;
+      width: 90%;
+      top: 50%;
+      transform: translateY(-50%);
+      margin: 0 auto;
     }
   }
 }

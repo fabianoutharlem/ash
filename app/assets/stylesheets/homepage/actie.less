@@ -121,6 +121,7 @@ section.actie {
       }
 
       &.vw_banner {
+        display: none;
         position: relative;
         float: right;
         border: solid 8px #f35026;
@@ -196,6 +197,82 @@ section.actie {
             @media @360 {
               width: 33.4px;
               background-size: 6.1px 9.4px;
+            }
+          }
+        }
+      }
+    }
+
+    .lSSlideOuter , .lSSlideWrapper {
+      float: right;
+      width: 560px;
+      height: 420px;
+      position: relative;
+
+      @media @1280 {
+        width: 480px;
+        height: 360px;
+      }
+
+      @media @1100 {
+        float: none;
+        margin: 0 auto;
+      }
+
+      @media @360 {
+        height: 210px;
+        width: 280px;
+      }
+
+      li.banners {
+        width: 560px;
+        height: 420px;
+
+        @media @1280 {
+          width: 480px;
+          height: 360px;
+        }
+
+        @media @360 {
+          height: 210px;
+          width: 280px;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        a {
+          width: 100%;
+          height: 100%;
+          display: inline-block;
+        }
+      }
+
+      .lSPager {
+        position: absolute;
+        bottom: 10px;
+        left: 49%;
+        transform: translateX(-50%);
+
+        @media @360 {
+          bottom: 1px;
+        }
+
+        li {
+
+          a {
+            background-color: lightgrey;
+          }
+
+          &.active {
+
+            a {
+              background-color: grey;
+
+              &:hover {
+                background-color: grey;
+              }
             }
           }
         }

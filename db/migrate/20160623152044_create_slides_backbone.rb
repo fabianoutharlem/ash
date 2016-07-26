@@ -1,9 +1,6 @@
 class CreateSlidesBackbone < ActiveRecord::Migration
   def change
     execute <<-EOF
-LOCK TABLES `slide_template_values` WRITE;
-/*!40000 ALTER TABLE `slide_template_values` DISABLE KEYS */;
-
 INSERT INTO `slide_template_values` (`id`, `option_name`, `option_type`, `slide_template_id`, `created_at`, `updated_at`)
 VALUES
 	(1,'Heading','SlideValues::TextField',1,'2016-06-23 13:47:20','2016-06-23 13:48:14'),
@@ -38,17 +35,9 @@ VALUES
 	(30,'Background','SlideValues::ImageField',5,'2016-06-23 14:43:02','2016-06-23 14:43:03'),
 	(31,'Background','SlideValues::ImageField',3,'2016-06-23 14:43:21','2016-06-23 14:43:27'),
 	(32,'Background','SlideValues::ImageField',4,'2016-06-23 14:43:45','2016-06-23 14:43:48');
+EOF
 
-/*!40000 ALTER TABLE `slide_template_values` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table slide_templates
-# ------------------------------------------------------------
-
-LOCK TABLES `slide_templates` WRITE;
-/*!40000 ALTER TABLE `slide_templates` DISABLE KEYS */;
-
+    execute <<-EOF
 INSERT INTO `slide_templates` (`id`, `name`, `template`, `created_at`, `updated_at`)
 VALUES
 	(1,'Actie Slide','tpl_action_slide','2016-06-23 13:48:14','2016-06-23 13:48:14'),
@@ -56,23 +45,12 @@ VALUES
 	(3,'Financieren slide','tpl_finance_slide','2016-06-23 14:34:21','2016-06-23 14:34:21'),
 	(4,'Logo slide','tpl_logo_slide','2016-06-23 14:41:40','2016-06-23 14:41:40'),
 	(5,'Geen button slide','tpl_no_button_slide','2016-06-23 14:43:03','2016-06-23 14:43:03');
+EOF
 
-/*!40000 ALTER TABLE `slide_templates` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table sliders
-# ------------------------------------------------------------
-
-LOCK TABLES `sliders` WRITE;
-/*!40000 ALTER TABLE `sliders` DISABLE KEYS */;
-
+    execute <<-EOF
 INSERT INTO `sliders` (`id`, `name`, `location`, `created_at`, `updated_at`)
 VALUES
 	(1,'Homepage Slider','homepage','2016-06-23 15:18:16','2016-06-23 13:27:32');
-
-/*!40000 ALTER TABLE `sliders` ENABLE KEYS */;
-UNLOCK TABLES;
     EOF
   end
 end
