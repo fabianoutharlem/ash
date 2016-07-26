@@ -83,6 +83,7 @@ gem 'select2-rails', github: 'argerim/select2-rails'
 gem 'gibbon'
 
 gem 'phrasing', github: 'infinum/phrasing', branch: 'new-release-4'
+gem 'memcached'
 
 gem 'simple_abs'
 
