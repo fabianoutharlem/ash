@@ -27,5 +27,4 @@
 //= require jquery.steps.min
 //= require main.js
 
-//= require page_animation.js
 
