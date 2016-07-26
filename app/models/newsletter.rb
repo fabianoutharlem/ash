@@ -74,4 +74,9 @@ class Newsletter < ActiveRecord::Base
     newsletter_values.includes(:newsletter_template_value).index_by { |value| value.newsletter_template_value.option_name.to_sym }
   end
 
+  def get_campaign_statistics
+    gibbon = Gibbon::Request.new
+    gibbon.campaigns(self.campaign_id).retrieve rescue nil
+  end
+
 end

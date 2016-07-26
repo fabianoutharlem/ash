@@ -72,7 +72,9 @@
                 });
               });
 
-              $('form.car_search_form').trigger('change');
+              $('form.car_search_form').each(function() {
+                $(this).trigger('change');
+              });
             });
           </script>
 
