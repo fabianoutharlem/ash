@@ -3,7 +3,7 @@ set :password, 'ftSdwa4w'
 
 set :deploy_to, '/data/ash-production'
 
-server 'ash_production.fabianoudhaarlem.nl', user: fetch(:user), password: fetch(:password), roles: %w{web app db}
+server 'ash-production.fabianoudhaarlem.nl', user: fetch(:user), password: fetch(:password), roles: %w{web app db}
 
 set :stage, :production
 
