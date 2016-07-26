@@ -206,7 +206,6 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
-    memcached (1.8.0)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
@@ -362,7 +361,6 @@ DEPENDENCIES
   kaminari
   koala
   less-rails
-  memcached
   mysql2
   phrasing!
   puma
