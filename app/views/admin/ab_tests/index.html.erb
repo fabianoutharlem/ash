@@ -1,0 +1,56 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2>AB Tests</h2>
+    <ol class="breadcrumb">
+      <li>
+        <a href="<%= url_for admin_root_path %>">Home</a>
+      </li>
+      <li class="active">
+        <strong>AB Tests</strong>
+      </li>
+    </ol>
+  </div>
+  <div class="col-lg-2">
+
+  </div>
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+
+    <% @tests.each do |experiment, alternatives| %>
+        <div class="col-lg-6">
+          <div class="ibox float-e-margins">
+            <div class="ibox-title">
+              <h5>Experiment: <%= experiment.humanize %></h5>
+            </div>
+            <div class="ibox-content">
+
+              <table class="table table-striped"  >
+                <thead>
+                <tr>
+                  <th>Test waarde</th>
+                  <th>Conversies</th>
+                  <th>Deelnemers</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                  <% alternatives.each do |alternative| %>
+                    <tr>
+                      <td><%= alternative.which %></td>
+                      <td><%= alternative.conversions %></td>
+                      <td><%= alternative.participants %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+    <% end %>
+
+  </div>
+</div>

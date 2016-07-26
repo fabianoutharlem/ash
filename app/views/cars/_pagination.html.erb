@@ -8,7 +8,7 @@
         <p class="nav-text_small">Volgende:</p>
         <nav class="pagination">
           <span class="prev">
-            <%= link_to_previous_page @cars, '' %>
+            <%= link_to_previous_page @cars, '', :params => params %>
           </span>
 
           <div class="page_indicator">
@@ -17,7 +17,7 @@
             <small><%= @cars.num_pages %></small>
           </div>
           <span class="next">
-            <%= link_to_next_page @cars, '' %>
+            <%= link_to_next_page @cars, '', :params => params %>
           </span>
         </nav>
       </div>
