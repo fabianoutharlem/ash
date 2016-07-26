@@ -12,12 +12,6 @@
  *= require animate/animate.css
  *= require ./miscellaneous
  *= require ./style
- *= require font-awesome
  */
 
-@font-face {
-  font-family: 'FontAwesome';
-  src: url(font_url('fontawesome-webfont.eot')) format('embedded-opentype'), url(font_url('fontawesome-webfont.woff2')) format('woff2'), url(font_url('fontawesome-webfont.woff')) format('woff'), url(font_url('fontawesome-webfont.ttf')) format('truetype'), url(font_url('fontawesome-webfont.svg')) format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
+@import "font-awesome";
