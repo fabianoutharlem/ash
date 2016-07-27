@@ -319,99 +319,101 @@
                       <% cars.each do |car| %>
                           <th class="large-6 small-12"
                               style="Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;line-height:19px;margin:0;padding:0;padding-bottom:10px;padding-left:8px;padding-right:8px;text-align:left;width:274px">
-                            <table class="car"
-                                   style="border-collapse:collapse;border-spacing:0;margin:0 auto;padding:0;text-align:left;vertical-align:top">
-                              <tbody>
-                              <tr style="padding:0;text-align:left;vertical-align:top">
-                                <th style="Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;line-height:19px;margin:0;padding:0;text-align:left">
-                                  <img src="<%= car.main_image.file.url %>"
-                                       alt=""
-                                       style="-ms-interpolation-mode:bicubic;clear:both;display:block;height:210px;max-width:100%;outline:0;text-decoration:none;width:280px">
-                                </th>
-                              </tr>
-                              <tr style="padding:0;text-align:left;vertical-align:top">
-                                <th class="car_info"
-                                    style="Margin:0;background-color:#fff;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;height:180px;line-height:19px;margin:0;padding:15px;text-align:left;width:250px">
-                                  <table class="info"
-                                         style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top">
-                                    <tbody>
-                                    <tr class="merk"
-                                        style="padding:0;text-align:left;vertical-align:top">
-                                      <th style="Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;line-height:19px;margin:0;padding:0;text-align:left">
-                                        <p class="merk_naam"
-                                           style="Margin:0;Margin-bottom:10px;color:#414141;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;line-height:19px;margin:0;margin-bottom:10px;padding:0;text-align:left">
-                                          <%= car.brand.name %></p></th>
-                                    </tr>
-                                    <tr class="model"
-                                        style="padding:0;text-align:left;vertical-align:top">
-                                      <th style="Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;line-height:19px;margin:0;padding:0;text-align:left">
-                                        <p class="model_naam"
-                                           style="min-height: 58px; Margin:0;Margin-bottom:10px;color:#414141;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:300;line-height:19px;margin:0;margin-bottom:10px;padding:0;text-align:left">
-                                          <%= car.model.name %> <%= car.car_type %></p></th>
-                                    </tr>
-                                    </tbody>
-                                  </table>
-                                  <table style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
-                                    <tbody>
+                            <%= link_to Rails.application.routes.url_helpers.car_url(car), style: 'text-decoration: none;' do %>
+                                <table class="car"
+                                       style="border-collapse:collapse;border-spacing:0;margin:0 auto;padding:0;text-align:left;vertical-align:top">
+                                  <tbody>
+                                  <tr style="padding:0;text-align:left;vertical-align:top">
+                                    <th style="Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;line-height:19px;margin:0;padding:0;text-align:left">
+                                      <img src="<%= car.main_image.file.url %>"
+                                           alt=""
+                                           style="-ms-interpolation-mode:bicubic;clear:both;display:block;height:210px;max-width:100%;outline:0;text-decoration:none;width:280px">
+                                    </th>
+                                  </tr>
+                                  <tr style="padding:0;text-align:left;vertical-align:top">
+                                    <th class="car_info"
+                                        style="Margin:0;background-color:#fff;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;height:180px;line-height:19px;margin:0;padding:15px;text-align:left;width:250px">
+                                      <table class="info"
+                                             style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top">
+                                        <tbody>
+                                        <tr class="merk"
+                                            style="padding:0;text-align:left;vertical-align:top">
+                                          <th style="Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;line-height:19px;margin:0;padding:0;text-align:left">
+                                            <p class="merk_naam"
+                                               style="Margin:0;Margin-bottom:10px;color:#414141;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;line-height:19px;margin:0;margin-bottom:10px;padding:0;text-align:left">
+                                              <%= car.brand.name %></p></th>
+                                        </tr>
+                                        <tr class="model"
+                                            style="padding:0;text-align:left;vertical-align:top">
+                                          <th style="Margin:0;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;line-height:19px;margin:0;padding:0;text-align:left">
+                                            <p class="model_naam"
+                                               style="min-height: 58px;Margin:0;Margin-bottom:10px;color:#414141;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:300;line-height:19px;margin:0;margin-bottom:10px;padding:0;text-align:left">
+                                              <%= car.model.name %> <%= car.car_type %></p></th>
+                                        </tr>
+                                        </tbody>
+                                      </table>
+                                      <table style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
+                                        <tbody>
 
-                                    <tr class="van__voor"
-                                        style="padding:0;text-align:left;vertical-align:top">
-                                      <% if car.price_discount.present? %>
-                                          <td class="van"
-                                              style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#757575;display:inline-block;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;height:25px;hyphens:auto;line-height:19px;margin:0;padding:0;text-align:left;vertical-align:top;width:50%;word-wrap:break-word">
-                                            van:
+                                        <tr class="van__voor"
+                                            style="padding:0;text-align:left;vertical-align:top">
+                                          <% if car.price_discount.present? %>
+                                              <td class="van"
+                                                  style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#757575;display:inline-block;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;height:25px;hyphens:auto;line-height:19px;margin:0;padding:0;text-align:left;vertical-align:top;width:50%;word-wrap:break-word">
+                                                van:
+                                              </td>
+                                          <% end %>
+                                          <td class="voor"
+                                              style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#757575;display:inline-block;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;height:25px;hyphens:auto;line-height:19px;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word">
+                                            Voor:
                                           </td>
-                                      <% end %>
-                                      <td class="voor"
-                                          style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#757575;display:inline-block;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;height:25px;hyphens:auto;line-height:19px;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word">
-                                        Voor:
-                                      </td>
 
-                                    </tr>
-                                    <tr class="van_voor_prijs"
-                                        style="padding:0;text-align:left;vertical-align:top">
-                                      <% if car.price_discount.present? %>
-                                          <td class="van"
-                                              style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#757575;display:inline-block;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;height:25px;hyphens:auto;line-height:19px;margin:0;padding:0;text-align:left;vertical-align:top;width:50%;word-wrap:break-word">
-                                            <%= format_money car.price_total %>
+                                        </tr>
+                                        <tr class="van_voor_prijs"
+                                            style="padding:0;text-align:left;vertical-align:top">
+                                          <% if car.price_discount.present? %>
+                                              <td class="van"
+                                                  style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#757575;display:inline-block;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;height:25px;hyphens:auto;line-height:19px;margin:0;padding:0;text-align:left;vertical-align:top;width:50%;word-wrap:break-word">
+                                                <%= format_money car.price_total %>
+                                              </td>
+                                          <% end %>
+                                          <td class="voor focus_price"
+                                              style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#f35026;display:inline-block;font-family:Helvetica,Arial,sans-serif;font-size:20px;font-weight:400;height:25px;hyphens:auto;line-height:19px;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word">
+                                            <%= format_money (car.price_discount.present? ? car.price_discount : car.price_total) %>
                                           </td>
-                                      <% end %>
-                                      <td class="voor focus_price"
-                                          style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#f35026;display:inline-block;font-family:Helvetica,Arial,sans-serif;font-size:20px;font-weight:400;height:25px;hyphens:auto;line-height:19px;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word">
-                                        <%= format_money (car.price_discount.present? ? car.price_discount : car.price_total) %>
-                                      </td>
 
-                                    </tr>
-                                    </tbody>
-                                  </table>
-                                  <table style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
-                                    <tbody>
-                                    <tr class="orange_blok"
-                                        style="padding:0;text-align:left;vertical-align:top">
-                                      <td style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border:solid 2px #f35026;border-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;height:44px;hyphens:auto;line-height:19px;margin:0;padding:0;padding-left:5px;text-align:left;vertical-align:top;width:240px;word-wrap:break-word">
-                                        <table width="100%"
-                                               style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top">
-                                          <tbody>
-                                          <tr style="padding:0;text-align:left;vertical-align:top">
-                                            <td class="block_content"
-                                                style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#595959;font-family:Helvetica,Arial,sans-serif;font-size:13px;font-weight:400;height:44px;hyphens:auto;line-height:19px;margin:0;padding:0;text-align:left;vertical-align:middle;word-wrap:break-word">
-                                              Rij deze auto p.m. vanaf
-                                            </td>
-                                            <td class="block_content_price"
-                                                style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#f35026;font-family:Helvetica,Arial,sans-serif;font-size:22px;font-weight:400;height:44px;hyphens:auto;line-height:19px;margin:0;padding:0;text-align:left;vertical-align:middle;word-wrap:break-word">
-                                              <%= format_money car.price_month %>
-                                            </td>
-                                          </tr>
-                                          </tbody>
-                                        </table>
-                                      </td>
-                                    </tr>
-                                    </tbody>
-                                  </table>
-                                </th>
-                              </tr>
-                              </tbody>
-                            </table>
+                                        </tr>
+                                        </tbody>
+                                      </table>
+                                      <table style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
+                                        <tbody>
+                                        <tr class="orange_blok"
+                                            style="padding:0;text-align:left;vertical-align:top">
+                                          <td style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border:solid 2px #f35026;border-collapse:collapse!important;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;height:44px;hyphens:auto;line-height:19px;margin:0;padding:0;padding-left:5px;text-align:left;vertical-align:top;width:240px;word-wrap:break-word">
+                                            <table width="100%"
+                                                   style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top">
+                                              <tbody>
+                                              <tr style="padding:0;text-align:left;vertical-align:top">
+                                                <td class="block_content"
+                                                    style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#595959;font-family:Helvetica,Arial,sans-serif;font-size:13px;font-weight:400;height:44px;hyphens:auto;line-height:19px;margin:0;padding:0;text-align:left;vertical-align:middle;word-wrap:break-word">
+                                                  Rij deze auto p.m. vanaf
+                                                </td>
+                                                <td class="block_content_price"
+                                                    style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#f35026;font-family:Helvetica,Arial,sans-serif;font-size:22px;font-weight:400;height:44px;hyphens:auto;line-height:19px;margin:0;padding:0;text-align:left;vertical-align:middle;word-wrap:break-word">
+                                                  <%= format_money car.price_month %>
+                                                </td>
+                                              </tr>
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                        </tbody>
+                                      </table>
+                                    </th>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                            <% end %>
                           </th>
                       <% end %>
 
