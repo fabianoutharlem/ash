@@ -21,6 +21,11 @@ set :linked_dirs, %w{public/uploads tmp public/assets}
 set :branch, fetch(:branch, "master")
 set :env, fetch(:env, "production")
 
+# set :sidekiq_queue, [:carrierwave_ash, :ash_facebook]
+# set :sidekiq_monit_conf_dir, -> { '/etc/monit.d' }
+set :pty,  false
+set :monit_alert_email, 'fabian@oldharlem.nl'
+
 namespace :deploy do
 
   desc 'Restart application'
