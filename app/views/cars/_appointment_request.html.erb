@@ -9,14 +9,14 @@
         </figure>
       </div>
 
-      <%= form_for AppointmentRequest.new, method: :post do |f| %>
+      <%= form_for AppointmentRequest.new, method: :post, html: {class: 'appointment_validation'} do |f| %>
           <%= f.hidden_field :car_id, value: car.id %>
 
           <%= f.text_field :first_name, placeholder: 'Je naam', required: true %>
           <%= f.text_field :last_name, placeholder: 'Je achternaam', required: true %>
           <%= f.text_field :phone, placeholder: 'Je telefoon nummer', required: true %>
           <%= f.email_field :email, placeholder: 'Je email adres', required: true %>
-          <%= f.text_field :comment, placeholder: 'Eventuele vragen of opmerkingen' %>
+          <%= f.text_field :comment, placeholder: 'Eventuele vragen of opmerkingen', required: false %>
 
           <button type="submit" class="orange_btn"><%= phrase 'verstuur_aanvraag' %></button>
       <% end %>
