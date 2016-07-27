@@ -25,7 +25,7 @@
 //= require jquery.cookie
 //= require phrasing
 //= require jquery.barrating
-//= require lightslider.js
+//= require lightslider
 //= require jquery.steps.min
 //= require main.js
 
