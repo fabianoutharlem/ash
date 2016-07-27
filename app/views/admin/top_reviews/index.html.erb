@@ -1,0 +1,73 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2>Top reviews</h2>
+    <ol class="breadcrumb">
+      <li>
+        <a href="<%= url_for admin_root_path %>">Home</a>
+      </li>
+      <li class="active">
+        <strong>Top reviews</strong>
+      </li>
+    </ol>
+  </div>
+  <div class="col-lg-2">
+
+  </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>Vacatures</h5>
+          <div class="ibox-tools">
+            <%= link_to new_admin_top_review_path do %>
+                <i class="fa fa-plus"></i><span> Nieuwe review</span>
+            <% end %>
+          </div>
+        </div>
+        <div class="ibox-content">
+
+          <table class="table table-striped"  >
+            <thead>
+            <tr>
+              <th>Foto</th>
+              <th>Review</th>
+              <th>Acties</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <%= render @top_reviews %>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<% content_for :head do %>
+    <%= stylesheet_link_tag 'admin/forms' %>
+<% end %>
+
+<% content_for :javascript do %>
+    <%= javascript_include_tag 'admin/forms' %>
+
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function () {
+        var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+
+        elems.forEach(function (html) {
+          var switchery = new Switchery(html);
+        });
+
+        $('.js-switch').on('change', function () {
+          $(this).parents('form').submit();
+        });
+
+      });
+    </script>
+<% end %>

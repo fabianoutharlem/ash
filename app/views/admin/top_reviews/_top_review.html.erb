@@ -1,0 +1,8 @@
+<tr>
+  <td><%= image_tag top_review.image.thumb %></td>
+  <td><%= strip_tags top_review.review %></td>
+  <td>
+    <%= link_to 'Aanpassen', edit_admin_top_review_path(top_review), class: 'btn btn-primary' %>
+    <%= link_to 'Delete', admin_top_review_path(top_review), method: :delete, class: 'btn btn-danger' %>
+  </td>
+</tr>

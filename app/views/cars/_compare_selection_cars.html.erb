@@ -1,16 +1,16 @@
 <div class="start_compare">
   <div class="remove_cross"></div>
   <p> <%= phrase 'Vergelijk deze autos' %></p>
-  <% if session[:compare_car_ids].length == 2 %>
+  <% if (session[:compare_car_ids] || []).length == 2 %>
       <%= link_to phrase('Start vergelijking'), compare_2_cars_path(*session[:compare_car_ids]), class: 'orange_btn start_compare' %>
-  <% elsif session[:compare_car_ids].length == 3 %>
+  <% elsif (session[:compare_car_ids] || []).length == 3 %>
       <%= link_to phrase('Start vergelijking'), compare_3_cars_path(*session[:compare_car_ids]), class: 'orange_btn start_compare' %>
   <% else %>
       <small><%= phrase 'Kies meer autos om te kunnen vergelijken' %></small>
   <% end %>
 </div>
 <ul class="cars_to_compare">
-  <% Car.where(id: session[:compare_car_ids]).order(session[:compare_car_ids].any? ? "field(id, #{session[:compare_car_ids].join(',')})" : 'id asc').each do |car| %>
+  <% Car.where(id: (session[:compare_car_ids] || [])).order((session[:compare_car_ids] || []).any? ? "field(id, #{session[:compare_car_ids].join(',')})" : 'id asc').each do |car| %>
       <li>
         <%= link_to '', car_remove_from_compare_selection_path(car), class: 'remove_cross', remote: true %>
         <%= render car %>

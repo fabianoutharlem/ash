@@ -69,6 +69,8 @@ Rails.application.routes.draw do
       post :update_row_order, on: :collection
     end
 
+    resources :top_reviews
+
     resources :ab_tests, only: [:index]
 
     resources :newsletters do

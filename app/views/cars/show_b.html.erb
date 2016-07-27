@@ -437,6 +437,118 @@
       </div>
     </div>
   </section>
+
+  <% if Setting.get('zekerheden_car_show_visible') %>
+
+      <section class="zekerheden">
+        <div class="wrapper">
+          <div class="container-fluid content_container">
+
+            <h2>De zekerheden van <span>Auto Service Haarlem</span></h2>
+
+            <div class="row row_text_blokken">
+              <div class="col keuze">
+                <div class="image">
+                  <span class="helper"></span>
+                  <%= image_tag 'autos.png' %>
+                </div>
+                <h4><%= phrase 'car-show-1-titel' %></h4>
+                <p><%= phrase 'car-show-1-content' %></p>
+              </div>
+              <div class="col bepaald">
+                <div class="image">
+                  <span class="helper"></span>
+                  <%= image_tag 'onderhoud.png' %>
+                </div>
+                <h4><%= phrase 'car-show-2-titel' %></h4>
+                <p><%= phrase 'car-show-2-content' %></p>
+              </div>
+              <div class="col specialist">
+                <div class="image">
+                  <span class="helper"></span>
+                  <%= image_tag 'medail.png' %>
+                </div>
+                <h4><%= phrase 'car-show-3-titel' %></h4>
+                <p><%= phrase 'car-show-3-content' %></p>
+              </div>
+              <div class="col historie">
+                <div class="image">
+                  <span class="helper"></span>
+                  <%= image_tag 'historie.png' %>
+                </div>
+                <h4><%= phrase 'car-show-4-titel' %></h4>
+                <p><%= phrase 'car-show-4-content' %></p>
+              </div>
+              <div class="col huurkoop">
+                <div class="image">
+                  <span class="helper"></span>
+                  <%= image_tag 'geld_zak.png' %>
+                </div>
+                <h4><%= phrase 'car-show-5-titel' %></h4>
+                <p><%= phrase 'car-show-5-content' %></p>
+              </div>
+            </div>
+
+            <div class="owl_carousel_zekerheden">
+              <div class="col keuze">
+                <div class="image">
+                  <span class="helper"></span>
+                  <%= image_tag 'autos.png' %>
+                </div>
+                <h4><%= phrase 'car-show-1-titel' %></h4>
+                <p><%= phrase 'car-show-1-content' %></p>
+              </div>
+              <div class="col bepaald">
+                <div class="image">
+                  <span class="helper"></span>
+                  <%= image_tag 'onderhoud.png' %>
+                </div>
+                <h4><%= phrase 'car-show-2-titel' %></h4>
+                <p><%= phrase 'car-show-2-content' %></p>
+              </div>
+              <div class="col specialist">
+                <div class="image">
+                  <span class="helper"></span>
+                  <%= image_tag 'medail.png' %>
+                </div>
+                <h4><%= phrase 'car-show-3-titel' %></h4>
+                <p><%= phrase 'car-show-3-content' %></p>
+              </div>
+              <div class="col historie">
+                <div class="image">
+                  <span class="helper"></span>
+                  <%= image_tag 'historie.png' %>
+                </div>
+                <h4><%= phrase 'car-show-4-titel' %></h4>
+                <p><%= phrase 'car-show-4-content' %></p>
+              </div>
+              <div class="col huurkoop">
+                <div class="image">
+                  <span class="helper"></span>
+                  <%= image_tag 'geld_zak.png' %>
+                </div>
+                <h4><%= phrase 'car-show-5-titel' %></h4>
+                <p><%= phrase 'car-show-5-content' %></p>
+              </div>
+            </div>
+
+            <% if Setting.get('top_review_car_show_visible') %>
+                <% review = TopReview.find_random %>
+                <div class="row recentie">
+                  <%= image_tag review.image.square, width: 225 %>
+                  <span class="helper"></span>
+                  <p class="recenctie_text">
+                    “ <%= strip_tags review.review.html_safe %> ”
+                  </p>
+                </div>
+            <% end %>
+
+          </div>
+        </div>
+      </section>
+
+  <% end %>
+
 </section>
 
 <% content_for :meta do %>
