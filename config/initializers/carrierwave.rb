@@ -14,8 +14,8 @@ CarrierWave.configure do |config|
   }
 
   config.aws_credentials = {
-      access_key_id:     'AKIAJYRWYDU3OSUJ3O6Q',
-      secret_access_key: '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',
+      access_key_id:     'AKIAIN6XY266FNO7UNAQ',
+      secret_access_key: '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',
       region:            'eu-central-1'
   }
 
