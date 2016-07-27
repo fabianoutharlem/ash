@@ -252,12 +252,6 @@ section.auto_uitgelicht {
       }
 
       img.cross {
-        //display: block;
-        //margin: 50px auto 0 auto;
-        //position: absolute;
-        //left: 50%;
-        //transform: translateX(-50%);
-        //bottom: 50px;
         margin: 0 0 20px 0;
 
         @media @360 {
@@ -1053,7 +1047,6 @@ section.detail_pagina_b { //only b
                 }
 
                 a.orange_btn {
-                  //z-index: 20;
                   display: inline-block;
                   font-size: 14px;
                   width: 100px;
@@ -1062,6 +1055,7 @@ section.detail_pagina_b { //only b
                   padding-right: 30px;
                   line-height: 30px;
                   overflow: hidden;
+                  transition: @trans;
 
                   @media @1370 {
                     width: 75px;
@@ -1074,6 +1068,7 @@ section.detail_pagina_b { //only b
                     width: 30px;
                     background-color: #00b04a;
                     border-left: 1px solid white;
+                    transition: @trans;
 
                     @media @1370 {
                       width: 25px;
@@ -1081,10 +1076,14 @@ section.detail_pagina_b { //only b
                   }
 
                   &:hover {
-                    background-color: #007c40;
+                    padding-right: 0;
+                    -webkit-animation-name: ShineAnimation;
+                    -webkit-animation-duration: 6s;
+                    -webkit-animation-iteration-count: infinite;
+                    -webkit-animation-timing-function: cubic-bezier(.12,.89,.98,.47);
 
                     &:after {
-                      background-color: #007c40;
+                      right: -100%;
                     }
                   }
                 }

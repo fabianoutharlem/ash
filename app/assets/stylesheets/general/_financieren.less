@@ -96,6 +96,8 @@ section.article_financieren {
         height: 50px;
         background-color: #00b04a;
         overflow: hidden;
+        transition: @trans;
+        cursor: pointer;
 
         @media @1279 {
           width: 145px;
@@ -109,6 +111,7 @@ section.article_financieren {
         &:after {
           background-color: #00b04a;
           border-left: 1px solid #23c467;
+          transition: @trans;
 
           @media @1279 {
             background-size: 6.3px 10px;
@@ -117,11 +120,14 @@ section.article_financieren {
         }
 
         &:hover {
-          background-color: #00974e;
-          cursor: pointer;
+          padding-right: 0;
+          -webkit-animation-name: ShineAnimation;
+          -webkit-animation-duration: 4s;
+          -webkit-animation-iteration-count: infinite;
+          -webkit-animation-timing-function: cubic-bezier(.12,.89,.98,.47);
 
           &:after {
-            background-color: #00974e;
+            right: -100%;
           }
         }
       }
