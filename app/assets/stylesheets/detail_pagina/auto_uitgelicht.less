@@ -34,15 +34,12 @@ section.auto_uitgelicht {
     }
 
     img.cross {
-      margin-top: 60px;
-
-      @media @880 {
-        margin-top: 30px;
-      }
-
-      &:hover {
-        cursor: pointer;
-      }
+      //margin-top: 60px;
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      cursor: pointer;
     }
 
     div.overlay_afspraak {
@@ -75,9 +72,10 @@ section.auto_uitgelicht {
         transform: translateY(-50%) translateX(-50%);
 
         @media @360 {
-          top: 20px;
+          top: 70px;
           transform: translateY(0) translateX(0);
           left: 0;
+          margin-bottom: 50px;
         }
 
         h2 {
