@@ -5,6 +5,19 @@ GIT
     select2-rails (4.0.2)
       thor (~> 0.14)
 
+GIT
+  remote: git://github.com/infinum/phrasing.git
+  revision: 1ed7b8b8bbc019aca9aa18439f28e701fbf772de
+  branch: new-release-4
+  specs:
+    phrasing (4.0.0rc14)
+      haml
+      jquery-cookie-rails
+      jquery-rails
+      rails (>= 3.2.0)
+      railties (>= 3.2)
+      sass
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -208,13 +221,6 @@ GEM
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
-    phrasing (3.2.10)
-      haml
-      jquery-cookie-rails
-      jquery-rails
-      rails (>= 3.2.0)
-      railties (>= 3.2)
-      sass
     puma (3.2.0)
     rack (1.6.4)
     rack-pjax (0.8.0)
@@ -356,7 +362,7 @@ DEPENDENCIES
   koala
   less-rails
   mysql2
-  phrasing
+  phrasing!
   puma
   rails (= 4.2.6)
   rails_admin

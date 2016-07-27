@@ -14,7 +14,7 @@ production:
   <<: *default
   host: localhost
   username: ash_p_user
-  password: calculi72
+  password: ydD331Ur177XB
   database: ash_production
 
 staging:
