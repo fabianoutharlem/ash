@@ -34,15 +34,12 @@ section.auto_uitgelicht {
     }
 
     img.cross {
-      margin-top: 60px;
-
-      @media @880 {
-        margin-top: 30px;
-      }
-
-      &:hover {
-        cursor: pointer;
-      }
+      //margin-top: 60px;
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      cursor: pointer;
     }
 
     div.overlay_afspraak {
@@ -75,9 +72,10 @@ section.auto_uitgelicht {
         transform: translateY(-50%) translateX(-50%);
 
         @media @360 {
-          top: 20px;
+          top: 70px;
           transform: translateY(0) translateX(0);
           left: 0;
+          margin-bottom: 50px;
         }
 
         h2 {
@@ -252,12 +250,6 @@ section.auto_uitgelicht {
       }
 
       img.cross {
-        //display: block;
-        //margin: 50px auto 0 auto;
-        //position: absolute;
-        //left: 50%;
-        //transform: translateX(-50%);
-        //bottom: 50px;
         margin: 0 0 20px 0;
 
         @media @360 {
@@ -945,7 +937,11 @@ section.detail_pagina_b { //only b
         div.car_content {
 
           table {
-            width: 100%;
+            width: 300px;
+
+            @media @360 {
+              width: 280px;
+            }
 
             tr {
               border: 0;
@@ -1049,7 +1045,6 @@ section.detail_pagina_b { //only b
                 }
 
                 a.orange_btn {
-                  //z-index: 20;
                   display: inline-block;
                   font-size: 14px;
                   width: 100px;
@@ -1058,6 +1053,7 @@ section.detail_pagina_b { //only b
                   padding-right: 30px;
                   line-height: 30px;
                   overflow: hidden;
+                  transition: @trans;
 
                   @media @1370 {
                     width: 75px;
@@ -1070,6 +1066,7 @@ section.detail_pagina_b { //only b
                     width: 30px;
                     background-color: #00b04a;
                     border-left: 1px solid white;
+                    transition: @trans;
 
                     @media @1370 {
                       width: 25px;
@@ -1077,10 +1074,14 @@ section.detail_pagina_b { //only b
                   }
 
                   &:hover {
-                    background-color: #007c40;
+                    padding-right: 0;
+                    -webkit-animation-name: ShineAnimation;
+                    -webkit-animation-duration: 6s;
+                    -webkit-animation-iteration-count: infinite;
+                    -webkit-animation-timing-function: cubic-bezier(.12,.89,.98,.47);
 
                     &:after {
-                      background-color: #007c40;
+                      right: -100%;
                     }
                   }
                 }

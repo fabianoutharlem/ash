@@ -11,16 +11,16 @@
   <div class="overlay_taxation animated">
     <div class="content">
       <div class="cross"></div>
-      <%= form_for CarSaleRequest.new, method: :post do |f| %>
+      <%= form_for CarSaleRequest.new, method: :post, html: {class: 'taxation_validation'} do |f| %>
           <div class="left">
-            <%= f.text_field :name, placeholder: 'Je naam', required: true %>
-            <%= f.text_field :phone, placeholder: 'Je telefoon nummer', required: true %>
-            <%= f.text_field :email, placeholder: 'Je email adres', required: true %>
-            <%= f.text_field :license_plate, placeholder: 'Vul hier je kenteken in', required: true %>
+            <%= f.text_field :name, placeholder: 'Je naam', required: 'required' %>
+            <%= f.text_field :phone, placeholder: 'Je telefoon nummer', required: 'required' %>
+            <%= f.email_field :email, placeholder: 'Je email adres', required: 'required' %>
+            <%= f.text_field :license_plate, placeholder: 'Vul hier je kenteken in', required: 'required' %>
           </div>
         <div class="right">
           <%= f.text_area :message, placeholder: 'Persoonlijk bericht' %>
-          <%= f.text_field :mileage, placeholder: 'Vul hier je kilometerstand in', required: true %>
+          <%= f.text_field :mileage, placeholder: 'Vul hier je kilometerstand in', required: 'required' %>
           <button type="submit" class="orange_btn"><%= phrase 'Taxatie aanvragen' %></button>
         </div>
       <% end %>
