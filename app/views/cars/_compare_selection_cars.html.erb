@@ -1,5 +1,5 @@
 <div class="start_compare">
-  <div class="remove_cross" onClick="closeCompareWindow"></div>
+  <div class="remove_cross"></div>
   <p> <%= phrase 'Vergelijk deze autos' %></p>
   <% if (session[:compare_car_ids] || []).length == 2 %>
       <%= link_to phrase('Start vergelijking'), compare_2_cars_path(*session[:compare_car_ids]), class: 'orange_btn start_compare' %>
