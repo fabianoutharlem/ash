@@ -478,7 +478,7 @@ $(document).ready(function () {
         $('article.article_car').toggleClass('compare_active');
     });
 
-    $('body').on("click", "div.remove_cross_main",(function () {
+    $('section.select_compare').live("click", "div.remove_cross_main",(function () {
         compare_section.removeClass('fadeIn');
         $('article.article_car').removeClass('compare_active');
         compare_section.addClass('fadeOut');
