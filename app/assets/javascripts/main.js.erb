@@ -478,16 +478,6 @@ $(document).ready(function () {
         $('article.article_car').toggleClass('compare_active');
     });
 
-    function closeCompareWindow() {
-        compare_section.removeClass('fadeIn');
-        $('article.article_car').removeClass('compare_active');
-        compare_section.addClass('fadeOut');
-
-        setTimeout(function () {
-            compare_section.removeClass('active fadeOut');
-        }, 200);
-    };
-
     //compare remove cars from list
     $('section.select_compare div.compare_selection li div.remove_cross').click(function () {
         var list_item = $(this).parent('li');
