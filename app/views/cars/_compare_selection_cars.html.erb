@@ -1,5 +1,5 @@
 <div class="start_compare">
-  <div class="remove_cross"></div>
+  <div class="remove_cross remove_cross_main"></div>
   <p> <%= phrase 'Vergelijk deze autos' %></p>
   <% if (session[:compare_car_ids] || []).length == 2 %>
       <%= link_to phrase('Start vergelijking'), compare_2_cars_path(*session[:compare_car_ids]), class: 'orange_btn start_compare' %>
@@ -17,3 +17,17 @@
       </li>
   <% end %>
 </ul>
+
+<script>
+   $('div.start_compare .remove_cross_main').click( function() {
+    var compare_section = $('section.select_compare div.compare_selection');
+
+    compare_section.removeClass('fadeIn');
+    $('article.article_car').removeClass('compare_active');
+    compare_section.addClass('fadeOut');
+
+    setTimeout(function () {
+      compare_section.removeClass('active fadeOut');
+    }, 200);
+  });
+</script>
