@@ -24,6 +24,7 @@ class Admin::ReviewsController < Admin::AdminBaseController
     review = Review.find(params[:id])
     review.destroy
     flash[:notice] = 'Recensie is succesvol verwijdert'
+    redirect_to :admin_reviews
   end
 
   private

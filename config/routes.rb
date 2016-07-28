@@ -118,7 +118,7 @@ Rails.application.routes.draw do
 
     resources :vacancies
 
-    resources :reviews, only: [:index, :update]
+    resources :reviews, only: [:index, :update, :destroy]
 
     resources :car_sale_requests, only: [:index, :destroy]
 
