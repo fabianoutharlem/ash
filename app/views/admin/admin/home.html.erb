@@ -150,6 +150,83 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>Recente afspraak aanvragen </h5>
+        </div>
+        <div class="ibox-content">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th>Naam</th>
+                <th>Telefoon</th>
+                <th>Email</th>
+                <th>Opmerking</th>
+                <th>Auto</th>
+              </tr>
+              </thead>
+              <tbody>
+              <% AppointmentRequest.all.order(created_at: :desc).first(10).each do |appointment_request| %>
+                  <tr>
+                    <td><%= [appointment_request.first_name, appointment_request.last_name].join(' ') %></td>
+                    <td><%= appointment_request.phone %></td>
+                    <td><%= mail_to appointment_request.email %></td>
+                    <td><%= appointment_request.comment %></td>
+                    <td><%= link_to appointment_request.car.display_name, car_path(appointment_request.car), target: '_blank' %></td>
+                  </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-lg-6">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>Recente taxatie aanvragen </h5>
+        </div>
+        <div class="ibox-content">
+          <div class="table-responsive">
+            <table class="table table-striped"  >
+              <thead>
+              <tr>
+                <th>Naam</th>
+                <th>Telefoon</th>
+                <th>Email</th>
+                <th>Opmerking</th>
+                <th>Kenteken</th>
+                <th>Kilometerstand</th>
+              </tr>
+              </thead>
+
+              <tbody>
+              <% CarSaleRequest.all.order(created_at: :desc).limit(10).each do |car_sale_request| %>
+                  <tr>
+                    <td><%= car_sale_request.name %></td>
+                    <td><%= car_sale_request.phone %></td>
+                    <td><%= mail_to car_sale_request.email %></td>
+                    <td><%= car_sale_request.message %></td>
+                    <td><%= car_sale_request.license_plate %></td>
+                    <td><%= car_sale_request.mileage %></td>
+                  </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
 
 </div>
 

@@ -88,6 +88,12 @@
             <span class="nav-label">Recensies</span>
         <% end %>
       </li>
+      <li class="<%= is_active_controller('top_reviews') %>">
+        <%= link_to admin_top_reviews_path do %>
+            <i class="fa fa-comments" aria-hidden="true"></i>
+            <span class="nav-label">Top Reviews</span>
+        <% end %>
+      </li>
       <li class="<%= is_active_controller('appointment_requests') %>">
         <%= link_to admin_appointment_requests_path do %>
             <i class="fa fa-calendar-o" aria-hidden="true"></i>
