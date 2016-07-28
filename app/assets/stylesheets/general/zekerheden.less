@@ -1,11 +1,11 @@
 section.zekerheden {
 
   div.content_container {
-    padding: 60px 0 60px 0;
+    padding: 60px 0 0 0;
     text-align: center;
 
     @media @1000 {
-      padding-top: 20px;
+      //padding-top: 20px;
       padding-bottom: 50px;
     }
 
@@ -40,6 +40,10 @@ section.zekerheden {
       @media @1280 {
         width: 880px;
         margin: 0 auto;
+      }
+
+      @media @880 {
+        width: 100%;
       }
 
       &.row_text_blokken {
@@ -126,6 +130,14 @@ section.zekerheden {
       }
     }
   }
+
+  div.recentie {
+    padding-bottom: 60px;
+
+    @media @880 {
+      padding-top: 60px;
+    }
+  }
 }
 
 div.recentie {
@@ -133,20 +145,12 @@ div.recentie {
   margin-bottom: 50px;
 
   @media @1280 {
-    width: 950px;
-  }
-
-  @media @1040 {
-    margin-top: 5%;
-  }
-
-  @media @880 {
-    width: 500px;
-    margin-top: 50px;
+    width: 100%;  //950
   }
 
   @media @360 {
     width: 300px;
+    margin: 0 auto 30px auto;
   }
 
   div.recentie_img {
@@ -181,17 +185,18 @@ div.recentie {
 
     @media @1040 {
       display: block;
-      margin: 20px auto;
+      margin: 10px auto;
     }
 
     @media @880 {
+      width: 90%;
       font-size: 1.5em;
-      width: auto;
-      margin-left: 30px;
-      margin-right: 30px;
+      //margin-left: 30px;
+      //margin-right: 30px;
     }
 
     @media @360 {
+      width: 300px;
       font-size: 1em;
     }
   }
