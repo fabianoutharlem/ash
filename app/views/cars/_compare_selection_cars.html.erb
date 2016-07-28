@@ -12,7 +12,7 @@
 <ul class="cars_to_compare">
   <% Car.where(id: (session[:compare_car_ids] || [])).order((session[:compare_car_ids] || []).any? ? "field(id, #{session[:compare_car_ids].join(',')})" : 'id asc').each do |car| %>
       <li>
-        <%= link_to '', car_remove_from_compare_selection_path(car), class: 'remove_cross', remote: true %>
+        <%= link_to '', car_remove_from_compare_selection_path(car), class: 'remove_cross_main', remote: true %>
         <%= render car %>
       </li>
   <% end %>
