@@ -91,7 +91,7 @@
       </article>
 
       <ul id="banner_carousel">
-        <% @actie_slider.slides.each do |slide| %>
+        <% @actie_slider.active_slides.each do |slide| %>
             <%= render ('admin/slides/templates/' + slide.slide_template.template), slide_values: slide.template_variables %>
         <% end %>
       </ul>

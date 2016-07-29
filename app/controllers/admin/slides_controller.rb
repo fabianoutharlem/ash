@@ -85,7 +85,7 @@ class Admin::SlidesController < Admin::AdminBaseController
   private
 
   def slide_params
-    params.require(:slide).permit(:id, :slide_id, :name, :slide_template_id, :slider_id, :row_order_position, slide_values_attributes: [:id, :value, :type, :slide_template_value_id, value: []])
+    params.require(:slide).permit(:id, :slide_id, :name, :enabled, :slide_template_id, :slider_id, :row_order_position, slide_values_attributes: [:id, :value, :type, :slide_template_value_id, value: []])
   end
   
 end
