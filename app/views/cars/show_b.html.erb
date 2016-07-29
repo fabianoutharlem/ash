@@ -364,7 +364,7 @@
           <section id="demos">
             <div class="row">
 
-              <div class="nav_container"></div>
+              <div class="nav_container_special"></div>
               <div id="owl2row-plugin1" class="owl-carousel_top40">
                 <% @car.related_cars.each do |car| %>
                     <%= render car %>
@@ -437,6 +437,17 @@
       </div>
     </div>
   </section>
+
+  <% if Setting.get('top_review_car_show_visible') %>
+      <% review = TopReview.find_random %>
+      <div class="recentie">
+        <div class="recentie_img"><%= image_tag review.image.square, width: 225 %></div>
+        <span class="helper"></span>
+        <p class="recenctie_text">
+          “ <%= strip_tags review.review.html_safe %> ”
+        </p>
+      </div>
+  <% end %>
 
   <% if Setting.get('zekerheden_car_show_visible') %>
 
@@ -531,24 +542,11 @@
                 <p><%= phrase 'car-show-5-content' %></p>
               </div>
             </div>
-
-            <% if Setting.get('top_review_car_show_visible') %>
-                <% review = TopReview.find_random %>
-                <div class="row recentie">
-                  <%= image_tag review.image.square, width: 225 %>
-                  <span class="helper"></span>
-                  <p class="recenctie_text">
-                    “ <%= strip_tags review.review.html_safe %> ”
-                  </p>
-                </div>
-            <% end %>
-
           </div>
         </div>
       </section>
 
   <% end %>
-
 </section>
 
 <% content_for :meta do %>
