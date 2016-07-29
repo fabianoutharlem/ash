@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160727192659) do
+ActiveRecord::Schema.define(version: 20160729113130) do
 
   create_table "alternatives", force: :cascade do |t|
     t.string   "which",        limit: 255
@@ -362,8 +362,9 @@ ActiveRecord::Schema.define(version: 20160727192659) do
   create_table "top_reviews", force: :cascade do |t|
     t.string   "image",      limit: 255
     t.text     "review",     limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.boolean  "enabled",                  default: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
   end
 
   create_table "transmission_types", force: :cascade do |t|
