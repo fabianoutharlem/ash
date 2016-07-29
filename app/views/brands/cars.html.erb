@@ -65,14 +65,22 @@
   </div>
 </section>
 
-<% if Setting.get('top_review_brands_visible') %>
+<% if Setting.get('top_review_car_show_visible') %>
     <% review = TopReview.find_random %>
     <div class="recentie">
-      <div class="recentie_img"><%= image_tag review.image.square, width: 225 %></div>
-      <span class="helper"></span>
-      <p class="recenctie_text">
-        “ <%= strip_tags review.review.html_safe %> ”
-      </p>
+      <div class="row_recentie">
+        <div class="col_recentie">
+          <div class="recentie_img">
+            <%= image_tag review.image.square, width: 225 %>
+          </div>
+        </div>
+        <div class="col_recentie">
+          <span class="helper"></span>
+          <p class="recenctie_text">
+            “ <%= strip_tags review.review.html_safe %> ”
+          </p>
+        </div>
+      </div>
     </div>
 <% end %>
 
