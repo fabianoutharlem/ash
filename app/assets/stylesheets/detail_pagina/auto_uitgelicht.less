@@ -217,6 +217,10 @@ section.auto_uitgelicht {
         @media @700 {
           padding-bottom: 60px;
         }
+
+        @media @360 {
+          padding: 19% 0;
+        }
       }
 
       h2 {
@@ -250,7 +254,11 @@ section.auto_uitgelicht {
       }
 
       img.cross {
-        margin: 0 0 20px 0;
+        margin: 100px 0 0 0;
+
+        @media @880 {
+          margin: 90px 0 0 0;
+        }
 
         @media @360 {
           height: 20px;
@@ -382,9 +390,10 @@ section.auto_uitgelicht {
 
             &.second {
               color: @orange;
-              text-align: right;
+              //text-align: right;
               width: 165px;
-              padding-right: 20px;
+              //padding-right: 20px;
+              padding-left: 40px;
             }
           }
         }
@@ -937,7 +946,7 @@ section.detail_pagina_b { //only b
         div.car_content {
 
           table {
-            width: 300px;
+            //width: 300px;
 
             @media @360 {
               width: 280px;
@@ -958,9 +967,9 @@ section.detail_pagina_b { //only b
 
                 &.first {
 
-                  @media @1280 {
-                    width: 100px;
-                  }
+                  //@media @1280 {
+                  //  width: 100px;
+                  //}
                 }
               }
             }
