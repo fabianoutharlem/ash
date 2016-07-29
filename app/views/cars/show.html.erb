@@ -121,7 +121,7 @@
           <a target="_blank" href="https://twitter.com/intent/tweet?url=<%= url_encode(car_url(@car)) %>&text=<%= url_encode('Bekijk deze auto op autoservicehaarlem.nl') %>&hashtags=ash,autoservicehaarlem"><i class="twitter align_right"></i></a>
           <a target="_blank" id="shareBtn" href=""><i class="fb align_right"></i></a>
           <script type="text/javascript" charset="utf-8">
-            document.getElementById('shareBtn').onclick = function() {
+            document.getElementById('shareBtn').onclick = function () {
               FB.ui({
                 method: 'share',
                 href: '<%= car_url(@car) %>',
@@ -477,6 +477,20 @@
   </div>
 </section>
 
+<% if Setting.get('top_review_car_show_visible') %>
+    <% review = TopReview.find_random %>
+    <div class="recentie">
+      <div class="recentie_img">
+        <%= image_tag review.image.square, width: 225 %>
+      </div>
+      <span class="helper"></span>
+
+      <p class="recenctie_text">
+        “ <%= strip_tags review.review.html_safe %> ”
+      </p>
+    </div>
+<% end %>
+
 <% if Setting.get('zekerheden_car_show_visible') %>
 
     <section class="zekerheden">
@@ -492,6 +506,7 @@
                 <%= image_tag 'autos.png' %>
               </div>
               <h4><%= phrase 'car-show-zekerheden-1-titel' %></h4>
+
               <p><%= phrase 'car-show-zekerheden-1-content' %></p>
             </div>
             <div class="col bepaald">
@@ -500,6 +515,7 @@
                 <%= image_tag 'onderhoud.png' %>
               </div>
               <h4><%= phrase 'car-show-zekerheden-2-titel' %></h4>
+
               <p><%= phrase 'car-show-zekerheden-2-content' %></p>
             </div>
             <div class="col specialist">
@@ -508,6 +524,7 @@
                 <%= image_tag 'medail.png' %>
               </div>
               <h4><%= phrase 'car-show-zekerheden-3-titel' %></h4>
+
               <p><%= phrase 'car-show-zekerheden-3-content' %></p>
             </div>
             <div class="col historie">
@@ -516,6 +533,7 @@
                 <%= image_tag 'historie.png' %>
               </div>
               <h4><%= phrase 'car-show-zekerheden-4-titel' %></h4>
+
               <p><%= phrase 'car-show-zekerheden-4-content' %></p>
             </div>
             <div class="col huurkoop">
@@ -524,6 +542,7 @@
                 <%= image_tag 'geld_zak.png' %>
               </div>
               <h4><%= phrase 'car-show-zekerheden-5-titel' %></h4>
+
               <p><%= phrase 'car-show-zekerheden-5-content' %></p>
             </div>
           </div>
@@ -535,6 +554,7 @@
                 <%= image_tag 'autos.png' %>
               </div>
               <h4><%= phrase 'car-show-zekerheden-1-titel' %></h4>
+
               <p><%= phrase 'car-show-zekerheden-1-content' %></p>
             </div>
             <div class="col bepaald">
@@ -543,6 +563,7 @@
                 <%= image_tag 'onderhoud.png' %>
               </div>
               <h4><%= phrase 'car-show-zekerheden-2-titel' %></h4>
+
               <p><%= phrase 'car-show-zekerheden-2-content' %></p>
             </div>
             <div class="col specialist">
@@ -551,6 +572,7 @@
                 <%= image_tag 'medail.png' %>
               </div>
               <h4><%= phrase 'car-show-zekerheden-3-titel' %></h4>
+
               <p><%= phrase 'car-show-zekerheden-3-content' %></p>
             </div>
             <div class="col historie">
@@ -559,6 +581,7 @@
                 <%= image_tag 'historie.png' %>
               </div>
               <h4><%= phrase 'car-show-zekerheden-4-titel' %></h4>
+
               <p><%= phrase 'car-show-zekerheden-4-content' %></p>
             </div>
             <div class="col huurkoop">
@@ -567,21 +590,10 @@
                 <%= image_tag 'geld_zak.png' %>
               </div>
               <h4><%= phrase 'car-show-zekerheden-5-titel' %></h4>
+
               <p><%= phrase 'car-show-zekerheden-5-content' %></p>
             </div>
           </div>
-
-          <% if Setting.get('top_review_car_show_visible') %>
-              <% review = TopReview.find_random %>
-              <div class="row recentie">
-                <%= image_tag review.image.square, width: 225 %>
-                <span class="helper"></span>
-                <p class="recenctie_text">
-                  “ <%= strip_tags review.review.html_safe %> ”
-                </p>
-              </div>
-          <% end %>
-
         </div>
       </div>
     </section>
@@ -590,9 +602,9 @@
 
 
 <% content_for :meta do %>
-    <meta property="og:title" content="<%= @car.display_name %>" />
-    <meta property="og:url" content="<%= car_url(@car) %>" />
-    <meta property="og:type" content="article" />
-    <meta property="og:image" content="<%= @car.main_image.try(:file).try(:url) %>" />
-    <meta property="og:description" content="<%= @car.display_name %>" />
+    <meta property="og:title" content="<%= @car.display_name %>"/>
+    <meta property="og:url" content="<%= car_url(@car) %>"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:image" content="<%= @car.main_image.try(:file).try(:url) %>"/>
+    <meta property="og:description" content="<%= @car.display_name %>"/>
 <% end %>
