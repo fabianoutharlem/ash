@@ -498,10 +498,21 @@ div.sub_menu {
   background-color: #f1f0f0;
   text-align: center;
   transition: @trans;
+  min-height: 805px;
+
 
   @media @1280 {
     width: 100%;
     top: 85px;
+    min-height: 760px;
+  }
+
+  @media @1040 {
+    min-height: 530px;
+  }
+
+  @media @360 {
+    min-height: 240px;
   }
 
   &.voorraad_menu {
