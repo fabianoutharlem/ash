@@ -490,7 +490,7 @@ section.header {
 }
 
 div.sub_menu {
-  z-index: 30;
+  z-index: 100;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -498,13 +498,11 @@ div.sub_menu {
   background-color: #f1f0f0;
   text-align: center;
   transition: @trans;
-  min-height: 805px;
 
 
   @media @1280 {
     width: 100%;
     top: 85px;
-    min-height: 760px;
   }
 
   @media @1040 {
@@ -517,6 +515,11 @@ div.sub_menu {
 
   &.voorraad_menu {
     display: none;
+    min-height: 805px;
+
+    @media @1280 {
+      min-height: 760px;
+    }
 
     &.active {
       display: block;
@@ -591,6 +594,11 @@ div.sub_menu {
     background: image-url('bg_mogelijkheden.png') no-repeat center;
     background-size: cover;
     display: none;
+    min-height: 805px;
+
+    @media @1280 {
+      min-height: 760px;
+    }
 
     @media @905 {
       top: 61px;
@@ -687,6 +695,11 @@ div.sub_menu {
 
   &.contact_menu {
     display: none;
+    min-height: 805px;
+
+    @media @1280 {
+      min-height: 760px;
+    }
 
     &.active {
       display: block;
