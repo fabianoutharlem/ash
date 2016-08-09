@@ -22,6 +22,7 @@ section.adres {
       div.col {
         display: inline-block;
         width: calc(99% / 3);
+        vertical-align: top;
 
         @media @750 {
           width: 70%;
@@ -41,6 +42,15 @@ section.adres {
           width: 95%;
           margin: 0 auto;
           padding-bottom: 30px;
+          height: 940px;
+
+          @media @1072 {
+            height: 1020px;
+          }
+
+          @media @640 {
+            height: auto;
+          }
 
           h5 {
             font-size: 24px;
