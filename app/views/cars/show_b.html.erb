@@ -89,7 +89,7 @@
                 <a href="mailto:info@autoservicehaarlem.nl?subject=<%= url_encode("Ik heb deze #{@car.display_name} gevonden op autoservicehaarlem.nl") %>&body=<%= url_encode("Ik heb deze #{@car.display_name} gevonden op autoservicehaarlem.nl, bekijk hem op #{car_url(@car)}!") %>"><i class="mail"></i></a>
                 <!--<a onclick="window.print();"><i class="print"></i></a>-->
                 <a target="_blank" href="https://twitter.com/intent/tweet?url=<%= url_encode(car_url(@car)) %>&text=<%= url_encode('Bekijk deze auto op autoservicehaarlem.nl') %>&hashtags=ash,autoservicehaarlem"><i class="twitter align_right"></i></a>
-                <a target="_blank" id="shareBtn" href=""><i class="fb align_right"></i></a>
+                <a id="shareBtn" href=""><i class="fb align_right"></i></a>
                 <script type="text/javascript" charset="utf-8">
                   document.getElementById('shareBtn').onclick = function() {
                     FB.ui({
