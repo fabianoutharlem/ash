@@ -80,5 +80,8 @@ Rails.application.configure do
 
   Rails.application.routes.default_url_options[:host] = config.domain
 
+  config.action_controller.default_url_options = config.domain
+  config.asset_host = config.domain
+
   config.action_mailer.asset_host = config.domain
 end

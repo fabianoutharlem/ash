@@ -79,6 +79,7 @@ Rails.application.configure do
   config.asset_host = config.domain
 
   Rails.application.routes.default_url_options[:host] = config.domain
+  config.action_controller.default_url_options = config.domain
 
   config.action_mailer.perform_deliveries = true
 

@@ -51,6 +51,7 @@ Rails.application.configure do
   config.asset_host = config.domain
 
   Rails.application.routes.default_url_options[:host] = config.domain
+  config.action_controller.default_url_options = config.domain
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
