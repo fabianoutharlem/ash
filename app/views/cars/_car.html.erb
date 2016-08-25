@@ -27,7 +27,7 @@
         <p class="click_hier"><%= phrase 'Deze auto financieren? Klik hieronder!' %></p>
       </div>
       <div class="finance_mogelijkheden">
-        <a href="<%= car_finance_car_path(car, 'bussiness') %>" class="zakelijk finance_opties">
+        <a href="<%= car_finance_car_path(car, 'bussiness') %>" target="_blank" class="zakelijk finance_opties">
           <table>
             <tr class="options">
               <td class="first finance"><%= phrase 'Zakelijk vanaf' %></td>
@@ -36,7 +36,7 @@
           </table>
           <div class="orange_arrow"><%= image_tag 'arrow_right.svg' %></div>
         </a>
-        <a href="<%= car_finance_car_path(car, 'private') %>" class="particulier finance_opties">
+        <a href="<%= car_finance_car_path(car, 'private') %>" target="_blank" class="particulier finance_opties">
           <table>
             <tr>
               <td class="first finance"><%= phrase 'Particulier vanaf' %></td>
@@ -45,7 +45,7 @@
           </table>
           <div class="orange_arrow"><%= image_tag 'arrow_right.svg' %></div>
         </a>
-        <a href="<%= car_finance_car_path(car, '50_50') %>" class="fifty_fifty finance_opties">
+        <a href="<%= car_finance_car_path(car, '50_50') %>" target="_blank" class="fifty_fifty finance_opties">
           <table>
             <tr>
               <td class="first finance"><%= phrase '50/50 Deal' %></td>
