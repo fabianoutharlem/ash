@@ -1,28 +1,26 @@
-<%= link_to car_path(car), class: 'mobile_link' do %>
 <div class="item">
   <article class="article_car hart <%= 'best_day_deal' if car.best_day_deal? %>">
+        <div class="hover_element">
+          <div class="content_box">
+            <h4><%= car.brand.name %></h4>
+            <h5><%= car.model.name %> <%= car.car_type %></h5>
 
-    <div class="hover_element">
-      <div class="content_box">
-        <h4><%= car.brand.name %></h4>
-        <h5><%= car.model.name %> <%= car.car_type %></h5>
-
-        <% if car.price_discount.present? %>
-            <table>
-              <tr>
-                <td><%= phrase 'Van' %></td>
-                <td><%= phrase 'Voor' %></td>
-              </tr>
-              <tr>
-                <td><%= format_money car.price_total %></td>
-                <td><%= format_money car.price_discount %></td>
-              </tr>
-            </table>
-        <% else %>
-            <small>
-              <%= format_money car.price_total %>
-            </small>
-        <% end %>
+            <% if car.price_discount.present? %>
+                <table>
+                  <tr>
+                    <td><%= phrase 'Van' %></td>
+                    <td><%= phrase 'Voor' %></td>
+                  </tr>
+                  <tr>
+                    <td><%= format_money car.price_total %></td>
+                    <td><%= format_money car.price_discount %></td>
+                  </tr>
+                </table>
+            <% else %>
+                <small>
+                  <%= format_money car.price_total %>
+                </small>
+            <% end %>
 
         <%= link_to phrase('bekijk_deze_auto'), car_path(car), class: :orange_btn %>
         <p class="click_hier"><%= phrase 'Deze auto financieren? Klik hieronder!' %></p>
@@ -58,59 +56,58 @@
       </div>
     </div>
 
-    <div class="overlay_compare">
-      <%= link_to phrase('vergelijken'), car_add_to_compare_selection_path(car), class: 'orange_btn', remote: true %>
-    </div>
+        <div class="overlay_compare">
+          <%= link_to phrase('vergelijken'), car_add_to_compare_selection_path(car), class: 'orange_btn', remote: true %>
+        </div>
 
-    <figure class="main_image">
-      <%= image_tag car.main_image.file.thumb %>
+        <figure class="main_image">
+          <%= image_tag car.main_image.file.thumb %>
 
-      <div class="best_deal">
-        <p><%= phrase 'BEST DAY DEAL' %></p>
-        <span class="day_deal_star"></span>
-        <span class="day_deal_star"></span>
-        <span class="day_deal_star"></span>
-      </div>
-    </figure>
+          <div class="best_deal">
+            <p><%= phrase 'BEST DAY DEAL' %></p>
+            <span class="day_deal_star"></span>
+            <span class="day_deal_star"></span>
+            <span class="day_deal_star"></span>
+          </div>
+        </figure>
 
-    <div class="container-fluid car_container">
-      <% if @car_likes.include? car.id %>
-          <div class="hart"></div>
-      <% end %>
-      <div class="car_info">
-        <h5><%= car.brand.name %></h5>
+        <div class="container-fluid car_container">
+          <% if @car_likes.include? car.id %>
+              <div class="hart"></div>
+          <% end %>
+          <div class="car_info">
+            <h5><%= car.brand.name %></h5>
 
-        <p><%= car.model.name %> <%= car.car_type %></p>
-      </div>
+            <p><%= car.model.name %> <%= car.car_type %></p>
+          </div>
 
-      <div class="aanbieding">
-        <% if car.price_discount.present? %>
+          <div class="aanbieding">
+            <% if car.price_discount.present? %>
+                <table>
+                  <tr>
+                    <td><%= phrase 'Van' %></td>
+                    <td><%= phrase 'Voor' %></td>
+                  </tr>
+                  <tr>
+                    <td><%= format_money car.price_total %></td>
+                    <td><%= format_money car.price_discount %></td>
+                  </tr>
+                </table>
+            <% else %>
+                <small>
+                  <%= format_money car.price_total %>
+                </small>
+            <% end %>
+          </div>
+
+          <div class="p_m">
             <table>
               <tr>
-                <td><%= phrase 'Van' %></td>
-                <td><%= phrase 'Voor' %></td>
-              </tr>
-              <tr>
-                <td><%= format_money car.price_total %></td>
-                <td><%= format_money car.price_discount %></td>
+                <td class="rij_deze"><%= phrase 'Rij deze auto p.m. vanaf' %></td>
+                <td class="orange"><%= format_money car.price_month %></td>
               </tr>
             </table>
-        <% else %>
-            <small>
-              <%= format_money car.price_total %>
-            </small>
-        <% end %>
-      </div>
-
-      <div class="p_m">
-        <table>
-          <tr>
-            <td class="rij_deze"><%= phrase 'Rij deze auto p.m. vanaf' %></td>
-            <td class="orange"><%= format_money car.price_month %></td>
-          </tr>
-        </table>
-      </div>
-    </div>
+          </div>
+        </div>
   </article>
 </div>
-<% end %>
