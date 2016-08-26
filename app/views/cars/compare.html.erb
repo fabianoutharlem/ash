@@ -17,29 +17,23 @@
                 </div>
               </th>
               <td class="car car1" width="<%= col_width %>">
-                <%= link_to car_path(@car_1) do %>
-                    <div class="car_img"
-                         style="background: url('<%= @car_1.main_image.file.thumb.url %>') no-repeat center; background-size: cover;"></div>
-                <% end %>
+                <div class="car_img"
+                     style="background: url('<%= @car_1.main_image.file.thumb.url %>') no-repeat center; background-size: cover;"></div>
                 <% if @car_3.present? %>
                     <%= link_to '', compare_2_cars_path(@car_2, @car_3), class: 'cross' %>
                 <% end %>
               </td>
               <td class="car car2" width="<%= col_width %>">
-                <%= link_to car_path(@car_2) do %>
-                    <div class="car_img"
-                         style="background: url('<%= @car_2.main_image.file.thumb.url %>') no-repeat center; background-size: cover;"></div>
-                <% end %>
+                <div class="car_img"
+                     style="background: url('<%= @car_2.main_image.file.thumb.url %>') no-repeat center; background-size: cover;"></div>
                 <% if @car_3.present? %>
                     <%= link_to '', compare_2_cars_path(@car_1, @car_3), class: 'cross' %>
                 <% end %>
               </td>
               <% if @car_3.present? %>
                   <td class="car car3" width="<%= col_width %>">
-                    <%= link_to car_path(@car_3) do %>
-                        <div class="car_img"
-                             style="background: url('<%= @car_3.main_image.file.thumb.url %>') no-repeat center; background-size: cover;"></div>
-                    <% end %>
+                    <div class="car_img"
+                         style="background: url('<%= @car_3.main_image.file.thumb.url %>') no-repeat center; background-size: cover;"></div>
                     <% if @car_3.present? %>
                         <%= link_to '', compare_2_cars_path(@car_1, @car_2), class: 'cross' %>
                     <% end %>
