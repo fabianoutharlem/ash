@@ -5,23 +5,15 @@ a.responsive_link {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 10;
 
   @media @360 {
     display: block;
   }
 }
 
-a.mobile_link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-
-  @media @360 {
-    display: block;
-  }
+div.item {
+  position: relative;
 }
 
 article.article_car {
@@ -37,16 +29,16 @@ article.article_car {
     &.compare_active {
       .overlay_compare {
         bottom: 0;
-
-        @media @360 {
-          bottom: -100%;
-        }
       }
     }
 
     &:not(.compare_active) {
       div.hover_element {
         bottom: 0;
+
+        @media @360 {
+          bottom: -100%;
+        }
       }
     }
 
@@ -204,10 +196,11 @@ article.article_car {
 
       p {
         max-width: 240px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        //white-space: nowrap;
+        //overflow: hidden;
+        //text-overflow: ellipsis;
         height: 25px;
+        font-size: 11px;
       }
     }
 
@@ -219,6 +212,10 @@ article.article_car {
       small {
         color: @orange;
         font-size: 20px;
+      }
+
+      table {
+        margin-top: -7px;
       }
     }
 
