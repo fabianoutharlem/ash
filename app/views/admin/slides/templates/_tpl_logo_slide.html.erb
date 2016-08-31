@@ -5,5 +5,5 @@
   <h1 style="color: <%= slide_values[:tekst_kleur].value rescue '' %>;"><%= slide_values[:heading].value %></h1>
   <p style="color: <%= slide_values[:tekst_kleur].value rescue '' %>;"><%= slide_values[:sub_heading].value %></p>
 
-  <a href="<%= slide_values[:button_link].value %>" class="orange_btn" style="color: <%= slide_values[:knop_kleur].value rescue '' %>;"><%= slide_values[:button_tekst].value %></a>
+  <a href="<%= slide_values[:button_link].value %>" class="orange_btn" style="background-color: <%= slide_values[:knop_kleur].value rescue '' %>; color: <%= slide_values[:knop_tekst_kleur].value rescue '' %>;"><%= slide_values[:button_tekst].value %></a>
 </li>
