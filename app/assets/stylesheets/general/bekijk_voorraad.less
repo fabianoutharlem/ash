@@ -151,3 +151,89 @@ section.nieuw_binnen {
     }
   }
 }
+
+section.brand_bekijk_voorraad {
+
+  div.content_container {
+    background: #F1F1F1;
+    padding: 50px;
+
+    @media @1280 {
+      padding-right: 20px;
+    }
+
+    @media @1160 {
+      padding-left: 30px;
+    }
+
+    @media @680 {
+      padding: 50px 0;
+    }
+
+    div.left_container, div.right_container {
+      display: inline-block;
+
+      @media @680 {
+        display: block;
+      }
+    }
+
+    div.left_container {
+
+      @media @680 {
+        width: 320px;
+        margin: 0 auto;
+      }
+
+      .search_fields {
+        background-color: white;
+      }
+    }
+
+    div.right_container {
+      width: 100%;
+      vertical-align: top;
+      margin-left: -325px;
+      padding-left: 350px;
+
+      @media @1160 {
+        padding-left: 325px;
+      }
+
+      @media @680 {
+        padding: 0;
+        width: 100%;
+        margin: 0;
+      }
+
+      ul.autos {
+        width: 100%;
+
+        li.auto {
+          width: 30%;
+          margin: 0 10px;
+
+          @media @1280 {
+            width: 31%;
+          }
+
+          @media @1370 {
+            width: 47%;
+          }
+
+          @media @1100 {
+            width: 100%;
+          }
+
+          @media @680 {
+            margin: 0;
+          }
+
+          article.article_car {
+            margin: 0 auto 25px auto;
+          }
+        }
+      }
+    }
+  }
+}

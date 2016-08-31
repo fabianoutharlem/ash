@@ -5,6 +5,7 @@
         <div class="col col-xs-4 right_modellen">
           <div class="specific_car">
             <span class="helper"></span>
+
             <div class="car_images"
                  style="background: url('<%= image_url @brand.image.menu %>') no-repeat center;"></div>
             <p><%= @brand.name %> (<%= @brand.cars.count %>)</p>
@@ -35,19 +36,547 @@
 
 <%= render 'cars/pagination', cars: @cars, compare: true %>
 
-<section class="bekijk_voorraad">
+<section class="bekijk_voorraad brand_bekijk_voorraad">
   <div class="wrapper">
     <div class="container-fluid content_container">
 
-      <%= render 'cars/search' %>
+      <div class="left_container">
+        <%= render 'cars/search' %>
+      </div>
 
-      <ul class="autos">
-        <% @cars.each do |car| %>
-            <li class="auto">
-              <%= render car %>
-            </li>
-        <% end %>
-      </ul>
+      <div class="right_container">
+        <ul class="autos">
+          <% @cars.each do |car| %>
+              <li class="auto">
+                <%= render car %>
+              </li>
+              <!-- -->
+              <li class="auto">
+                <div class="item">
+                  <a class="responsive_link" href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full"></a>
+                  <article class="article_car hart best_day_deal">
+                    <div class="hover_element">
+                      <div class="content_box">
+                        <h4>Alfa Romeo</h4>
+                        <h5>Giulietta 1.4 Turbo Multi Air DISTINCTIVE Autom-Led Xenon-Navi-Full</h5>
+
+                        <small>
+                          € 15.900,-
+                        </small>
+
+                        <a class="orange_btn" href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full"><span class="phrasable" spellcheck="false" data-url="/phrasing/19?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">bekijk_deze_auto</span></a>
+                        <p class="click_hier"><span class="phrasable" spellcheck="false" data-url="/phrasing/101?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">Deze auto financieren? Klik hieronder!</span></p>
+                      </div>
+                      <div class="finance_mogelijkheden">
+                        <a href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/finance_car/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/bussiness" class="zakelijk finance_opties">
+                          <table>
+                            <tbody><tr class="options">
+                              <td class="first finance"><span class="phrasable" spellcheck="false" data-url="/phrasing/102?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">Zakelijk vanaf</span></td>
+                              <td class="finance">€ 199,- p/m</td>
+                            </tr>
+                            </tbody></table>
+                          <div class="orange_arrow"><img src="http://localhost:3000/assets/arrow_right-750e62f9dcf667f9f21b901d51fe871153f31c9a13e222c39f289a0506572cdf.svg" alt="Arrow right"></div>
+                        </a>
+                        <a href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/finance_car/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/private" class="particulier finance_opties">
+                          <table>
+                            <tbody><tr>
+                              <td class="first finance"><span class="phrasable" spellcheck="false" data-url="/phrasing/103?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">Particulier vanaf</span></td>
+                              <td class="finance">€ 199,- p/m</td>
+                            </tr>
+                            </tbody></table>
+                          <div class="orange_arrow"><img src="http://localhost:3000/assets/arrow_right-750e62f9dcf667f9f21b901d51fe871153f31c9a13e222c39f289a0506572cdf.svg" alt="Arrow right"></div>
+                        </a>
+                        <a href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/finance_car/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/50_50" class="fifty_fifty finance_opties">
+                          <table>
+                            <tbody><tr>
+                              <td class="first finance"><span class="phrasable" spellcheck="false" data-url="/phrasing/104?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">50/50 Deal</span></td>
+                              <td class="finance">€ 7.950,-</td>
+                            </tr>
+                            </tbody></table>
+                          <div class="orange_arrow"><img src="http://localhost:3000/assets/arrow_right-750e62f9dcf667f9f21b901d51fe871153f31c9a13e222c39f289a0506572cdf.svg" alt="Arrow right"></div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="overlay_compare">
+                      <a class="orange_btn" data-remote="true" href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/add_to_compare_selection"><span class="phrasable" spellcheck="false" data-url="/phrasing/190?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">vergelijken</span></a>
+                    </div>
+
+                    <figure class="main_image">
+                      <img src="https://ash-development.s3.eu-central-1.amazonaws.com/uploads/car_media/file/28/thumb_11648165-1-13-3.jpg" alt="Thumb 11648165 1 13 3">
+
+                      <div class="best_deal">
+                        <p><span class="phrasable" spellcheck="false" data-url="/phrasing/105?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">BEST DAY DEAL</span></p>
+                        <span class="day_deal_star"></span>
+                        <span class="day_deal_star"></span>
+                        <span class="day_deal_star"></span>
+                      </div>
+                    </figure>
+
+                    <div class="container-fluid car_container">
+                      <div class="car_info">
+                        <h5>Alfa Romeo</h5>
+
+                        <p>Giulietta 1.4 Turbo Multi Air DISTINCTIVE Autom-Led Xenon-Navi-Full</p>
+                      </div>
+
+                      <div class="aanbieding">
+                        <small>
+                          € 15.900,-
+                        </small>
+                      </div>
+
+                      <div class="p_m">
+                        <table>
+                          <tbody><tr>
+                            <td class="rij_deze"><span class="phrasable" spellcheck="false" data-url="/phrasing/106?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">Rij deze auto p.m. vanaf</span></td>
+                            <td class="orange">€ 199,-</td>
+                          </tr>
+                          </tbody></table>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </li>
+              <li class="auto">
+                <div class="item">
+                  <a class="responsive_link" href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full"></a>
+                  <article class="article_car hart best_day_deal">
+                    <div class="hover_element">
+                      <div class="content_box">
+                        <h4>Alfa Romeo</h4>
+                        <h5>Giulietta 1.4 Turbo Multi Air DISTINCTIVE Autom-Led Xenon-Navi-Full</h5>
+
+                        <small>
+                          € 15.900,-
+                        </small>
+
+                        <a class="orange_btn" href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full"><span class="phrasable" spellcheck="false" data-url="/phrasing/19?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">bekijk_deze_auto</span></a>
+                        <p class="click_hier"><span class="phrasable" spellcheck="false" data-url="/phrasing/101?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">Deze auto financieren? Klik hieronder!</span></p>
+                      </div>
+                      <div class="finance_mogelijkheden">
+                        <a href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/finance_car/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/bussiness" class="zakelijk finance_opties">
+                          <table>
+                            <tbody><tr class="options">
+                              <td class="first finance"><span class="phrasable" spellcheck="false" data-url="/phrasing/102?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">Zakelijk vanaf</span></td>
+                              <td class="finance">€ 199,- p/m</td>
+                            </tr>
+                            </tbody></table>
+                          <div class="orange_arrow"><img src="http://localhost:3000/assets/arrow_right-750e62f9dcf667f9f21b901d51fe871153f31c9a13e222c39f289a0506572cdf.svg" alt="Arrow right"></div>
+                        </a>
+                        <a href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/finance_car/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/private" class="particulier finance_opties">
+                          <table>
+                            <tbody><tr>
+                              <td class="first finance"><span class="phrasable" spellcheck="false" data-url="/phrasing/103?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">Particulier vanaf</span></td>
+                              <td class="finance">€ 199,- p/m</td>
+                            </tr>
+                            </tbody></table>
+                          <div class="orange_arrow"><img src="http://localhost:3000/assets/arrow_right-750e62f9dcf667f9f21b901d51fe871153f31c9a13e222c39f289a0506572cdf.svg" alt="Arrow right"></div>
+                        </a>
+                        <a href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/finance_car/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/50_50" class="fifty_fifty finance_opties">
+                          <table>
+                            <tbody><tr>
+                              <td class="first finance"><span class="phrasable" spellcheck="false" data-url="/phrasing/104?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">50/50 Deal</span></td>
+                              <td class="finance">€ 7.950,-</td>
+                            </tr>
+                            </tbody></table>
+                          <div class="orange_arrow"><img src="http://localhost:3000/assets/arrow_right-750e62f9dcf667f9f21b901d51fe871153f31c9a13e222c39f289a0506572cdf.svg" alt="Arrow right"></div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="overlay_compare">
+                      <a class="orange_btn" data-remote="true" href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/add_to_compare_selection"><span class="phrasable" spellcheck="false" data-url="/phrasing/190?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">vergelijken</span></a>
+                    </div>
+
+                    <figure class="main_image">
+                      <img src="https://ash-development.s3.eu-central-1.amazonaws.com/uploads/car_media/file/28/thumb_11648165-1-13-3.jpg" alt="Thumb 11648165 1 13 3">
+
+                      <div class="best_deal">
+                        <p><span class="phrasable" spellcheck="false" data-url="/phrasing/105?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">BEST DAY DEAL</span></p>
+                        <span class="day_deal_star"></span>
+                        <span class="day_deal_star"></span>
+                        <span class="day_deal_star"></span>
+                      </div>
+                    </figure>
+
+                    <div class="container-fluid car_container">
+                      <div class="car_info">
+                        <h5>Alfa Romeo</h5>
+
+                        <p>Giulietta 1.4 Turbo Multi Air DISTINCTIVE Autom-Led Xenon-Navi-Full</p>
+                      </div>
+
+                      <div class="aanbieding">
+                        <small>
+                          € 15.900,-
+                        </small>
+                      </div>
+
+                      <div class="p_m">
+                        <table>
+                          <tbody><tr>
+                            <td class="rij_deze"><span class="phrasable" spellcheck="false" data-url="/phrasing/106?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">Rij deze auto p.m. vanaf</span></td>
+                            <td class="orange">€ 199,-</td>
+                          </tr>
+                          </tbody></table>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </li>
+              <li class="auto">
+                <div class="item">
+                  <a class="responsive_link" href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full"></a>
+                  <article class="article_car hart best_day_deal">
+                    <div class="hover_element">
+                      <div class="content_box">
+                        <h4>Alfa Romeo</h4>
+                        <h5>Giulietta 1.4 Turbo Multi Air DISTINCTIVE Autom-Led Xenon-Navi-Full</h5>
+
+                        <small>
+                          € 15.900,-
+                        </small>
+
+                        <a class="orange_btn" href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full"><span class="phrasable" spellcheck="false" data-url="/phrasing/19?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">bekijk_deze_auto</span></a>
+                        <p class="click_hier"><span class="phrasable" spellcheck="false" data-url="/phrasing/101?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">Deze auto financieren? Klik hieronder!</span></p>
+                      </div>
+                      <div class="finance_mogelijkheden">
+                        <a href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/finance_car/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/bussiness" class="zakelijk finance_opties">
+                          <table>
+                            <tbody><tr class="options">
+                              <td class="first finance"><span class="phrasable" spellcheck="false" data-url="/phrasing/102?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">Zakelijk vanaf</span></td>
+                              <td class="finance">€ 199,- p/m</td>
+                            </tr>
+                            </tbody></table>
+                          <div class="orange_arrow"><img src="http://localhost:3000/assets/arrow_right-750e62f9dcf667f9f21b901d51fe871153f31c9a13e222c39f289a0506572cdf.svg" alt="Arrow right"></div>
+                        </a>
+                        <a href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/finance_car/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/private" class="particulier finance_opties">
+                          <table>
+                            <tbody><tr>
+                              <td class="first finance"><span class="phrasable" spellcheck="false" data-url="/phrasing/103?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">Particulier vanaf</span></td>
+                              <td class="finance">€ 199,- p/m</td>
+                            </tr>
+                            </tbody></table>
+                          <div class="orange_arrow"><img src="http://localhost:3000/assets/arrow_right-750e62f9dcf667f9f21b901d51fe871153f31c9a13e222c39f289a0506572cdf.svg" alt="Arrow right"></div>
+                        </a>
+                        <a href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/finance_car/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/50_50" class="fifty_fifty finance_opties">
+                          <table>
+                            <tbody><tr>
+                              <td class="first finance"><span class="phrasable" spellcheck="false" data-url="/phrasing/104?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">50/50 Deal</span></td>
+                              <td class="finance">€ 7.950,-</td>
+                            </tr>
+                            </tbody></table>
+                          <div class="orange_arrow"><img src="http://localhost:3000/assets/arrow_right-750e62f9dcf667f9f21b901d51fe871153f31c9a13e222c39f289a0506572cdf.svg" alt="Arrow right"></div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="overlay_compare">
+                      <a class="orange_btn" data-remote="true" href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/add_to_compare_selection"><span class="phrasable" spellcheck="false" data-url="/phrasing/190?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">vergelijken</span></a>
+                    </div>
+
+                    <figure class="main_image">
+                      <img src="https://ash-development.s3.eu-central-1.amazonaws.com/uploads/car_media/file/28/thumb_11648165-1-13-3.jpg" alt="Thumb 11648165 1 13 3">
+
+                      <div class="best_deal">
+                        <p><span class="phrasable" spellcheck="false" data-url="/phrasing/105?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">BEST DAY DEAL</span></p>
+                        <span class="day_deal_star"></span>
+                        <span class="day_deal_star"></span>
+                        <span class="day_deal_star"></span>
+                      </div>
+                    </figure>
+
+                    <div class="container-fluid car_container">
+                      <div class="car_info">
+                        <h5>Alfa Romeo</h5>
+
+                        <p>Giulietta 1.4 Turbo Multi Air DISTINCTIVE Autom-Led Xenon-Navi-Full</p>
+                      </div>
+
+                      <div class="aanbieding">
+                        <small>
+                          € 15.900,-
+                        </small>
+                      </div>
+
+                      <div class="p_m">
+                        <table>
+                          <tbody><tr>
+                            <td class="rij_deze"><span class="phrasable" spellcheck="false" data-url="/phrasing/106?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">Rij deze auto p.m. vanaf</span></td>
+                            <td class="orange">€ 199,-</td>
+                          </tr>
+                          </tbody></table>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </li>
+              <li class="auto">
+                <div class="item">
+                  <a class="responsive_link" href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full"></a>
+                  <article class="article_car hart best_day_deal">
+                    <div class="hover_element">
+                      <div class="content_box">
+                        <h4>Alfa Romeo</h4>
+                        <h5>Giulietta 1.4 Turbo Multi Air DISTINCTIVE Autom-Led Xenon-Navi-Full</h5>
+
+                        <small>
+                          € 15.900,-
+                        </small>
+
+                        <a class="orange_btn" href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full"><span class="phrasable" spellcheck="false" data-url="/phrasing/19?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">bekijk_deze_auto</span></a>
+                        <p class="click_hier"><span class="phrasable" spellcheck="false" data-url="/phrasing/101?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">Deze auto financieren? Klik hieronder!</span></p>
+                      </div>
+                      <div class="finance_mogelijkheden">
+                        <a href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/finance_car/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/bussiness" class="zakelijk finance_opties">
+                          <table>
+                            <tbody><tr class="options">
+                              <td class="first finance"><span class="phrasable" spellcheck="false" data-url="/phrasing/102?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">Zakelijk vanaf</span></td>
+                              <td class="finance">€ 199,- p/m</td>
+                            </tr>
+                            </tbody></table>
+                          <div class="orange_arrow"><img src="http://localhost:3000/assets/arrow_right-750e62f9dcf667f9f21b901d51fe871153f31c9a13e222c39f289a0506572cdf.svg" alt="Arrow right"></div>
+                        </a>
+                        <a href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/finance_car/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/private" class="particulier finance_opties">
+                          <table>
+                            <tbody><tr>
+                              <td class="first finance"><span class="phrasable" spellcheck="false" data-url="/phrasing/103?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">Particulier vanaf</span></td>
+                              <td class="finance">€ 199,- p/m</td>
+                            </tr>
+                            </tbody></table>
+                          <div class="orange_arrow"><img src="http://localhost:3000/assets/arrow_right-750e62f9dcf667f9f21b901d51fe871153f31c9a13e222c39f289a0506572cdf.svg" alt="Arrow right"></div>
+                        </a>
+                        <a href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/finance_car/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/50_50" class="fifty_fifty finance_opties">
+                          <table>
+                            <tbody><tr>
+                              <td class="first finance"><span class="phrasable" spellcheck="false" data-url="/phrasing/104?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">50/50 Deal</span></td>
+                              <td class="finance">€ 7.950,-</td>
+                            </tr>
+                            </tbody></table>
+                          <div class="orange_arrow"><img src="http://localhost:3000/assets/arrow_right-750e62f9dcf667f9f21b901d51fe871153f31c9a13e222c39f289a0506572cdf.svg" alt="Arrow right"></div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="overlay_compare">
+                      <a class="orange_btn" data-remote="true" href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/add_to_compare_selection"><span class="phrasable" spellcheck="false" data-url="/phrasing/190?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">vergelijken</span></a>
+                    </div>
+
+                    <figure class="main_image">
+                      <img src="https://ash-development.s3.eu-central-1.amazonaws.com/uploads/car_media/file/28/thumb_11648165-1-13-3.jpg" alt="Thumb 11648165 1 13 3">
+
+                      <div class="best_deal">
+                        <p><span class="phrasable" spellcheck="false" data-url="/phrasing/105?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">BEST DAY DEAL</span></p>
+                        <span class="day_deal_star"></span>
+                        <span class="day_deal_star"></span>
+                        <span class="day_deal_star"></span>
+                      </div>
+                    </figure>
+
+                    <div class="container-fluid car_container">
+                      <div class="car_info">
+                        <h5>Alfa Romeo</h5>
+
+                        <p>Giulietta 1.4 Turbo Multi Air DISTINCTIVE Autom-Led Xenon-Navi-Full</p>
+                      </div>
+
+                      <div class="aanbieding">
+                        <small>
+                          € 15.900,-
+                        </small>
+                      </div>
+
+                      <div class="p_m">
+                        <table>
+                          <tbody><tr>
+                            <td class="rij_deze"><span class="phrasable" spellcheck="false" data-url="/phrasing/106?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">Rij deze auto p.m. vanaf</span></td>
+                            <td class="orange">€ 199,-</td>
+                          </tr>
+                          </tbody></table>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </li>
+              <li class="auto">
+                <div class="item">
+                  <a class="responsive_link" href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full"></a>
+                  <article class="article_car hart best_day_deal">
+                    <div class="hover_element">
+                      <div class="content_box">
+                        <h4>Alfa Romeo</h4>
+                        <h5>Giulietta 1.4 Turbo Multi Air DISTINCTIVE Autom-Led Xenon-Navi-Full</h5>
+
+                        <small>
+                          € 15.900,-
+                        </small>
+
+                        <a class="orange_btn" href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full"><span class="phrasable" spellcheck="false" data-url="/phrasing/19?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">bekijk_deze_auto</span></a>
+                        <p class="click_hier"><span class="phrasable" spellcheck="false" data-url="/phrasing/101?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">Deze auto financieren? Klik hieronder!</span></p>
+                      </div>
+                      <div class="finance_mogelijkheden">
+                        <a href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/finance_car/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/bussiness" class="zakelijk finance_opties">
+                          <table>
+                            <tbody><tr class="options">
+                              <td class="first finance"><span class="phrasable" spellcheck="false" data-url="/phrasing/102?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">Zakelijk vanaf</span></td>
+                              <td class="finance">€ 199,- p/m</td>
+                            </tr>
+                            </tbody></table>
+                          <div class="orange_arrow"><img src="http://localhost:3000/assets/arrow_right-750e62f9dcf667f9f21b901d51fe871153f31c9a13e222c39f289a0506572cdf.svg" alt="Arrow right"></div>
+                        </a>
+                        <a href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/finance_car/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/private" class="particulier finance_opties">
+                          <table>
+                            <tbody><tr>
+                              <td class="first finance"><span class="phrasable" spellcheck="false" data-url="/phrasing/103?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">Particulier vanaf</span></td>
+                              <td class="finance">€ 199,- p/m</td>
+                            </tr>
+                            </tbody></table>
+                          <div class="orange_arrow"><img src="http://localhost:3000/assets/arrow_right-750e62f9dcf667f9f21b901d51fe871153f31c9a13e222c39f289a0506572cdf.svg" alt="Arrow right"></div>
+                        </a>
+                        <a href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/finance_car/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/50_50" class="fifty_fifty finance_opties">
+                          <table>
+                            <tbody><tr>
+                              <td class="first finance"><span class="phrasable" spellcheck="false" data-url="/phrasing/104?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">50/50 Deal</span></td>
+                              <td class="finance">€ 7.950,-</td>
+                            </tr>
+                            </tbody></table>
+                          <div class="orange_arrow"><img src="http://localhost:3000/assets/arrow_right-750e62f9dcf667f9f21b901d51fe871153f31c9a13e222c39f289a0506572cdf.svg" alt="Arrow right"></div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="overlay_compare">
+                      <a class="orange_btn" data-remote="true" href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/add_to_compare_selection"><span class="phrasable" spellcheck="false" data-url="/phrasing/190?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">vergelijken</span></a>
+                    </div>
+
+                    <figure class="main_image">
+                      <img src="https://ash-development.s3.eu-central-1.amazonaws.com/uploads/car_media/file/28/thumb_11648165-1-13-3.jpg" alt="Thumb 11648165 1 13 3">
+
+                      <div class="best_deal">
+                        <p><span class="phrasable" spellcheck="false" data-url="/phrasing/105?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">BEST DAY DEAL</span></p>
+                        <span class="day_deal_star"></span>
+                        <span class="day_deal_star"></span>
+                        <span class="day_deal_star"></span>
+                      </div>
+                    </figure>
+
+                    <div class="container-fluid car_container">
+                      <div class="car_info">
+                        <h5>Alfa Romeo</h5>
+
+                        <p>Giulietta 1.4 Turbo Multi Air DISTINCTIVE Autom-Led Xenon-Navi-Full</p>
+                      </div>
+
+                      <div class="aanbieding">
+                        <small>
+                          € 15.900,-
+                        </small>
+                      </div>
+
+                      <div class="p_m">
+                        <table>
+                          <tbody><tr>
+                            <td class="rij_deze"><span class="phrasable" spellcheck="false" data-url="/phrasing/106?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">Rij deze auto p.m. vanaf</span></td>
+                            <td class="orange">€ 199,-</td>
+                          </tr>
+                          </tbody></table>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </li>
+              <li class="auto">
+                <div class="item">
+                  <a class="responsive_link" href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full"></a>
+                  <article class="article_car hart best_day_deal">
+                    <div class="hover_element">
+                      <div class="content_box">
+                        <h4>Alfa Romeo</h4>
+                        <h5>Giulietta 1.4 Turbo Multi Air DISTINCTIVE Autom-Led Xenon-Navi-Full</h5>
+
+                        <small>
+                          € 15.900,-
+                        </small>
+
+                        <a class="orange_btn" href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full"><span class="phrasable" spellcheck="false" data-url="/phrasing/19?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">bekijk_deze_auto</span></a>
+                        <p class="click_hier"><span class="phrasable" spellcheck="false" data-url="/phrasing/101?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">Deze auto financieren? Klik hieronder!</span></p>
+                      </div>
+                      <div class="finance_mogelijkheden">
+                        <a href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/finance_car/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/bussiness" class="zakelijk finance_opties">
+                          <table>
+                            <tbody><tr class="options">
+                              <td class="first finance"><span class="phrasable" spellcheck="false" data-url="/phrasing/102?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">Zakelijk vanaf</span></td>
+                              <td class="finance">€ 199,- p/m</td>
+                            </tr>
+                            </tbody></table>
+                          <div class="orange_arrow"><img src="http://localhost:3000/assets/arrow_right-750e62f9dcf667f9f21b901d51fe871153f31c9a13e222c39f289a0506572cdf.svg" alt="Arrow right"></div>
+                        </a>
+                        <a href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/finance_car/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/private" class="particulier finance_opties">
+                          <table>
+                            <tbody><tr>
+                              <td class="first finance"><span class="phrasable" spellcheck="false" data-url="/phrasing/103?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">Particulier vanaf</span></td>
+                              <td class="finance">€ 199,- p/m</td>
+                            </tr>
+                            </tbody></table>
+                          <div class="orange_arrow"><img src="http://localhost:3000/assets/arrow_right-750e62f9dcf667f9f21b901d51fe871153f31c9a13e222c39f289a0506572cdf.svg" alt="Arrow right"></div>
+                        </a>
+                        <a href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/finance_car/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/50_50" class="fifty_fifty finance_opties">
+                          <table>
+                            <tbody><tr>
+                              <td class="first finance"><span class="phrasable" spellcheck="false" data-url="/phrasing/104?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">50/50 Deal</span></td>
+                              <td class="finance">€ 7.950,-</td>
+                            </tr>
+                            </tbody></table>
+                          <div class="orange_arrow"><img src="http://localhost:3000/assets/arrow_right-750e62f9dcf667f9f21b901d51fe871153f31c9a13e222c39f289a0506572cdf.svg" alt="Arrow right"></div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="overlay_compare">
+                      <a class="orange_btn" data-remote="true" href="/autos/alfa-romeo-giulietta-1-4-turbo-multi-air-distinctive-autom-led-xenon-navi-full/add_to_compare_selection"><span class="phrasable" spellcheck="false" data-url="/phrasing/190?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">vergelijken</span></a>
+                    </div>
+
+                    <figure class="main_image">
+                      <img src="https://ash-development.s3.eu-central-1.amazonaws.com/uploads/car_media/file/28/thumb_11648165-1-13-3.jpg" alt="Thumb 11648165 1 13 3">
+
+                      <div class="best_deal">
+                        <p><span class="phrasable" spellcheck="false" data-url="/phrasing/105?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">BEST DAY DEAL</span></p>
+                        <span class="day_deal_star"></span>
+                        <span class="day_deal_star"></span>
+                        <span class="day_deal_star"></span>
+                      </div>
+                    </figure>
+
+                    <div class="container-fluid car_container">
+                      <div class="car_info">
+                        <h5>Alfa Romeo</h5>
+
+                        <p>Giulietta 1.4 Turbo Multi Air DISTINCTIVE Autom-Led Xenon-Navi-Full</p>
+                      </div>
+
+                      <div class="aanbieding">
+                        <small>
+                          € 15.900,-
+                        </small>
+                      </div>
+
+                      <div class="p_m">
+                        <table>
+                          <tbody><tr>
+                            <td class="rij_deze"><span class="phrasable" spellcheck="false" data-url="/phrasing/106?attribute=value&amp;klass=PhrasingPhrase" contenteditable="false">Rij deze auto p.m. vanaf</span></td>
+                            <td class="orange">€ 199,-</td>
+                          </tr>
+                          </tbody></table>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </li>
+              <!-- -->
+          <% end %>
+        </ul>
+      </div>
 
     </div>
   </div>
@@ -60,6 +589,7 @@
     <div class="container-fluid content_container" style="background: url('<%= image_url 'bg_mogelijkheden.jpg' %>') no-repeat center; background-size: cover">
 
       <h2><%= phrase 'finance_header_brand_page' %></h2>
+
       <h3><%= phrase 'finance_sub_header_brand_page' %></h3>
 
       <%= render 'shared/finance_circles' %>
@@ -78,6 +608,7 @@
         </div>
         <div class="col_recentie">
           <span class="helper"></span>
+
           <p class="recenctie_text">
             “ <%= strip_tags review.review.html_safe %> ”
           </p>
@@ -101,6 +632,7 @@
                 <%= image_tag 'autos.png' %>
               </div>
               <h4><%= phrase 'brands-zekerheden-1-titel' %></h4>
+
               <p><%= phrase 'brands-zekerheden-1-content' %></p>
             </div>
             <div class="col bepaald">
@@ -109,6 +641,7 @@
                 <%= image_tag 'onderhoud.png' %>
               </div>
               <h4><%= phrase 'brands-zekerheden-2-titel' %></h4>
+
               <p><%= phrase 'brands-zekerheden-2-content' %></p>
             </div>
             <div class="col specialist">
@@ -117,6 +650,7 @@
                 <%= image_tag 'medail.png' %>
               </div>
               <h4><%= phrase 'brands-zekerheden-3-titel' %></h4>
+
               <p><%= phrase 'brands-zekerheden-3-content' %></p>
             </div>
             <div class="col historie">
@@ -125,6 +659,7 @@
                 <%= image_tag 'historie.png' %>
               </div>
               <h4><%= phrase 'brands-zekerheden-4-titel' %></h4>
+
               <p><%= phrase 'brands-zekerheden-4-content' %></p>
             </div>
             <div class="col huurkoop">
@@ -133,6 +668,7 @@
                 <%= image_tag 'geld_zak.png' %>
               </div>
               <h4><%= phrase 'brands-zekerheden-5-titel' %></h4>
+
               <p><%= phrase 'brands-zekerheden-5-content' %></p>
             </div>
           </div>
@@ -144,6 +680,7 @@
                 <%= image_tag 'autos.png' %>
               </div>
               <h4><%= phrase 'brands-zekerheden-1-titel' %></h4>
+
               <p><%= phrase 'brands-zekerheden-1-content' %></p>
             </div>
             <div class="col bepaald">
@@ -152,6 +689,7 @@
                 <%= image_tag 'onderhoud.png' %>
               </div>
               <h4><%= phrase 'brands-zekerheden-2-titel' %></h4>
+
               <p><%= phrase 'brands-zekerheden-2-content' %></p>
             </div>
             <div class="col specialist">
@@ -160,6 +698,7 @@
                 <%= image_tag 'medail.png' %>
               </div>
               <h4><%= phrase 'brands-zekerheden-3-titel' %></h4>
+
               <p><%= phrase 'brands-zekerheden-3-content' %></p>
             </div>
             <div class="col historie">
@@ -168,6 +707,7 @@
                 <%= image_tag 'historie.png' %>
               </div>
               <h4><%= phrase 'brands-zekerheden-4-titel' %></h4>
+
               <p><%= phrase 'brands-zekerheden-4-content' %></p>
             </div>
             <div class="col huurkoop">
@@ -176,6 +716,7 @@
                 <%= image_tag 'geld_zak.png' %>
               </div>
               <h4><%= phrase 'brands-zekerheden-5-titel' %></h4>
+
               <p><%= phrase 'brands-zekerheden-5-content' %></p>
             </div>
           </div>
