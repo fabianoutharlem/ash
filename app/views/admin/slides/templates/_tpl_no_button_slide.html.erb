@@ -2,7 +2,7 @@
 
   <span class="helper"></span>
   <div class="text">
-    <h2><%= slide_values[:heading].value %></h2>
-    <p><%= slide_values[:sub_heading].value %></p>
+    <h2 style="color: <%= slide_values[:tekst_kleur].value rescue '' %>;"><%= slide_values[:heading].value %></h2>
+    <p style="color: <%= slide_values[:tekst_kleur].value rescue '' %>;"><%= slide_values[:sub_heading].value %></p>
   </div>
 </li>

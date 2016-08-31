@@ -20,3 +20,5 @@
 //= require ./slides/update_slides_row_order
 //= require ./menu_items/update_menu_items_row_order
 //= require toastr/toastr.min.js
+//= require bootstrap-colorpicker
+
