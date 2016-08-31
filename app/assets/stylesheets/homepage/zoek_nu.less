@@ -261,6 +261,19 @@ section.zoek_nu {
         }
 
         &.slider_col {
+          width: 575px;
+
+          @media @650 {
+            width: 280px;
+          }
+
+          .ui-slider-horizontal {
+            width: 95%;
+
+            @media @650 {
+              width: 87%;
+            }
+          }
 
           small.label {
             font-size: 14px;
