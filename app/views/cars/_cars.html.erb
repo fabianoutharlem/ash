@@ -11,7 +11,7 @@
             <div class="tab active auto_kopen" data-searchfield="buy_field"><span class="helper"></span>Auto kopen</div>
             <div class="search_fields finance_field">
               <form class="car_search_form" action="<%= search_cars_path %>" method="GET">
-                <%= render 'search_form' %>
+                <%= render 'search_form', finance_form: true %>
               </form>
             </div>
 

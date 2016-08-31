@@ -23,7 +23,7 @@ module CarManipulations
                           when 'price'
                             'cars.price_total'
                           else
-                            'cars.price_total'
+                            'cars.created_at'
                         end
       order_direction = case params[:order][:direction]
                           when 'asc'
@@ -31,7 +31,7 @@ module CarManipulations
                           when 'desc'
                             'DESC'
                           else
-                            'ASC'
+                            'DESC'
                         end
       cars = cars.order("#{order_attribute} #{order_direction}")
     end
