@@ -42,6 +42,10 @@ class Admin::SlidesController < Admin::AdminBaseController
 
   def edit
     @slide = Slide.find(params[:id])
+    used_template_values = @slide.slide_values.collect(&:slide_template_value)
+    (@slide.slide_template.slide_template_values - used_template_values).each do |slide_template_value|
+      @slide.slide_values << SlideValue.new(slide_template_value: slide_template_value, type: slide_template_value.option_type)
+    end
   end
 
   def update

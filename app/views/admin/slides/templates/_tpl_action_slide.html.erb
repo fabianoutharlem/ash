@@ -1,7 +1,7 @@
 <li class="main_slides _slide1" style="background: url('<%= slide_values[:achtergrond].value.url %>') no-repeat center; background-size: cover;">
-  <h1 class="animated fadeInRightBig"><%= slide_values[:heading].value %></h1>
+  <h1 class="animated fadeInRightBig" style="color: <%= slide_values[:tekst_kleur].value rescue '' %>;"><%= slide_values[:heading].value %></h1>
 
-  <a href="<%= slide_values[:knop_link].value %>" class="orange_btn animated fadeInUp">
+  <a href="<%= slide_values[:knop_link].value %>" class="orange_btn animated fadeInUp" style="background-color: <%= slide_values[:knop_kleur].value rescue '' %>; color: <%= slide_values[:knop_tekst_kleur].value rescue '' %>;">
     <%= slide_values[:knop_tekst].value %>
   </a>
 </li>

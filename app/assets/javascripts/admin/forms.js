@@ -21,3 +21,5 @@
 //= require bootstrap-markdown/markdown.js
 //= require select2-full
 //= require select2_locale_nl
+
+$('.colorpicker').colorpicker();

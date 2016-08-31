@@ -92,3 +92,5 @@ gem 'wkhtmltopdf-binary'
 gem 'breadcrumbs_on_rails'
 
 gem 'koala'
+
+gem 'bootstrap-colorpicker-rails'

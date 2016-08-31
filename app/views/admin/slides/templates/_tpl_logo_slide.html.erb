@@ -1,9 +1,9 @@
 <li class="main_slides _slide4" style="background: url(<%= slide_values[:background].value.url %>) no-repeat center; background-size: cover;">
 
-  <%= image_tag slide_values[:logo].value.url, class: 'ath-logo' %>
+  <%= image_tag slide_values[:logo].value.url, class: 'ath-logo', height: 200 %>
 
-  <h1><%= slide_values[:heading].value %></h1>
-  <p><%= slide_values[:sub_heading].value %></p>
+  <h1 style="color: <%= slide_values[:tekst_kleur].value rescue '' %>;"><%= slide_values[:heading].value %></h1>
+  <p style="color: <%= slide_values[:tekst_kleur].value rescue '' %>;"><%= slide_values[:sub_heading].value %></p>
 
-  <a href="<%= slide_values[:button_link].value %>" class="orange_btn"><%= slide_values[:button_tekst].value %></a>
+  <a href="<%= slide_values[:button_link].value %>" class="orange_btn" style="background-color: <%= slide_values[:knop_kleur].value rescue '' %>; color: <%= slide_values[:knop_tekst_kleur].value rescue '' %>;"><%= slide_values[:button_tekst].value %></a>
 </li>
