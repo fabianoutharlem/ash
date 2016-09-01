@@ -534,10 +534,10 @@ $(document).ready(function () {
 
   //left menu filters tab active
   var data_searchfield = $(this).data('searchfield'),
-      searchfield = $('section.all_cars div.search_fields');
+      searchfield = $('section.all_cars div.search_fields, section.brand_bekijk_voorraad div.search_fields');
 
-  $('section.all_cars div.left div.tab').click(function () {
-    $('section.all_cars div.left div.tab').removeClass('active');
+  $('section.all_cars div.left div.tab, section.brand_bekijk_voorraad div.left_container div.tab').click(function () {
+    $('section.all_cars div.left div.tab, section.brand_bekijk_voorraad div.left_container div.tab').removeClass('active');
     $(this).addClass('active');
 
     searchfield.removeClass('active');

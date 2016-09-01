@@ -170,19 +170,15 @@ section.brand_bekijk_voorraad {
       padding: 50px 0;
     }
 
-    div.left_container, div.right_container {
-      display: inline-block;
-
-      @media @680 {
-        display: block;
-      }
-    }
-
     div.left_container {
+      float: left;
+      width: 320px;
 
       @media @680 {
         width: 320px;
         margin: 0 auto;
+        display: block;
+        float: none;
       }
 
       .search_fields {
@@ -191,19 +187,20 @@ section.brand_bekijk_voorraad {
     }
 
     div.right_container {
-      width: 100%;
+      width: calc(~"100% - 350px");
       vertical-align: top;
-      margin-left: -325px;
-      padding-left: 350px;
+      float: right;
 
-      @media @1160 {
-        padding-left: 325px;
+      @media @880 {
+        width: calc(~"100% - 330px");
       }
 
       @media @680 {
         padding: 0;
         width: 100%;
         margin: 0;
+        display: block;
+        float: none;
       }
 
       ul.autos {
