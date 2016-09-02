@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160831105240) do
+ActiveRecord::Schema.define(version: 20160902123444) do
 
   create_table "alternatives", force: :cascade do |t|
     t.string   "which",        limit: 255
@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 20160831105240) do
     t.boolean  "nap"
     t.boolean  "rdw"
     t.integer  "price_total",          limit: 4
-    t.decimal  "price_discount",                   precision: 10
+    t.decimal  "price_discount",                     precision: 10
     t.integer  "price_month",          limit: 4
     t.integer  "price_50_50",          limit: 4
     t.integer  "manufacture_year",     limit: 4
@@ -111,8 +111,9 @@ ActiveRecord::Schema.define(version: 20160831105240) do
     t.string   "license_plate",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "best_day_deal",                                   default: false
+    t.boolean  "best_day_deal",                                     default: false
     t.integer  "views",                limit: 4
+    t.text     "comment",              limit: 65535
   end
 
   add_index "cars", ["brand_id"], name: "index_cars_on_brand_id", using: :btree
@@ -330,12 +331,12 @@ ActiveRecord::Schema.define(version: 20160831105240) do
 
   create_table "slides", force: :cascade do |t|
     t.string   "name",              limit: 255
+    t.boolean  "enabled",                       default: true
     t.integer  "row_order",         limit: 4
     t.integer  "slider_id",         limit: 4
     t.integer  "slide_template_id", limit: 4
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-    t.boolean  "enabled"
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
   end
 
   add_index "slides", ["slider_id"], name: "index_slides_on_slider_id", using: :btree
