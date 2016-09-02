@@ -79,7 +79,13 @@
             </div>
 
             <div class="appointment">
-              <p class="views"><%= @car.views %> <%= phrase 'bezoekers bekeken deze auto' %>.</p>
+              <div class="visitors_info">
+                <div class="hot_item">
+                  <figure class="hot_item_icon"></figure>
+                  <small>Hot Item!</small>
+                </div>
+                <p class="views"><%= @car.views %> <%= phrase 'bezoekers bekeken deze auto' %>.</p>
+              </div>
               <a href="#" class="orange_btn appointment_btn">Afspraak maken</a>
 
               <div class="icons">
@@ -91,7 +97,7 @@
                 <a target="_blank" href="https://twitter.com/intent/tweet?url=<%= url_encode(car_url(@car)) %>&text=<%= url_encode('Bekijk deze auto op autoservicehaarlem.nl') %>&hashtags=ash,autoservicehaarlem"><i class="twitter align_right"></i></a>
                 <a target="_blank" id="shareBtn" href=""><i class="fb align_right"></i></a>
                 <script type="text/javascript" charset="utf-8">
-                  document.getElementById('shareBtn').onclick = function() {
+                  document.getElementById('shareBtn').onclick = function () {
                     FB.ui({
                       method: 'share',
                       href: '<%= car_url(@car) %>',
@@ -191,7 +197,6 @@
             <p><%= phrase 'finance_information' %></p>
             <%= image_tag 'arrow_down_orange.svg' %>
           </div>
-
           <div class="_photos tab" data-submenu="photos">
             <span class="helper"></span>
 
@@ -345,6 +350,21 @@
               <% end %>
             </ul>
           </div>
+
+          <div class="text_area">
+            <h5>Extra informatie</h5>
+
+            <p>Etiam porta sem malesuada magna mollis euismod. Cras justo odio, dapibus ac facilisis in, egestas eget
+              quam. Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel
+              scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit.
+
+              Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus mollis interdum.
+              Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet
+              risus. Curabitur blandit tempus porttitor.
+              Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a
+              ante venenatis dapibus posuere velit aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Donec sed odio dui. Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -449,6 +469,7 @@
           </div>
           <div class="col_recentie">
             <span class="helper"></span>
+
             <p class="recenctie_text">
               “ <%= strip_tags review.review.html_safe %> ”
             </p>
@@ -472,6 +493,7 @@
                   <%= image_tag 'autos.png' %>
                 </div>
                 <h4><%= phrase 'car-show-1-titel' %></h4>
+
                 <p><%= phrase 'car-show-1-content' %></p>
               </div>
               <div class="col bepaald">
@@ -480,6 +502,7 @@
                   <%= image_tag 'onderhoud.png' %>
                 </div>
                 <h4><%= phrase 'car-show-2-titel' %></h4>
+
                 <p><%= phrase 'car-show-2-content' %></p>
               </div>
               <div class="col specialist">
@@ -488,6 +511,7 @@
                   <%= image_tag 'medail.png' %>
                 </div>
                 <h4><%= phrase 'car-show-3-titel' %></h4>
+
                 <p><%= phrase 'car-show-3-content' %></p>
               </div>
               <div class="col historie">
@@ -496,6 +520,7 @@
                   <%= image_tag 'historie.png' %>
                 </div>
                 <h4><%= phrase 'car-show-4-titel' %></h4>
+
                 <p><%= phrase 'car-show-4-content' %></p>
               </div>
               <div class="col huurkoop">
@@ -504,6 +529,7 @@
                   <%= image_tag 'geld_zak.png' %>
                 </div>
                 <h4><%= phrase 'car-show-5-titel' %></h4>
+
                 <p><%= phrase 'car-show-5-content' %></p>
               </div>
             </div>
@@ -515,6 +541,7 @@
                   <%= image_tag 'autos.png' %>
                 </div>
                 <h4><%= phrase 'car-show-1-titel' %></h4>
+
                 <p><%= phrase 'car-show-1-content' %></p>
               </div>
               <div class="col bepaald">
@@ -523,6 +550,7 @@
                   <%= image_tag 'onderhoud.png' %>
                 </div>
                 <h4><%= phrase 'car-show-2-titel' %></h4>
+
                 <p><%= phrase 'car-show-2-content' %></p>
               </div>
               <div class="col specialist">
@@ -531,6 +559,7 @@
                   <%= image_tag 'medail.png' %>
                 </div>
                 <h4><%= phrase 'car-show-3-titel' %></h4>
+
                 <p><%= phrase 'car-show-3-content' %></p>
               </div>
               <div class="col historie">
@@ -539,6 +568,7 @@
                   <%= image_tag 'historie.png' %>
                 </div>
                 <h4><%= phrase 'car-show-4-titel' %></h4>
+
                 <p><%= phrase 'car-show-4-content' %></p>
               </div>
               <div class="col huurkoop">
@@ -547,6 +577,7 @@
                   <%= image_tag 'geld_zak.png' %>
                 </div>
                 <h4><%= phrase 'car-show-5-titel' %></h4>
+
                 <p><%= phrase 'car-show-5-content' %></p>
               </div>
             </div>
@@ -558,9 +589,9 @@
 </section>
 
 <% content_for :meta do %>
-    <meta property="og:title" content="<%= @car.display_name %>" />
-    <meta property="og:url" content="<%= car_url(@car) %>" />
-    <meta property="og:type" content="article" />
-    <meta property="og:image" content="<%= @car.main_image.try(:file).try(:url) %>" />
-    <meta property="og:description" content="<%= @car.display_name %>" />
+    <meta property="og:title" content="<%= @car.display_name %>"/>
+    <meta property="og:url" content="<%= car_url(@car) %>"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:image" content="<%= @car.main_image.try(:file).try(:url) %>"/>
+    <meta property="og:description" content="<%= @car.display_name %>"/>
 <% end %>

@@ -1115,11 +1115,35 @@ section.detail_pagina_b { //only b
             text-align: center;
           }
 
-          p.views {
-            font-size: 10px;
-            line-height: 1.6;
-            color: #414141;
+          div.visitors_info {
             margin: 10px 0;
+
+            div.hot_item {
+              display: inline-block;
+              margin-right: 5px;
+
+              figure.hot_item_icon {
+                background: image-url('hot_item.svg') no-repeat center;
+                background-size: cover;
+                width: 15.6px;
+                height: 18px;
+                float: left;
+                margin-right: 3px;
+              }
+
+              small {
+                font-size: 10px;
+                line-height: 1.2;
+                color: #e42127;
+              }
+            }
+
+            p.views {
+              font-size: 10px;
+              line-height: 1.6;
+              color: #414141;
+              display: inline-block;
+            }
           }
 
           div.icons {
