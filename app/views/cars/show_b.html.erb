@@ -86,7 +86,7 @@
                 </div>
                 <p class="views"><%= @car.views %> <%= phrase 'bezoekers bekeken deze auto' %>.</p>
               </div>
-              <a href="#" class="orange_btn appointment_btn">Afspraak maken</a>
+      route        <a href="#" class="orange_btn appointment_btn">Afspraak maken</a>
 
               <div class="icons">
                 <%= link_to car_like_path(@car), class: "like_button #{@car_likes.include?(@car.slug) ? 'liked' : nil}", remote: true do %>
