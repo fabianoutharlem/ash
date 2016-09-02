@@ -154,7 +154,8 @@ class Car < ActiveRecord::Base
         door_count: params[:aantal_deuren],
         license_plate: params[:kenteken],
         option_list: options,
-        car_medias: media
+        car_medias: media,
+        comment: params[:opmerkingen]
     }
   end
 
