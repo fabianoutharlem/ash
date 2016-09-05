@@ -143,6 +143,12 @@ Rails.application.routes.draw do
   end
   resources :phrasing_phrase_versions, as: 'phrasing_phrase_versions', controller: 'phrasing_phrase_versions', only: [:destroy]
 
+  %w( 404 500 503 401 ).each do |code|
+    get code, :to => "errors#show", :code => code
+  end
+
+  get 'errors/:code', to: 'errors#show'
+
   resources :pages, only: [:show], path: '/'
 
 end
