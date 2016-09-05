@@ -2,9 +2,10 @@
   <td><%= newsletter.title %></td>
   <td><%= newsletter.subject %></td>
   <td><%= newsletter.created_at.strftime('%Y-%m-%d - %H:%M') %></td>
+  <td><%= newsletter.updated_at.strftime('%Y-%m-%d - %H:%M') %></td>
   <td>
-    <%= link_to 'Aanpassen', edit_admin_newsletter_path(newsletter), class: 'btn btn-primary' %>
-    <%= link_to 'Verstuur', admin_newsletter_prepare_for_send_path(newsletter), class: 'btn btn-success' %>
+    <%= link_to 'Aanpassen', newsletter.campaign_id.present? ? '#' : edit_admin_newsletter_path(newsletter), class: 'btn btn-primary', disabled: newsletter.campaign_id.present? %>
+    <%= link_to 'Verstuur', newsletter.campaign_id.present? ? '#' : admin_newsletter_prepare_for_send_path(newsletter), class: 'btn btn-success', disabled: newsletter.campaign_id.present? %>
     <%= link_to 'Voorbeeld', admin_newsletter_preview_path(newsletter), class: 'btn btn-default' %>
     <%= link_to 'Delete', admin_newsletter_path(newsletter), class: 'btn btn-danger', method: :delete %>
   </td>

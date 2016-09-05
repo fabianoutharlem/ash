@@ -1,0 +1,16 @@
+<section class="error">
+  <div class="wrapper">
+    <div class="container-fluid content_container">
+      <%= render 'shared/adress' %>
+
+      <div class="_404_melding">
+        <div class="content">
+          <h3><%= phrase '503 pagina - Onze excuses…' %></h3>
+          <small><%= phrase 'Door extreme drukte zijn wij op dit moment niet in staat u van dienst te zijn, herlaad uw browser of probeer het later nog eens' %></small>
+        </div>
+
+        <a href="<%= root_path %>" class="orange_btn"><%= phrase 'Naar de Homepage' %></a>
+      </div>
+    </div>
+  </div>
+</section>

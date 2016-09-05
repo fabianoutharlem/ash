@@ -82,4 +82,7 @@ Rails.application.configure do
   config.asset_host = config.domain
   config.action_controller.asset_host = config.domain
   config.action_mailer.asset_host = config.domain
+
+  #handling errors with a nice page
+  config.exceptions_app = self.routes
 end

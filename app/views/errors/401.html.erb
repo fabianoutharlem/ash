@@ -1,0 +1,16 @@
+<section class="error">
+  <div class="wrapper">
+    <div class="container-fluid content_container">
+      <%= render 'shared/adress' %>
+
+      <div class="_404_melding">
+        <div class="content">
+          <h3><%= phrase '401 pagina - Geen toegang' %></h3>
+          <small><%= phrase 'U probeert een beveiligd gedeelte van onze site te bezoeken, dit is niet toegestaan' %></small>
+        </div>
+
+        <a href="<%= root_path %>" class="orange_btn"><%= phrase 'Naar de Homepage' %></a>
+      </div>
+    </div>
+  </div>
+</section>
