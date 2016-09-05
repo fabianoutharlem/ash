@@ -79,6 +79,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   Rails.application.routes.default_url_options[:host] = config.domain
-
+  config.asset_host = config.domain
+  config.action_controller.asset_host = config.domain
   config.action_mailer.asset_host = config.domain
 end
