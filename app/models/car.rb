@@ -42,6 +42,8 @@ class Car < ActiveRecord::Base
 
   has_many :car_images, -> { where('file_type LIKE ?', '%image%') }, class_name: 'CarMedia'
 
+  has_many :appointment_requests, dependent: :nullify
+
   enum nap: {true: 'j', false: 'n'}
   enum reserved: {'Gereserveerd' => 'j', 'Niet Gereserveerd' => 'n'}
   enum new: {'Nieuw' => 'j', 'Occasion' => 'n'}
