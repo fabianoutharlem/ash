@@ -22,9 +22,7 @@
         <div class="ibox-title">
           <h5>Nieuwsbrief "<%= @newsletter.title %>" preview</h5>
           <div class="ibox-tools">
-            <a class="btn btn-primary" href="<%= admin_newsletter_prepare_for_send_path(@newsletter) %>">
-              Versturen
-            </a>
+            <%= link_to 'Verstuur', @newsletter.campaign_id.present? ? '#' : admin_newsletter_prepare_for_send_path(@newsletter), class: 'btn btn-success', disabled: @newsletter.campaign_id.present? %>
           </div>
         </div>
         <div class="ibox-content">
