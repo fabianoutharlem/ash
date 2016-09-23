@@ -94,3 +94,7 @@ gem 'breadcrumbs_on_rails'
 gem 'koala'
 
 gem 'bootstrap-colorpicker-rails'
+
+gem 'identity_cache'
+gem 'memcached'
+gem 'dalli'

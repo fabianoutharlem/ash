@@ -331,12 +331,12 @@ ActiveRecord::Schema.define(version: 20160902123444) do
 
   create_table "slides", force: :cascade do |t|
     t.string   "name",              limit: 255
-    t.boolean  "enabled",                       default: true
     t.integer  "row_order",         limit: 4
     t.integer  "slider_id",         limit: 4
     t.integer  "slide_template_id", limit: 4
-    t.datetime "created_at",                                   null: false
-    t.datetime "updated_at",                                   null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.boolean  "enabled"
   end
 
   add_index "slides", ["slider_id"], name: "index_slides_on_slider_id", using: :btree
