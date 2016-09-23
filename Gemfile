@@ -98,3 +98,5 @@ gem 'bootstrap-colorpicker-rails'
 gem 'identity_cache'
 gem 'memcached'
 gem 'dalli'
+
+gem 'skylight'
