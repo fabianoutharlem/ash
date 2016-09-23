@@ -342,24 +342,27 @@
         </form>
       </li>
       <li class="home smartmenu <%= is_active_url(root_path) %>">
-        <a href="<% root_path %>"><%= phrase 'Home' %></a>
+        <a href="
+          <% root_path %>"><%= phrase 'Home' %></a>
       </li>
       <li class="voorraad smartmenu <%= is_active_url(cars_path) %>">
         <%= phrase 'Voorraad' %>
         <%= image_tag 'arrow_down_orange.svg', class: 'arrow_down_orange.png' %>
         <div class="expand">
           <ul>
-            <% @brands.each do |brand| %>
-                <li class="img" class="<%= is_active_url(brand_cars_path(brand)) %>">
-                  <%= link_to brand_cars_path(brand) do %>
-                      <span class="helper"></span>
-                      <figure>
-                        <span class="helper"></span>
-                        <%= image_tag brand.image.menu %>
-                      </figure>
-                      <p><%= brand.name %> (<%= brand.cars.count %>)</p>
-                  <% end %>
-                </li>
+            <% cache ['main-menu-brands', @brands] do %>
+                <% @brands.each do |brand| %>
+                    <li class="img" class="<%= is_active_url(brand_cars_path(brand)) %>">
+                      <%= link_to brand_cars_path(brand) do %>
+                          <span class="helper"></span>
+                          <figure>
+                            <span class="helper"></span>
+                            <%= image_tag brand.image.menu %>
+                          </figure>
+                          <p><%= brand.name %> (<%= brand.cars.count %>)</p>
+                      <% end %>
+                    </li>
+                <% end %>
             <% end %>
           </ul>
         </div>

@@ -7,7 +7,9 @@
 
           <div class="nav_container"></div>
           <div id="owl2row-plugin" class="owl-carousel_top40">
+            <% cache ['nieuw-binnen-carousel', @nieuw_binnen] do %>
                 <%= render partial: 'cars/car', collection: @nieuw_binnen %>
+            <% end %>
           </div>
           <a href="<%= new_cars_cars_path %>" class="orange_btn"><%= phrase 'Bekijk de voorraad' %></a>
         </div>
