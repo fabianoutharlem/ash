@@ -154,7 +154,6 @@
     display: block;
     top: 50%;
     height: 32px;
-    background-image: url('../../../../../../Downloads/lightslider-master/src/img/controls.png');
     cursor: pointer;
     position: absolute;
     z-index: 99;
