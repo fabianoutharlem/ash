@@ -114,24 +114,26 @@
         </div>
         <div class="tot_voorraad">
           <h4><%= phrase 'Totale voorraad' %></h4>
-          <div class="first_col">
-            <ul>
-              <% @brands[0..(@brands.length/2-1)].each do |brand| %>
-                  <li>
-                    <%= link_to "#{brand.name} (#{brand.cars.count})", brand_cars_path(brand) %>
-                  </li>
-              <% end %>
-            </ul>
-          </div>
-          <div class="second_col">
-            <ul>
-              <% @brands[(@brands.length/2)..-1].each do |brand| %>
-                  <li>
-                    <%= link_to "#{brand.name} (#{brand.cars.count})", brand_cars_path(brand) %>
-                  </li>
-              <% end %>
-            </ul>
-          </div>
+          <% cache ['footer-desktop-brands', @brands] do %>
+              <div class="first_col">
+                <ul>
+                  <% @brands[0..(@brands.length/2-1)].each do |brand| %>
+                      <li>
+                        <%= link_to "#{brand.name} (#{brand.cars.count})", brand_cars_path(brand) %>
+                      </li>
+                  <% end %>
+                </ul>
+              </div>
+              <div class="second_col">
+                <ul>
+                  <% @brands[(@brands.length/2)..-1].each do |brand| %>
+                      <li>
+                        <%= link_to "#{brand.name} (#{brand.cars.count})", brand_cars_path(brand) %>
+                      </li>
+                  <% end %>
+                </ul>
+              </div>
+          <% end %>
         </div>
       </div>
     </div>
@@ -231,17 +233,19 @@
 
         <div class="expand">
           <ul>
-            <% @brands.each do |brand| %>
-                <li class="img" class="<%= is_active_url(brand_cars_path(brand)) %>">
-                  <%= link_to brand_cars_path(brand) do %>
-                      <span class="helper"></span>
-                      <figure>
-                        <span class="helper"></span>
-                        <%= image_tag brand.image.menu %>
-                      </figure>
-                      <p><%= brand.name %> (<%= brand.cars.count %>)</p>
-                  <% end %>
-                </li>
+            <% cache ['footer-brands', @brands] do %>
+                <% @brands.each do |brand| %>
+                    <li class="img" class="<%= is_active_url(brand_cars_path(brand)) %>">
+                      <%= link_to brand_cars_path(brand) do %>
+                          <span class="helper"></span>
+                          <figure>
+                            <span class="helper"></span>
+                            <%= image_tag brand.image.menu %>
+                          </figure>
+                          <p><%= brand.name %> (<%= brand.cars.count %>)</p>
+                      <% end %>
+                    </li>
+                <% end %>
             <% end %>
           </ul>
         </div>
