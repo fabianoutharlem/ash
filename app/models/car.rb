@@ -1,4 +1,6 @@
 class Car < ActiveRecord::Base
+  include IdentityCache
+
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 
@@ -54,6 +56,12 @@ class Car < ActiveRecord::Base
   validates_associated :model, :brand
   validates :mileage, :color, :engine_size, :manufacture_year, presence: true
 
+
+  #caching
+  cache_has_many :car_medias, embed: true
+  cache_has_many :car_images, embed: true
+
+
   def self.query(params)
     puts build_query(params).to_json
     search = Car.search(build_query(params).to_json)
@@ -65,7 +73,7 @@ class Car < ActiveRecord::Base
   end
 
   def main_image
-    car_medias.first if car_medias.any?
+    fetch_car_images.try(:first)
   end
 
   def display_name
