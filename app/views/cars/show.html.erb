@@ -70,7 +70,7 @@
 
       <div class="car_slider carslider_responsive">
         <ul>
-          <% @car.car_images.each do |car_media| %>
+          <% @car.fetch_car_images.each do |car_media| %>
               <li>
                 <div class="background"
                      style="background: url('<%= image_path car_media.file.large %>') no-repeat center; background-size: cover;"></div>
@@ -134,7 +134,7 @@
 
       <div class="car_slider carslider_fullwidth">
         <ul>
-          <% @car.car_images.each do |car_media| %>
+          <% @car.fetch_car_images.each do |car_media| %>
               <li>
                 <div class="background"
                      style="background: url('<%= image_path car_media.file.large %>') no-repeat center; background-size: cover;"></div>
@@ -197,7 +197,7 @@
 
     <div class="slider_container">
       <ul id="lightSlider">
-        <% @car.car_images.each do |car_image| %>
+        <% @car.fetch_car_images.each do |car_image| %>
             <li data-thumb="<%= car_image.file.thumb.url %>" data-src="<%= car_image.file.large.url %>">
               <div class="image_container">
                 <%= image_tag car_image.file %>
@@ -375,7 +375,7 @@
 
         <div class="photos tabs">
           <ul>
-            <% @car.car_images.each do |car_image| %>
+            <% @car.fetch_car_images.each do |car_image| %>
                 <li>
                   <figure>
                     <%= image_tag car_image.file.thumb %>
