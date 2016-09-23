@@ -270,8 +270,10 @@
           <div class="right">
             <h4><%= phrase 'accessoiries' %></h4>
             <ul>
-              <% @car.option_list.first(42).each do |option| %>
-                  <li><%= option %></li>
+              <% cache ['car-show-options-small', @car] do %>
+                  <% @car.option_list.first(42).each do |option| %>
+                      <li><%= option %></li>
+                  <% end %>
               <% end %>
             </ul>
             <div class="more active" onclick="$('._Accesoires').click()">Meer opties +</div>
@@ -289,8 +291,10 @@
 
           <div class="list">
             <ul>
-              <% @car.option_list.each do |option| %>
-                  <li><%= option %></li>
+              <% cache ['car-show-options', @car] do %>
+                  <% @car.option_list.each do |option| %>
+                      <li><%= option %></li>
+                  <% end %>
               <% end %>
             </ul>
             <div class="more active">Meer opties +</div>
