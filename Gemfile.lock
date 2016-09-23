@@ -59,6 +59,8 @@ GEM
     acts-as-taggable-on (3.5.0)
       activerecord (>= 3.2, < 5)
     addressable (2.4.0)
+    ar_transaction_changes (1.1.0)
+      activerecord (>= 3.0, < 6.0, != 4.2.3)
     arel (6.0.3)
     autoprefixer-rails (6.3.3.1)
       execjs
@@ -137,6 +139,7 @@ GEM
     commonjs (0.2.7)
     concurrent-ruby (1.0.2)
     connection_pool (2.2.0)
+    dalli (2.7.6)
     debug_inspector (0.0.2)
     devise (3.5.6)
       bcrypt (~> 3.0)
@@ -176,6 +179,9 @@ GEM
     hashie (3.4.3)
     hitimes (1.2.3)
     i18n (0.7.0)
+    identity_cache (0.3.1)
+      activerecord (>= 4.0.4)
+      ar_transaction_changes (~> 1.0)
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -208,6 +214,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    memcached (1.8.0)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
@@ -352,18 +359,21 @@ DEPENDENCIES
   carrierwave
   carrierwave-aws
   coffee-rails (~> 4.1.0)
+  dalli
   devise
   elasticsearch-model
   elasticsearch-rails
   font-awesome-rails (= 4.3.0.0)
   friendly_id
   gibbon
+  identity_cache
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails
   kaminari
   koala
   less-rails
+  memcached
   mysql2
   phrasing!
   puma
