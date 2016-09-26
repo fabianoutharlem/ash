@@ -16,6 +16,10 @@
       <li>
         <%= link_to '<i class="fa fa-sign-out"></i> Log out'.html_safe, destroy_user_session_path, method: :delete %>
       </li>
+
+      <li>
+        <%= link_to '<i class="fa fa-refresh"></i> Leeg cache'.html_safe, clear_cache_admin_admin_index_path %>
+      </li>
     </ul>
   </nav>
 </div>

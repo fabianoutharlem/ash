@@ -111,6 +111,7 @@ Rails.application.routes.draw do
     resources :admin do
       collection do
         get :home
+        get :clear_cache
       end
     end
 
