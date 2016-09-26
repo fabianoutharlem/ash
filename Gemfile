@@ -100,3 +100,5 @@ gem 'memcached'
 gem 'dalli'
 
 gem 'skylight'
+
+gem 'rack-cors'
