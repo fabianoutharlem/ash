@@ -25,7 +25,7 @@
         </div>
         <div class="col col-xs-8 left_content">
           <h1 class="brand_name"><%= @brand.name %></h1>
-          <%= @brand.description.html_safe %>
+          <%= @brand.description.try(:html_safe) %>
         </div>
         <div class="clear"></div>
       </div>
