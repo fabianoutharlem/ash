@@ -11,12 +11,13 @@ class CarsController < ApplicationController
   end
 
   def search
-    @cars = Car.query(params)
-
+    Car.unscoped do
+      @cars = Car.query(params)
+    end
     respond_to do |format|
-      format.json { render json: {cars: @cars.count} }
+      format.json { render json: {cars: @cars.size} }
       format.html {
-        @cars = @cars.includes(:brand, :model)
+        @cars = @cars.includes(:car_images, :brand, :model)
         @cars = manipulate_by_params(@cars, params).page(params[:page]).per(params[:per_page])
         render :index
       }
