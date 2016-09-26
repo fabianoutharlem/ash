@@ -84,7 +84,7 @@ Rails.application.configure do
 
   Rails.application.routes.default_url_options[:host] = config.domain
   config.asset_host = config.domain
-  config.action_controller.asset_host = config.domain
+  config.action_controller.asset_host = 'http://d1ocmpidlz0zue.cloudfront.net/'
   config.action_mailer.asset_host = config.domain
 
   #handling errors with a nice page
