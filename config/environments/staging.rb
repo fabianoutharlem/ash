@@ -6,7 +6,7 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
-  config.cache_store = :dalli_store
+  config.cache_store = :dalli_store, {namespace: "ash_cache_#{Rails.env}"}
 
   config.identity_cache_store = :dalli_store
 
