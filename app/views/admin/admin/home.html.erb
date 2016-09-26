@@ -175,7 +175,7 @@
                     <td><%= appointment_request.phone %></td>
                     <td><%= mail_to appointment_request.email %></td>
                     <td><%= appointment_request.comment %></td>
-                    <td><%= link_to appointment_request.car.display_name, car_path(appointment_request.car), target: '_blank' %></td>
+                    <td><%= appointment_request.car.present? ? link_to(appointment_request.car.try(:display_name), car_path(appointment_request.car), target: '_blank') : 'Auto is verwijderd' %></td>
                   </tr>
               <% end %>
               </tbody>

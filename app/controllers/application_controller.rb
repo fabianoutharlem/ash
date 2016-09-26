@@ -20,11 +20,12 @@ class ApplicationController < ActionController::Base
   end
 
   def prepare_shared_variables
-
     @menus = Menu.includes(:menu_items).all.inject({}) do |menus, menu|
       menus[menu.location] = menu.menu_items
       menus
     end
-    @brands = Brand.includes(:cars).menu_items.order(:row_order)
+    Car.unscoped do
+      @brands = Brand.all.includes(:cars).menu_brands.order(:row_order)
+    end
   end
 end

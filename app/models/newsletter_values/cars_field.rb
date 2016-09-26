@@ -5,7 +5,7 @@ module NewsletterValues
     serialize :value
 
     def cars
-      Car.find(value.reject(&:blank?)) if value.present? && value.any? rescue Car.none
+      Car.where(id: value.reject(&:blank?)) if value.present? && value.any? rescue Car.none
     end
 
     def form_field

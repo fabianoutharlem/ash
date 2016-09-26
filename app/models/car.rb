@@ -38,11 +38,13 @@ class Car < ActiveRecord::Base
   belongs_to :body_type
   belongs_to :fuel_type
   belongs_to :model
-  belongs_to :brand
+  belongs_to :brand, touch: true
   belongs_to :transmission_type
   has_many :car_medias, dependent: :destroy
 
   has_many :car_images, -> { where('file_type LIKE ?', '%image%') }, class_name: 'CarMedia'
+
+  has_many :appointment_requests, dependent: :nullify
 
   enum nap: {true: 'j', false: 'n'}
   enum reserved: {'Gereserveerd' => 'j', 'Niet Gereserveerd' => 'n'}

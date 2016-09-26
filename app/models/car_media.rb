@@ -1,6 +1,6 @@
 class CarMedia < ActiveRecord::Base
 
-  belongs_to :car
+  belongs_to :car, touch: true
 
   mount_uploader :file, CarMediaUploader
 

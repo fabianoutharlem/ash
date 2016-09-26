@@ -58,15 +58,17 @@
             <div class="left_border"></div>
           </a>
         </li>
-        <% @menus['head_menu'].each do |menu_item| %>
-            <li class="<%= is_active_url(menu_item.route) %>">
-              <%= link_to menu_item.route do %>
-                  <span class="helper"></span>
-                  <%= menu_item.name %>
-                  <div class="border-bottom"></div>
-                  <div class="left_border"></div>
-              <% end %>
-            </li>
+        <% cache ['head_menu', @menus['head_menu']] do %>
+            <% @menus['head_menu'].each do |menu_item| %>
+                <li class="<%= is_active_url(menu_item.route) %>">
+                  <%= link_to menu_item.route do %>
+                      <span class="helper"></span>
+                      <%= menu_item.name %>
+                      <div class="border-bottom"></div>
+                      <div class="left_border"></div>
+                  <% end %>
+                </li>
+            <% end %>
         <% end %>
         <li class="<%= is_active_url(contact_path) %>" class="Contact" data-submenu="contact_menu">
           <a href="<%= contact_path %>">
@@ -111,17 +113,19 @@
     <div class="wrapper">
       <div class="container-fluid content-container">
         <ul>
-          <% @brands.each do |brand| %>
-              <li class="img" class="<%= is_active_url(brand_cars_path(brand)) %>">
-                <%= link_to brand_cars_path(brand) do %>
-                    <span class="helper"></span>
-                    <figure>
-                      <span class="helper"></span>
-                      <%= image_tag brand.image.menu %>
-                    </figure>
-                    <p><%= brand.name %> (<%= brand.cars.count %>)</p>
-                <% end %>
-              </li>
+          <% cache ['desktop-menu-brands', @brands] do %>
+              <% @brands.each do |brand| %>
+                  <li class="img" class="<%= is_active_url(brand_cars_path(brand)) %>">
+                    <%= link_to brand_cars_path(brand) do %>
+                        <span class="helper"></span>
+                        <figure>
+                          <span class="helper"></span>
+                          <%= image_tag brand.image.menu %>
+                        </figure>
+                        <p><%= brand.name %> (<%= brand.cars.size %>)</p>
+                    <% end %>
+                  </li>
+              <% end %>
           <% end %>
         </ul>
       </div>
@@ -151,32 +155,38 @@
 
             <div class="first_col">
               <ul>
-                <% @menus['sub_menu_1'].each do |menu_item| %>
-                    <li class="<%= is_active_url(menu_item.route) %>">
-                      <%= link_to menu_item.route do %>
-                          <%= menu_item.name %>
-                      <% end %>
-                    </li>
+                <% cache ['sub-menu-1', @menus['sub_menu_1']] do %>
+                    <% @menus['sub_menu_1'].each do |menu_item| %>
+                        <li class="<%= is_active_url(menu_item.route) %>">
+                          <%= link_to menu_item.route do %>
+                              <%= menu_item.name %>
+                          <% end %>
+                        </li>
+                    <% end %>
                 <% end %>
               </ul>
               <ul>
-                <% @menus['sub_menu_2'].each do |menu_item| %>
-                    <li class="<%= is_active_url(menu_item.route) %>">
-                      <%= link_to menu_item.route do %>
-                          <%= menu_item.name %>
-                      <% end %>
-                    </li>
+                <% cache ['sub-menu-2', @menus['sub_menu_2']] do %>
+                    <% @menus['sub_menu_2'].each do |menu_item| %>
+                        <li class="<%= is_active_url(menu_item.route) %>">
+                          <%= link_to menu_item.route do %>
+                              <%= menu_item.name %>
+                          <% end %>
+                        </li>
+                    <% end %>
                 <% end %>
               </ul>
             </div>
             <div class="second_col">
               <ul>
-                <% @menus['sub_menu_3'].each do |menu_item| %>
-                    <li class="<%= is_active_url(menu_item.route) %>">
-                      <%= link_to menu_item.route do %>
-                          <%= menu_item.name %>
-                      <% end %>
-                    </li>
+                <% cache ['sub-menu-3', @menus['sub_menu_3']] do %>
+                    <% @menus['sub_menu_3'].each do |menu_item| %>
+                        <li class="<%= is_active_url(menu_item.route) %>">
+                          <%= link_to menu_item.route do %>
+                              <%= menu_item.name %>
+                          <% end %>
+                        </li>
+                    <% end %>
                 <% end %>
               </ul>
             </div>
@@ -350,7 +360,7 @@
         <%= image_tag 'arrow_down_orange.svg', class: 'arrow_down_orange.png' %>
         <div class="expand">
           <ul>
-            <% cache ['main-menu-brands', @brands] do %>
+            <% cache ['mobile-menu-brands', @brands] do %>
                 <% @brands.each do |brand| %>
                     <li class="img" class="<%= is_active_url(brand_cars_path(brand)) %>">
                       <%= link_to brand_cars_path(brand) do %>
@@ -359,7 +369,7 @@
                             <span class="helper"></span>
                             <%= image_tag brand.image.menu %>
                           </figure>
-                          <p><%= brand.name %> (<%= brand.cars.count %>)</p>
+                          <p><%= brand.name %> (<%= brand.cars.size %>)</p>
                       <% end %>
                     </li>
                 <% end %>
