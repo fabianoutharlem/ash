@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="my-slider">
         <ul>
-          <% cache ['main-slider', @slider, @slider.active_slides] do %>
+          <% cache ['main-slider', @slider] do %>
               <% @slider.active_slides.each do |slide| %>
                   <%= render ('admin/slides/templates/' + slide.slide_template.template), slide_values: slide.template_variables %>
               <% end %>

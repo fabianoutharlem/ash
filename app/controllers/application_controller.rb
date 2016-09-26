@@ -25,6 +25,6 @@ class ApplicationController < ActionController::Base
       menus[menu.location] = menu.menu_items
       menus
     end
-    @brands = Brand.includes(:cars).menu_items.order(:row_order)
+    @brands = Brand.includes(:cars).menu_brands.order(:row_order)
   end
 end

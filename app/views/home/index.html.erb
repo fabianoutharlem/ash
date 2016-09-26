@@ -18,11 +18,11 @@
             <%= f.email_field :email, placeholder: 'Je email adres', required: 'required' %>
             <%= f.text_field :license_plate, placeholder: 'Vul hier je kenteken in', required: 'required' %>
           </div>
-        <div class="right">
-          <%= f.text_area :message, placeholder: 'Persoonlijk bericht' %>
-          <%= f.text_field :mileage, placeholder: 'Vul hier je kilometerstand in', required: 'required' %>
-          <button type="submit" class="orange_btn"><%= phrase 'Taxatie aanvragen' %></button>
-        </div>
+          <div class="right">
+            <%= f.text_area :message, placeholder: 'Persoonlijk bericht' %>
+            <%= f.text_field :mileage, placeholder: 'Vul hier je kilometerstand in', required: 'required' %>
+            <button type="submit" class="orange_btn"><%= phrase 'Taxatie aanvragen' %></button>
+          </div>
       <% end %>
     </div>
   </div>
@@ -91,8 +91,10 @@
       </article>
 
       <ul id="banner_carousel">
-        <% @actie_slider.active_slides.each do |slide| %>
-            <%= render ('admin/slides/templates/' + slide.slide_template.template), slide_values: slide.template_variables %>
+        <% cache ['actie-slider-home', @actie_slider] do %>
+            <% @actie_slider.active_slides.each do |slide| %>
+                <%= render ('admin/slides/templates/' + slide.slide_template.template), slide_values: slide.template_variables %>
+            <% end %>
         <% end %>
       </ul>
     </div>

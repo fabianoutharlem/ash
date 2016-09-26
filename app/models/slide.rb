@@ -1,5 +1,5 @@
 class Slide < ActiveRecord::Base
-  belongs_to :slider
+  belongs_to :slider, touch: true
   belongs_to :slide_template
   has_many :slide_values, dependent: :destroy
 
