@@ -23,6 +23,7 @@
             <%= f.text_field :mileage, placeholder: 'Vul hier je kilometerstand in', required: 'required' %>
             <button type="submit" class="orange_btn"><%= phrase 'Taxatie aanvragen' %></button>
           </div>
+          <%= recaptcha_tags %>
       <% end %>
     </div>
   </div>

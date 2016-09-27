@@ -53,7 +53,7 @@ group :development do
   gem 'capistrano-sidekiq'
   gem 'capistrano-monit-recipes'
   # web server
-  gem 'puma'
+  # gem 'puma'
 end
 
 gem 'rails_admin'
@@ -102,3 +102,5 @@ gem 'dalli'
 gem 'skylight'
 
 gem 'rack-cors'
+
+gem 'recaptcha', require: 'recaptcha/rails'

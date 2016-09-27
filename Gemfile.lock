@@ -230,7 +230,6 @@ GEM
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
-    puma (3.2.0)
     rack (1.6.4)
     rack-cors (0.4.0)
     rack-pjax (0.8.0)
@@ -281,6 +280,8 @@ GEM
       activerecord (>= 3.1.12)
     rdoc (4.2.2)
       json (~> 1.4)
+    recaptcha (3.3.0)
+      json
     redis (3.3.0)
     redis-namespace (1.5.2)
       redis (~> 3.0, >= 3.0.4)
@@ -379,11 +380,11 @@ DEPENDENCIES
   memcached
   mysql2
   phrasing!
-  puma
   rack-cors
   rails (= 4.2.6)
   rails_admin
   ranked-model
+  recaptcha
   rmagick
   sass-rails (~> 5.0.4)
   sdoc (~> 0.4.0)
