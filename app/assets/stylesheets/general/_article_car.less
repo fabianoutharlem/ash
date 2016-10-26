@@ -258,7 +258,7 @@ article.article_car {
     width: 100%;
     height: 100%;
     background-color: white;
-    bottom: -100%;
+    bottom: -0%;
     transition: @trans;
 
     div.content_box {
@@ -331,6 +331,10 @@ article.article_car {
           height: 96%;
           width: 100%;
 
+          &.second {
+            margin-top: -5px;
+          }
+
           td {
             color: white;
             font-size: 15px;
@@ -343,10 +347,14 @@ article.article_car {
         }
 
         p {
-          height: 62px;
-          line-height: 62px;
+          position: absolute;
+          bottom: 10px;
           color: white;
-          font-size: 17px;
+          font-size: 12px;
+
+          &.second {
+            bottom: 15px;
+          }
         }
 
         &.zakelijk {

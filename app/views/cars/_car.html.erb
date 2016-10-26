@@ -36,15 +36,17 @@
                   <td class="finance"><%= format_money car.price_month %> p/m</td>
                 </tr>
               </table>
+              <p>Op basis van financial lease</p>
               <div class="orange_arrow"><%= image_tag 'arrow_right.svg' %></div>
             </a>
             <a href="<%= car_finance_car_path(car, 'private') %>" class="particulier finance_opties">
-              <table>
+              <table class="second">
                 <tr>
                   <td class="first finance"><%= phrase 'Particulier vanaf' %></td>
                   <td class="finance"><%= format_money car.price_month %> p/m</td>
                 </tr>
               </table>
+              <p class="second">Op basis van financial lease</p>
               <div class="orange_arrow"><%= image_tag 'arrow_right.svg' %></div>
             </a>
 
