@@ -30,23 +30,9 @@
           </div>
           <div class="finance_mogelijkheden">
             <a href="<%= car_finance_car_path(car, 'bussiness') %>" class="zakelijk finance_opties">
-              <table>
-                <tr class="options">
-                  <td class="first finance">Zakelijk v.a.</td>
-                  <td class="finance"><%= format_money car.price_month %> p/m</td>
-                </tr>
-              </table>
-              <p>Op basis van Financial lease</p>
-              <div class="orange_arrow"><%= image_tag 'arrow_right.svg' %></div>
-            </a>
-            <a href="<%= car_finance_car_path(car, 'private') %>" class="particulier finance_opties">
-              <table class="second">
-                <tr>
-                  <td class="first finance">Particulier v.a.</td>
-                  <td class="finance"><%= format_money car.price_month %> p/m</td>
-                </tr>
-              </table>
-              <p class="second">Op basis van Financial lease</p>
+              <p class="p_m">Rij deze auto p.m. vanaf</p>
+              <p class="price"><%= format_money car.price_month %></p>
+              <p class="small_text">Op basis van Financial lease</p>
               <div class="orange_arrow"><%= image_tag 'arrow_right.svg' %></div>
             </a>
 

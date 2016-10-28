@@ -322,13 +322,46 @@ article.article_car {
         position: relative;
         display: inline-block;
         width: 100%;
-        height: 49%;
+        height: 100%;
         background-color: green;
         padding-left: 20px;
         padding-right: 50px;
+        text-align: center;
+        padding-top: 30px;
 
         &:hover {
           cursor: pointer;
+        }
+
+        p {
+          font-size: 17px;
+          color: white;
+
+          @media @905 {
+            font-size: 14px;
+          }
+
+          &.price {
+            margin-top: 10px;
+            font-size: 32px;
+
+            @media @905 {
+              font-size: 23px;
+            }
+          }
+
+          &.small_text {
+            position: absolute;
+            bottom: 11px;
+            color: white;
+            font-size: 12px;
+            left: 45%;
+            transform: translateX(-50%);
+
+            @media @905 {
+              font-size: 10px;
+            }
+          }
         }
 
         table {
@@ -350,16 +383,16 @@ article.article_car {
           }
         }
 
-        p {
-          position: absolute;
-          bottom: 11px;
-          color: white;
-          font-size: 12px;
-
-          &.second {
-            bottom: 15px;
-          }
-        }
+        //p {
+        //  position: absolute;
+        //  bottom: 11px;
+        //  color: white;
+        //  font-size: 12px;
+        //
+        //  &.second {
+        //    bottom: 15px;
+        //  }
+        //}
 
         &.zakelijk {
           background-color: #22c064;
