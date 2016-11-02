@@ -103,7 +103,7 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<% if Rails.env.production? %>
+<% if Rails.env.production? || 1 %>
 
     <script type="text/javascript">
       window.smartlook || (function (d) {

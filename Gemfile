@@ -104,3 +104,5 @@ gem 'skylight'
 gem 'rack-cors'
 
 gem 'recaptcha', require: 'recaptcha/rails'
+
+gem 'staccato'

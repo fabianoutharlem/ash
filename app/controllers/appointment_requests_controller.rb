@@ -6,6 +6,7 @@ class AppointmentRequestsController < ApplicationController
     respond_to do |format|
       if @appointment_request.save
         converted!('car_show')
+        track_event 'cars', 'afspraak maken formulier verzonden', @appointment_request.car.display_name, @appointment_request.car.vehicle_number
         format.html { redirect_to :back }
         format.js
       end

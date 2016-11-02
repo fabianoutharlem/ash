@@ -57,4 +57,6 @@ Rails.application.configure do
 
   config.identity_cache_store = :dalli_store
 
+  # GA_TRACKER = Staccato.tracker('UA-55394434-1')
+
 end

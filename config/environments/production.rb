@@ -89,4 +89,7 @@ Rails.application.configure do
 
   #handling errors with a nice page
   config.exceptions_app = self.routes
+
+  GA_TRACKER = Staccato.tracker('UA-55394434-1')
+
 end
