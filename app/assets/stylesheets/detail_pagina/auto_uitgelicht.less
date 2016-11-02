@@ -374,6 +374,10 @@ section.auto_uitgelicht {
           height: 50px;
           border-bottom: solid 1px #dddddd;
 
+          @media @360 {
+            height: 50px;
+          }
+
           td {
             font-size: 24px;
             line-height: 2.1;
@@ -404,12 +408,16 @@ section.auto_uitgelicht {
         height: 60px;
         border: solid 1px #dddddd;
         padding: 0 20px 0 10px;
-        margin: 50px 0 0 0;
+        margin: 100px 0 0 0;
         background-color: white;
 
         @media @1070 {
           width: 280px;
           position: relative;
+        }
+
+        @media @880 {
+          margin-top: 50px;
         }
 
         @media @750 {

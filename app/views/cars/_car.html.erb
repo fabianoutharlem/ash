@@ -30,32 +30,12 @@
           </div>
           <div class="finance_mogelijkheden">
             <a href="<%= car_finance_car_path(car, 'bussiness') %>" class="zakelijk finance_opties">
-              <table>
-                <tr class="options">
-                  <td class="first finance"><%= phrase 'Zakelijk vanaf' %></td>
-                  <td class="finance"><%= format_money car.price_month %> p/m</td>
-                </tr>
-              </table>
+              <p class="p_m">Rij deze auto p.m. vanaf</p>
+              <p class="price"><%= format_money car.price_month %></p>
+              <p class="small_text">Op basis van Financial lease</p>
               <div class="orange_arrow"><%= image_tag 'arrow_right.svg' %></div>
             </a>
-            <a href="<%= car_finance_car_path(car, 'private') %>" class="particulier finance_opties">
-              <table>
-                <tr>
-                  <td class="first finance"><%= phrase 'Particulier vanaf' %></td>
-                  <td class="finance"><%= format_money car.price_month %> p/m</td>
-                </tr>
-              </table>
-              <div class="orange_arrow"><%= image_tag 'arrow_right.svg' %></div>
-            </a>
-            <a href="<%= car_finance_car_path(car, '50_50') %>" class="fifty_fifty finance_opties">
-              <table>
-                <tr>
-                  <td class="first finance"><%= phrase '50/50 Deal' %></td>
-                  <td class="finance"><%= format_money car.price_50_50 %></td>
-                </tr>
-              </table>
-              <div class="orange_arrow"><%= image_tag 'arrow_right.svg' %></div>
-            </a>
+
           </div>
         </div>
 
@@ -106,7 +86,7 @@
           <div class="p_m">
             <table>
               <tr>
-                <td class="rij_deze"><%= phrase 'Rij deze auto p.m. vanaf' %></td>
+                <td class="rij_deze"><%= phrase 'Rij deze auto p.m. vanaf' %><br><span>Op basis van Financial lease</span></td>
                 <td class="orange"><%= format_money car.price_month %></td>
               </tr>
             </table>

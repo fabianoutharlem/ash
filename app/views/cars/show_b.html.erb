@@ -43,10 +43,6 @@
                   <td class="second"><%= format_money @car.price_total %></td>
                 </tr>
                 <tr>
-                  <td class="first"><%= phrase '50/50 Deal' %></td>
-                  <td class="second"><%= format_money @car.price_50_50 %></td>
-                </tr>
-                <tr>
                   <td class="first"><%= phrase 'Per maand v.a.' %></td>
                   <td class="second"><%= format_money @car.price_month %></td>
                 </tr>
@@ -73,10 +69,10 @@
                   <div class="white_circle"></div>
                 </div>
                 <div class="finace_circle circle_3">
-                  <h5>50/50 deals Particulier</h5>
+                  <h5>U BEPAALT WAT U BETAALT!</h5>
 
                   <div class="button">
-                    <a href="<%= car_finance_car_path(@car, '50_50') %>" class="orange_btn">Klik hier</a></div>
+                    <a href="http://www.autoservicehaarlem.nl/actie-weken" class="orange_btn">Klik hier</a></div>
                   <div class="white_circle"></div>
                 </div>
               </div>
@@ -415,11 +411,11 @@
 
           <div class="circle_container">
             <div class="orange_circle">
-              <h4>50/50 DEALS (PARTICULIER)</h4>
+              <h4>U BEPAALT WAT U BETAALT!</h4>
 
               <p><%= phrase('finance-circle-1-text') %></p>
 
-              <a href="<%= car_finance_car_path(@car, '50_50') %>" class="orange_btn"><%= phrase('finance-circle-1-button') %></a>
+              <a href="http://autoservicehaarlem.nl/actie-weken" class="orange_btn"><%= phrase('finance-circle-1-button') %></a>
 
               <div class="white_circle"></div>
             </div>
