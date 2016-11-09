@@ -1,5 +1,5 @@
 class SlideValue < ActiveRecord::Base
-  belongs_to :slide
+  belongs_to :slide, touch: true
   belongs_to :slide_template_value
 
   def field_value
