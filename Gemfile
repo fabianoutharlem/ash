@@ -99,7 +99,7 @@ gem 'identity_cache'
 gem 'memcached'
 gem 'dalli'
 
-gem 'skylight'
+gem 'skylight', '~> 1.0.1'
 
 gem 'rack-cors'
 
